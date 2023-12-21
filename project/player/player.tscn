@@ -20,5 +20,3 @@ shape = SubResource("RectangleShape2D_5uoy1")
 
 [node name="player" type="Sprite2D" parent="."]
 texture = ExtResource("3_xwmp0")
-
-[node name="target" type="Marker2D" parent="."]
