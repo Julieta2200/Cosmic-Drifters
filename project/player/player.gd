@@ -19,7 +19,6 @@ func move() -> void:
 	if position.distance_to(target_position) < position_delta:
 		position = target_position #Stopped moving
 	
-	position = position.snapped(Vector2(1,1))
 	
 
 func _input(event: InputEvent):
