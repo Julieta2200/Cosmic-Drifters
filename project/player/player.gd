@@ -20,6 +20,7 @@ func move() -> void:
 		position = target_position #Stopped moving
 		$AnimatedSprite2D.play("stand") 
 	
+
 	
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.is_pressed():
