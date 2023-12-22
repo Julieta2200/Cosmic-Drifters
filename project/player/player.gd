@@ -18,19 +18,23 @@ func move() -> void:
 	
 	if position.distance_to(target_position) < position_delta:
 		position = target_position #Stopped moving
+		$AnimatedSprite2D.play("stand")  
 	
 	
-
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			target_position = get_global_mouse_position()
-			animation()
+			start_movement()
 
 #player animation
-func animation() -> void:
+func animation()-> void:
 	if (target_position - position).y > 0:
 		$AnimatedSprite2D.play("walk_down")
 	else:
 		$AnimatedSprite2D.play("walk_up")
+
+
+func start_movement() -> void:
+	target_position = get_global_mouse_position()
+	animation()
 
