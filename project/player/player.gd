@@ -25,4 +25,12 @@ func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			target_position = get_global_mouse_position()
+			animation()
+
+#player animation
+func animation() -> void:
+	if (target_position - position).y > 0:
+		$AnimatedSprite2D.play("walk_down")
+	else:
+		$AnimatedSprite2D.play("walk_up")
 
