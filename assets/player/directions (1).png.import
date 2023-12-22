@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4nl01m5fjh6q"
-path="res://.godot/imported/back-base.png-7a825f4439c2cab68f4fe76356ddcfae.ctex"
+uid="uid://r3h45ni412re"
+path="res://.godot/imported/directions (1).png-d5d64f20cb79fc9354bd68f9d1009ce5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/playerAsset/back-base.png"
-dest_files=["res://.godot/imported/back-base.png-7a825f4439c2cab68f4fe76356ddcfae.ctex"]
+source_file="res://assets/player/directions (1).png"
+dest_files=["res://.godot/imported/directions (1).png-d5d64f20cb79fc9354bd68f9d1009ce5.ctex"]
 
 [params]
 
