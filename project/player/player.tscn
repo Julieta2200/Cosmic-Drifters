@@ -45,13 +45,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ffqgp")
-}, {
-"duration": 1.0,
 "texture": ExtResource("7_67uvq")
 }, {
 "duration": 1.0,
+"texture": ExtResource("5_ffqgp")
+}, {
+"duration": 1.0,
 "texture": ExtResource("8_jvjbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ffqgp")
 }],
 "loop": true,
 "name": &"walk",
@@ -72,3 +75,4 @@ texture = ExtResource("2_41rpm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
 animation = &"idle"
+frame_progress = 0.772525
