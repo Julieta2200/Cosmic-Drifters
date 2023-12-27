@@ -1,0 +1,216 @@
+[gd_scene load_steps=11 format=3 uid="uid://doj6mhr6j1vcq"]
+
+[ext_resource type="Texture2D" uid="uid://q4ndtdh0486o" path="res://assets/details/TileMap.png" id="1_1yaak"]
+[ext_resource type="Texture2D" uid="uid://cfk5qwyxvc7er" path="res://assets/details/Bar.png" id="2_ijkua"]
+[ext_resource type="Texture2D" uid="uid://x51gf52yay6n" path="res://assets/details/chair1.png" id="3_r1itb"]
+[ext_resource type="Texture2D" uid="uid://bdi5pl1aei5mn" path="res://assets/details/table.png" id="4_5t22e"]
+[ext_resource type="Texture2D" uid="uid://cy8qc1bj4aqj1" path="res://assets/details/chair2.png" id="5_8aih1"]
+[ext_resource type="Texture2D" uid="uid://c7fxop4ydqowv" path="res://assets/details/tile.png" id="6_gyyqm"]
+[ext_resource type="Texture2D" uid="uid://i58csb58xh5v" path="res://assets/details/plant1.png" id="7_kcafq"]
+[ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="8_m0vx5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8fol"]
+texture = ExtResource("1_1yaak")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w1pab"]
+sources/0 = SubResource("TileSetAtlasSource_w8fol")
+
+[node name="level 1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_w1pab")
+format = 2
+layer_0/name = "floor"
+layer_0/tile_data = PackedInt32Array(3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 65549, 0, 0, 131085, 0, 0, 131084, 0, 0, 65548, 0, 0, 65547, 0, 0, 65546, 0, 0, 65543, 0, 0, 131079, 0, 0, 131082, 0, 0, 131083, 0, 0, 196621, 0, 0, 196620, 0, 0, 196619, 0, 0, 196618, 0, 0, 196617, 0, 0, 196616, 0, 0, 196615, 0, 0, 196614, 0, 0, 196613, 0, 0, 196612, 0, 0, 196611, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 327693, 0, 0, 262157, 0, 0, 262156, 0, 0, 262155, 0, 0, 262154, 0, 0, 262153, 0, 0, 262152, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262147, 0, 0, 327683, 0, 0, 327692, 0, 0, 393228, 0, 0, 458763, 0, 0, 393227, 0, 0, 327691, 0, 0, 524298, 0, 0, 458762, 0, 0, 393226, 0, 0, 327690, 0, 0, 524297, 0, 0, 589833, 0, 0, 458761, 0, 0, 393225, 0, 0, 327689, 0, 0, 393224, 0, 0, 327688, 0, 0, 327687, 0, 0, 327686, 0, 0, 327685, 0, 0, 327684, 0, 0, 458757, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 524294, 0, 0, 458758, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 393220, 0, 0)
+
+[node name="tile" type="Node2D" parent="."]
+
+[node name="Tile" type="Sprite2D" parent="tile"]
+position = Vector2(52, 8)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile2" type="Sprite2D" parent="tile"]
+position = Vector2(52, 20)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile3" type="Sprite2D" parent="tile"]
+position = Vector2(52, 32)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile4" type="Sprite2D" parent="tile"]
+position = Vector2(52, 44)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile5" type="Sprite2D" parent="tile"]
+position = Vector2(52, 57)
+scale = Vector2(1, 1.0625)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile7" type="Sprite2D" parent="tile"]
+position = Vector2(52, 69)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile8" type="Sprite2D" parent="tile"]
+position = Vector2(222, 8)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile9" type="Sprite2D" parent="tile"]
+position = Vector2(222, 20)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile10" type="Sprite2D" parent="tile"]
+position = Vector2(222, 32)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile11" type="Sprite2D" parent="tile"]
+position = Vector2(222, 44)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile13" type="Sprite2D" parent="tile"]
+position = Vector2(222, 57)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile14" type="Sprite2D" parent="tile"]
+position = Vector2(222, 69)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile6" type="Sprite2D" parent="tile"]
+position = Vector2(128, 11)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile12" type="Sprite2D" parent="tile"]
+position = Vector2(128, 24)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile15" type="Sprite2D" parent="tile"]
+position = Vector2(128, 36)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile16" type="Sprite2D" parent="tile"]
+position = Vector2(128, 49)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile17" type="Sprite2D" parent="tile"]
+position = Vector2(156, 49)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile18" type="Sprite2D" parent="tile"]
+position = Vector2(141, 52)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile19" type="Sprite2D" parent="tile"]
+position = Vector2(158, 24)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile20" type="Sprite2D" parent="tile"]
+position = Vector2(158, 36)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile21" type="Sprite2D" parent="tile"]
+position = Vector2(120, 161)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile22" type="Sprite2D" parent="tile"]
+position = Vector2(148, 161)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile23" type="Sprite2D" parent="tile"]
+position = Vector2(133, 161)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile24" type="Sprite2D" parent="tile"]
+position = Vector2(160, 161)
+texture = ExtResource("6_gyyqm")
+
+[node name="Tile25" type="Sprite2D" parent="tile"]
+position = Vector2(158, 12)
+texture = ExtResource("6_gyyqm")
+
+[node name="chair" type="Node2D" parent="."]
+
+[node name="Chair4" type="Sprite2D" parent="chair"]
+position = Vector2(136, 86)
+texture = ExtResource("3_r1itb")
+
+[node name="Chair5" type="Sprite2D" parent="chair"]
+position = Vector2(156, 102)
+texture = ExtResource("5_8aih1")
+
+[node name="Chair6" type="Sprite2D" parent="chair"]
+position = Vector2(176, 86)
+texture = ExtResource("3_r1itb")
+
+[node name="Chair2" type="Sprite2D" parent="chair"]
+position = Vector2(67, 78)
+texture = ExtResource("5_8aih1")
+
+[node name="Chair3" type="Sprite2D" parent="chair"]
+position = Vector2(85, 93)
+texture = ExtResource("3_r1itb")
+
+[node name="Chair1" type="Sprite2D" parent="chair"]
+position = Vector2(105, 78)
+texture = ExtResource("3_r1itb")
+
+[node name="plant" type="Node2D" parent="."]
+
+[node name="Plant4" type="Sprite2D" parent="plant"]
+position = Vector2(75, 123)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant5" type="Sprite2D" parent="plant"]
+position = Vector2(215, 108)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant6" type="Sprite2D" parent="plant"]
+position = Vector2(90, 138)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant7" type="Sprite2D" parent="plant"]
+position = Vector2(171, 153)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant8" type="Sprite2D" parent="plant"]
+position = Vector2(223, 93)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant13" type="Sprite2D" parent="plant"]
+position = Vector2(105, 153)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant16" type="Sprite2D" parent="plant"]
+position = Vector2(185, 138)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant18" type="Sprite2D" parent="plant"]
+position = Vector2(200, 123)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant2" type="Sprite2D" parent="plant"]
+position = Vector2(52, 93)
+texture = ExtResource("7_kcafq")
+
+[node name="Plant3" type="Sprite2D" parent="plant"]
+position = Vector2(60, 108)
+texture = ExtResource("7_kcafq")
+
+[node name="table" type="Node2D" parent="."]
+
+[node name="Table2" type="Sprite2D" parent="table"]
+position = Vector2(156, 86)
+texture = ExtResource("4_5t22e")
+
+[node name="Table" type="Sprite2D" parent="table"]
+position = Vector2(85, 78)
+texture = ExtResource("4_5t22e")
+
+[node name="bar" type="Node2D" parent="."]
+
+[node name="Bar" type="Sprite2D" parent="bar"]
+position = Vector2(90, 12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ijkua")
+
+[node name="player" parent="." instance=ExtResource("8_m0vx5")]
+position = Vector2(112, 108)

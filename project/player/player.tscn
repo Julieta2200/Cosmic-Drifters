@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=11 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://cr7uia36672nj" path="res://assets/player/shadow.png" id="2_kp23c"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://but5isv8rhb5f" path="res://assets/player/Base.png" id="6_dstx7"]
 [ext_resource type="Texture2D" uid="uid://brho50bl7cre6" path="res://assets/player/Idle.png" id="7_7uqlp"]
 [ext_resource type="Texture2D" uid="uid://cgexs8oi2fk4j" path="res://assets/player/Walk_1.png" id="8_0hfms"]
+[ext_resource type="Texture2D" uid="uid://cuuimitxcmskl" path="res://assets/player/Walk_2.png" id="9_6nqac"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u1gh"]
 animations = [{
@@ -50,7 +51,7 @@ animations = [{
 "texture": ExtResource("6_dstx7")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("9_6nqac")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_dstx7")
@@ -73,5 +74,4 @@ texture = ExtResource("2_kp23c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-animation = &"idle"
-frame_progress = 0.772525
+animation = &"walk"
