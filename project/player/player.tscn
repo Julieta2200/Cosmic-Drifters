@@ -75,3 +75,5 @@ texture = ExtResource("2_kp23c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
 animation = &"walk"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

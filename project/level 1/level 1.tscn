@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://doj6mhr6j1vcq"]
+[gd_scene load_steps=15 format=3 uid="uid://doj6mhr6j1vcq"]
 
 [ext_resource type="Texture2D" uid="uid://q4ndtdh0486o" path="res://assets/details/TileMap.png" id="1_1yaak"]
 [ext_resource type="Texture2D" uid="uid://cfk5qwyxvc7er" path="res://assets/details/Bar.png" id="2_ijkua"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://c7fxop4ydqowv" path="res://assets/details/tile.png" id="6_gyyqm"]
 [ext_resource type="Texture2D" uid="uid://i58csb58xh5v" path="res://assets/details/plant1.png" id="7_kcafq"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="8_m0vx5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_titu5"]
+vertices = PackedVector2Array(152, 118, 191, 116, 156, 153, 120, 152, 58, 2, 62, 1, 62, 21, 59, 67, 67, 25, 111, 69, 76, 108, 73, 96, 111, 95, 116, 23, 123, 57, 148, 84, 116, 2, 120, 2, 165, 56, 215, 81, 213, 0, 165, 1)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(3, 10, 11, 12, 0), PackedInt32Array(9, 8, 13, 14), PackedInt32Array(15, 0, 12, 9, 14), PackedInt32Array(13, 16, 17, 14), PackedInt32Array(15, 14, 18, 19), PackedInt32Array(20, 19, 18, 21)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(58, 2, 59, 67, 111, 69, 111, 95, 73, 96, 76, 108, 120, 152, 156, 153, 191, 116, 152, 118, 148, 84, 215, 81, 213, 0, 165, 1, 165, 56, 123, 57, 120, 2, 116, 2, 116, 23, 67, 25, 62, 21, 62, 1)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc5lb"]
 size = Vector2(52, 21)
@@ -28,6 +33,9 @@ sources/0 = SubResource("TileSetAtlasSource_w8fol")
 
 [node name="level 1" type="Node2D"]
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_titu5")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -43,7 +51,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nbra8")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(156, 82)
+position = Vector2(176, 91)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nbra8")
 
@@ -52,11 +60,11 @@ position = Vector2(155.75, 100.75)
 shape = SubResource("RectangleShape2D_3jde4")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(136, 86)
+position = Vector2(175, 111)
 shape = SubResource("RectangleShape2D_3jde4")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(176, 86)
+position = Vector2(200, 99)
 shape = SubResource("RectangleShape2D_3jde4")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -171,15 +179,15 @@ texture = ExtResource("6_gyyqm")
 [node name="chair" type="Node2D" parent="."]
 
 [node name="Chair4" type="Sprite2D" parent="chair"]
-position = Vector2(136, 86)
+position = Vector2(156, 101)
 texture = ExtResource("3_r1itb")
 
 [node name="Chair5" type="Sprite2D" parent="chair"]
-position = Vector2(156, 102)
+position = Vector2(176, 112)
 texture = ExtResource("5_8aih1")
 
 [node name="Chair6" type="Sprite2D" parent="chair"]
-position = Vector2(176, 86)
+position = Vector2(200, 99)
 texture = ExtResource("3_r1itb")
 
 [node name="Chair2" type="Sprite2D" parent="chair"]
@@ -239,7 +247,7 @@ texture = ExtResource("7_kcafq")
 [node name="table" type="Node2D" parent="."]
 
 [node name="Table2" type="Sprite2D" parent="table"]
-position = Vector2(156, 86)
+position = Vector2(176, 94)
 texture = ExtResource("4_5t22e")
 
 [node name="Table" type="Sprite2D" parent="table"]
