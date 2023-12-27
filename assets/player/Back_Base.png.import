@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpvih5ggnd5nq"
-path="res://.godot/imported/Talk_1.png-cbbce3f64580c8bd064a92d8097867e6.ctex"
+uid="uid://slo824akkvjx"
+path="res://.godot/imported/Back_Base.png-95da7f7b8fb401f2bae067a10d4373ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Talk_1.png"
-dest_files=["res://.godot/imported/Talk_1.png-cbbce3f64580c8bd064a92d8097867e6.ctex"]
+source_file="res://assets/player/Back_Base.png"
+dest_files=["res://.godot/imported/Back_Base.png-95da7f7b8fb401f2bae067a10d4373ab.ctex"]
 
 [params]
 
