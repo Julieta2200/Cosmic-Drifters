@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+@onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
 var target_position: Vector2
 var position_delta: float
+
 
 func _ready():
 	target_position = position
@@ -12,14 +14,13 @@ func _physics_process(_delta):
 	move()
 
 func move() -> void:
-	var direction: Vector2 = (target_position - position).normalized()
+	var direction: Vector2 = (navigation_agent.get_next_path_position() - position).normalized()
 	velocity = direction * speed
 	move_and_slide()
 	
-	if position.distance_to(target_position) < position_delta:
-		position = target_position #Stopped moving
-		$AnimatedSprite2D.play("idle") 
-	
+	if position.distance_to(navigation_agent.get_next_path_position()) < position_delta:
+		position = navigation_agent.get_next_path_position() #Stopped moving
+		$AnimatedSprite2D.play("idle")
 
 	
 func _input(event: InputEvent):
@@ -29,7 +30,7 @@ func _input(event: InputEvent):
 
 #player animation
 func animation()-> void:
-	if (target_position - position).y > 0:
+	if (navigation_agent.get_next_path_position() - position ).y > 0:
 		$AnimatedSprite2D.play("walk")
 	else:
 		$AnimatedSprite2D.play("back_walk")
@@ -37,5 +38,6 @@ func animation()-> void:
 
 func start_movement() -> void:
 	target_position = get_global_mouse_position()
+	navigation_agent.target_position = target_position
 	animation()
 
