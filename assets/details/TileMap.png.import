@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bih2st4qfgw"
-path="res://.godot/imported/Talk_2.png-f128368464ce7fdcbf662e224477ce04.ctex"
+uid="uid://q4ndtdh0486o"
+path="res://.godot/imported/TileMap.png-1eb31a087f8f7f2ba25c9da0a19a62c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Talk_2.png"
-dest_files=["res://.godot/imported/Talk_2.png-f128368464ce7fdcbf662e224477ce04.ctex"]
+source_file="res://assets/details/TileMap.png"
+dest_files=["res://.godot/imported/TileMap.png-1eb31a087f8f7f2ba25c9da0a19a62c5.ctex"]
 
 [params]
 
