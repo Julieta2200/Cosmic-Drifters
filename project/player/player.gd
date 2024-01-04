@@ -7,7 +7,7 @@ var path: PackedVector2Array
 
 func _ready():
 	position_delta = speed / 60 # game is working approximately in 60 fps
-	$AnimatedSprite2D.play("idle")
+	animation()
 
 func _physics_process(_delta):
 	move()
