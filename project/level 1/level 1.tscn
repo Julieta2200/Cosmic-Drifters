@@ -269,3 +269,5 @@ shape = SubResource("RectangleShape2D_3jde4")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(104, 78)
 shape = SubResource("RectangleShape2D_3jde4")
+
+[connection signal="input_event" from="Area2D" to="gameManager" method="_on_area_2d_input_event"]

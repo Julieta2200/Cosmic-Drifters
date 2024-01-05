@@ -3,33 +3,9 @@ extends CharacterBody2D
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
 
-#var position_delta: float
-#var path: PackedVector2Array
-
-#func _ready():
-#	position_delta = speed / 60 # game is working approximately in 60 fps
-#	animation()
 
 func _physics_process(_delta):
 	$"../gameManager".move()
-
-#func move() -> void:
-#	if path.is_empty():
-#		return
-#
-#	var direction: Vector2 = (path[0] - position).normalized()
-#	velocity = direction * speed
-#	move_and_slide()
-#
-#	if position.distance_to(path[0]) < position_delta:
-#		path.remove_at(0)
-#		animation()
-
-
-#func _input(event: InputEvent):
-#	if event is InputEventMouseButton and event.is_pressed():
-#		if event.button_index == MOUSE_BUTTON_LEFT:
-#			start_movement()
 
 #player animation
 func animation()-> void:
@@ -41,11 +17,4 @@ func animation()-> void:
 		$AnimatedSprite2D.play("walk")
 	else:
 		$AnimatedSprite2D.play("back_walk")
-#
-#
-#func start_movement() -> void:
-#	navigation_agent.target_position = get_global_mouse_position()
-#	navigation_agent.get_next_path_position()
-#	path = navigation_agent.get_current_navigation_path()
-#	animation()
-#
+
