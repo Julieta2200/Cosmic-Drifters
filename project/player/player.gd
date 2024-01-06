@@ -8,17 +8,6 @@ var path: PackedVector2Array
 func _physics_process(_delta):
 	move()
 
-#player animation
-func animation()-> void:
-	if path.is_empty():
-		$AnimatedSprite2D.play("idle")
-		return
-
-	if (path[0] - position ).y > 0:
-		$AnimatedSprite2D.play("walk")
-	else:
-		$AnimatedSprite2D.play("back_walk")
-		
 func _ready():
 	position_delta = speed / 60 # game is working approximately in 60 fps
 	animation()
@@ -36,6 +25,17 @@ func move() -> void:
 		path.remove_at(0)
 		animation()
 
+#player animation
+func animation()-> void:
+	if path.is_empty():
+		$AnimatedSprite2D.play("idle")
+		return
+
+	if (path[0] - position ).y > 0:
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.play("back_walk")
+		
 #start player movement
 func start_movement() -> void:
 	navigation_agent.target_position = get_global_mouse_position()
