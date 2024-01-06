@@ -8,3 +8,5 @@ script = ExtResource("1_x4dg3")
 
 [node name="mouse" type="Node2D" parent="."]
 script = ExtResource("1_kbmx6")
+
+[connection signal="click_area_input_event" from="." to="mouse" method="_on_game_manager_click_area_input_event"]
