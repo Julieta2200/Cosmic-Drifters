@@ -3,7 +3,6 @@ extends CharacterBody2D
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
 
-
 func _physics_process(_delta):
 	$"../gameManager".move()
 
