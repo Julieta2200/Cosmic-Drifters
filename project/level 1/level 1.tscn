@@ -228,7 +228,6 @@ texture = ExtResource("2_ijkua")
 position = Vector2(128, 100)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_laagt")
 
 [node name="gameManager" parent="." instance=ExtResource("9_lwym0")]
