@@ -4,7 +4,7 @@ extends Node2D
 signal click_area_input_event(event)
 
 
-func player_movement():
+func player_start_movement():
 	player.start_movement()
 	
 
