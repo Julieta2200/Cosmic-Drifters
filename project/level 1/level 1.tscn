@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://doj6mhr6j1vcq"]
+[gd_scene load_steps=16 format=3 uid="uid://doj6mhr6j1vcq"]
 
 [ext_resource type="Texture2D" uid="uid://q4ndtdh0486o" path="res://assets/details/TileMap.png" id="1_1yaak"]
 [ext_resource type="Texture2D" uid="uid://cfk5qwyxvc7er" path="res://assets/details/Bar.png" id="2_ijkua"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7fxop4ydqowv" path="res://assets/details/tile.png" id="6_gyyqm"]
 [ext_resource type="Texture2D" uid="uid://i58csb58xh5v" path="res://assets/details/plant1.png" id="7_kcafq"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="8_m0vx5"]
+[ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/GM/game_manager.tscn" id="9_lwym0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8fol"]
 texture = ExtResource("1_1yaak")
@@ -229,33 +230,42 @@ position = Vector2(128, 100)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_laagt")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="gameManager" parent="." instance=ExtResource("9_lwym0")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="walking_area" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="walking_area"]
+polygon = PackedVector2Array(119, 21, 59, 23, 60, 69, 109, 69, 110, 96, 71, 98, 115, 152, 156, 151, 212, 88, 180, 99, 167, 108, 153, 108, 141, 80, 181, 75, 180, 98, 212, 88, 213, 5, 163, 4, 162, 60, 124, 58)
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(122, 4, 121, 55, 137, 58, 141, 58, 146, 58, 163, 56, 164, 6, 156, 0, 151, 6, 149, 45, 134, 44, 134, 6, 164, 1, 133, -2, 58, 1, 47, -1, 46, 95, 116, 166, 164, 168, 226, 85, 227, 75, 227, 0, 160, 0, 164, 1, 216, 1, 216, 77, 222, 80, 157, 153, 119, 154, 48, 79, 59, 75, 60, 1, 125, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collisions"]
 position = Vector2(90, 12.5)
 shape = SubResource("RectangleShape2D_mc5lb")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collisions"]
 position = Vector2(86, 75)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nbra8")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="collisions"]
 position = Vector2(168, 82)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nbra8")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="collisions"]
 position = Vector2(148, 89)
 shape = SubResource("RectangleShape2D_3jde4")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="collisions"]
 position = Vector2(168, 104)
 shape = SubResource("RectangleShape2D_3jde4")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="collisions"]
 position = Vector2(104, 78)
 shape = SubResource("RectangleShape2D_3jde4")
+
+[connection signal="input_event" from="walking_area" to="gameManager" method="_on_walking_area_input_event"]
