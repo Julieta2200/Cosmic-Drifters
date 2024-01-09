@@ -226,6 +226,7 @@ texture = ExtResource("2_ijkua")
 
 [node name="player" parent="." instance=ExtResource("8_m0vx5")]
 position = Vector2(128, 100)
+speed = 50.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_laagt")

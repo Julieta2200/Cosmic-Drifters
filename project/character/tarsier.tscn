@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://dmuxy485enb1w"]
+
+[ext_resource type="Texture2D" uid="uid://b8ha2vvqpoy0c" path="res://assets/tarsiers/base.png" id="1_0vjrb"]
+[ext_resource type="Script" path="res://project/character/tarsier.gd" id="1_q8xre"]
+[ext_resource type="Texture2D" uid="uid://c5w4wn6pqpvu3" path="res://assets/tarsiers/back-walk-1.png" id="1_u5tyl"]
+[ext_resource type="Texture2D" uid="uid://cx7pg5cppqoex" path="res://assets/tarsiers/shadow.png" id="1_ykulf"]
+[ext_resource type="Texture2D" uid="uid://dnoohaergw36y" path="res://assets/tarsiers/idle.png" id="2_4teof"]
+[ext_resource type="Texture2D" uid="uid://cwncwtrnhhadn" path="res://assets/tarsiers/back-base.png" id="2_tas0r"]
+[ext_resource type="Texture2D" uid="uid://biwpi3jnpsbqy" path="res://assets/tarsiers/walk-1.png" id="3_52pi8"]
+[ext_resource type="Texture2D" uid="uid://4obyvslrlxt2" path="res://assets/tarsiers/back-walk-2.png" id="3_bt7xt"]
+[ext_resource type="Texture2D" uid="uid://cs6rj020pshgw" path="res://assets/tarsiers/walk-2.png" id="4_g5vqr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e4kd"]
+size = Vector2(6, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hj2u1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u5tyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tas0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bt7xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tas0r")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("1_0vjrb")
+}, {
+"duration": 0.3,
+"texture": ExtResource("2_4teof")
+}, {
+"duration": 0.3,
+"texture": ExtResource("1_0vjrb")
+}, {
+"duration": 0.3,
+"texture": ExtResource("2_4teof")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_52pi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_0vjrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g5vqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_0vjrb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="tarsier" type="CharacterBody2D"]
+script = ExtResource("1_q8xre")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_5e4kd")
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("1_ykulf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hj2u1")
+animation = &"idle"
+frame_progress = 0.566623
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
