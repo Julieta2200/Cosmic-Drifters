@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://doj6mhr6j1vcq"]
+[gd_scene load_steps=17 format=3 uid="uid://doj6mhr6j1vcq"]
 
 [ext_resource type="Texture2D" uid="uid://q4ndtdh0486o" path="res://assets/details/TileMap.png" id="1_1yaak"]
 [ext_resource type="Texture2D" uid="uid://cfk5qwyxvc7er" path="res://assets/details/Bar.png" id="2_ijkua"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://i58csb58xh5v" path="res://assets/details/plant1.png" id="7_kcafq"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="8_m0vx5"]
 [ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/GM/game_manager.tscn" id="9_lwym0"]
+[ext_resource type="PackedScene" uid="uid://dmuxy485enb1w" path="res://project/character/tarsier.tscn" id="10_m4v2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8fol"]
 texture = ExtResource("1_1yaak")
@@ -224,10 +225,6 @@ position = Vector2(90, 12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ijkua")
 
-[node name="player" parent="." instance=ExtResource("8_m0vx5")]
-position = Vector2(128, 100)
-speed = 50.0
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_laagt")
 
@@ -269,4 +266,12 @@ shape = SubResource("RectangleShape2D_3jde4")
 position = Vector2(104, 78)
 shape = SubResource("RectangleShape2D_3jde4")
 
+[node name="player" parent="." instance=ExtResource("8_m0vx5")]
+position = Vector2(128, 100)
+speed = 50.0
+
+[node name="tarsier" parent="." instance=ExtResource("10_m4v2f")]
+position = Vector2(97, 49)
+
 [connection signal="input_event" from="walking_area" to="gameManager" method="_on_walking_area_input_event"]
+[connection signal="click_tarsier_input_event" from="tarsier" to="gameManager" method="_on_tarsier_click_tarsier_input_event"]

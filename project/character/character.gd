@@ -3,15 +3,16 @@ extends CharacterBody2D
 class_name Character
 
 var position_delta: float
-var path: PackedVector2Array
+var path: PackedVector2Array 
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
+
 
 #character movement
 func move() -> void:
 	if path.is_empty():
 		return
-
+		
 	var direction: Vector2 = (path[0] - position).normalized()
 	velocity = direction * speed
 	move_and_slide()
