@@ -274,4 +274,4 @@ speed = 50.0
 position = Vector2(97, 49)
 
 [connection signal="input_event" from="walking_area" to="gameManager" method="_on_walking_area_input_event"]
-[connection signal="click_tarsier_input_event" from="tarsier" to="gameManager" method="_on_tarsier_click_tarsier_input_event"]
+[connection signal="click_tarsier_input_event" from="tarsier" to="gameManager" method="_on_click_tarsier_input_event"]
