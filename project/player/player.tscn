@@ -63,10 +63,9 @@ animations = [{
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_r3jtw")
-speed = 50.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-5, 6, -5, 8, 6, 8, 6, 6)
+polygon = PackedVector2Array(-3, 6, -3, 8, 4, 8, 4, 6)
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(1, 7)
@@ -74,7 +73,7 @@ texture = ExtResource("2_kp23c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-animation = &"idle"
+animation = &"walk"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1

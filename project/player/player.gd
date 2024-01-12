@@ -3,7 +3,7 @@ extends CharacterBody2D
 var position_delta: float
 var path: PackedVector2Array
 @onready var navigation_agent = $NavigationAgent2D
-@export var speed: float
+@export var speed: float = 50.0
 
 func _physics_process(_delta):
 	move()

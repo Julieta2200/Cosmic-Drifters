@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://doj6mhr6j1vcq"]
 
-[ext_resource type="Texture2D" uid="uid://q4ndtdh0486o" path="res://assets/details/TileMap.png" id="1_1yaak"]
-[ext_resource type="Texture2D" uid="uid://cfk5qwyxvc7er" path="res://assets/details/Bar.png" id="2_ijkua"]
-[ext_resource type="Texture2D" uid="uid://x51gf52yay6n" path="res://assets/details/chair1.png" id="3_r1itb"]
+[ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_1yaak"]
+[ext_resource type="Texture2D" uid="uid://bfv8sam4lhder" path="res://assets/details/Bar.png" id="2_ijkua"]
+[ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="3_r1itb"]
 [ext_resource type="Texture2D" uid="uid://bdi5pl1aei5mn" path="res://assets/details/table.png" id="4_5t22e"]
-[ext_resource type="Texture2D" uid="uid://cy8qc1bj4aqj1" path="res://assets/details/chair2.png" id="5_8aih1"]
-[ext_resource type="Texture2D" uid="uid://c7fxop4ydqowv" path="res://assets/details/tile.png" id="6_gyyqm"]
-[ext_resource type="Texture2D" uid="uid://i58csb58xh5v" path="res://assets/details/plant1.png" id="7_kcafq"]
+[ext_resource type="Texture2D" uid="uid://c0v3ccyslqvy6" path="res://assets/details/chair2.png" id="5_8aih1"]
+[ext_resource type="Texture2D" uid="uid://ddtii8uku7ppy" path="res://assets/details/tile.png" id="6_gyyqm"]
+[ext_resource type="Texture2D" uid="uid://cwcx0jbidj1hk" path="res://assets/details/plant1.png" id="7_kcafq"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="8_m0vx5"]
 [ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/GM/game_manager.tscn" id="9_lwym0"]
 
@@ -224,9 +224,6 @@ position = Vector2(90, 12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ijkua")
 
-[node name="player" parent="." instance=ExtResource("8_m0vx5")]
-position = Vector2(128, 100)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_laagt")
 
@@ -267,5 +264,8 @@ shape = SubResource("RectangleShape2D_3jde4")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="collisions"]
 position = Vector2(104, 78)
 shape = SubResource("RectangleShape2D_3jde4")
+
+[node name="player" parent="." instance=ExtResource("8_m0vx5")]
+position = Vector2(128, 100)
 
 [connection signal="input_event" from="walking_area" to="gameManager" method="_on_walking_area_input_event"]

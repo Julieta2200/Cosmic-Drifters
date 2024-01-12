@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgaxsnbk0121u"
-path="res://.godot/imported/TileMap.png-1eb31a087f8f7f2ba25c9da0a19a62c5.ctex"
+uid="uid://b356vwrt2xp4g"
+path="res://.godot/imported/Security Room.png-d66e349b48a48dd7c0c9941af571a557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/details/TileMap.png"
-dest_files=["res://.godot/imported/TileMap.png-1eb31a087f8f7f2ba25c9da0a19a62c5.ctex"]
+source_file="res://assets/details/Security Room.png"
+dest_files=["res://.godot/imported/Security Room.png-d66e349b48a48dd7c0c9941af571a557.ctex"]
 
 [params]
 

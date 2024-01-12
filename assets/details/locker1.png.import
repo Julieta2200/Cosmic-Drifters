@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgaxsnbk0121u"
-path="res://.godot/imported/TileMap.png-1eb31a087f8f7f2ba25c9da0a19a62c5.ctex"
+uid="uid://dfue8ktlse46q"
+path="res://.godot/imported/locker1.png-941235815dd2ef593be683e22438787e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/details/TileMap.png"
-dest_files=["res://.godot/imported/TileMap.png-1eb31a087f8f7f2ba25c9da0a19a62c5.ctex"]
+source_file="res://assets/details/locker1.png"
+dest_files=["res://.godot/imported/locker1.png-941235815dd2ef593be683e22438787e.ctex"]
 
 [params]
 
