@@ -228,7 +228,7 @@ texture = ExtResource("2_ijkua")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_laagt")
 
-[node name="gameManager" parent="." instance=ExtResource("9_lwym0")]
+[node name="game_manager" parent="." instance=ExtResource("9_lwym0")]
 
 [node name="walking_area" type="Area2D" parent="."]
 
@@ -273,5 +273,5 @@ speed = 50.0
 [node name="tarsier" parent="." instance=ExtResource("10_m4v2f")]
 position = Vector2(97, 49)
 
-[connection signal="input_event" from="walking_area" to="gameManager" method="_on_walking_area_input_event"]
-[connection signal="click_tarsier_input_event" from="tarsier" to="gameManager" method="_on_click_tarsier_input_event"]
+[connection signal="input_event" from="walking_area" to="game_manager" method="_on_walking_area_input_event"]
+[connection signal="click_tarsier_input_event" from="tarsier" to="game_manager" method="_on_click_tarsier_input_event"]
