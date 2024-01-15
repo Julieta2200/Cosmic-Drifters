@@ -261,11 +261,11 @@ position = Vector2(-64, 208)
 texture = ExtResource("30_hkg2q")
 
 [node name="Chair27" type="Sprite2D" parent="chair"]
-position = Vector2(304, 192)
+position = Vector2(304, 204)
 texture = ExtResource("29_34v40")
 
 [node name="Chair28" type="Sprite2D" parent="chair"]
-position = Vector2(272, 192)
+position = Vector2(272, 205)
 texture = ExtResource("29_34v40")
 
 [node name="Chair29" type="Sprite2D" parent="chair"]
@@ -329,7 +329,7 @@ position = Vector2(352, 288)
 texture = ExtResource("23_c1ikk")
 
 [node name="TableSmall" type="Sprite2D" parent="table"]
-position = Vector2(288, 184)
+position = Vector2(288, 200)
 texture = ExtResource("24_equwe")
 
 [node name="TableSmall2" type="Sprite2D" parent="table"]
