@@ -71,7 +71,7 @@ position = Vector2(-68, 269)
 texture = ExtResource("8_8h6j8")
 
 [node name="ManagerRoom2" type="Sprite2D" parent="."]
-position = Vector2(645, 159)
+position = Vector2(645, 167)
 texture = ExtResource("8_8h6j8")
 
 [node name="Carpet" type="Sprite2D" parent="."]
@@ -87,19 +87,19 @@ position = Vector2(-120, 300)
 texture = ExtResource("12_4sni6")
 
 [node name="Locker1" type="Sprite2D" parent="."]
-position = Vector2(646, 139)
+position = Vector2(646, 147)
 texture = ExtResource("13_8rcif")
 
 [node name="Locker2" type="Sprite2D" parent="."]
-position = Vector2(646, 196)
+position = Vector2(646, 204)
 texture = ExtResource("14_8jq0r")
 
 [node name="Bench" type="Sprite2D" parent="."]
-position = Vector2(675, 170)
+position = Vector2(675, 178)
 texture = ExtResource("15_c25nf")
 
 [node name="Bench2" type="Sprite2D" parent="."]
-position = Vector2(611, 170)
+position = Vector2(611, 178)
 texture = ExtResource("15_c25nf")
 
 [node name="SecuretyTable" type="Sprite2D" parent="."]

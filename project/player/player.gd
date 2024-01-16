@@ -44,3 +44,9 @@ func start_movement() -> void:
 	animation()
 
 
+
+
+func _on_walking_area_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			start_movement()
