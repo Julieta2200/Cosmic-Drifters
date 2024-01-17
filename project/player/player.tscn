@@ -76,4 +76,3 @@ sprite_frames = SubResource("SpriteFrames_4u1gh")
 animation = &"walk"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
