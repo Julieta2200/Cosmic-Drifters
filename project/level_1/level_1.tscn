@@ -348,9 +348,9 @@ texture = ExtResource("21_7xcaq")
 y_sort_enabled = true
 
 [node name="Mushroom" type="Sprite2D" parent="mushroom"]
-position = Vector2(19, 239)
+position = Vector2(28, 403)
 texture = ExtResource("19_qat7f")
-offset = Vector2(8, 152)
+offset = Vector2(-1, -12)
 
 [node name="Mushroom2" type="Sprite2D" parent="mushroom"]
 position = Vector2(19, 239)
@@ -358,9 +358,9 @@ texture = ExtResource("19_qat7f")
 offset = Vector2(-1, -13)
 
 [node name="Mushroom3" type="Sprite2D" parent="mushroom"]
-position = Vector2(558, 245)
+position = Vector2(557, 246)
 texture = ExtResource("19_qat7f")
-offset = Vector2(-2, -11)
+offset = Vector2(-1, -12)
 
 [node name="kristal" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -437,15 +437,16 @@ position = Vector2(-64, 186)
 texture = ExtResource("14_l4uwd")
 offset = Vector2(0, 5)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(526, 168)
+
 [node name="player" parent="." instance=ExtResource("25_6bfeo")]
 position = Vector2(528, 169)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-44, -58)
 
 [node name="walking_area" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="walking_area"]
+visible = false
 polygon = PackedVector2Array(0, 416, 0, 323, -45, 323, -61, 316, -69, 316, -61, 313, -60, 308, -39, 308, -32, 301, -32, 291, -98, 291, -98, 301, -89, 308, -69, 308, -69, 316, -61, 316, -45, 323, -112, 323, -136, 324, -136, 256, -1, 256, 0, 216, -72, 216, -69, 202, -69, 210, -61, 210, -61, 202, -27, 202, -20, 195, -20, 185, -108, 185, -108, 195, -100, 202, -69, 202, -72, 216, -136, 216, -136, 194, -117, 194, -112, 185, -113, 161, -126, 161, -132, 156, -136, 159, -136, 144, 0, 144, 0, 60, 256, 60, 274, 76, 354, 76, 367, 59, 397, 59, 405, 66, 459, 66, 466, 59, 484, 60, 493, 64, 499, 64, 508, 59, 576, 60, 576, 154, 712, 154, 712, 221, 694, 221, 693, 201, 597, 201, 597, 220, 576, 221, 576, 416, 385, 416, 384, 544, 192, 544, 192, 416, 142, 416, 190, 287, 208, 289, 209, 294, 216, 294, 217, 290, 235, 286, 235, 277, 227, 275, 197, 275, 181, 238, 180, 233, 190, 233, 199, 230, 198, 222, 193, 219, 211, 174, 213, 169, 276, 198, 281, 202, 291, 202, 298, 236, 292, 232, 283, 232, 276, 235, 276, 239, 283, 242, 291, 242, 298, 240, 298, 236, 291, 202, 298, 201, 298, 195, 287, 191, 330, 164, 337, 169, 367, 168, 377, 219, 370, 223, 370, 229, 377, 233, 408, 233, 373, 282, 367, 278, 337, 278, 329, 282, 329, 288, 336, 292, 363, 292, 373, 289, 373, 282, 408, 233, 413, 230, 415, 224, 407, 219, 377, 219, 367, 168, 375, 165, 374, 158, 371, 155, 336, 156, 330, 159, 330, 164, 287, 191, 279, 194, 276, 198, 213, 169, 230, 166, 231, 159, 224, 155, 194, 155, 187, 159, 188, 167, 205, 169, 205, 174, 211, 174, 193, 219, 162, 219, 154, 223, 154, 229, 161, 232, 172, 232, 172, 237, 181, 238, 197, 275, 190, 278, 190, 287, 142, 416)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
