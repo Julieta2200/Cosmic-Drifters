@@ -4,25 +4,24 @@ var position_delta: float
 var path: PackedVector2Array
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float = 50.0
-var mouse = preload("res://assets/mouse_cursor/Mouse.png")
-var click = preload("res://assets/mouse_cursor/Click.png")
+var click_area : bool
 
 
 func _physics_process(_delta):
 	move()
+	
 
 func _ready():
-	Input.set_custom_mouse_cursor(mouse, Input.CURSOR_ARROW)
 	position_delta = speed / 60 # game is working approximately in 60 fps
 	animation()
-
+	
 #player movement
 func move() -> void:
 	if path.is_empty():
 		return
 
 	var direction: Vector2 = (path[0] - position).normalized()
-	velocity = direction * speed
+	velocity = direction * speed 
 	move_and_slide()
 
 	if position.distance_to(path[0]) < position_delta:
@@ -48,15 +47,10 @@ func start_movement() -> void:
 	animation()
 
 
-
-
-func _on_walking_area_input_event(viewport, event, shape_idx):
+func _on_walking_area_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			start_movement()
-			Input.set_custom_mouse_cursor(click, Input.CURSOR_ARROW)
-			$Timer.start()
+			click_area = true
 
-
-func _on_timer_timeout():
-	Input.set_custom_mouse_cursor(mouse, Input.CURSOR_ARROW)
+	

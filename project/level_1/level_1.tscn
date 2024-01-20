@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=37 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall.png" id="2_qio2a"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bf47icbmtqy2c" path="res://assets/details/Manager_table.png" id="29_rw71g"]
 [ext_resource type="Texture2D" uid="uid://clkam3ofrmvwi" path="res://assets/details/Door_1.png" id="30_ptdti"]
 [ext_resource type="Texture2D" uid="uid://blruakifulty0" path="res://assets/details/Door.png" id="31_6gfxv"]
+[ext_resource type="Script" path="res://project/level_1/cursor_manager.gd" id="33_aqwxn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -443,9 +444,6 @@ offset = Vector2(0, 5)
 [node name="player" parent="." instance=ExtResource("25_6bfeo")]
 position = Vector2(528, 169)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-2, -1)
-
 [node name="walking_area" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="walking_area"]
@@ -456,4 +454,14 @@ polygon = PackedVector2Array(0, 416, 0, 323, -45, 323, -61, 316, -69, 316, -61, 
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_bs06d")
 
+[node name="cursor_manager" type="Node2D" parent="."]
+script = ExtResource("33_aqwxn")
+
+[node name="Timer" type="Timer" parent="cursor_manager"]
+wait_time = 0.2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(526, 168)
+
 [connection signal="input_event" from="walking_area" to="player" method="_on_walking_area_input_event"]
+[connection signal="timeout" from="cursor_manager/Timer" to="cursor_manager" method="_on_timer_timeout"]
