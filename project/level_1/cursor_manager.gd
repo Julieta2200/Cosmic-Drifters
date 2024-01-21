@@ -6,7 +6,7 @@ var cursor_texture : Texture
 
 func _ready():
 	cursor_texture = mouse
-	get_window().size_changed.connect(update_cursor_size)
+#	get_window().size_changed.connect(update_cursor_size)
 	
 func _physics_process(_delta):
 	update_cursor_size()
