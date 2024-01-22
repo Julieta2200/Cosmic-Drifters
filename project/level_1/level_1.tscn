@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=38 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall.png" id="2_qio2a"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://clkam3ofrmvwi" path="res://assets/details/Door_1.png" id="30_ptdti"]
 [ext_resource type="Texture2D" uid="uid://blruakifulty0" path="res://assets/details/Door.png" id="31_6gfxv"]
 [ext_resource type="Script" path="res://project/level_1/cursor_manager.gd" id="33_aqwxn"]
+[ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/GM/game_manager.tscn" id="34_h4sxy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -459,9 +460,12 @@ script = ExtResource("33_aqwxn")
 
 [node name="Timer" type="Timer" parent="cursor_manager"]
 wait_time = 0.2
+one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(526, 168)
 
-[connection signal="input_event" from="walking_area" to="player" method="_on_walking_area_input_event"]
+[node name="game_manager" parent="." instance=ExtResource("34_h4sxy")]
+
+[connection signal="input_event" from="walking_area" to="game_manager" method="_on_walking_area_input_event"]
 [connection signal="timeout" from="cursor_manager/Timer" to="cursor_manager" method="_on_timer_timeout"]

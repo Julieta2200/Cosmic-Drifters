@@ -4,7 +4,6 @@ var position_delta: float
 var path: PackedVector2Array
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float = 50.0
-var click_area : bool
 
 
 func _physics_process(_delta):
@@ -46,11 +45,11 @@ func start_movement() -> void:
 	path = navigation_agent.get_current_navigation_path()
 	animation()
 
-
-func _on_walking_area_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			start_movement()
-			click_area = true
-
-	
+#
+#func _on_walking_area_input_event(_viewport, event, _shape_idx):
+#	if event is InputEventMouseButton and event.is_pressed():
+#		if event.button_index == MOUSE_BUTTON_LEFT:
+#			start_movement()
+#			click_area = true
+#
+#

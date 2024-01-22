@@ -1,54 +1,55 @@
 extends Node2D
 
-#var mouse =  preload("res://assets/mouse_cursor/Mouse.png")
-#var click = preload("res://assets/mouse_cursor/Click.png")
-#var cursor_texture : Texture 
-#var cu
-#
-#func _ready():
-#	cursor_texture = mouse
-##	get_window().size_changed.connect(update_cursor_size)
-#
-#func _physics_process(_delta):
-#	update_cursor_size()
-#	update_cursor_texture()
-#
-#func update_cursor_size() -> void:
-#	var current_window_size = get_window().size
-#	var scale_multiple = floor(current_window_size.x / 256)
-#	var image = cursor_texture.get_image()
-#	var scaler = cursor_texture.get_size() * scale_multiple 
-#	image.resize(scaler.x,scaler.y,Image.INTERPOLATE_NEAREST)
-#	var texture = ImageTexture.create_from_image(image)
-#	Input.set_custom_mouse_cursor(texture,Input.CURSOR_ARROW)
-#
-#func _on_timer_timeout():
-#	cursor_texture = mouse
-#
-#func update_cursor_texture() -> void:
-#	if $"../player".click_area:
-#		cursor_texture = click
-#		$Timer.start()
-#		$"../player".click_area = false
-#
-var cursor_texture : Dictionary = {
-	"mouse8" :  preload("res://assets/mouse_cursor/Mouse.png"),
-	"mouse16" :  preload("res://assets/mouse_cursor/Mouse 16px.png"),
+var size
+var texture
+var mouse_cursor_texture : Dictionary = {
+	8 :  preload("res://assets/mouse_cursor/Mouse.png"),
+	16 :  preload("res://assets/mouse_cursor/Mouse 16px.png"),
+	}
+
+var click_cursor_texture : Dictionary = {
+	8 :  preload("res://assets/mouse_cursor/Click.png"),
+	16 :  preload("res://assets/mouse_cursor/Click 16px.png"),
 	}
 	
 func _ready():
 	update_cursor_size()
 	get_window().size_changed.connect(update_cursor_size)
 	
-func update_cursor_size() -> void:
-	if get_window().size.x < 1024 :
-		Input.set_custom_mouse_cursor(f(8),Input.CURSOR_ARROW)
+func cursor_size() -> int:
+#	var size : int
+	if get_window().size.x < 720 :
+		size = 8
 	else:
-		Input.set_custom_mouse_cursor(cursor_texture["mouse16"],Input.CURSOR_ARROW)
+		size = 16
+	return size
 
-func f(k):
-	if k == 8:
-		return cursor_texture["mouse8"]
-	elif k == 16:
-		return cursor_texture["mouse16"]
+func _process(delta):
+	click()
+#		$"../game_manager".click_area = false
+
+func updatee_cursor_texture(pixel):
+	if $"../game_manager".click_area:
+		print("d")
+		texture = click_cursor_texture[pixel]
+		$Timer.start()
+		$"../game_manager".click_area = false
+	else:
+		print("j")
+		texture = mouse_cursor_texture[pixel]
+	return texture
 	
+func update_cursor_size():
+	Input.set_custom_mouse_cursor(updatee_cursor_texture(cursor_size()),Input.CURSOR_ARROW)
+
+
+func _on_timer_timeout():
+	texture = mouse_cursor_texture[size]
+#	Input.set_custom_mouse_cursor(texture,Input.CURSOR_ARROW)
+	print("k")
+#	update_cursor_size()
+
+func click():
+	if $"../game_manager".click_area:
+		update_cursor_size()
+		return true
