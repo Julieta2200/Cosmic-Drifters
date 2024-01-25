@@ -25,31 +25,26 @@ func cursor_size() -> int:
 	return size
 
 func _process(delta):
-	click()
-#		$"../game_manager".click_area = false
+	if $"../game_manager".click_area:
+		click()
 
 func updatee_cursor_texture(pixel):
 	if $"../game_manager".click_area:
-		print("d")
 		texture = click_cursor_texture[pixel]
-		$Timer.start()
 		$"../game_manager".click_area = false
 	else:
-		print("j")
 		texture = mouse_cursor_texture[pixel]
 	return texture
+	
 	
 func update_cursor_size():
 	Input.set_custom_mouse_cursor(updatee_cursor_texture(cursor_size()),Input.CURSOR_ARROW)
 
 
 func _on_timer_timeout():
-	texture = mouse_cursor_texture[size]
-#	Input.set_custom_mouse_cursor(texture,Input.CURSOR_ARROW)
-	print("k")
-#	update_cursor_size()
+	update_cursor_size()
+
 
 func click():
-	if $"../game_manager".click_area:
-		update_cursor_size()
-		return true
+	update_cursor_size()
+	$Timer.start()
