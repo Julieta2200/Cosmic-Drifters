@@ -1,7 +1,6 @@
 extends Node2D
 
-var size
-var texture
+
 var mouse_cursor_texture : Dictionary = {
 	8 :  preload("res://assets/mouse_cursor/Mouse.png"),
 	16 :  preload("res://assets/mouse_cursor/Mouse 16px.png"),
@@ -17,28 +16,25 @@ func _ready():
 	get_window().size_changed.connect(update_cursor_size)
 	
 func cursor_size() -> int:
-#	var size : int
 	if get_window().size.x < 720 :
-		size = 8
+		return 8
 	else:
-		size = 16
-	return size
+		return 16
 
 func _process(delta):
 	if $"../game_manager".click_area:
 		click()
 
-func updatee_cursor_texture(pixel):
+func cursor_texture(pixel):
 	if $"../game_manager".click_area:
-		texture = click_cursor_texture[pixel]
 		$"../game_manager".click_area = false
+		return click_cursor_texture[pixel]
 	else:
-		texture = mouse_cursor_texture[pixel]
-	return texture
+		return mouse_cursor_texture[pixel]
 	
 	
 func update_cursor_size():
-	Input.set_custom_mouse_cursor(updatee_cursor_texture(cursor_size()),Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(cursor_texture(cursor_size()),Input.CURSOR_ARROW)
 
 
 func _on_timer_timeout():

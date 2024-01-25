@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ddtii8uku7ppy" path="res://assets/details/tile.png" id="6_gyyqm"]
 [ext_resource type="Texture2D" uid="uid://cwcx0jbidj1hk" path="res://assets/details/plant1.png" id="7_kcafq"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="8_m0vx5"]
-[ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/GM/game_manager.tscn" id="9_lwym0"]
+[ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/game_manager/game_manager.tscn" id="9_lwym0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8fol"]
 texture = ExtResource("1_1yaak")

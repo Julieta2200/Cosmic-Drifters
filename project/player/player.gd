@@ -44,12 +44,3 @@ func start_movement() -> void:
 	navigation_agent.get_next_path_position()
 	path = navigation_agent.get_current_navigation_path()
 	animation()
-
-#
-#func _on_walking_area_input_event(_viewport, event, _shape_idx):
-#	if event is InputEventMouseButton and event.is_pressed():
-#		if event.button_index == MOUSE_BUTTON_LEFT:
-#			start_movement()
-#			click_area = true
-#
-#
