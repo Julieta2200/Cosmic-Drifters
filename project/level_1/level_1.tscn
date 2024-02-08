@@ -1,16 +1,19 @@
-[gd_scene load_steps=38 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=45 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
-[ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall.png" id="2_qio2a"]
+[ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall2.png" id="2_66qcg"]
+[ext_resource type="Texture2D" uid="uid://bfhtpurh4w2nb" path="res://assets/details/Wall (2).png" id="2_dql83"]
 [ext_resource type="Texture2D" uid="uid://drdy1y8153apn" path="res://assets/details/Gaming Machine.png" id="3_vw5no"]
 [ext_resource type="Texture2D" uid="uid://8em3q8k8n88e" path="res://assets/details/Galagrama.png" id="4_28ynh"]
 [ext_resource type="Texture2D" uid="uid://bfv8sam4lhder" path="res://assets/details/Bar.png" id="5_gi08y"]
 [ext_resource type="Texture2D" uid="uid://b356vwrt2xp4g" path="res://assets/details/Security Room.png" id="6_40ikp"]
 [ext_resource type="Texture2D" uid="uid://4vu842bxn5u5" path="res://assets/details/Manager Room.png" id="7_1rb70"]
 [ext_resource type="Texture2D" uid="uid://dxyxybdy2bsua" path="res://assets/details/Carpet.png" id="8_s8wtl"]
+[ext_resource type="Texture2D" uid="uid://dkpaxkomj463u" path="res://assets/details/Wall (1).png" id="9_6mwdq"]
 [ext_resource type="Texture2D" uid="uid://dxte6j22bmhq5" path="res://assets/details/Sofa.png" id="9_hdhm1"]
 [ext_resource type="Texture2D" uid="uid://bfvwn8bjk6m84" path="res://assets/details/Hanger.png" id="10_x7ti7"]
 [ext_resource type="Texture2D" uid="uid://dfue8ktlse46q" path="res://assets/details/locker1.png" id="11_jbiau"]
+[ext_resource type="Texture2D" uid="uid://dv240nob4csoa" path="res://assets/details/Floor.png" id="11_qytns"]
 [ext_resource type="Texture2D" uid="uid://mxrra4f50hrp" path="res://assets/details/locker2.png" id="12_oiage"]
 [ext_resource type="Texture2D" uid="uid://dn7s0jw0u2lak" path="res://assets/details/Bench.png" id="13_nx1ir"]
 [ext_resource type="Texture2D" uid="uid://bgp0cjigqm8kc" path="res://assets/details/Securety_table .png" id="14_l4uwd"]
@@ -34,6 +37,10 @@
 [ext_resource type="Texture2D" uid="uid://blruakifulty0" path="res://assets/details/Door.png" id="31_6gfxv"]
 [ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/game_manager/game_manager.tscn" id="34_h4sxy"]
 [ext_resource type="PackedScene" uid="uid://s1ay8d4kp6jm" path="res://project/cursor_manager/cursor_manager.tscn" id="34_k54hi"]
+[ext_resource type="Texture2D" uid="uid://c15o56tr7k33w" path="res://assets/details/Sink.png" id="35_nfcmx"]
+[ext_resource type="Texture2D" uid="uid://nxkupdik83g2" path="res://assets/details/Refrigerator.png" id="36_ol6cy"]
+[ext_resource type="Texture2D" uid="uid://intdhev6g1s" path="res://assets/details/Gas stove.png" id="37_fup5s"]
+[ext_resource type="Texture2D" uid="uid://dgrkwx7d7idty" path="res://assets/details/Table (1).png" id="38_uwreu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -59,7 +66,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0
 
 [node name="Wall" type="Sprite2D" parent="details"]
 position = Vector2(289, 30)
-texture = ExtResource("2_qio2a")
+texture = ExtResource("2_dql83")
 
 [node name="GamingMachine" type="Sprite2D" parent="details"]
 position = Vector2(111, 44)
@@ -88,6 +95,18 @@ texture = ExtResource("7_1rb70")
 [node name="Carpet" type="Sprite2D" parent="details"]
 position = Vector2(-64, 285)
 texture = ExtResource("8_s8wtl")
+
+[node name="Wall(1)" type="Sprite2D" parent="details"]
+position = Vector2(645, 277)
+texture = ExtResource("9_6mwdq")
+
+[node name="Wall2" type="Sprite2D" parent="details"]
+position = Vector2(-68, 126)
+texture = ExtResource("2_66qcg")
+
+[node name="Floor" type="Sprite2D" parent="details"]
+position = Vector2(645, 277)
+texture = ExtResource("11_qytns")
 
 [node name="details_y_sort_enabled" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -442,13 +461,29 @@ position = Vector2(-64, 186)
 texture = ExtResource("14_l4uwd")
 offset = Vector2(0, 5)
 
+[node name="Sink" type="Sprite2D" parent="details_y_sort_enabled"]
+position = Vector2(644, 277)
+texture = ExtResource("35_nfcmx")
+
+[node name="Refrigerator" type="Sprite2D" parent="details_y_sort_enabled"]
+position = Vector2(645, 277)
+texture = ExtResource("36_ol6cy")
+
+[node name="GasStove" type="Sprite2D" parent="details_y_sort_enabled"]
+position = Vector2(643, 277)
+texture = ExtResource("37_fup5s")
+
+[node name="Table(1)" type="Sprite2D" parent="details_y_sort_enabled"]
+position = Vector2(646, 273)
+texture = ExtResource("38_uwreu")
+
 [node name="player" parent="." instance=ExtResource("25_6bfeo")]
 position = Vector2(528, 169)
 
 [node name="walking_area" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="walking_area"]
-visible = false
 polygon = PackedVector2Array(0, 416, 0, 323, -45, 323, -61, 316, -69, 316, -61, 313, -60, 308, -39, 308, -32, 301, -32, 291, -98, 291, -98, 301, -89, 308, -69, 308, -69, 316, -61, 316, -45, 323, -135, 323, -136, 256, -1, 256, 0, 216, -72, 216, -69, 202, -69, 210, -61, 210, -61, 202, -27, 202, -20, 195, -20, 185, -108, 185, -108, 195, -100, 202, -69, 202, -72, 216, -136, 216, -136, 194, -117, 194, -112, 185, -113, 161, -126, 161, -132, 156, -136, 159, -136, 147, 0, 147, 0, 60, 256, 60, 274, 76, 354, 76, 367, 60, 397, 60, 405, 66, 459, 66, 466, 60, 484, 60, 493, 64, 499, 64, 509, 60, 576, 60, 576, 154, 712, 154, 712, 221, 694, 221, 694, 201, 597, 201, 597, 221, 576, 221, 576, 416, 385, 416, 384, 544, 192, 544, 192, 416, 142, 416, 190, 287, 209, 289, 209, 294, 216, 294, 216, 289, 228, 288, 235, 286, 235, 278, 227, 275, 197, 275, 181, 238, 180, 233, 190, 233, 199, 230, 199, 223, 193, 219, 211, 174, 213, 169, 276, 198, 277, 200, 284, 203, 284, 207, 291, 207, 291, 202, 298, 236, 292, 232, 283, 232, 276, 235, 276, 239, 283, 242, 285, 247, 290, 247, 291, 242, 298, 240, 298, 236, 291, 202, 298, 201, 298, 195, 290, 192, 330, 164, 337, 169, 349, 169, 349, 174, 356, 174, 356, 169, 367, 168, 377, 219, 370, 223, 370, 229, 377, 233, 389, 233, 389, 238, 396, 238, 396, 233, 408, 233, 373, 282, 367, 278, 337, 278, 329, 282, 329, 288, 336, 292, 348, 292, 348, 297, 355, 297, 355, 292, 363, 292, 373, 289, 373, 282, 408, 233, 413, 230, 415, 224, 407, 219, 377, 219, 367, 168, 375, 165, 374, 158, 371, 155, 336, 156, 330, 159, 330, 164, 290, 192, 283, 192, 279, 194, 276, 198, 213, 169, 230, 166, 231, 159, 224, 155, 194, 155, 187, 159, 188, 167, 205, 169, 205, 174, 211, 174, 193, 219, 162, 219, 154, 223, 154, 229, 161, 233, 173, 233, 173, 238, 181, 238, 197, 275, 190, 278, 190, 287, 142, 416)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
