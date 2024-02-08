@@ -15,7 +15,8 @@ func _ready():
 	get_window().size_changed.connect(update_cursor)
 
 func _process(_delta):
-	click_area()
+	if $"../game_manager".click_area:
+		change_mouse_texture()
 		
 #update cursor 
 func update_cursor() -> void:
@@ -36,8 +37,7 @@ func cursor_size() -> int:
 		return 16
 
 #change mouse texture to click texture
-func click_area() -> void:
-	if $"../game_manager".click_area:
+func change_mouse_texture() -> void:
 		$Timer.start()
 		update_cursor()
 		$"../game_manager".click_area = false
