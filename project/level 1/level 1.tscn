@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://doj6mhr6j1vcq"]
 
-[ext_resource type="Texture2D" uid="uid://q4ndtdh0486o" path="res://assets/details/TileMap.png" id="1_1yaak"]
-[ext_resource type="Texture2D" uid="uid://cfk5qwyxvc7er" path="res://assets/details/Bar.png" id="2_ijkua"]
-[ext_resource type="Texture2D" uid="uid://x51gf52yay6n" path="res://assets/details/chair1.png" id="3_r1itb"]
+[ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_1yaak"]
+[ext_resource type="Texture2D" uid="uid://bfv8sam4lhder" path="res://assets/details/Bar.png" id="2_ijkua"]
+[ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="3_r1itb"]
 [ext_resource type="Texture2D" uid="uid://bdi5pl1aei5mn" path="res://assets/details/table.png" id="4_5t22e"]
-[ext_resource type="Texture2D" uid="uid://cy8qc1bj4aqj1" path="res://assets/details/chair2.png" id="5_8aih1"]
-[ext_resource type="Texture2D" uid="uid://c7fxop4ydqowv" path="res://assets/details/tile.png" id="6_gyyqm"]
-[ext_resource type="Texture2D" uid="uid://i58csb58xh5v" path="res://assets/details/plant1.png" id="7_kcafq"]
+[ext_resource type="Texture2D" uid="uid://c0v3ccyslqvy6" path="res://assets/details/chair2.png" id="5_8aih1"]
+[ext_resource type="Texture2D" uid="uid://ddtii8uku7ppy" path="res://assets/details/tile.png" id="6_gyyqm"]
+[ext_resource type="Texture2D" uid="uid://cwcx0jbidj1hk" path="res://assets/details/plant1.png" id="7_kcafq"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="8_m0vx5"]
-[ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/GM/game_manager.tscn" id="9_lwym0"]
+[ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/game_manager/game_manager.tscn" id="9_lwym0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8fol"]
 texture = ExtResource("1_1yaak")
@@ -224,10 +224,8 @@ position = Vector2(90, 12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ijkua")
 
-[node name="player" parent="." instance=ExtResource("8_m0vx5")]
-position = Vector2(128, 100)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_laagt")
 
 [node name="gameManager" parent="." instance=ExtResource("9_lwym0")]
@@ -238,6 +236,7 @@ navigation_polygon = SubResource("NavigationPolygon_laagt")
 polygon = PackedVector2Array(119, 21, 59, 23, 60, 69, 109, 69, 110, 96, 71, 98, 115, 152, 156, 151, 212, 88, 180, 99, 167, 108, 153, 108, 141, 80, 181, 75, 180, 98, 212, 88, 213, 5, 163, 4, 162, 60, 124, 58)
 
 [node name="collisions" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(122, 4, 121, 55, 137, 58, 141, 58, 146, 58, 163, 56, 164, 6, 156, 0, 151, 6, 149, 45, 134, 44, 134, 6, 164, 1, 133, -2, 58, 1, 47, -1, 46, 95, 116, 166, 164, 168, 226, 85, 227, 75, 227, 0, 160, 0, 164, 1, 216, 1, 216, 77, 222, 80, 157, 153, 119, 154, 48, 79, 59, 75, 60, 1, 125, 0)
@@ -267,5 +266,8 @@ shape = SubResource("RectangleShape2D_3jde4")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="collisions"]
 position = Vector2(104, 78)
 shape = SubResource("RectangleShape2D_3jde4")
+
+[node name="player" parent="." instance=ExtResource("8_m0vx5")]
+position = Vector2(128, 100)
 
 [connection signal="input_event" from="walking_area" to="gameManager" method="_on_walking_area_input_event"]

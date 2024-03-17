@@ -3,22 +3,25 @@ extends CharacterBody2D
 var position_delta: float
 var path: PackedVector2Array
 @onready var navigation_agent = $NavigationAgent2D
-@export var speed: float
+@export var speed: float = 50.0
+
 
 func _physics_process(_delta):
 	move()
+	
 
 func _ready():
+	
 	position_delta = speed / 60 # game is working approximately in 60 fps
 	animation()
-
+	
 #player movement
 func move() -> void:
 	if path.is_empty():
 		return
 
 	var direction: Vector2 = (path[0] - position).normalized()
-	velocity = direction * speed
+	velocity = direction * speed 
 	move_and_slide()
 
 	if position.distance_to(path[0]) < position_delta:
@@ -42,5 +45,3 @@ func start_movement() -> void:
 	navigation_agent.get_next_path_position()
 	path = navigation_agent.get_current_navigation_path()
 	animation()
-
-
