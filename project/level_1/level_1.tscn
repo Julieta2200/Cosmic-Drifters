@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=70 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall2.png" id="2_66qcg"]
@@ -55,6 +55,9 @@
 [ext_resource type="Texture2D" uid="uid://dv0n8bpk3ksgg" path="res://assets/details/Kristal1.png" id="52_vuctr"]
 [ext_resource type="Texture2D" uid="uid://duoal6ofs5elx" path="res://assets/details/Kristal2.png" id="53_46751"]
 [ext_resource type="Texture2D" uid="uid://dnf600lmni3xh" path="res://assets/details/Kristal3.png" id="54_sbhpo"]
+[ext_resource type="Texture2D" uid="uid://d1qqxr8qw5r5i" path="res://assets/details/Fountain_Shadow.png" id="56_ymsb1"]
+[ext_resource type="Texture2D" uid="uid://br61rtwu6s2rk" path="res://assets/details/Herb_Shadow.png" id="57_0yhs7"]
+[ext_resource type="Texture2D" uid="uid://csg6bosdsvhsd" path="res://assets/details/Seaweed_Shadow.png" id="58_be5dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -404,6 +407,31 @@ texture = ExtResource("2_66qcg")
 position = Vector2(10320, 4432)
 scale = Vector2(16, 16)
 texture = ExtResource("11_qytns")
+
+[node name="FountainShadow" type="Sprite2D" parent="details"]
+position = Vector2(4673, 4078)
+scale = Vector2(16, 16)
+texture = ExtResource("56_ymsb1")
+
+[node name="HerbShadow" type="Sprite2D" parent="details"]
+position = Vector2(3760, 5055)
+scale = Vector2(16, 16)
+texture = ExtResource("57_0yhs7")
+
+[node name="HerbShadow2" type="Sprite2D" parent="details"]
+position = Vector2(5680, 2430)
+scale = Vector2(16, 16)
+texture = ExtResource("57_0yhs7")
+
+[node name="SeaweedShadow" type="Sprite2D" parent="details"]
+position = Vector2(5872, 5004)
+scale = Vector2(16, 16)
+texture = ExtResource("58_be5dh")
+
+[node name="SeaweedShadow2" type="Sprite2D" parent="details"]
+position = Vector2(2768, 3680)
+scale = Vector2(16, 16)
+texture = ExtResource("58_be5dh")
 
 [node name="details_y_sort_enabled" type="Node2D" parent="."]
 y_sort_enabled = true
