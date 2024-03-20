@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player  = $"../player"
+@onready var player  = $"../clickable_objects/player"
 signal click_area_input_event(event)
 var click_area : bool
 
