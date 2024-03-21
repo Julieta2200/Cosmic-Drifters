@@ -4,7 +4,6 @@ var position_delta: float
 var path: PackedVector2Array
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float = 50.0
-@onready var clickable_component : ClickableComponent = $clickable_component
 
 func _physics_process(_delta):
 	move()

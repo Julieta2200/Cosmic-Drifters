@@ -50,8 +50,15 @@ func _on_timer_timeout():
 	
 func detect_object() -> void:
 	for object in clickable_objects. get_children():
-		if object.clickable_component.active == true:
+		if get_clickable_component(object).active == true:
 			print(object)
 			break
 			
-		
+func get_clickable_component(object) -> ClickableComponent:
+	var clickable_component
+	for child in object.get_children():
+		if typeof(child) == typeof( ClickableComponent):
+			clickable_component = child
+	return clickable_component
+
+	
