@@ -49,7 +49,7 @@ func _on_timer_timeout():
 	update_cursor()
 	
 func detect_object() -> void:
-	for object in clickable_objects. get_children():
+	for object in clickable_objects.get_children():
 		if get_clickable_component(object).active == true:
 			print(object)
 			break
