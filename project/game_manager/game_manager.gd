@@ -3,7 +3,7 @@ extends Node2D
 @onready var player  = $"../clickable_objects/player"
 signal click_area_input_event(event)
 var click_area : bool
-
+var selected_object
 
 func player_start_movement():
 	player.start_movement()

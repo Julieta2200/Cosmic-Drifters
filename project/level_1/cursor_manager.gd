@@ -55,10 +55,10 @@ func detect_object() -> void:
 			break
 			
 func get_clickable_component(object) -> ClickableComponent:
-	var clickable_component
 	for child in object.get_children():
-		if typeof(child) == typeof( ClickableComponent):
-			clickable_component = child
-	return clickable_component
+		if child is ClickableComponent:
+			return child
+	return null
+	
 
 	
