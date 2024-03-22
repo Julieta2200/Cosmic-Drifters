@@ -1,0 +1,174 @@
+[gd_scene load_steps=29 format=3 uid="uid://cc8vhn66q8yup"]
+
+[ext_resource type="Script" path="res://project/menu/menu.gd" id="1_eudk0"]
+[ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="2_3xq7i"]
+[ext_resource type="Texture2D" uid="uid://by71iajxbgm41" path="res://assets/menu/Item/alien1.png" id="3_hyap1"]
+[ext_resource type="Texture2D" uid="uid://x4e7gemlj63y" path="res://assets/menu/background/Background2.png" id="3_pckx7"]
+[ext_resource type="Texture2D" uid="uid://bn30tc86p0iqn" path="res://assets/menu/Item/alien2.png" id="4_wxoto"]
+[ext_resource type="Texture2D" uid="uid://cnwyc6w6idqws" path="res://assets/menu/Item/black hole.png" id="5_yqqtt"]
+[ext_resource type="Texture2D" uid="uid://c0eogh3wd18bh" path="res://assets/menu/Item/comet1.png" id="6_sjea0"]
+[ext_resource type="Texture2D" uid="uid://b73m6cje3har2" path="res://assets/menu/Item/comet2.png" id="7_1ftre"]
+[ext_resource type="Texture2D" uid="uid://b1tfk34e2a07t" path="res://assets/menu/Item/planet1.png" id="8_kl8yb"]
+[ext_resource type="Texture2D" uid="uid://baxfkv7v10mfw" path="res://assets/menu/Item/planet2.png" id="9_60r0g"]
+[ext_resource type="Texture2D" uid="uid://dc63mx4y1tmdi" path="res://assets/menu/Logo/logo1.png" id="11_2ms01"]
+[ext_resource type="Texture2D" uid="uid://hvrlki2vnktn" path="res://assets/menu/Logo/logo2.png" id="12_qblao"]
+[ext_resource type="Texture2D" uid="uid://btssha27kj84c" path="res://assets/menu/Logo/logo3.png" id="13_62335"]
+[ext_resource type="Texture2D" uid="uid://byrw55veop6tx" path="res://assets/menu/Logo/logo4.png" id="14_2bolj"]
+[ext_resource type="Texture2D" uid="uid://bi67rutcv5155" path="res://assets/menu/Logo/logo5.png" id="15_bxoww"]
+[ext_resource type="Texture2D" uid="uid://ck1p5ds7p6ipm" path="res://assets/menu/Logo/logo6.png" id="16_iixwn"]
+[ext_resource type="Texture2D" uid="uid://ds6jufuruvqph" path="res://assets/menu/Logo/logo7.png" id="17_cgwvw"]
+[ext_resource type="Texture2D" uid="uid://dqeqb7r7811jp" path="res://assets/menu/Logo/logo8.png" id="18_c7klm"]
+[ext_resource type="Texture2D" uid="uid://bsb7bsrxxfms" path="res://assets/menu/Logo/logo9.png" id="19_buyc0"]
+[ext_resource type="Texture2D" uid="uid://b64f8horkrkgh" path="res://assets/menu/Logo/logo10.png" id="20_k7561"]
+[ext_resource type="Texture2D" uid="uid://dc3sgxwxexe2q" path="res://assets/menu/Logo/logo11.png" id="21_fqyt8"]
+[ext_resource type="Texture2D" uid="uid://bewr0bd117q64" path="res://assets/menu/Buttons 2/Play 1.png" id="22_0cxxj"]
+[ext_resource type="Texture2D" uid="uid://btquj13ed2h2t" path="res://assets/menu/Buttons 2/Play 2.png" id="23_oh0pv"]
+[ext_resource type="Texture2D" uid="uid://b6t4yahux4wwk" path="res://assets/menu/Buttons 2/Settings 1.png" id="24_o30ln"]
+[ext_resource type="Texture2D" uid="uid://dklrhmsf4hmb5" path="res://assets/menu/Buttons 2/Settings 2.png" id="25_j71lk"]
+[ext_resource type="Texture2D" uid="uid://t8aqac8e22tm" path="res://assets/menu/Buttons 2/Exit 1.png" id="26_oi6eq"]
+[ext_resource type="Texture2D" uid="uid://b64rsfdg6v5y1" path="res://assets/menu/Buttons 2/Exit 2.png" id="27_2teow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahlcs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_2ms01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qblao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_62335")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2bolj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bxoww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_iixwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_cgwvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_c7klm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_buyc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k7561")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fqyt8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eudk0")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(2051, 1793)
+scale = Vector2(16, 16)
+
+[node name="main" type="Sprite2D" parent="Background"]
+texture = ExtResource("2_3xq7i")
+
+[node name="alien1" type="Sprite2D" parent="Background"]
+position = Vector2(-62, 44.375)
+texture = ExtResource("3_hyap1")
+
+[node name="alien2" type="Sprite2D" parent="Background"]
+position = Vector2(104.75, 90.3125)
+texture = ExtResource("4_wxoto")
+
+[node name="black_hole" type="Sprite2D" parent="Background"]
+position = Vector2(105.375, -88.3125)
+texture = ExtResource("5_yqqtt")
+
+[node name="comet1" type="Sprite2D" parent="Background"]
+position = Vector2(0, -38.125)
+texture = ExtResource("6_sjea0")
+
+[node name="comet2" type="Sprite2D" parent="Background"]
+position = Vector2(39.5625, 20.0625)
+texture = ExtResource("7_1ftre")
+
+[node name="comet3" type="Sprite2D" parent="Background"]
+position = Vector2(-103.125, 79.0625)
+texture = ExtResource("7_1ftre")
+flip_h = true
+
+[node name="planet1" type="Sprite2D" parent="Background"]
+position = Vector2(-90.3125, -87.3125)
+texture = ExtResource("8_kl8yb")
+
+[node name="planet3" type="Sprite2D" parent="Background"]
+position = Vector2(108.938, 5.1875)
+texture = ExtResource("8_kl8yb")
+
+[node name="planet2" type="Sprite2D" parent="Background"]
+position = Vector2(-116.375, 0)
+texture = ExtResource("9_60r0g")
+
+[node name="shadow" type="Sprite2D" parent="Background"]
+texture = ExtResource("3_pckx7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(0, -43.9375)
+sprite_frames = SubResource("SpriteFrames_ahlcs")
+autoplay = "default"
+frame = 5
+frame_progress = 0.816765
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -166.0
+offset_right = 43.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(16, 16)
+pivot_offset = Vector2(43, 78)
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("22_0cxxj")
+texture_pressed = ExtResource("23_oh0pv")
+texture_hover = ExtResource("23_oh0pv")
+texture_focused = ExtResource("23_oh0pv")
+stretch_mode = 0
+
+[node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("24_o30ln")
+texture_pressed = ExtResource("25_j71lk")
+texture_hover = ExtResource("25_j71lk")
+texture_focused = ExtResource("25_j71lk")
+stretch_mode = 0
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("26_oi6eq")
+texture_pressed = ExtResource("27_2teow")
+texture_hover = ExtResource("27_2teow")
+texture_focused = ExtResource("27_2teow")
+stretch_mode = 0
