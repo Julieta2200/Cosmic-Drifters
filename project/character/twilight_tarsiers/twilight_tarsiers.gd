@@ -1,7 +1,5 @@
 extends Character
 
-class_name Player
-
 func _physics_process(_delta):
 	move()
 

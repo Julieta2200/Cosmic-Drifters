@@ -77,7 +77,7 @@ polygon = PackedVector2Array(-3, 6, -3, 8, 4, 8, 4, 6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-animation = &"walk"
+animation = &"idle"
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

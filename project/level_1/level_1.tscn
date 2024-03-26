@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=73 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall2.png" id="2_66qcg"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://br61rtwu6s2rk" path="res://assets/details/Herb_Shadow.png" id="57_0yhs7"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="57_iauci"]
 [ext_resource type="Texture2D" uid="uid://csg6bosdsvhsd" path="res://assets/details/Seaweed_Shadow.png" id="58_be5dh"]
+[ext_resource type="PackedScene" uid="uid://dl1thhd2djkjj" path="res://project/character/twilight_tarsiers/twilight_tarsiers.tscn" id="60_rjade"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -970,6 +971,7 @@ navigation_polygon = SubResource("NavigationPolygon_bs06d")
 clickable_objects = NodePath("../clickable_objects")
 
 [node name="clickable_objects" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="player" parent="clickable_objects" instance=ExtResource("25_6bfeo")]
 position = Vector2(3552, 3936)
@@ -985,19 +987,17 @@ position = Vector2(-2, -1)
 position = Vector2(1.15625, -5.09375)
 shape = SubResource("RectangleShape2D_rlcj1")
 
-[node name="player2" parent="clickable_objects" instance=ExtResource("25_6bfeo")]
-position = Vector2(4001, 4352)
+[node name="twilight_tarsiers" parent="clickable_objects" instance=ExtResource("60_rjade")]
+position = Vector2(1748, 4021)
 scale = Vector2(16, 16)
 speed = 800.0
 
-[node name="Camera2D" type="Camera2D" parent="clickable_objects/player2"]
-position = Vector2(-2, -1)
+[node name="Camera2D" type="Camera2D" parent="clickable_objects/twilight_tarsiers"]
 
-[node name="clickable_component" parent="clickable_objects/player2" instance=ExtResource("57_iauci")]
+[node name="clickable_component" parent="clickable_objects/twilight_tarsiers" instance=ExtResource("57_iauci")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_objects/player2/clickable_component"]
-position = Vector2(1.15625, -5.09375)
-shape = SubResource("RectangleShape2D_rlcj1")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/twilight_tarsiers/clickable_component"]
+polygon = PackedVector2Array(8.0625, -5.9375, -8.0625, -5.9375, -7.875, 6.9375, 8, 7)
 
 [node name="walking_area" type="Area2D" parent="clickable_objects"]
 
@@ -1008,8 +1008,7 @@ polygon = PackedVector2Array(0, 416, 0, 323, -45, 323, -61, 316, -69, 316, -61, 
 
 [node name="clickable_component" parent="clickable_objects/walking_area" instance=ExtResource("57_iauci")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/walking_area/clickable_component"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="clickable_objects/walking_area/clickable_component"]
 visible = false
-polygon = PackedVector2Array(13, 93, 9195, 33, 9231, 1831, 11376, 1819, 11400, 5223, 9195, 5259, 9219, 6577, 1, 6649)
-
-[connection signal="input_event" from="clickable_objects/walking_area" to="game_manager" method="_on_walking_area_input_event"]
+scale = Vector2(16, 16)
+polygon = PackedVector2Array(0, 416, 0, 323, -45, 323, -61, 316, -69, 316, -61, 313, -60, 308, -39, 308, -32, 301, -32, 291, -98, 291, -98, 301, -89, 308, -69, 308, -69, 316, -61, 316, -45, 323, -135, 323, -136, 256, -1, 256, 0, 216, -72, 216, -69, 202, -69, 210, -61, 210, -61, 202, -27, 202, -20, 195, -20, 185, -108, 185, -108, 195, -100, 202, -69, 202, -72, 216, -136, 216, -136, 194, -117, 194, -112, 185, -113, 161, -126, 161, -132, 156, -136, 159, -136, 147, 0, 147, 0, 60, 256, 60, 274, 76, 354, 76, 367, 60, 397, 60, 405, 66, 459, 66, 466, 60, 484, 60, 493, 64, 499, 64, 509, 60, 576, 60, 576, 154, 712, 154, 712, 221, 694, 221, 694, 201, 597, 201, 597, 221, 576, 221, 576, 263, 713, 263, 713, 332, 576, 332, 576, 416, 385, 416, 384, 544, 192, 544, 192, 416, 142, 416, 283, 309, 295, 309, 295, 314, 302, 314, 302, 309, 313, 309, 321, 305, 321, 298, 314, 295, 283, 295, 276, 298, 180, 277, 180, 272, 192, 272, 199, 268, 199, 262, 193, 258, 182, 175, 182, 170, 344, 205, 344, 208, 352, 212, 352, 216, 359, 216, 239, 220, 230, 212, 238, 208, 238, 205, 231, 201, 222, 201, 215, 205, 215, 208, 223, 212, 223, 216, 230, 216, 230, 212, 239, 220, 359, 216, 359, 212, 367, 208, 367, 205, 360, 201, 351, 201, 277, 142, 284, 146, 296, 146, 296, 151, 303, 151, 303, 146, 315, 146, 394, 156, 385, 159, 385, 166, 392, 170, 404, 170, 404, 175, 411, 175, 411, 170, 423, 170, 430, 262, 423, 258, 392, 258, 385, 262, 385, 268, 392, 272, 404, 272, 404, 277, 411, 277, 411, 272, 423, 272, 430, 268, 430, 262, 423, 170, 430, 166, 430, 160, 423, 156, 394, 156, 315, 146, 322, 142, 322, 136, 315, 132, 284, 132, 277, 136, 277, 142, 351, 201, 344, 205, 182, 170, 194, 170, 201, 166, 201, 160, 194, 156, 163, 156, 156, 160, 156, 167, 163, 170, 175, 170, 175, 175, 182, 175, 193, 258, 161, 258, 154, 261, 154, 269, 161, 272, 173, 272, 173, 277, 180, 277, 276, 298, 276, 305, 283, 309, 142, 416)
