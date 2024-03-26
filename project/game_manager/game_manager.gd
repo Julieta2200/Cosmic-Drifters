@@ -5,21 +5,23 @@ extends Node2D
 signal click_area_input_event(event)
 var click_area : bool
 var selected_object 
-var i
+var i = 0
+var d
 
 
 func start_movement():
 	if Input.is_action_just_pressed("left_click"):
 		if   $"../cursor_manager".detect_object() is Area2D:
-			player.start_movement()
+			if i != 0:
+				d.start_movement()
+				i= i - 1
+			else :
+				player.start_movement()
 		if $"../cursor_manager".detect_object() is Character:
 			print($"../cursor_manager".detect_object())
-			for j in range(1):
-				if Input.is_action_just_pressed("left_click"):
-					j = j+1
-				if j != 0:
-					print("h")
-					$"../cursor_manager".detect_object().start_movement()
+			d=$"../cursor_manager".detect_object()
+			i = i+1
+
 					
 			
 			
