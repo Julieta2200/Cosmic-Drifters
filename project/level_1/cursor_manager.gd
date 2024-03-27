@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var clickable_objects : Node2D 
 #corsor texture dictionary
 var mouse_cursor_texture : Dictionary = {
 	8 :  preload("res://assets/mouse_cursor/Mouse.png"),
@@ -15,6 +16,8 @@ func _ready():
 	get_window().size_changed.connect(update_cursor)
 
 func _process(_delta):
+#	if Input.is_action_just_pressed("left_click"):
+#		detect_object()
 	if $"../game_manager".click_area:
 		change_mouse_texture()
 		
@@ -45,5 +48,16 @@ func change_mouse_texture() -> void:
 func _on_timer_timeout():
 	update_cursor()
 	
+func detect_object() :
+	for object in clickable_objects.get_children():
+		if get_clickable_component(object).active == true:
+			return object
+			
+func get_clickable_component(object) -> ClickableComponent:
+	for child in object.get_children():
+		if child is ClickableComponent:
+			return child
+	return null
+	
 
-
+	
