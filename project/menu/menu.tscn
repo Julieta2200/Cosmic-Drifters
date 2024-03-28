@@ -1,15 +1,16 @@
-[gd_scene load_steps=29 format=3 uid="uid://cc8vhn66q8yup"]
+[gd_scene load_steps=49 format=3 uid="uid://cc8vhn66q8yup"]
 
 [ext_resource type="Script" path="res://project/menu/menu.gd" id="1_eudk0"]
 [ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="2_3xq7i"]
+[ext_resource type="Shader" path="res://project/menu/menu.gdshader" id="2_s4neu"]
 [ext_resource type="Texture2D" uid="uid://by71iajxbgm41" path="res://assets/menu/Item/alien1.png" id="3_hyap1"]
 [ext_resource type="Texture2D" uid="uid://x4e7gemlj63y" path="res://assets/menu/background/Background2.png" id="3_pckx7"]
+[ext_resource type="Texture2D" uid="uid://dxyn2ltd7h4xm" path="res://assets/menu/Item/Black_Hole.png" id="4_80n4g"]
 [ext_resource type="Texture2D" uid="uid://bn30tc86p0iqn" path="res://assets/menu/Item/alien2.png" id="4_wxoto"]
-[ext_resource type="Texture2D" uid="uid://cnwyc6w6idqws" path="res://assets/menu/Item/black hole.png" id="5_yqqtt"]
+[ext_resource type="Texture2D" uid="uid://c1y3tqrwefere" path="res://assets/menu/Item/Green_planets.png" id="5_tdq1c"]
+[ext_resource type="Texture2D" uid="uid://mjrk6l00ky0y" path="res://assets/menu/Item/Pink_planet_full.png" id="6_olyxv"]
 [ext_resource type="Texture2D" uid="uid://c0eogh3wd18bh" path="res://assets/menu/Item/comet1.png" id="6_sjea0"]
 [ext_resource type="Texture2D" uid="uid://b73m6cje3har2" path="res://assets/menu/Item/comet2.png" id="7_1ftre"]
-[ext_resource type="Texture2D" uid="uid://b1tfk34e2a07t" path="res://assets/menu/Item/planet1.png" id="8_kl8yb"]
-[ext_resource type="Texture2D" uid="uid://baxfkv7v10mfw" path="res://assets/menu/Item/planet2.png" id="9_60r0g"]
 [ext_resource type="Texture2D" uid="uid://dc63mx4y1tmdi" path="res://assets/menu/Logo/logo1.png" id="11_2ms01"]
 [ext_resource type="Texture2D" uid="uid://hvrlki2vnktn" path="res://assets/menu/Logo/logo2.png" id="12_qblao"]
 [ext_resource type="Texture2D" uid="uid://btssha27kj84c" path="res://assets/menu/Logo/logo3.png" id="13_62335"]
@@ -27,6 +28,212 @@
 [ext_resource type="Texture2D" uid="uid://dklrhmsf4hmb5" path="res://assets/menu/Buttons 2/Settings 2.png" id="25_j71lk"]
 [ext_resource type="Texture2D" uid="uid://t8aqac8e22tm" path="res://assets/menu/Buttons 2/Exit 1.png" id="26_oi6eq"]
 [ext_resource type="Texture2D" uid="uid://b64rsfdg6v5y1" path="res://assets/menu/Buttons 2/Exit 2.png" id="27_2teow"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5ne"]
+shader = ExtResource("2_s4neu")
+shader_parameter/speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bsoum"]
+shader = ExtResource("2_s4neu")
+shader_parameter/speed = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwhgi"]
+shader = ExtResource("2_s4neu")
+shader_parameter/speed = -0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr5k8"]
+shader = ExtResource("2_s4neu")
+shader_parameter/speed = 0.02
+
+[sub_resource type="Animation" id="Animation_gj8bb"]
+resource_name = "floating_ship"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 0.329877),
+"update": 0,
+"values": [Vector2(-62, 44.375), Vector2(-67, 39), Vector2(-68, 48), Vector2(-62, 44.375)]
+}
+
+[sub_resource type="Animation" id="Animation_65gir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-62, 44.375)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_daqws"]
+_data = {
+"RESET": SubResource("Animation_65gir"),
+"floating_ship": SubResource("Animation_gj8bb")
+}
+
+[sub_resource type="Animation" id="Animation_ibd4i"]
+resource_name = "float"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.246093, 0.0, 0.246091, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jv863"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mv3g"]
+_data = {
+"RESET": SubResource("Animation_jv863"),
+"float": SubResource("Animation_ibd4i")
+}
+
+[sub_resource type="Animation" id="Animation_0e4lq"]
+resource_name = "move"
+length = 14.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, -238), Vector2(200, 162)]
+}
+
+[sub_resource type="Animation" id="Animation_1nq2b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, -238)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rxrvq"]
+_data = {
+"RESET": SubResource("Animation_1nq2b"),
+"move": SubResource("Animation_0e4lq")
+}
+
+[sub_resource type="Animation" id="Animation_5ivlg"]
+resource_name = "move"
+length = 14.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(239, -180), Vector2(-161, 220)]
+}
+
+[sub_resource type="Animation" id="Animation_12cxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(239, -180)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_of7oi"]
+_data = {
+"RESET": SubResource("Animation_12cxl"),
+"move": SubResource("Animation_5ivlg")
+}
+
+[sub_resource type="Animation" id="Animation_vkyex"]
+resource_name = "float"
+length = 9.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-353, -171), Vector2(147, 329)]
+}
+
+[sub_resource type="Animation" id="Animation_tmlfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-353, -171)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_il2f7"]
+_data = {
+"RESET": SubResource("Animation_tmlfs"),
+"float": SubResource("Animation_vkyex")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ahlcs"]
 animations = [{
@@ -83,44 +290,71 @@ position = Vector2(2051, 1793)
 scale = Vector2(16, 16)
 
 [node name="main" type="Sprite2D" parent="Background"]
+material = SubResource("ShaderMaterial_yf5ne")
 texture = ExtResource("2_3xq7i")
+
+[node name="black_hole" type="Sprite2D" parent="Background"]
+material = SubResource("ShaderMaterial_bsoum")
+texture = ExtResource("4_80n4g")
+
+[node name="green_planets" type="Sprite2D" parent="Background"]
+material = SubResource("ShaderMaterial_iwhgi")
+texture = ExtResource("5_tdq1c")
+
+[node name="red_planet" type="Sprite2D" parent="Background"]
+material = SubResource("ShaderMaterial_hr5k8")
+texture = ExtResource("6_olyxv")
 
 [node name="alien1" type="Sprite2D" parent="Background"]
 position = Vector2(-62, 44.375)
 texture = ExtResource("3_hyap1")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/alien1"]
+autoplay = "floating_ship"
+libraries = {
+"": SubResource("AnimationLibrary_daqws")
+}
+
 [node name="alien2" type="Sprite2D" parent="Background"]
 position = Vector2(104.75, 90.3125)
 texture = ExtResource("4_wxoto")
 
-[node name="black_hole" type="Sprite2D" parent="Background"]
-position = Vector2(105.375, -88.3125)
-texture = ExtResource("5_yqqtt")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/alien2"]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_7mv3g")
+}
 
 [node name="comet1" type="Sprite2D" parent="Background"]
-position = Vector2(0, -38.125)
+position = Vector2(-200, -238)
 texture = ExtResource("6_sjea0")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/comet1"]
+autoplay = "move"
+libraries = {
+"": SubResource("AnimationLibrary_rxrvq")
+}
+
 [node name="comet2" type="Sprite2D" parent="Background"]
-position = Vector2(39.5625, 20.0625)
+position = Vector2(239, -180)
 texture = ExtResource("7_1ftre")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/comet2"]
+autoplay = "move"
+libraries = {
+"": SubResource("AnimationLibrary_of7oi")
+}
+
 [node name="comet3" type="Sprite2D" parent="Background"]
-position = Vector2(-103.125, 79.0625)
+position = Vector2(-353, -171)
 texture = ExtResource("7_1ftre")
 flip_h = true
 
-[node name="planet1" type="Sprite2D" parent="Background"]
-position = Vector2(-90.3125, -87.3125)
-texture = ExtResource("8_kl8yb")
-
-[node name="planet3" type="Sprite2D" parent="Background"]
-position = Vector2(108.938, 5.1875)
-texture = ExtResource("8_kl8yb")
-
-[node name="planet2" type="Sprite2D" parent="Background"]
-position = Vector2(-116.375, 0)
-texture = ExtResource("9_60r0g")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/comet3"]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_il2f7")
+}
 
 [node name="shadow" type="Sprite2D" parent="Background"]
 texture = ExtResource("3_pckx7")
