@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqmbm2cublfgn"]
+
+[ext_resource type="Script" path="res://project/components/clickable_component.gd" id="1_g8knw"]
+
+[node name="clickable_component" type="Area2D"]
+script = ExtResource("1_g8knw")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://dl1thhd2djkjj"]
+
+[ext_resource type="Script" path="res://project/character/twilight_tarsiers/twilight_tarsiers.gd" id="1_ih3rl"]
+[ext_resource type="Texture2D" uid="uid://bcy06wkftxe6v" path="res://assets/Twilight Tarsiers/shadow.png" id="2_hkg40"]
+[ext_resource type="Texture2D" uid="uid://f8800d64koiv" path="res://assets/Twilight Tarsiers/back-walk-1.png" id="3_anf7q"]
+[ext_resource type="Texture2D" uid="uid://bntjrrckoun76" path="res://assets/Twilight Tarsiers/back-base.png" id="4_7drx1"]
+[ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="5_e4kla"]
+[ext_resource type="Texture2D" uid="uid://cng306mo6er3j" path="res://assets/Twilight Tarsiers/back-walk-2.png" id="5_ten5q"]
+[ext_resource type="Texture2D" uid="uid://do53cpci126p5" path="res://assets/Twilight Tarsiers/walk-2.png" id="8_nwlqq"]
+[ext_resource type="Texture2D" uid="uid://dfpfkhsnj1dqu" path="res://assets/Twilight Tarsiers/idle.png" id="9_jlne5"]
+[ext_resource type="Texture2D" uid="uid://dmya7n1tixfng" path="res://assets/Twilight Tarsiers/walk-1.png" id="10_310rt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbfcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_anf7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7drx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ten5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7drx1")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("5_e4kla")
+}, {
+"duration": 0.3,
+"texture": ExtResource("9_jlne5")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_e4kla")
+}, {
+"duration": 0.3,
+"texture": ExtResource("9_jlne5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nwlqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e4kla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_310rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e4kla")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="twilight_tarsiers" type="CharacterBody2D"]
+script = ExtResource("1_ih3rl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("2_hkg40")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, 5, 3, 5, 3, 7, -3, 7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fbfcc")
+animation = &"idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

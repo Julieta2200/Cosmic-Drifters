@@ -1,14 +1,24 @@
 extends Node2D
 
-@onready var player  = $"../player"
-signal click_area_input_event(event)
+
+@onready var player  = $"../clickable_objects/player"
 var click_area : bool
+var selected_object = null
 
 
-func player_start_movement():
-	player.start_movement()
+func start_movement():
+	click_area = true
+	if   $"../cursor_manager".detect_object() is Area2D:
+		if selected_object !=  null:
+			selected_object.start_movement()
+			selected_object = null
+		else :
+			player.start_movement()
+	elif $"../cursor_manager".detect_object() is Character:
+		selected_object = $"../cursor_manager".detect_object()
+
+func _process(_delta):
+	if Input.is_action_just_pressed("left_click"):
+		start_movement()
 	
 
-func _on_walking_area_input_event(_viewport, event, _shape_idx):
-	click_area_input_event.emit(event)
-	
