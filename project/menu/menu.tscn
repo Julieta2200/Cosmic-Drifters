@@ -406,3 +406,5 @@ texture_pressed = ExtResource("27_2teow")
 texture_hover = ExtResource("27_2teow")
 texture_focused = ExtResource("27_2teow")
 stretch_mode = 0
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
