@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=71 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall2.png" id="2_66qcg"]
@@ -21,14 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://2c8ncp05p7by" path="res://assets/details/Order Board.png" id="16_a1qfs"]
 [ext_resource type="Texture2D" uid="uid://doqmo0nwllqjb" path="res://assets/details/Order (1).png" id="17_01yp3"]
 [ext_resource type="Texture2D" uid="uid://c3wqkdjvmvlnh" path="res://assets/details/Bookcase.png" id="18_wyra1"]
-[ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="21_7xcaq"]
-[ext_resource type="Texture2D" uid="uid://c0v3ccyslqvy6" path="res://assets/details/chair2.png" id="22_a1tga"]
 [ext_resource type="Texture2D" uid="uid://bqqaymukjxk20" path="res://assets/details/plant2.png" id="23_8goi7"]
 [ext_resource type="Texture2D" uid="uid://cwcx0jbidj1hk" path="res://assets/details/plant1.png" id="24_6tpyt"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="25_6bfeo"]
 [ext_resource type="Texture2D" uid="uid://drehqytfm1p18" path="res://assets/details/plant 3.png" id="25_m3uav"]
-[ext_resource type="Texture2D" uid="uid://dp37y5m0a4hx8" path="res://assets/details/Table_Big.png" id="26_bx45p"]
-[ext_resource type="Texture2D" uid="uid://bwaoqkksmk10d" path="res://assets/details/Table_Small.png" id="27_jg0wp"]
 [ext_resource type="Texture2D" uid="uid://kek2o3wvuvdq" path="res://assets/details/Table3.png" id="28_u0job"]
 [ext_resource type="Texture2D" uid="uid://bf47icbmtqy2c" path="res://assets/details/Manager_table.png" id="29_rw71g"]
 [ext_resource type="Texture2D" uid="uid://clkam3ofrmvwi" path="res://assets/details/Door_1.png" id="30_ptdti"]
@@ -60,6 +56,8 @@
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="57_iauci"]
 [ext_resource type="Texture2D" uid="uid://csg6bosdsvhsd" path="res://assets/details/Seaweed_Shadow.png" id="58_be5dh"]
 [ext_resource type="PackedScene" uid="uid://dl1thhd2djkjj" path="res://project/character/twilight_tarsiers/twilight_tarsiers.tscn" id="60_rjade"]
+[ext_resource type="PackedScene" uid="uid://bv5yvkcbdul8n" path="res://project/table/table_big.tscn" id="61_cr3yw"]
+[ext_resource type="PackedScene" uid="uid://ckyh5oo0eb6jt" path="res://project/table/table_small.tscn" id="64_4nifk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -515,48 +513,6 @@ offset = Vector2(0, -5)
 [node name="table" type="Node2D" parent="details_y_sort_enabled"]
 y_sort_enabled = true
 
-[node name="TableBig7" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(6528, 4288)
-scale = Vector2(16, 16)
-texture = ExtResource("26_bx45p")
-
-[node name="TableBig9" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(6528, 2656)
-scale = Vector2(16, 16)
-texture = ExtResource("26_bx45p")
-
-[node name="TableBig11" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(2864, 2656)
-scale = Vector2(16, 16)
-texture = ExtResource("26_bx45p")
-
-[node name="TableBig13" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(2832, 4288)
-scale = Vector2(16, 16)
-texture = ExtResource("26_bx45p")
-
-[node name="TableBig15" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(4800, 2288)
-scale = Vector2(16, 16)
-texture = ExtResource("26_bx45p")
-offset = Vector2(0, -1)
-
-[node name="TableBig4" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(4768, 4944)
-scale = Vector2(16, 16)
-texture = ExtResource("26_bx45p")
-offset = Vector2(1, -4)
-
-[node name="TableSmall" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(5696, 3344)
-scale = Vector2(16, 16)
-texture = ExtResource("27_jg0wp")
-
-[node name="TableSmall2" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(3632, 3344)
-scale = Vector2(16, 16)
-texture = ExtResource("27_jg0wp")
-
 [node name="Table3" type="Sprite2D" parent="details_y_sort_enabled/table"]
 position = Vector2(6912, 896)
 scale = Vector2(16, 16)
@@ -607,160 +563,6 @@ texture = ExtResource("30_ptdti")
 position = Vector2(112, 4640)
 scale = Vector2(16, 16)
 texture = ExtResource("30_ptdti")
-
-[node name="chair" type="Node2D" parent="details_y_sort_enabled"]
-y_sort_enabled = true
-
-[node name="Chair1" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(5296, 4864)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair2" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(4912, 4624)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair3" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(4656, 4624)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair4" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(4272, 4880)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair7" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(7024, 4256)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair8" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(6640, 4032)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair9" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(6384, 4032)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair10" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(6000, 4256)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair11" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(7024, 2624)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair12" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(6640, 2400)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair13" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(6384, 2400)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair14" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(6000, 2624)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair15" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(3360, 2624)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair16" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(2976, 2400)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair17" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(2720, 2400)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair18" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(2336, 2624)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair19" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(3328, 4272)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair20" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(2944, 4032)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair21" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(2688, 4032)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair22" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(2336, 4272)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair23" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(5296, 2208)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair24" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(4912, 2016)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair25" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(4656, 2016)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair26" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(4272, 2224)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-offset = Vector2(0, -1)
-
-[node name="Chair5" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(-1024, 5024)
-scale = Vector2(16, 16)
-texture = ExtResource("22_a1tga")
-
-[node name="Chair6" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(-1024, 3328)
-scale = Vector2(16, 16)
-texture = ExtResource("22_a1tga")
-
-[node name="Chair27" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(5952, 3408)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair28" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(5440, 3424)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair29" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(3888, 3472)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
-
-[node name="Chair30" type="Sprite2D" parent="details_y_sort_enabled/chair"]
-position = Vector2(3376, 3472)
-scale = Vector2(16, 16)
-texture = ExtResource("21_7xcaq")
 
 [node name="Sofa" type="Sprite2D" parent="details_y_sort_enabled"]
 position = Vector2(-1904, 2768)
@@ -998,6 +800,78 @@ speed = 800.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/twilight_tarsiers/clickable_component"]
 polygon = PackedVector2Array(8.0625, -5.9375, -8.0625, -5.9375, -7.875, 6.9375, 8, 7)
+
+[node name="table_big" parent="clickable_objects" instance=ExtResource("61_cr3yw")]
+position = Vector2(4804, 4898)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_big" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_big/clickable_component"]
+polygon = PackedVector2Array(-23, -6.0625, -16.125, -9.875, 15, -9.9375, 21.8125, -5.9375, 21.9375, -0.0625, 14.875, 3.8125, -15.9375, 3.9375, -23, -0.1875)
+
+[node name="table_big2" parent="clickable_objects" instance=ExtResource("61_cr3yw")]
+position = Vector2(6536, 4288)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_big2" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_big2/clickable_component"]
+polygon = PackedVector2Array(-23, -6.0625, -16.125, -9.875, 15, -9.9375, 21.8125, -5.9375, 21.9375, -0.0625, 14.875, 3.8125, -15.9375, 3.9375, -23, -0.1875)
+
+[node name="table_big3" parent="clickable_objects" instance=ExtResource("61_cr3yw")]
+position = Vector2(6536, 2659)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_big3" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_big3/clickable_component"]
+polygon = PackedVector2Array(-23, -6.0625, -16.125, -9.875, 15, -9.9375, 21.8125, -5.9375, 21.9375, -0.0625, 14.875, 3.8125, -15.9375, 3.9375, -23, -0.1875)
+
+[node name="table_big4" parent="clickable_objects" instance=ExtResource("61_cr3yw")]
+position = Vector2(4805, 2274)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_big4" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_big4/clickable_component"]
+polygon = PackedVector2Array(-23, -6.0625, -16.125, -9.875, 15, -9.9375, 21.8125, -5.9375, 21.9375, -0.0625, 14.875, 3.8125, -15.9375, 3.9375, -23, -0.1875)
+
+[node name="table_big5" parent="clickable_objects" instance=ExtResource("61_cr3yw")]
+position = Vector2(2859, 2659)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_big5" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_big5/clickable_component"]
+polygon = PackedVector2Array(-23, -6.0625, -16.125, -9.875, 15, -9.9375, 21.8125, -5.9375, 21.9375, -0.0625, 14.875, 3.8125, -15.9375, 3.9375, -23, -0.1875)
+
+[node name="table_big6" parent="clickable_objects" instance=ExtResource("61_cr3yw")]
+position = Vector2(2836, 4299)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_big6" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_big6/clickable_component"]
+polygon = PackedVector2Array(-23, -6.0625, -16.125, -9.875, 15, -9.9375, 21.8125, -5.9375, 21.9375, -0.0625, 14.875, 3.8125, -15.9375, 3.9375, -23, -0.1875)
+
+[node name="table_small" parent="clickable_objects" instance=ExtResource("64_4nifk")]
+position = Vector2(5695, 3343)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_small" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_small/clickable_component"]
+polygon = PackedVector2Array(-11.75, -3.8125, -5.0625, -7.9375, 3.875, -8.0625, 10.875, -4.125, 11.125, -0.8125, 3.9375, 2.875, -4.9375, 2.9375, -11.8125, -1.0625)
+
+[node name="table_small2" parent="clickable_objects" instance=ExtResource("64_4nifk")]
+position = Vector2(3635, 3336)
+scale = Vector2(16, 16)
+
+[node name="clickable_component" parent="clickable_objects/table_small2" instance=ExtResource("57_iauci")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_objects/table_small2/clickable_component"]
+polygon = PackedVector2Array(-11.75, -3.8125, -5.0625, -7.9375, 3.875, -8.0625, 10.875, -4.125, 11.125, -0.8125, 3.9375, 2.875, -4.9375, 2.9375, -11.8125, -1.0625)
 
 [node name="walking_area" type="Area2D" parent="clickable_objects"]
 

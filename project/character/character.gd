@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name Character
 
 var position_delta: float
+var target_object = null
 var path: PackedVector2Array 
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
@@ -34,7 +35,12 @@ func animation()-> void:
 		
 #start character movement
 func start_movement() -> void:
-	navigation_agent.target_position = get_global_mouse_position()
+	if target_object != null:
+		navigation_agent.target_position = target_object.position
+		target_object = null
+	else:
+		navigation_agent.target_position = get_global_mouse_position()
 	navigation_agent.get_next_path_position()
 	path = navigation_agent.get_current_navigation_path()
 	animation()
+

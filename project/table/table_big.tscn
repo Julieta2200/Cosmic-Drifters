@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv5yvkcbdul8n"]
+
+[ext_resource type="Texture2D" uid="uid://dp37y5m0a4hx8" path="res://assets/details/Table_Big.png" id="1_kxmei"]
+[ext_resource type="Script" path="res://project/table/table.gd" id="1_mcg8d"]
+[ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="2_vigiq"]
+
+[node name="table_big" type="Node2D"]
+script = ExtResource("1_mcg8d")
+
+[node name="table" type="Sprite2D" parent="."]
+texture = ExtResource("1_kxmei")
+
+[node name="chair" type="Node2D" parent="table"]
+
+[node name="Chair1" type="Sprite2D" parent="table/chair"]
+position = Vector2(-11, -16)
+texture = ExtResource("2_vigiq")
+
+[node name="Chair2" type="Sprite2D" parent="table/chair"]
+position = Vector2(11, -16)
+texture = ExtResource("2_vigiq")
+
+[node name="Chair3" type="Sprite2D" parent="table/chair"]
+position = Vector2(30, -3)
+texture = ExtResource("2_vigiq")
+
+[node name="Chair4" type="Sprite2D" parent="table/chair"]
+position = Vector2(-30, -3)
+texture = ExtResource("2_vigiq")
