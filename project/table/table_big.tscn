@@ -10,20 +10,20 @@ script = ExtResource("1_mcg8d")
 [node name="table" type="Sprite2D" parent="."]
 texture = ExtResource("1_kxmei")
 
-[node name="chair" type="Node2D" parent="table"]
+[node name="chairs" type="Node2D" parent="table"]
 
-[node name="Chair1" type="Sprite2D" parent="table/chair"]
+[node name="Chair1" type="Sprite2D" parent="table/chairs"]
 position = Vector2(-11, -16)
 texture = ExtResource("2_vigiq")
 
-[node name="Chair2" type="Sprite2D" parent="table/chair"]
+[node name="Chair2" type="Sprite2D" parent="table/chairs"]
 position = Vector2(11, -16)
 texture = ExtResource("2_vigiq")
 
-[node name="Chair3" type="Sprite2D" parent="table/chair"]
+[node name="Chair3" type="Sprite2D" parent="table/chairs"]
 position = Vector2(30, -3)
 texture = ExtResource("2_vigiq")
 
-[node name="Chair4" type="Sprite2D" parent="table/chair"]
+[node name="Chair4" type="Sprite2D" parent="table/chairs"]
 position = Vector2(-30, -3)
 texture = ExtResource("2_vigiq")

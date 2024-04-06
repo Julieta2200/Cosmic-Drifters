@@ -67,15 +67,18 @@ animations = [{
 [node name="twilight_tarsiers" type="CharacterBody2D"]
 script = ExtResource("1_ih3rl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 7)
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
 texture = ExtResource("2_hkg40")
+offset = Vector2(0, 2)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-3, 5, 3, 5, 3, 7, -3, 7)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 6)
 sprite_frames = SubResource("SpriteFrames_fbfcc")
 animation = &"idle"
+offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

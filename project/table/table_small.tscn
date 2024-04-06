@@ -10,12 +10,12 @@ script = ExtResource("1_ry31y")
 [node name="table" type="Sprite2D" parent="."]
 texture = ExtResource("1_bi03n")
 
-[node name="chair" type="Node2D" parent="table"]
+[node name="chairs" type="Node2D" parent="table"]
 
-[node name="Chair2" type="Sprite2D" parent="table/chair"]
+[node name="Chair2" type="Sprite2D" parent="table/chairs"]
 position = Vector2(-17, 1)
 texture = ExtResource("2_o0kc1")
 
-[node name="Chair1" type="Sprite2D" parent="table/chair"]
+[node name="Chair1" type="Sprite2D" parent="table/chairs"]
 position = Vector2(17, 1)
 texture = ExtResource("2_o0kc1")
