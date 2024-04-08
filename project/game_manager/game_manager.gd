@@ -12,7 +12,6 @@ func start_movement():
 #	if $"../cursor_manager".detect_object().chair_add.has(player):
 	if $"../cursor_manager".detect_object() is Table:
 		if $"../cursor_manager".detect_object().chair_add.size() != $"../cursor_manager".detect_object().chairs.get_children().size():
-			print("l")
 			if selected_object !=  null:
 				selected_object.target_object = $"../cursor_manager".detect_object()
 				selected_object.start_movement()
@@ -22,7 +21,6 @@ func start_movement():
 				player.start_movement()
 		
 	if   $"../cursor_manager".detect_object() is Area2D:
-		print("k")
 		if selected_object !=  null:
 			selected_object.start_movement()
 			selected_object = null
