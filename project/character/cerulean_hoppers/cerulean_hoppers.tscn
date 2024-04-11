@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsncelllnchub"]
+
+[ext_resource type="Texture2D" uid="uid://bi0wwtfx58fd0" path="res://assets/Cerulean Hoppers/shadow.png" id="1_osyae"]
+[ext_resource type="Texture2D" uid="uid://d24xtgo7r7rg3" path="res://assets/Cerulean Hoppers/back-walk-1.png" id="2_o1awh"]
+[ext_resource type="Texture2D" uid="uid://do2jv473g2rkk" path="res://assets/Cerulean Hoppers/back-base.png" id="3_l4mbp"]
+[ext_resource type="Texture2D" uid="uid://bnis6suuuqun1" path="res://assets/Cerulean Hoppers/back-walk-2.png" id="4_dnr5i"]
+[ext_resource type="Texture2D" uid="uid://1uxhmsu7k6ec" path="res://assets/Cerulean Hoppers/base.png" id="5_6huyq"]
+[ext_resource type="Texture2D" uid="uid://jnivrnd5q8h8" path="res://assets/Cerulean Hoppers/idle.png" id="6_xwhjq"]
+[ext_resource type="Texture2D" uid="uid://cwrbphfvgbdxn" path="res://assets/Cerulean Hoppers/walk-1.png" id="7_k2ou8"]
+[ext_resource type="Texture2D" uid="uid://bas2moxg1hann" path="res://assets/Cerulean Hoppers/walk-2.png" id="8_gnp7n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_grrju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o1awh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l4mbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dnr5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l4mbp")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("5_6huyq")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_xwhjq")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_6huyq")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_xwhjq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_k2ou8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6huyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gnp7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6huyq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="cerulean_hoppers" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_osyae")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, 0, -3, 1, 2, 1, 2, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -6)
+sprite_frames = SubResource("SpriteFrames_grrju")
+animation = &"idle"
+frame_progress = 0.607854
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

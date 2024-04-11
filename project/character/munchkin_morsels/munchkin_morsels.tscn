@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://7k6qxbu2nrsc"]
+
+[ext_resource type="Texture2D" uid="uid://5lxyems8rjy1" path="res://assets/Munchkin Morsels/shadow.png" id="1_a728u"]
+[ext_resource type="Texture2D" uid="uid://dhmapyedvnixt" path="res://assets/Munchkin Morsels/back-walk-1.png" id="2_gxwkm"]
+[ext_resource type="Texture2D" uid="uid://btkwws02wvi8" path="res://assets/Munchkin Morsels/back-base.png" id="3_bjmih"]
+[ext_resource type="Texture2D" uid="uid://dqbyuxepxxp5i" path="res://assets/Munchkin Morsels/back-walk-2.png" id="4_17ro4"]
+[ext_resource type="Texture2D" uid="uid://dwibqn78nnood" path="res://assets/Munchkin Morsels/base.png" id="5_n6ylb"]
+[ext_resource type="Texture2D" uid="uid://p0myw6oi2j78" path="res://assets/Munchkin Morsels/idle.png" id="6_1lw6b"]
+[ext_resource type="Texture2D" uid="uid://dydfvm68plof4" path="res://assets/Munchkin Morsels/walk-1.png" id="7_1s2pc"]
+[ext_resource type="Texture2D" uid="uid://dhydnhug1i6je" path="res://assets/Munchkin Morsels/walk-2.png" id="8_a8up6"]
+[ext_resource type="Texture2D" uid="uid://dcjlj1absawkx" path="res://assets/Munchkin Morsels/talk.png" id="9_ho4dj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nriwt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gxwkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bjmih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_17ro4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bjmih")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("5_n6ylb")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_1lw6b")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_n6ylb")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_1lw6b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1s2pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n6ylb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a8up6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ho4dj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="munchkin_morsels" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a728u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -2, -4, 0, 4, 0, 4, -2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_nriwt")
+animation = &"idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
