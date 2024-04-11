@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxr0iy23ubcla"]
+
+[ext_resource type="Texture2D" uid="uid://cvpg5yfof2kns" path="res://assets/Frost Dumplings/shadow.png" id="1_jjwap"]
+[ext_resource type="Texture2D" uid="uid://rvb1ph74bbk7" path="res://assets/Frost Dumplings/base-walk-2.png" id="2_g055v"]
+[ext_resource type="Texture2D" uid="uid://bssi38idh2ync" path="res://assets/Frost Dumplings/back-base.png" id="3_2ppps"]
+[ext_resource type="Texture2D" uid="uid://ks8fcuauwms8" path="res://assets/Frost Dumplings/base-walk-1.png" id="4_hjq1c"]
+[ext_resource type="Texture2D" uid="uid://bid8428apnfre" path="res://assets/Frost Dumplings/base.png" id="5_574q4"]
+[ext_resource type="Texture2D" uid="uid://cbfsm6wosf4f1" path="res://assets/Frost Dumplings/idle.png" id="6_bbms2"]
+[ext_resource type="Texture2D" uid="uid://nwxpvy7kbg1k" path="res://assets/Frost Dumplings/walk-1.png" id="7_tbljp"]
+[ext_resource type="Texture2D" uid="uid://e1pbotktfsp3" path="res://assets/Frost Dumplings/walk-2.png" id="8_w48ct"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4dkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g055v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2ppps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hjq1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2ppps")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("5_574q4")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_bbms2")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_574q4")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_bbms2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tbljp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_574q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w48ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_574q4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="frost_dumplings" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_jjwap")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -1, -4, 1, 2, 1, 2, -1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -6)
+sprite_frames = SubResource("SpriteFrames_k4dkx")
+animation = &"idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjagok857by7o"]
+
+[ext_resource type="Texture2D" uid="uid://dbhfi0a4ng3is" path="res://assets/Waiter 1/Shadow.png" id="1_24vp5"]
+[ext_resource type="Texture2D" uid="uid://baqmeeqvfr664" path="res://assets/Waiter 1/Back_Walk_1.png" id="2_7vx1e"]
+[ext_resource type="Texture2D" uid="uid://dujsp8n33wwya" path="res://assets/Waiter 1/Back_Base.png" id="3_qslr7"]
+[ext_resource type="Texture2D" uid="uid://becgof0vpdnso" path="res://assets/Waiter 1/Back_Walk_2.png" id="4_kfwbm"]
+[ext_resource type="Texture2D" uid="uid://5vlpb3ullb5j" path="res://assets/Waiter 1/Base.png" id="5_g83lu"]
+[ext_resource type="Texture2D" uid="uid://dtcuuki67yau0" path="res://assets/Waiter 1/idle.png" id="6_y3w36"]
+[ext_resource type="Texture2D" uid="uid://dmo2oiwjtb0qf" path="res://assets/Waiter 1/Walk-1.png" id="7_7jagc"]
+[ext_resource type="Texture2D" uid="uid://bjfdwe0s0816b" path="res://assets/Waiter 1/Walk-2.png" id="8_p8t2b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uyqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7vx1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qslr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kfwbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qslr7")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("5_g83lu")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_y3w36")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_g83lu")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_y3w36")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7jagc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g83lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p8t2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g83lu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="Waiter_1" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_24vp5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(-3, 0, -3, 1, 0, 1, 2, 1, 2, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -8)
+sprite_frames = SubResource("SpriteFrames_5uyqs")
+animation = &"idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
