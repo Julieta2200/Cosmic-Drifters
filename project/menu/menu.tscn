@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cc8vhn66q8yup"]
+[gd_scene load_steps=56 format=3 uid="uid://cc8vhn66q8yup"]
 
 [ext_resource type="Script" path="res://project/menu/menu.gd" id="1_eudk0"]
 [ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="2_3xq7i"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://clgxhhw5m53h" path="res://assets/menu/settings/sprite-0007_360.png" id="32_ubayy"]
 [ext_resource type="Texture2D" uid="uid://boj4gjb8tijep" path="res://assets/menu/settings/sprite-0015_360.png" id="33_jt1cc"]
 [ext_resource type="Texture2D" uid="uid://ckk02m3hgvkow" path="res://assets/menu/settings/sprite-0016.png" id="34_8btb4"]
+[ext_resource type="Texture2D" uid="uid://dc2eyhgy2luut" path="res://assets/menu/settings/sprite-0012.png" id="35_3iwre"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5ne"]
 shader = ExtResource("2_s4neu")
@@ -292,7 +293,6 @@ grow_vertical = 2
 script = ExtResource("1_eudk0")
 
 [node name="Background" type="Node2D" parent="."]
-visible = false
 position = Vector2(2051, 1793)
 scale = Vector2(16, 16)
 
@@ -374,7 +374,6 @@ frame = 5
 frame_progress = 0.816765
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -416,11 +415,14 @@ texture_focused = ExtResource("27_2teow")
 stretch_mode = 0
 
 [node name="Settings" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchor_left = 0.240967
 anchor_top = 0.247489
-anchor_right = 0.240967
-anchor_bottom = 0.247489
+anchor_right = 0.804
+anchor_bottom = 0.817
+offset_right = -2306.18
+offset_bottom = -2041.13
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -432,20 +434,14 @@ scale = Vector2(16, 16)
 texture = ExtResource("29_biii7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 9.0
-offset_right = 151.0
-offset_bottom = 137.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_top = 100.0
+offset_right = 144.0
+offset_bottom = 227.0
 scale = Vector2(16, 16)
 theme_override_constants/separation = 20
 
-[node name="TextureRect" type="TextureRect" parent="Settings/VBoxContainer"]
+[node name="BackgroundSettings" type="TextureRect" parent="Settings/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("30_drbl5")
@@ -453,34 +449,41 @@ texture = ExtResource("30_drbl5")
 [node name="HBoxContainer" type="HBoxContainer" parent="Settings/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-theme_override_constants/separation = 12
+theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MusicTextureRect" type="TextureRect" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 0
 texture = ExtResource("31_hl2lt")
 
-[node name="TextureRect2" type="TextureRect" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="SoundTextureRect2" type="TextureRect" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 8
 texture = ExtResource("32_ubayy")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Settings/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/separation = 10
 
-[node name="CheckButton" type="CheckButton" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="MusicButton" type="CheckButton" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_icons/checked = ExtResource("34_8btb4")
+theme_override_icons/unchecked = ExtResource("33_jt1cc")
+keep_pressed_outside = true
+
+[node name="SoundButton" type="CheckButton" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_icons/checked = ExtResource("34_8btb4")
 theme_override_icons/unchecked = ExtResource("33_jt1cc")
 
-[node name="CheckButton2" type="CheckButton" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="BackButton" type="TextureButton" parent="Settings/VBoxContainer"]
 layout_mode = 2
-theme_override_icons/unchecked = ExtResource("34_8btb4")
+size_flags_horizontal = 4
+texture_normal = ExtResource("35_3iwre")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
