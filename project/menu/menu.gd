@@ -6,8 +6,6 @@ func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://project/level_1/level_1.tscn")
 
 
-
-
 func _on_back_button_pressed():
 	$Background.set_modulate("ffffff")
 	$Settings.visible = false
