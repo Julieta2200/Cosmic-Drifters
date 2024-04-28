@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxr0iy23ubcla"]
+[gd_scene load_steps=13 format=3 uid="uid://bxr0iy23ubcla"]
 
+[ext_resource type="Script" path="res://project/character/enemy.gd" id="1_ek06i"]
 [ext_resource type="Texture2D" uid="uid://cvpg5yfof2kns" path="res://assets/Frost Dumplings/shadow.png" id="1_jjwap"]
 [ext_resource type="Texture2D" uid="uid://rvb1ph74bbk7" path="res://assets/Frost Dumplings/base-walk-2.png" id="2_g055v"]
 [ext_resource type="Texture2D" uid="uid://bssi38idh2ync" path="res://assets/Frost Dumplings/back-base.png" id="3_2ppps"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cbfsm6wosf4f1" path="res://assets/Frost Dumplings/idle.png" id="6_bbms2"]
 [ext_resource type="Texture2D" uid="uid://nwxpvy7kbg1k" path="res://assets/Frost Dumplings/walk-1.png" id="7_tbljp"]
 [ext_resource type="Texture2D" uid="uid://e1pbotktfsp3" path="res://assets/Frost Dumplings/walk-2.png" id="8_w48ct"]
+[ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_baegv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k4dkx"]
 animations = [{
@@ -63,7 +65,12 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngn3d"]
+size = Vector2(14, 16)
+
 [node name="frost_dumplings" type="CharacterBody2D"]
+scale = Vector2(16, 16)
+script = ExtResource("1_ek06i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)
@@ -76,5 +83,12 @@ polygon = PackedVector2Array(-4, -1, -4, 1, 2, 1, 2, -1)
 position = Vector2(-1, -6)
 sprite_frames = SubResource("SpriteFrames_k4dkx")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="clickable_component" parent="." instance=ExtResource("10_baegv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
+position = Vector2(-1, -5)
+shape = SubResource("RectangleShape2D_ngn3d")

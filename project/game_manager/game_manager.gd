@@ -10,10 +10,10 @@ func start_movement():
 	click_area = true
 	if   $"../cursor_manager".detect_object() is Area2D:
 		if selected_object !=  null:
-			selected_object.start_movement()
+			selected_object.start_movement(get_global_mouse_position())
 			selected_object = null
 		else :
-			player.start_movement()
+			player.start_movement(get_global_mouse_position())
 	elif $"../cursor_manager".detect_object() is Character:
 		selected_object = $"../cursor_manager".detect_object()
 
