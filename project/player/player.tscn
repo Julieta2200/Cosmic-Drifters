@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=13 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://cr7uia36672nj" path="res://assets/player/shadow.png" id="2_kp23c"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://brho50bl7cre6" path="res://assets/player/Idle.png" id="7_7uqlp"]
 [ext_resource type="Texture2D" uid="uid://cgexs8oi2fk4j" path="res://assets/player/Walk_1.png" id="8_0hfms"]
 [ext_resource type="Texture2D" uid="uid://cuuimitxcmskl" path="res://assets/player/Walk_2.png" id="9_6nqac"]
+[ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_4r0lb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u1gh"]
 animations = [{
@@ -64,6 +65,9 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r21ao"]
+size = Vector2(13, 16)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_r3jtw")
 
@@ -81,3 +85,9 @@ animation = &"idle"
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="clickable_component" parent="." instance=ExtResource("10_4r0lb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
+position = Vector2(0.5, -4)
+shape = SubResource("RectangleShape2D_r21ao")

@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var clickable_objects : Node2D 
+@export var walking_area: Area2D
 #corsor texture dictionary
 var mouse_cursor_texture : Dictionary = {
 	8 :  preload("res://assets/mouse_cursor/Mouse.png"),
@@ -52,6 +53,8 @@ func detect_object() :
 	for object in clickable_objects.get_children():
 		if get_clickable_component(object).active == true:
 			return object
+	if get_clickable_component(walking_area).active == true:
+		return walking_area
 			
 func get_clickable_component(object) -> ClickableComponent:
 	for child in object.get_children():

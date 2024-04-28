@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://d34mkuf7wsay2"]
+
+[ext_resource type="Script" path="res://project/table/table.gd" id="1_kl5hu"]
+[ext_resource type="Texture2D" uid="uid://bwaoqkksmk10d" path="res://assets/details/Table_Small.png" id="2_nj8fs"]
+[ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="3_die76"]
+[ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="4_8lav6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkeg3"]
+size = Vector2(45, 20)
+
+[node name="TableSmall" type="Node2D" node_paths=PackedStringArray("chairs")]
+scale = Vector2(16, 16)
+script = ExtResource("1_kl5hu")
+chairs = [NodePath("chair1"), NodePath("chair2")]
+
+[node name="table" type="Sprite2D" parent="."]
+texture = ExtResource("2_nj8fs")
+
+[node name="chair1" type="Sprite2D" parent="."]
+position = Vector2(-17, 0)
+texture = ExtResource("3_die76")
+
+[node name="chair2" type="Sprite2D" parent="."]
+position = Vector2(17, 0)
+texture = ExtResource("3_die76")
+
+[node name="clickable_component" parent="." instance=ExtResource("4_8lav6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_kkeg3")

@@ -1,6 +1,4 @@
-extends CharacterBody2D
-
-class_name Character
+class_name Character extends CharacterBody2D
 
 var position_delta: float
 var path: PackedVector2Array 
@@ -33,8 +31,8 @@ func animation()-> void:
 		$AnimatedSprite2D.play("back_walk")
 		
 #start character movement
-func start_movement() -> void:
-	navigation_agent.target_position = get_global_mouse_position()
+func start_movement(target: Vector2) -> void:
+	navigation_agent.target_position = target
 	navigation_agent.get_next_path_position()
 	path = navigation_agent.get_current_navigation_path()
 	animation()

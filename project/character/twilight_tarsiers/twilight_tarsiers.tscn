@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl1thhd2djkjj"]
+[gd_scene load_steps=13 format=3 uid="uid://dl1thhd2djkjj"]
 
 [ext_resource type="Script" path="res://project/character/twilight_tarsiers/twilight_tarsiers.gd" id="1_ih3rl"]
 [ext_resource type="Texture2D" uid="uid://bcy06wkftxe6v" path="res://assets/Twilight Tarsiers/shadow.png" id="2_hkg40"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://do53cpci126p5" path="res://assets/Twilight Tarsiers/walk-2.png" id="8_nwlqq"]
 [ext_resource type="Texture2D" uid="uid://dfpfkhsnj1dqu" path="res://assets/Twilight Tarsiers/idle.png" id="9_jlne5"]
 [ext_resource type="Texture2D" uid="uid://dmya7n1tixfng" path="res://assets/Twilight Tarsiers/walk-1.png" id="10_310rt"]
+[ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_anb0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fbfcc"]
 animations = [{
@@ -64,7 +65,11 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alwxn"]
+size = Vector2(17, 15)
+
 [node name="twilight_tarsiers" type="CharacterBody2D"]
+scale = Vector2(16, 16)
 script = ExtResource("1_ih3rl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -79,3 +84,9 @@ sprite_frames = SubResource("SpriteFrames_fbfcc")
 animation = &"idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="clickable_component" parent="." instance=ExtResource("10_anb0r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_alwxn")
