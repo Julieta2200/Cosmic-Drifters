@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjagok857by7o"]
+[gd_scene load_steps=11 format=3 uid="uid://cjagok857by7o"]
 
 [ext_resource type="Texture2D" uid="uid://dbhfi0a4ng3is" path="res://assets/Waiter 1/Shadow.png" id="1_24vp5"]
+[ext_resource type="Script" path="res://project/character/waiter.gd" id="1_fc07m"]
 [ext_resource type="Texture2D" uid="uid://baqmeeqvfr664" path="res://assets/Waiter 1/Back_Walk_1.png" id="2_7vx1e"]
 [ext_resource type="Texture2D" uid="uid://dujsp8n33wwya" path="res://assets/Waiter 1/Back_Base.png" id="3_qslr7"]
 [ext_resource type="Texture2D" uid="uid://becgof0vpdnso" path="res://assets/Waiter 1/Back_Walk_2.png" id="4_kfwbm"]
@@ -64,6 +65,8 @@ animations = [{
 }]
 
 [node name="Waiter_1" type="CharacterBody2D"]
+scale = Vector2(16, 16)
+script = ExtResource("1_fc07m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_24vp5")
