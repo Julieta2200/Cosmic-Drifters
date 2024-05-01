@@ -11,11 +11,11 @@ func move() -> void:
 	if path.is_empty():
 		return
 		
-	var direction: Vector2 = (path[0] - position).normalized()
+	var direction: Vector2 = (path[0] - global_position).normalized()
 	velocity = direction * speed
 	move_and_slide()
 
-	if position.distance_to(path[0]) < position_delta:
+	if global_position.distance_to(path[0]) < position_delta:
 		path.remove_at(0)
 		animation()
 

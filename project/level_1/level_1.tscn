@@ -780,7 +780,6 @@ libraries = {
 }
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 scale = Vector2(16, 16)
 navigation_polygon = SubResource("NavigationPolygon_bs06d")
 

@@ -84,6 +84,7 @@ sprite_frames = SubResource("SpriteFrames_fbfcc")
 animation = &"idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [node name="clickable_component" parent="." instance=ExtResource("10_anb0r")]
 

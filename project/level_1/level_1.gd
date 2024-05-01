@@ -41,11 +41,9 @@ func spawn_and_sit():
 	var i: int = 0
 	for enemy in enemies:
 		enemy.spawn($spawn_point.global_position)
-		print("spawn")
 		var chair = group_1["table"].get_chair(i)
-		print("chair", i)
 		enemy.walk_to(chair.global_position)
-		print("walking")
+		print(chair.global_position)
 		i += 1
 		await get_tree().create_timer(SPAWN_DELAY).timeout
 		
