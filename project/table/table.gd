@@ -14,3 +14,9 @@ func get_chair(index):
 	
 func get_serve_point():
 	return $serve_point.global_position
+
+func sit_down(index):
+	chairs[index].visible = false
+	
+func get_up(index):
+	chairs[index].visible = true
