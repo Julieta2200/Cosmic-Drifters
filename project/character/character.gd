@@ -2,6 +2,8 @@ class_name Character extends CharacterBody2D
 
 var position_delta: float
 var path: PackedVector2Array 
+var level :Node2D
+var ch_action : String
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
 
@@ -15,9 +17,15 @@ func move() -> void:
 	velocity = direction * speed
 	move_and_slide()
 
+	
 	if global_position.distance_to(path[0]) < position_delta:
 		path.remove_at(0)
 		animation()
+		if path.is_empty() and level != null:
+			level.action_complete(ch_action)
+			level = null
+	
+
 
 #character animation
 func animation()-> void:
@@ -37,5 +45,8 @@ func start_movement(target: Vector2) -> void:
 	path = navigation_agent.get_current_navigation_path()
 	animation()
 
-func walk_to(pos):
+func walk_to(node : Node2D ,pos: Vector2 , action: String):
 	start_movement(pos)
+	level = node
+	ch_action = action
+	
