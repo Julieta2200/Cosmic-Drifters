@@ -37,5 +37,5 @@ func start_movement(target: Vector2) -> void:
 	path = navigation_agent.get_current_navigation_path()
 	animation()
 
-func walk_to(walk_position):
-	start_movement(walk_position)
+func walk_to(pos):
+	start_movement(pos)
