@@ -8,3 +8,6 @@ func add_character(ch: Character):
 			ch.position = chair.position
 			chair.visible = false
 			return
+
+func get_chair(index):
+	return chairs[index]

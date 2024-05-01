@@ -40,11 +40,11 @@ func spawn_and_sit():
 	var enemies= group_1["group"].get_children()
 	var i: int = 0
 	for enemy in enemies:
-		# enemy.spawn($spawn_point.global_position)
+		enemy.spawn($spawn_point.global_position)
 		print("spawn")
-		# var chair = group_1["table"].get_chair(i)
+		var chair = group_1["table"].get_chair(i)
 		print("chair", i)
-		# enemy.walk_to(chair.global_position)
+		enemy.walk_to(chair.global_position)
 		print("walking")
 		i += 1
 		await get_tree().create_timer(SPAWN_DELAY).timeout
