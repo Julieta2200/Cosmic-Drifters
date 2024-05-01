@@ -11,3 +11,6 @@ func add_character(ch: Character):
 
 func get_chair(index):
 	return chairs[index]
+	
+func get_serve_point():
+	return $serve_point.global_position

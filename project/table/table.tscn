@@ -38,3 +38,6 @@ texture = ExtResource("2_qedio")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
 position = Vector2(-0.5, -5)
 shape = SubResource("RectangleShape2D_x8l1r")
+
+[node name="serve_point" type="Marker2D" parent="."]
+position = Vector2(23.625, -11)
