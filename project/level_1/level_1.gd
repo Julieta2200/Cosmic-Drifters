@@ -17,6 +17,10 @@ var action_map: Dictionary = {
 	"waiter": $Waiter_1
 }
 
+@onready var groups = {
+	"group_1": group_1
+}
+
 func _ready():
 	$Timer.wait_time = level_time
 	$Timer.start()
@@ -34,7 +38,6 @@ func is_action_time(t: int) -> bool:
 func group_1_spawn():
 	action_map[GROUP_1_SPAWN] = true
 	call_deferred("spawn_and_sit")
-	print("end_call")
 
 func spawn_and_sit():
 	var enemies= group_1["group"].get_children()
@@ -42,17 +45,20 @@ func spawn_and_sit():
 	for enemy in enemies:
 		enemy.spawn($spawn_point.global_position)
 		var chair = group_1["table"].get_chair(i)
-		enemy.walk_to(chair.global_position)
-		print(chair.global_position)
+		enemy.walk_to(self, chair.global_position, "group_1:"+str(i)+":sit")
 		i += 1
 		await get_tree().create_timer(SPAWN_DELAY).timeout
 		
 func group_1_serve():
 	action_map[GROUP_1_SERVE] = true
 	var serve_point = group_1["table"].get_serve_point()
-	print("serve_point")
-	group_1["waiter"].walk_to(serve_point)
-	print("waiter walking")
+	group_1["waiter"].walk_to(self, serve_point, "waiter test")
 	
-func action_complete(action: String):
-	pass
+func action_complete(a: String):
+	var action := a.split(":")
+	if len(action) != 3:
+		return
+	
+	match action[2]:
+		"sit":
+			groups[action[0]]["table"].sit_down(int(action[1]))
