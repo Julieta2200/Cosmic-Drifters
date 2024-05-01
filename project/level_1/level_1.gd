@@ -54,4 +54,5 @@ func group_1_serve():
 	group_1["waiter"].walk_to(serve_point)
 	print("waiter walking")
 	
-
+func action_complete(action: String):
+	pass
