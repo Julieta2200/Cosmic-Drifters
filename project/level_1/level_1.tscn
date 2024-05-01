@@ -875,4 +875,5 @@ position = Vector2(-3073, -1944)
 speed = 800.0
 
 [node name="Waiter_1" parent="." instance=ExtResource("63_7uax7")]
-position = Vector2(2, -2)
+position = Vector2(6536, 1327)
+speed = 800.0

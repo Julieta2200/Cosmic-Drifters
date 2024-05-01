@@ -49,9 +49,9 @@ func spawn_and_sit():
 		
 func group_1_serve():
 	action_map[GROUP_1_SERVE] = true
-	# var serve_point = group_1["table"].get_serve_point()
+	var serve_point = group_1["table"].get_serve_point()
 	print("serve_point")
-	# group_1["waiter"].walk_to(serve_point.global_position)
+	group_1["waiter"].walk_to(serve_point)
 	print("waiter walking")
 	
 
