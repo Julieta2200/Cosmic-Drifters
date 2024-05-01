@@ -861,15 +861,19 @@ position = Vector2(2678, 1274)
 
 [node name="bunnyboo_sippers" parent="group_1" instance=ExtResource("61_yheks")]
 position = Vector2(-3081, -1828)
+speed = 800.0
 
 [node name="bunnyboo_sippers2" parent="group_1" instance=ExtResource("61_yheks")]
 position = Vector2(-3081, -1828)
+speed = 800.0
 
 [node name="cerulean_hoppers" parent="group_1" instance=ExtResource("62_wvuod")]
 position = Vector2(-3081, -1828)
+speed = 800.0
 
 [node name="twilight_tarsiers" parent="group_1" instance=ExtResource("60_rjade")]
 position = Vector2(-3073, -1944)
+speed = 800.0
 
 [node name="Waiter_1" parent="." instance=ExtResource("63_7uax7")]
 position = Vector2(2, -2)

@@ -1,5 +1,7 @@
 class_name Enemy extends Character
 
 func spawn(pos):
-	position = pos
+	global_position = pos
 	
+func _process(delta):
+	move()
