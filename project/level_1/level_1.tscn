@@ -918,3 +918,6 @@ speed = 800.0
 [node name="Waiter_1" parent="." instance=ExtResource("63_7uax7")]
 position = Vector2(6536, 1327)
 speed = 800.0
+
+[node name="desk" type="Marker2D" parent="."]
+position = Vector2(7926, 1141)

@@ -14,7 +14,8 @@ var action_map: Dictionary = {
 @onready var group_1 = {
 	"group": $group_1,
 	"table": $clickable_objects/Table,
-	"waiter": $Waiter_1
+	"waiter": $Waiter_1,
+	"name": "group_1"
 }
 
 @onready var groups = {
@@ -64,6 +65,10 @@ func action_complete(a: String):
 			groups[action[0]]["table"].sit_down(int(action[1]))
 		"ask_order":
 			ask_order(groups[action[0]])
+		"order":
+			waiter_to_desk(groups[action[0]])
+		"input_order":
+			pass
 			
 func ask_order(group):
 	call_deferred("get_orders", group)
@@ -72,5 +77,9 @@ func get_orders(group):
 	var enemies= group["group"].get_children()
 	var i: int = 0
 	for enemy in enemies:
-#		enemy.order(self, "group_1:"+str(i)+":order")
+#		enemy.order(self, "group_1:"+str(i)+":order") change here
 		i += 1
+
+func waiter_to_desk(group):
+	group["waiter"].walk_to(self, $desk.global_position, group["name"]+"::input_order")
+	
