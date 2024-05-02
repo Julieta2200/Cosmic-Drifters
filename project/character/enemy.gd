@@ -8,3 +8,7 @@ func spawn(pos):
 	
 func _process(delta):
 	move()
+
+func order(node : Node2D, action: String):
+	pass
+	
