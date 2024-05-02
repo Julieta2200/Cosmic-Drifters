@@ -17,7 +17,8 @@ var action_map: Dictionary = {
 	"group": $group_1,
 	"table": $clickable_objects/Table,
 	"waiter": $Waiter_1,
-	"name": "group_1"
+	"name": "group_1",
+	"orders": []
 }
 
 @onready var groups = {
@@ -68,7 +69,12 @@ func action_complete(a: String):
 		"ask_order":
 			ask_order(groups[action[0]])
 		"order":
-			waiter_to_desk(groups[action[0]], int(action[1]))
+			if len(action) == 3:
+				waiter_to_desk(groups[action[0]], int(action[1]))
+			else:
+				match action[3]:
+					"order_prepared":
+						order_prepared(groups[action[0]], action[1])
 		"input_order":
 			pass
 			
@@ -80,6 +86,7 @@ func get_orders(group):
 	var i: int = 0
 	for enemy in enemies:
 #		enemy.order(self, group["name"]+":"+str(i)+":order")
+		group["orders"].append(false)
 		await get_tree().create_timer(ORDER_TIME).timeout
 		i += 1
 
@@ -87,4 +94,11 @@ func waiter_to_desk(group, num):
 	if num != len(group["group"].get_children()):
 		return
 	group["waiter"].walk_to(self, $desk.global_position, group["name"]+"::input_order")
+	
+func order_prepared(group, num):
+	group["orders"][num] = true
+	for order in group["orders"]:
+		if !order:
+			return # pending order
+	print("orders done")
 	
