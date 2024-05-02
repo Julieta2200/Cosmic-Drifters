@@ -799,6 +799,10 @@ speed = 800.0
 
 [node name="Camera2D" type="Camera2D" parent="clickable_objects/player"]
 position = Vector2(-2, -1)
+limit_left = -2200
+limit_top = 0
+limit_right = 11500
+limit_bottom = 8900
 
 [node name="twilight_tarsiers" parent="clickable_objects" instance=ExtResource("60_rjade")]
 position = Vector2(1748, 4021)
