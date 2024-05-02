@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=77 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -64,6 +64,7 @@
 [ext_resource type="PackedScene" uid="uid://bt7yhx8mojj0m" path="res://project/character/bunnyboo_sippes/bunnyboo_sippers.tscn" id="61_yheks"]
 [ext_resource type="PackedScene" uid="uid://bsncelllnchub" path="res://project/character/cerulean_hoppers/cerulean_hoppers.tscn" id="62_wvuod"]
 [ext_resource type="PackedScene" uid="uid://cjagok857by7o" path="res://project/character/waiter_1/waiter_1.tscn" id="63_7uax7"]
+[ext_resource type="Script" path="res://project/level/kitchen.gd" id="65_bnd8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -921,3 +922,6 @@ speed = 800.0
 
 [node name="desk" type="Marker2D" parent="."]
 position = Vector2(7926, 1141)
+
+[node name="kitchen" type="Node2D" parent="."]
+script = ExtResource("65_bnd8v")

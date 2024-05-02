@@ -4,6 +4,8 @@ extends Level
 const GROUP_1_SPAWN: int = 5
 const SPAWN_DELAY = 1
 const GROUP_1_SERVE: int = 7
+const ORDER_TIME: int = 1
+const PREP_TIME: int = 10
 
 var level_time: int = 500
 var action_map: Dictionary = {
@@ -57,7 +59,7 @@ func group_1_serve():
 	
 func action_complete(a: String):
 	var action := a.split(":")
-	if len(action) != 3:
+	if len(action) < 3:
 		return
 	
 	match action[2]:
@@ -66,7 +68,7 @@ func action_complete(a: String):
 		"ask_order":
 			ask_order(groups[action[0]])
 		"order":
-			waiter_to_desk(groups[action[0]])
+			waiter_to_desk(groups[action[0]], int(action[1]))
 		"input_order":
 			pass
 			
@@ -77,9 +79,12 @@ func get_orders(group):
 	var enemies= group["group"].get_children()
 	var i: int = 0
 	for enemy in enemies:
-#		enemy.order(self, "group_1:"+str(i)+":order") change here
+#		enemy.order(self, group["name"]+":"+str(i)+":order")
+		await get_tree().create_timer(ORDER_TIME).timeout
 		i += 1
 
-func waiter_to_desk(group):
+func waiter_to_desk(group, num):
+	if num != len(group["group"].get_children()):
+		return
 	group["waiter"].walk_to(self, $desk.global_position, group["name"]+"::input_order")
 	
