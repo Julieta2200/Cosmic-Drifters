@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=76 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bgp0cjigqm8kc" path="res://assets/details/Securety_table .png" id="14_l4uwd"]
 [ext_resource type="Texture2D" uid="uid://nyrddmf7wkcc" path="res://assets/details/Computer.png" id="15_08wu6"]
 [ext_resource type="Texture2D" uid="uid://2c8ncp05p7by" path="res://assets/details/Order Board.png" id="16_a1qfs"]
+[ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="16_n4wgm"]
 [ext_resource type="Texture2D" uid="uid://doqmo0nwllqjb" path="res://assets/details/Order (1).png" id="17_01yp3"]
 [ext_resource type="Texture2D" uid="uid://c3wqkdjvmvlnh" path="res://assets/details/Bookcase.png" id="18_wyra1"]
 [ext_resource type="Texture2D" uid="uid://c0v3ccyslqvy6" path="res://assets/details/chair2.png" id="22_a1tga"]
@@ -439,6 +440,41 @@ position = Vector2(2768, 3680)
 scale = Vector2(16, 16)
 texture = ExtResource("58_be5dh")
 
+[node name="Background1" type="Sprite2D" parent="details"]
+position = Vector2(-2050, -123)
+scale = Vector2(16, 16)
+texture = ExtResource("16_n4wgm")
+
+[node name="Background2" type="Sprite2D" parent="details"]
+position = Vector2(-2049, 6976)
+scale = Vector2(16, 16)
+texture = ExtResource("16_n4wgm")
+
+[node name="Background3" type="Sprite2D" parent="details"]
+position = Vector2(1024, 8451)
+scale = Vector2(16, 16)
+texture = ExtResource("16_n4wgm")
+
+[node name="Background5" type="Sprite2D" parent="details"]
+position = Vector2(8194, 8449)
+scale = Vector2(16, 16)
+texture = ExtResource("16_n4wgm")
+
+[node name="Background6" type="Sprite2D" parent="details"]
+position = Vector2(11267, 7105)
+scale = Vector2(16, 16)
+texture = ExtResource("16_n4wgm")
+
+[node name="Background7" type="Sprite2D" parent="details"]
+position = Vector2(11269, -4)
+scale = Vector2(16, 16)
+texture = ExtResource("16_n4wgm")
+
+[node name="Background4" type="Sprite2D" parent="details"]
+position = Vector2(4995, 10504)
+scale = Vector2(16, 16)
+texture = ExtResource("16_n4wgm")
+
 [node name="details_y_sort_enabled" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -780,6 +816,7 @@ libraries = {
 }
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 scale = Vector2(16, 16)
 navigation_polygon = SubResource("NavigationPolygon_bs06d")
 

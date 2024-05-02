@@ -52,7 +52,7 @@ func spawn_and_sit():
 func group_1_serve():
 	action_map[GROUP_1_SERVE] = true
 	var serve_point = group_1["table"].get_serve_point()
-	group_1["waiter"].walk_to(self, serve_point, "waiter test")
+	group_1["waiter"].walk_to(self, serve_point, "group_1::ask_order")
 	
 func action_complete(a: String):
 	var action := a.split(":")
@@ -62,3 +62,15 @@ func action_complete(a: String):
 	match action[2]:
 		"sit":
 			groups[action[0]]["table"].sit_down(int(action[1]))
+		"ask_order":
+			ask_order(groups[action[0]])
+			
+func ask_order(group):
+	call_deferred("get_orders", group)
+	
+func get_orders(group):
+	var enemies= group["group"].get_children()
+	var i: int = 0
+	for enemy in enemies:
+#		enemy.order(self, "group_1:"+str(i)+":order")
+		i += 1
