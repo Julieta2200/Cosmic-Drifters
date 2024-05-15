@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://yttmqlisr86f" path="res://assets/Food/Dessert/muffin_2.png" id="3_q8c1c"]
 
 [node name="food" type="Node2D"]
+z_index = 1
 script = ExtResource("1_nam7q")
 
 [node name="cloud" type="Sprite2D" parent="."]
@@ -13,5 +14,4 @@ texture = ExtResource("2_4ypwa")
 
 [node name="food" type="Sprite2D" parent="."]
 position = Vector2(12.1429, 5.57143)
-scale = Vector2(1, 1)
 texture = ExtResource("3_q8c1c")

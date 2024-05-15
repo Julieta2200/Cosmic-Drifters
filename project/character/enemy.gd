@@ -14,11 +14,11 @@ func _process(delta):
 
 
 func order(node : Node2D, action: String):
-	food.food_sp.texture = food.foods[rng.randf_range(0,food.foods.size())]
+	food.food_sp.texture = load(food.foods[rng.randf_range(0,food.foods.size())])
 	food.visible = true
 	level = node
 	ch_action = action
-	$Timer.start()
+	$order_timer.start()
 
 func _on_timer_timeout():
 	food.visible = false

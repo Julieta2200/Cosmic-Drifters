@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsncelllnchub"]
+[gd_scene load_steps=14 format=3 uid="uid://bsncelllnchub"]
 
 [ext_resource type="Texture2D" uid="uid://bi0wwtfx58fd0" path="res://assets/Cerulean Hoppers/shadow.png" id="1_osyae"]
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_rc42d"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cwrbphfvgbdxn" path="res://assets/Cerulean Hoppers/walk-1.png" id="7_k2ou8"]
 [ext_resource type="Texture2D" uid="uid://bas2moxg1hann" path="res://assets/Cerulean Hoppers/walk-2.png" id="8_gnp7n"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_kkml1"]
+[ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_5pmbo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_grrju"]
 animations = [{
@@ -93,3 +94,10 @@ frame_progress = 0.607854
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
 position = Vector2(-0.5, -5)
 shape = SubResource("RectangleShape2D_uelsl")
+
+[node name="food" parent="." instance=ExtResource("11_5pmbo")]
+visible = false
+position = Vector2(4.625, -26.5625)
+
+[node name="order_timer" type="Timer" parent="."]
+wait_time = 2.0

@@ -85,7 +85,7 @@ func get_orders(group):
 	var enemies= group["group"].get_children()
 	var i: int = 0
 	for enemy in enemies:
-#		enemy.order(self, group["name"]+":"+str(i)+":order")
+		enemy.order(self, group["name"]+":"+str(i)+":order")
 		group["orders"].append(false)
 		await get_tree().create_timer(ORDER_TIME).timeout
 		i += 1

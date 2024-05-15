@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dl1thhd2djkjj"]
+[gd_scene load_steps=14 format=3 uid="uid://dl1thhd2djkjj"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_sig5f"]
 [ext_resource type="Texture2D" uid="uid://bcy06wkftxe6v" path="res://assets/Twilight Tarsiers/shadow.png" id="2_hkg40"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dfpfkhsnj1dqu" path="res://assets/Twilight Tarsiers/idle.png" id="9_jlne5"]
 [ext_resource type="Texture2D" uid="uid://dmya7n1tixfng" path="res://assets/Twilight Tarsiers/walk-1.png" id="10_310rt"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_anb0r"]
+[ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_taqb0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fbfcc"]
 animations = [{
@@ -91,3 +92,10 @@ debug_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_alwxn")
+
+[node name="food" parent="." instance=ExtResource("11_taqb0")]
+visible = false
+position = Vector2(7.25, -20.25)
+
+[node name="order_timer" type="Timer" parent="."]
+wait_time = 2.0
