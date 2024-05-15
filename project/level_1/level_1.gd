@@ -91,7 +91,7 @@ func get_orders(group):
 		i += 1
 
 func waiter_to_desk(group, num):
-	if num != len(group["group"].get_children()):
+	if num != len(group["group"].get_children()) - 1:
 		return
 	group["waiter"].walk_to(self, $desk.global_position, group["name"]+"::input_order")
 	

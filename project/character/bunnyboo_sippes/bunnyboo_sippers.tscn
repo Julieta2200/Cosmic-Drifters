@@ -96,9 +96,10 @@ shape = SubResource("RectangleShape2D_e5d1g")
 
 [node name="order_timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="food" parent="." instance=ExtResource("11_a2b33")]
 visible = false
 position = Vector2(5.625, -29.375)
 
-[connection signal="timeout" from="order_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]
