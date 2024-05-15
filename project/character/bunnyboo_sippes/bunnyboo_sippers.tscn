@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt7yhx8mojj0m"]
+[gd_scene load_steps=14 format=3 uid="uid://bt7yhx8mojj0m"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_gitro"]
 [ext_resource type="Texture2D" uid="uid://d0gmsjk3nceok" path="res://assets/Bunnyboo Sippers/shadow.png" id="2_0e3tl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dclm4rvyfju75" path="res://assets/Bunnyboo Sippers/idle.png" id="6_gsh1s"]
 [ext_resource type="Texture2D" uid="uid://7j1i2smfdiqn" path="res://assets/Bunnyboo Sippers/walk-2.png" id="9_qslu4"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_2lnlj"]
+[ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_a2b33"]
 [ext_resource type="Texture2D" uid="uid://bt6eg4tfuq0c2" path="res://assets/Bunnyboo Sippers/walk-1.png" id="11_wne1m"]
 [ext_resource type="Texture2D" uid="uid://1v6yyjbpgsgr" path="res://assets/Bunnyboo Sippers/base.png" id="12_088qh"]
 
@@ -69,6 +70,7 @@ animations = [{
 size = Vector2(14, 17)
 
 [node name="bunnyboo_sippers" type="CharacterBody2D"]
+position = Vector2(812, 652)
 scale = Vector2(16, 16)
 script = ExtResource("1_gitro")
 
@@ -91,3 +93,12 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_e5d1g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="food" parent="." instance=ExtResource("11_a2b33")]
+visible = false
+position = Vector2(5.625, -29.375)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
