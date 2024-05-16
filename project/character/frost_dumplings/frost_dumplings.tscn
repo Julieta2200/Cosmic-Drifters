@@ -77,9 +77,6 @@ script = ExtResource("1_ek06i")
 position = Vector2(-1, 0)
 texture = ExtResource("1_jjwap")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-4, -1, -4, 1, 2, 1, 2, -1)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -6)
 sprite_frames = SubResource("SpriteFrames_k4dkx")

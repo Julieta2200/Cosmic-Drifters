@@ -476,6 +476,16 @@ position = Vector2(4995, 10504)
 scale = Vector2(16, 16)
 texture = ExtResource("16_n4wgm")
 
+[node name="Computer" type="Sprite2D" parent="details"]
+position = Vector2(7936, 768)
+scale = Vector2(16, 16)
+texture = ExtResource("15_08wu6")
+
+[node name="Table3" type="Sprite2D" parent="details"]
+position = Vector2(6912, 896)
+scale = Vector2(16, 16)
+texture = ExtResource("28_u0job")
+
 [node name="details_y_sort_enabled" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -552,11 +562,6 @@ offset = Vector2(0, -5)
 
 [node name="table" type="Node2D" parent="details_y_sort_enabled"]
 y_sort_enabled = true
-
-[node name="Table3" type="Sprite2D" parent="details_y_sort_enabled/table"]
-position = Vector2(6912, 896)
-scale = Vector2(16, 16)
-texture = ExtResource("28_u0job")
 
 [node name="ManagerTable" type="Sprite2D" parent="details_y_sort_enabled/table"]
 position = Vector2(-1024, 4736)
@@ -643,12 +648,6 @@ texture = ExtResource("13_nx1ir")
 position = Vector2(9776, 2848)
 scale = Vector2(16, 16)
 texture = ExtResource("13_nx1ir")
-
-[node name="Computer" type="Sprite2D" parent="details_y_sort_enabled"]
-z_index = 1
-position = Vector2(7936, 768)
-scale = Vector2(16, 16)
-texture = ExtResource("15_08wu6")
 
 [node name="OrderBoard" type="Sprite2D" parent="details_y_sort_enabled"]
 position = Vector2(6896, 448)
@@ -737,29 +736,30 @@ frame_progress = 0.868458
 offset = Vector2(-1, -14)
 
 [node name="mushroom_AnimatedSprite2D3" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
-position = Vector2(8944, 3984)
+position = Vector2(8934, 4022)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_fr2qw")
 animation = &"mushroom"
 autoplay = "mushroom"
 frame = 2
 frame_progress = 0.868458
-offset = Vector2(-2, -12)
+offset = Vector2(-1.375, -14.375)
 
 [node name="fountain_AnimatedSprite2D" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
-position = Vector2(4688, 3904)
+position = Vector2(4676, 3964)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_5fcx6")
 animation = &"fountain"
 autoplay = "fountain"
-offset = Vector2(-3, -30)
+offset = Vector2(-2.25, -33.75)
 
 [node name="herb_AnimatedSprite2D2" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
-position = Vector2(5664, 2080)
+position = Vector2(5676, 2323)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_8klqh")
 animation = &"herb"
 autoplay = "herb"
+offset = Vector2(-0.75, -15.1875)
 
 [node name="herb_AnimatedSprite2D3" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
 position = Vector2(3776, 4928)
@@ -780,14 +780,14 @@ autoplay = "kristal"
 offset = Vector2(2, -17)
 
 [node name="kristal_AnimatedSprite2D6" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
-position = Vector2(2896, 6384)
+position = Vector2(2894, 6458)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_8r1ja")
 animation = &"kristal"
 autoplay = "kristal"
 frame = 2
 frame_progress = 0.388809
-offset = Vector2(1, -17)
+offset = Vector2(1.125, -21.625)
 
 [node name="kristal_AnimatedSprite2D4" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
 position = Vector2(8768, 992)
@@ -801,14 +801,14 @@ offset = Vector2(-2, -19)
 flip_h = true
 
 [node name="kristal_AnimatedSprite2D5" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
-position = Vector2(6320, 6352)
+position = Vector2(6316, 6463)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_8r1ja")
 animation = &"kristal"
 autoplay = "kristal"
 frame = 2
 frame_progress = 0.388809
-offset = Vector2(-2, -16)
+offset = Vector2(-1.75, -22.9375)
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="details_y_sort_enabled"]
@@ -831,7 +831,7 @@ walking_area = NodePath("../walking_area")
 y_sort_enabled = true
 
 [node name="player" parent="clickable_objects" instance=ExtResource("25_6bfeo")]
-position = Vector2(3552, 3936)
+position = Vector2(2208, 2064)
 scale = Vector2(16, 16)
 speed = 800.0
 
@@ -841,10 +841,6 @@ limit_left = -2200
 limit_top = 0
 limit_right = 11500
 limit_bottom = 8900
-
-[node name="twilight_tarsiers" parent="clickable_objects" instance=ExtResource("60_rjade")]
-position = Vector2(1748, 4021)
-speed = 800.0
 
 [node name="Table" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2865, 2656)

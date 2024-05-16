@@ -75,10 +75,6 @@ script = ExtResource("1_r3jtw")
 position = Vector2(1, 1)
 texture = ExtResource("2_kp23c")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, -6)
-polygon = PackedVector2Array(-3, 6, -3, 8, 4, 8, 4, 6)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
 animation = &"idle"

@@ -70,28 +70,25 @@ animations = [{
 size = Vector2(14, 17)
 
 [node name="bunnyboo_sippers" type="CharacterBody2D"]
-position = Vector2(812, 652)
 scale = Vector2(16, 16)
 script = ExtResource("1_gitro")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 6.4375)
 texture = ExtResource("2_0e3tl")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-4, -2, 4, -2, 4, -1, -4, -1)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_y2mwg")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0.5625, -0.125)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="clickable_component" parent="." instance=ExtResource("10_2lnlj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
-position = Vector2(0, -6.5)
+position = Vector2(0.5625, 0.8125)
 shape = SubResource("RectangleShape2D_e5d1g")
 
 [node name="order_timer" type="Timer" parent="."]

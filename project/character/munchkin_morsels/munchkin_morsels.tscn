@@ -70,9 +70,6 @@ animations = [{
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_a728u")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-4, -2, -4, 0, 4, 0, 4, -2)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_nriwt")

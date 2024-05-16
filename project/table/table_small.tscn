@@ -24,4 +24,5 @@ texture = ExtResource("3_die76")
 [node name="clickable_component" parent="." instance=ExtResource("4_8lav6")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_component"]
+visible = false
 polygon = PackedVector2Array(-5, -8.1875, 4.1875, -8.125, 10.875, -3.9375, 19.75, -3.875, 20, 3, 12.6875, 2.9375, 2.9375, 3, 3, 6.9375, -4.25, 6.875, -4.1875, 3, -13.8125, 2.9375, -21.125, 3, -21.25, -4.125, -12.0625, -4.1875)

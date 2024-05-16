@@ -33,6 +33,7 @@ texture = ExtResource("2_qedio")
 [node name="clickable_component" parent="." instance=ExtResource("3_s58k2")]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="clickable_component"]
+visible = false
 position = Vector2(-0.5, -5)
 polygon = PackedVector2Array(-17, -14.875, -10.0625, -14.875, -9.875, -5.125, 10.25, -4.875, 10.4375, -14.875, 17.5625, -14.625, 17.875, -4.25, 22.375, -0.875, 34.625, -0.5625, 34.5625, 6.1875, 21.3125, 5.875, 14.9375, 8.5625, 3.5, 8.9375, 3.5625, 13.875, -3, 14.1875, -3.25, 9.125, -15.25, 8.9375, -22.125, 5.5, -34.25, 6, -34.4375, -1.3125, -22.125, -1.125, -16.875, -4.625)
 
