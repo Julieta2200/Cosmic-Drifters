@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxr0iy23ubcla"]
+[gd_scene load_steps=14 format=3 uid="uid://bxr0iy23ubcla"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_ek06i"]
 [ext_resource type="Texture2D" uid="uid://cvpg5yfof2kns" path="res://assets/Frost Dumplings/shadow.png" id="1_jjwap"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://nwxpvy7kbg1k" path="res://assets/Frost Dumplings/walk-1.png" id="7_tbljp"]
 [ext_resource type="Texture2D" uid="uid://e1pbotktfsp3" path="res://assets/Frost Dumplings/walk-2.png" id="8_w48ct"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_baegv"]
+[ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_f6w78"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k4dkx"]
 animations = [{
@@ -92,3 +93,11 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
 position = Vector2(-1, -5)
 shape = SubResource("RectangleShape2D_ngn3d")
+
+[node name="food" parent="." instance=ExtResource("11_f6w78")]
+visible = false
+position = Vector2(4.625, -26.5625)
+
+[node name="order_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

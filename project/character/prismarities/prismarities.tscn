@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7njhwo26o2yf"]
+[gd_scene load_steps=11 format=3 uid="uid://7njhwo26o2yf"]
 
 [ext_resource type="Texture2D" uid="uid://dn7d8mwyfamme" path="res://assets/Prismarities/shadow.png" id="1_ggkf8"]
 [ext_resource type="Texture2D" uid="uid://dg4yw4a0yknj0" path="res://assets/Prismarities/back-walk-2.png" id="2_xci1d"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b2wmfgdgnfkfv" path="res://assets/Prismarities/idle.png" id="6_riu6e"]
 [ext_resource type="Texture2D" uid="uid://8yfwfcb37euq" path="res://assets/Prismarities/walk-1.png" id="7_m52mk"]
 [ext_resource type="Texture2D" uid="uid://bk5pbm8cyfsi7" path="res://assets/Prismarities/walk-2.png" id="8_w40ut"]
+[ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="9_n3y1t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3fmdn"]
 animations = [{
@@ -77,3 +78,11 @@ sprite_frames = SubResource("SpriteFrames_3fmdn")
 animation = &"idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="food" parent="." instance=ExtResource("9_n3y1t")]
+visible = false
+position = Vector2(4.625, -26.5625)
+
+[node name="order_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
