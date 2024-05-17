@@ -73,7 +73,7 @@ size = Vector2(17, 15)
 scale = Vector2(16, 16)
 script = ExtResource("1_sig5f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 7)
 texture = ExtResource("2_hkg40")
 

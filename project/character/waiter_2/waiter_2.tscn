@@ -65,7 +65,7 @@ animations = [{
 
 [node name="waiter_2" type="CharacterBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
 texture = ExtResource("1_uxwr8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

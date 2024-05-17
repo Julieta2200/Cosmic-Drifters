@@ -67,7 +67,7 @@ animations = [{
 
 [node name="munchkin_morsels" type="CharacterBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
 texture = ExtResource("1_a728u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

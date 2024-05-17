@@ -73,7 +73,7 @@ size = Vector2(13, 15)
 scale = Vector2(16, 16)
 script = ExtResource("1_rc42d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 texture = ExtResource("1_osyae")
 

@@ -68,7 +68,7 @@ animations = [{
 scale = Vector2(16, 16)
 script = ExtResource("1_fc07m")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
 texture = ExtResource("1_24vp5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
