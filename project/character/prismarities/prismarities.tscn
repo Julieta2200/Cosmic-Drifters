@@ -67,10 +67,10 @@ animations = [{
 [node name="prismarities" type="CharacterBody2D"]
 
 [node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
 texture = ExtResource("1_ggkf8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_3fmdn")
 animation = &"idle"
 

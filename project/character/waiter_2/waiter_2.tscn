@@ -66,10 +66,10 @@ animations = [{
 [node name="waiter_2" type="CharacterBody2D"]
 
 [node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(1, 7)
 texture = ExtResource("1_uxwr8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_l8akl")
 animation = &"idle"
 

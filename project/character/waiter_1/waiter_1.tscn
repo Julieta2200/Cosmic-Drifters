@@ -69,10 +69,10 @@ scale = Vector2(16, 16)
 script = ExtResource("1_fc07m")
 
 [node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(1.125, 7.625)
 texture = ExtResource("1_24vp5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_5uyqs")
 animation = &"idle"
 

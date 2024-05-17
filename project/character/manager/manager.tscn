@@ -66,10 +66,10 @@ animations = [{
 [node name="manager" type="CharacterBody2D"]
 
 [node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
 texture = ExtResource("1_2yx55")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_m18j0")
 animation = &"walk"
 frame_progress = 0.0905409

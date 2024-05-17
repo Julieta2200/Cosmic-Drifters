@@ -74,11 +74,10 @@ scale = Vector2(16, 16)
 script = ExtResource("1_rc42d")
 
 [node name="shadow" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(1.1875, 6.5625)
 texture = ExtResource("1_osyae")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -6)
 sprite_frames = SubResource("SpriteFrames_grrju")
 animation = &"idle"
 autoplay = "idle"
@@ -89,7 +88,7 @@ frame_progress = 0.607854
 [node name="clickable_component" parent="." instance=ExtResource("10_kkml1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
-position = Vector2(-0.5, -5)
+position = Vector2(0.875, 0.75)
 shape = SubResource("RectangleShape2D_uelsl")
 
 [node name="food" parent="." instance=ExtResource("11_5pmbo")]

@@ -68,10 +68,10 @@ animations = [{
 [node name="munchkin_morsels" type="CharacterBody2D"]
 
 [node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
 texture = ExtResource("1_a728u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_nriwt")
 animation = &"idle"
 

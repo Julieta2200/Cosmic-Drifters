@@ -57,10 +57,10 @@ animations = [{
 [node name="secuity_guard" type="CharacterBody2D"]
 
 [node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 15)
 texture = ExtResource("1_kqh67")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_1sipt")
 animation = &"idle"
 
