@@ -32,16 +32,16 @@ texture = ExtResource("2_qedio")
 
 [node name="plate" type="Node2D" parent="."]
 
-[node name="point0" type="Sprite2D" parent="plate"]
+[node name="number0" type="Sprite2D" parent="plate"]
 position = Vector2(-15.9375, -2.625)
 
-[node name="point1" type="Sprite2D" parent="plate"]
+[node name="number1" type="Sprite2D" parent="plate"]
 position = Vector2(-7.9375, -5.125)
 
-[node name="point2" type="Sprite2D" parent="plate"]
+[node name="number2" type="Sprite2D" parent="plate"]
 position = Vector2(7.375, -5.125)
 
-[node name="point3" type="Sprite2D" parent="plate"]
+[node name="number3" type="Sprite2D" parent="plate"]
 position = Vector2(15.25, -2.625)
 
 [node name="clickable_component" parent="." instance=ExtResource("3_s58k2")]
