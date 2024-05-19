@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3eghgca6xgvb"]
+[gd_scene load_steps=5 format=3 uid="uid://d3eghgca6xgvb"]
 
 [ext_resource type="Texture2D" uid="uid://dp37y5m0a4hx8" path="res://assets/details/Table_Big.png" id="1_7bdqp"]
 [ext_resource type="Script" path="res://project/table/table.gd" id="1_xte3g"]
 [ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="2_qedio"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="3_s58k2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8l1r"]
-size = Vector2(73, 30)
 
 [node name="Table" type="Node2D" node_paths=PackedStringArray("chairs")]
 position = Vector2(1, 1)
@@ -35,9 +32,10 @@ texture = ExtResource("2_qedio")
 
 [node name="clickable_component" parent="." instance=ExtResource("3_s58k2")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="clickable_component"]
+visible = false
 position = Vector2(-0.5, -5)
-shape = SubResource("RectangleShape2D_x8l1r")
+polygon = PackedVector2Array(-17, -14.875, -10.0625, -14.875, -9.875, -5.125, 10.25, -4.875, 10.4375, -14.875, 17.5625, -14.625, 17.875, -4.25, 22.375, -0.875, 34.625, -0.5625, 34.5625, 6.1875, 21.3125, 5.875, 14.9375, 8.5625, 3.5, 8.9375, 3.5625, 13.875, -3, 14.1875, -3.25, 9.125, -15.25, 8.9375, -22.125, 5.5, -34.25, 6, -34.4375, -1.3125, -22.125, -1.125, -16.875, -4.625)
 
 [node name="serve_point" type="Marker2D" parent="."]
 position = Vector2(31.375, -17.5625)

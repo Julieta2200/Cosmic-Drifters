@@ -73,15 +73,11 @@ size = Vector2(14, 16)
 scale = Vector2(16, 16)
 script = ExtResource("1_ek06i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0.6875, 5.75)
 texture = ExtResource("1_jjwap")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-4, -1, -4, 1, 2, 1, 2, -1)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -6)
 sprite_frames = SubResource("SpriteFrames_k4dkx")
 animation = &"idle"
 autoplay = "idle"
@@ -91,7 +87,7 @@ autoplay = "idle"
 [node name="clickable_component" parent="." instance=ExtResource("10_baegv")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
-position = Vector2(-1, -5)
+position = Vector2(0.5, 0.3125)
 shape = SubResource("RectangleShape2D_ngn3d")
 
 [node name="food" parent="." instance=ExtResource("11_f6w78")]

@@ -73,12 +73,9 @@ size = Vector2(17, 15)
 scale = Vector2(16, 16)
 script = ExtResource("1_sig5f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 7)
 texture = ExtResource("2_hkg40")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-3, 5, 3, 5, 3, 7, -3, 7)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fbfcc")

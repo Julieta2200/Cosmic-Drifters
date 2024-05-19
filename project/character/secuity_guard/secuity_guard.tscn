@@ -56,14 +56,11 @@ animations = [{
 
 [node name="secuity_guard" type="CharacterBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 15)
 texture = ExtResource("1_kqh67")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(8, -1, 8, 1, -8, 1, -8, -1)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_1sipt")
 animation = &"idle"
 
