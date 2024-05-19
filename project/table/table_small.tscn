@@ -21,6 +21,14 @@ texture = ExtResource("3_die76")
 position = Vector2(17, 0)
 texture = ExtResource("3_die76")
 
+[node name="plate" type="Node2D" parent="."]
+
+[node name="number0" type="Sprite2D" parent="plate"]
+position = Vector2(-15.9375, -2.625)
+
+[node name="number1" type="Sprite2D" parent="plate"]
+position = Vector2(-7.9375, -5.125)
+
 [node name="clickable_component" parent="." instance=ExtResource("4_8lav6")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_component"]
