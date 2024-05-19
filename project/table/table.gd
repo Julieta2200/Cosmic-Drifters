@@ -33,3 +33,4 @@ func plate_visible_true(i: int):
 	
 func plate_visible_false(i: int):
 	plate.get_child(i).visible = false
+	
