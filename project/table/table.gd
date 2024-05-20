@@ -27,10 +27,10 @@ func sit_down(index):
 func get_up(index):
 	chairs[index].visible = true
 
-func plate_visible_true(i: int):
+func add_plate(i: int):
 	plate.get_child(i).texture = load(plates[rng.randf_range(0,plates.size())])
 	plate.get_child(i).visible = true
 	
-func plate_visible_false(i: int):
+func remove_plate(i: int):
 	plate.get_child(i).visible = false
 	
