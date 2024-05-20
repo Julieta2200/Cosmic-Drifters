@@ -94,7 +94,7 @@ texture = ExtResource("2_0e3tl")
 sprite_frames = SubResource("SpriteFrames_y2mwg")
 animation = &"talk"
 autoplay = "idle"
-frame_progress = 0.484778
+frame_progress = 0.842197
 offset = Vector2(0.5625, -0.125)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
