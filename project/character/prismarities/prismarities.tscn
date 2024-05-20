@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7njhwo26o2yf"]
+[gd_scene load_steps=13 format=3 uid="uid://7njhwo26o2yf"]
 
 [ext_resource type="Texture2D" uid="uid://dn7d8mwyfamme" path="res://assets/Prismarities/shadow.png" id="1_ggkf8"]
 [ext_resource type="Texture2D" uid="uid://dg4yw4a0yknj0" path="res://assets/Prismarities/back-walk-2.png" id="2_xci1d"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d1xg01m2i28jk" path="res://assets/Prismarities/back-walk-1.png" id="4_ayhf2"]
 [ext_resource type="Texture2D" uid="uid://df4baooeu4510" path="res://assets/Prismarities/base.png" id="5_iajly"]
 [ext_resource type="Texture2D" uid="uid://b2wmfgdgnfkfv" path="res://assets/Prismarities/idle.png" id="6_riu6e"]
+[ext_resource type="Texture2D" uid="uid://bkkuxo45ajxp8" path="res://assets/Prismarities/talk-1.png" id="7_6smcj"]
 [ext_resource type="Texture2D" uid="uid://8yfwfcb37euq" path="res://assets/Prismarities/walk-1.png" id="7_m52mk"]
+[ext_resource type="Texture2D" uid="uid://d2tnytjb3yl2k" path="res://assets/Prismarities/talk-2.png" id="8_sgbwi"]
 [ext_resource type="Texture2D" uid="uid://bk5pbm8cyfsi7" path="res://assets/Prismarities/walk-2.png" id="8_w40ut"]
 [ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="9_n3y1t"]
 
@@ -48,6 +50,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_6smcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sgbwi")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_m52mk")
 }, {
 "duration": 1.0,
@@ -72,7 +85,7 @@ texture = ExtResource("1_ggkf8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3fmdn")
-animation = &"idle"
+animation = &"talk"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsncelllnchub"]
+[gd_scene load_steps=16 format=3 uid="uid://bsncelllnchub"]
 
 [ext_resource type="Texture2D" uid="uid://bi0wwtfx58fd0" path="res://assets/Cerulean Hoppers/shadow.png" id="1_osyae"]
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_rc42d"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://1uxhmsu7k6ec" path="res://assets/Cerulean Hoppers/base.png" id="5_6huyq"]
 [ext_resource type="Texture2D" uid="uid://jnivrnd5q8h8" path="res://assets/Cerulean Hoppers/idle.png" id="6_xwhjq"]
 [ext_resource type="Texture2D" uid="uid://cwrbphfvgbdxn" path="res://assets/Cerulean Hoppers/walk-1.png" id="7_k2ou8"]
+[ext_resource type="Texture2D" uid="uid://derjcv85k1b73" path="res://assets/Cerulean Hoppers/talk-1.png" id="8_6ppgh"]
 [ext_resource type="Texture2D" uid="uid://bas2moxg1hann" path="res://assets/Cerulean Hoppers/walk-2.png" id="8_gnp7n"]
+[ext_resource type="Texture2D" uid="uid://b8s1k4suhxyoq" path="res://assets/Cerulean Hoppers/talk-2.png" id="9_7avdn"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_kkml1"]
 [ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_5pmbo"]
 
@@ -50,6 +52,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_6ppgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7avdn")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_k2ou8")
 }, {
 "duration": 1.0,
@@ -79,9 +92,8 @@ texture = ExtResource("1_osyae")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_grrju")
-animation = &"idle"
+animation = &"talk"
 autoplay = "idle"
-frame_progress = 0.607854
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
