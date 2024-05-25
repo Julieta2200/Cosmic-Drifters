@@ -8,7 +8,6 @@ var level_time: int = 500
 @onready var group_1 = {
 	"group": $group_1,
 	"table": $clickable_objects/Table,
-	"waiter": $Waiter_1,
 	"name": "group_1",
 	"orders": [],
 	"served": false,
@@ -19,7 +18,6 @@ var level_time: int = 500
 @onready var group_2 = {
 	"group": $group_2,
 	"table": $clickable_objects/TableSmall,
-	"waiter": $waiter_2,
 	"name": "group_2",
 	"orders": [],
 	"served": false,
@@ -29,8 +27,9 @@ var level_time: int = 500
 
 @onready var groups = {
 	"group_1": group_1,
-	"group_2": group_2,
 }
+
+var waiter_queue = []
 
 func _ready():
 	$Timer.wait_time = level_time
@@ -64,7 +63,7 @@ func serve(group):
 		return
 	group["served"] = true
 	var serve_point = group["table"].get_serve_point()
-	group["waiter"].walk_to(self, serve_point, group["name"]+"::ask_order")
+	waiter_queue.append({"func": "walk_to", "params": serve_point, "action": group["name"]+"::ask_order"})
 	
 func action_complete(a: String):
 	var action := a.split(":")
@@ -91,12 +90,11 @@ func action_complete(a: String):
 
 func serve_food(group):
 	group["table"].add_plates()
-	group["waiter"].walk_to(self, $desk.global_position, "")
 			
 func pick_order(group):
 	$desk_plates.remove_plate()
 	var serve_point = group["table"].get_serve_point()
-	group["waiter"].walk_to(self, serve_point, group["name"]+"::serve_food")
+	waiter_queue.append({"func": "walk_to", "params": serve_point, "action": group["name"]+"::serve_food"})
 
 func ask_order(group):
 	call_deferred("get_orders", group)
@@ -113,7 +111,7 @@ func get_orders(group):
 func waiter_to_desk(group, num):
 	if num != len(group["group"].get_children()) - 1:
 		return
-	group["waiter"].walk_to(self, $desk.global_position, "")
+	# remove this method
 	
 func order_prepared(group, num):
 	group["orders"][num] = true
@@ -122,5 +120,6 @@ func order_prepared(group, num):
 			return # pending order
 	# order done
 	$desk_plates.add_plate()
-	group["waiter"].walk_to(self, $order_desk.global_position, group["name"]+"::pick_order")
+	waiter_queue.append({"func": "walk_to", "params": $order_desk.global_position, "action": group["name"]+"::pick_order"})
+
 	
