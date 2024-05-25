@@ -16,10 +16,12 @@ func _process(delta):
 func order(node : Node2D, action: String):
 	food.food_sp.texture = load(food.foods[rng.randf_range(0,food.foods.size())])
 	food.visible = true
+	$AnimatedSprite2D.play("talk")
 	level = node
 	ch_action = action
 	$order_timer.start()
 
 func _on_order_timer_timeout():
 	food.visible = false
+	$AnimatedSprite2D.play("idle")
 	level.action_complete(ch_action)

@@ -49,6 +49,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_ho4dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n6ylb")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_1s2pc")
 }, {
 "duration": 1.0,
@@ -73,7 +84,9 @@ texture = ExtResource("1_a728u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nriwt")
-animation = &"idle"
+animation = &"talk"
+frame = 1
+frame_progress = 0.881726
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

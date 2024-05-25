@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dl1thhd2djkjj"]
+[gd_scene load_steps=16 format=3 uid="uid://dl1thhd2djkjj"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_sig5f"]
 [ext_resource type="Texture2D" uid="uid://bcy06wkftxe6v" path="res://assets/Twilight Tarsiers/shadow.png" id="2_hkg40"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bntjrrckoun76" path="res://assets/Twilight Tarsiers/back-base.png" id="4_7drx1"]
 [ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="5_e4kla"]
 [ext_resource type="Texture2D" uid="uid://cng306mo6er3j" path="res://assets/Twilight Tarsiers/back-walk-2.png" id="5_ten5q"]
+[ext_resource type="Texture2D" uid="uid://de4pflt0m8c5s" path="res://assets/Twilight Tarsiers/talk-1.png" id="8_2e6i4"]
 [ext_resource type="Texture2D" uid="uid://do53cpci126p5" path="res://assets/Twilight Tarsiers/walk-2.png" id="8_nwlqq"]
 [ext_resource type="Texture2D" uid="uid://dfpfkhsnj1dqu" path="res://assets/Twilight Tarsiers/idle.png" id="9_jlne5"]
+[ext_resource type="Texture2D" uid="uid://d2ail2gy8ti0i" path="res://assets/Twilight Tarsiers/talk-2.png" id="9_maitp"]
 [ext_resource type="Texture2D" uid="uid://dmya7n1tixfng" path="res://assets/Twilight Tarsiers/walk-1.png" id="10_310rt"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_anb0r"]
 [ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_taqb0"]
@@ -50,6 +52,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_2e6i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_maitp")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_nwlqq")
 }, {
 "duration": 1.0,
@@ -79,7 +92,9 @@ texture = ExtResource("2_hkg40")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fbfcc")
-animation = &"idle"
+animation = &"talk"
+frame = 1
+frame_progress = 0.251337
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true

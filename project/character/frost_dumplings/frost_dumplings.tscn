@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxr0iy23ubcla"]
+[gd_scene load_steps=16 format=3 uid="uid://bxr0iy23ubcla"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_ek06i"]
 [ext_resource type="Texture2D" uid="uid://cvpg5yfof2kns" path="res://assets/Frost Dumplings/shadow.png" id="1_jjwap"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bid8428apnfre" path="res://assets/Frost Dumplings/base.png" id="5_574q4"]
 [ext_resource type="Texture2D" uid="uid://cbfsm6wosf4f1" path="res://assets/Frost Dumplings/idle.png" id="6_bbms2"]
 [ext_resource type="Texture2D" uid="uid://nwxpvy7kbg1k" path="res://assets/Frost Dumplings/walk-1.png" id="7_tbljp"]
+[ext_resource type="Texture2D" uid="uid://67c3rnubctj" path="res://assets/Frost Dumplings/talk-1.png" id="8_2q877"]
 [ext_resource type="Texture2D" uid="uid://e1pbotktfsp3" path="res://assets/Frost Dumplings/walk-2.png" id="8_w48ct"]
+[ext_resource type="Texture2D" uid="uid://pnryomenucj" path="res://assets/Frost Dumplings/talk-2.png" id="9_j4sj1"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_baegv"]
 [ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_f6w78"]
 
@@ -50,6 +52,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_2q877")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j4sj1")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_tbljp")
 }, {
 "duration": 1.0,
@@ -79,7 +92,7 @@ texture = ExtResource("1_jjwap")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k4dkx")
-animation = &"idle"
+animation = &"talk"
 autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

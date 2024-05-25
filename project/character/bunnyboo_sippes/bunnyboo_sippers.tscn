@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt7yhx8mojj0m"]
+[gd_scene load_steps=16 format=3 uid="uid://bt7yhx8mojj0m"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_gitro"]
 [ext_resource type="Texture2D" uid="uid://d0gmsjk3nceok" path="res://assets/Bunnyboo Sippers/shadow.png" id="2_0e3tl"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://2fo88ml1wgs5" path="res://assets/Bunnyboo Sippers/back-walk-1.png" id="5_hfsws"]
 [ext_resource type="Texture2D" uid="uid://dh854f12tflre" path="res://assets/Bunnyboo Sippers/back-base.png" id="6_2bsi8"]
 [ext_resource type="Texture2D" uid="uid://dclm4rvyfju75" path="res://assets/Bunnyboo Sippers/idle.png" id="6_gsh1s"]
+[ext_resource type="Texture2D" uid="uid://bu4w06om1mqbd" path="res://assets/Bunnyboo Sippers/talk-1.png" id="8_kp2ym"]
+[ext_resource type="Texture2D" uid="uid://cu61jthgwo4i7" path="res://assets/Bunnyboo Sippers/talk-2.png" id="9_1r40f"]
 [ext_resource type="Texture2D" uid="uid://7j1i2smfdiqn" path="res://assets/Bunnyboo Sippers/walk-2.png" id="9_qslu4"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_2lnlj"]
 [ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="11_a2b33"]
@@ -50,6 +52,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_kp2ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1r40f")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("9_qslu4")
 }, {
 "duration": 1.0,
@@ -79,8 +92,9 @@ texture = ExtResource("2_0e3tl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y2mwg")
-animation = &"idle"
+animation = &"talk"
 autoplay = "idle"
+frame_progress = 0.842197
 offset = Vector2(0.5625, -0.125)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
