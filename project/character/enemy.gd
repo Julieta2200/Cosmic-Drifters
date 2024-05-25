@@ -20,6 +20,7 @@ func order(node : Node2D, action: String):
 	level = node
 	ch_action = action
 	$order_timer.start()
+	food.prepare(action, node)
 
 func _on_order_timer_timeout():
 	food.visible = false

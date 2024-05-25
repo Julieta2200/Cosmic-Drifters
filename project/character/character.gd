@@ -23,7 +23,6 @@ func move() -> void:
 		animation()
 		if path.is_empty() and level != null:
 			level.action_complete(ch_action)
-			level = null
 	
 
 

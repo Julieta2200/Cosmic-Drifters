@@ -15,3 +15,8 @@ texture = ExtResource("2_4ypwa")
 [node name="food" type="Sprite2D" parent="."]
 position = Vector2(12.1429, 5.57143)
 texture = ExtResource("3_q8c1c")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
