@@ -1,24 +1,19 @@
 extends Level
 
-# seconds
-const GROUP_1_SPAWN: int = 5
 const SPAWN_DELAY = 1
-const GROUP_1_SERVE: int = 7
 const ORDER_TIME: int = 1
-const PREP_TIME: int = 10
 
 var level_time: int = 500
-var action_map: Dictionary = {
-	GROUP_1_SPAWN: false,
-	GROUP_1_SERVE: false
-}
 
 @onready var group_1 = {
 	"group": $group_1,
 	"table": $clickable_objects/Table,
 	"waiter": $Waiter_1,
 	"name": "group_1",
-	"orders": []
+	"orders": [],
+	"served": false,
+	"spawned": false,
+	"spawn_time": 5
 }
 
 @onready var groups = {
@@ -30,33 +25,34 @@ func _ready():
 	$Timer.start()
 
 func _process(delta):
-	if is_action_time(GROUP_1_SPAWN):
-		group_1_spawn()
-	elif is_action_time(GROUP_1_SERVE):
-		group_1_serve()
+	for k in groups:
+		if is_spawn_time(groups[k]):
+			spawn(groups[k])
 
-func is_action_time(t: int) -> bool:
-	return round($Timer.time_left) == level_time - t && !action_map[t]
+func is_spawn_time(group) -> bool:
+	return round($Timer.time_left) == level_time - group["spawn_time"] && !group["spawned"]
 
 
-func group_1_spawn():
-	action_map[GROUP_1_SPAWN] = true
-	call_deferred("spawn_and_sit")
+func spawn(group):
+	group["spawned"] = true
+	call_deferred("spawn_and_sit", group)
 
-func spawn_and_sit():
-	var enemies= group_1["group"].get_children()
+func spawn_and_sit(group):
+	var enemies= group["group"].get_children()
 	var i: int = 0
 	for enemy in enemies:
 		enemy.spawn($spawn_point.global_position)
-		var chair = group_1["table"].get_chair(i)
-		enemy.walk_to(self, chair.global_position, "group_1:"+str(i)+":sit")
+		var chair = group["table"].get_chair(i)
+		enemy.walk_to(self, chair.global_position, group["name"]+":"+str(i)+":sit")
 		i += 1
 		await get_tree().create_timer(SPAWN_DELAY).timeout
 		
-func group_1_serve():
-	action_map[GROUP_1_SERVE] = true
-	var serve_point = group_1["table"].get_serve_point()
-	group_1["waiter"].walk_to(self, serve_point, "group_1::ask_order")
+func serve(group):
+	if group["served"]:
+		return
+	group["served"] = true
+	var serve_point = group["table"].get_serve_point()
+	group["waiter"].walk_to(self, serve_point, group["name"]+"::ask_order")
 	
 func action_complete(a: String):
 	var action := a.split(":")
@@ -66,6 +62,7 @@ func action_complete(a: String):
 	match action[2]:
 		"sit":
 			groups[action[0]]["table"].sit_down(int(action[1]))
+			serve(groups[action[0]])
 		"ask_order":
 			ask_order(groups[action[0]])
 		"order":
