@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=79 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -66,6 +66,7 @@
 [ext_resource type="PackedScene" uid="uid://cjagok857by7o" path="res://project/character/waiter_1/waiter_1.tscn" id="63_7uax7"]
 [ext_resource type="Script" path="res://project/level/kitchen.gd" id="65_bnd8v"]
 [ext_resource type="Script" path="res://project/level_1/desk_plates.gd" id="66_hi4ob"]
+[ext_resource type="PackedScene" uid="uid://dlhg3xr3k7hc8" path="res://project/character/waiter_2/waiter_2.tscn" id="67_uro2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -847,7 +848,7 @@ limit_bottom = 8900
 position = Vector2(2865, 2656)
 
 [node name="Table2" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("61_44c81")]
-position = Vector2(4800, 2276)
+position = Vector2(4800, 2277)
 chairs = [NodePath("../Table/chair1"), NodePath("../Table/chair2"), NodePath("../Table/chair3"), NodePath("../Table/chair4")]
 
 [node name="Table3" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("61_44c81")]
@@ -913,6 +914,17 @@ speed = 800.0
 position = Vector2(-3073, -1944)
 speed = 800.0
 
+[node name="group_2" type="Node2D" parent="."]
+position = Vector2(2678, 1274)
+
+[node name="cerulean_hoppers" parent="group_2" instance=ExtResource("62_wvuod")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="twilight_tarsiers" parent="group_2" instance=ExtResource("60_rjade")]
+position = Vector2(-3073, -1944)
+speed = 800.0
+
 [node name="Waiter_1" parent="." instance=ExtResource("63_7uax7")]
 position = Vector2(6536, 1327)
 speed = 800.0
@@ -953,3 +965,6 @@ scale = Vector2(16, 16)
 visible = false
 position = Vector2(7247, 867)
 scale = Vector2(16, 16)
+
+[node name="waiter_2" parent="." instance=ExtResource("67_uro2u")]
+position = Vector2(7011, 1306)

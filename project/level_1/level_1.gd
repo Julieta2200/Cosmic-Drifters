@@ -16,8 +16,20 @@ var level_time: int = 500
 	"spawn_time": 5
 }
 
+@onready var group_2 = {
+	"group": $group_2,
+	"table": $clickable_objects/TableSmall,
+	"waiter": $waiter_2,
+	"name": "group_2",
+	"orders": [],
+	"served": false,
+	"spawned": false,
+	"spawn_time": 10
+}
+
 @onready var groups = {
-	"group_1": group_1
+	"group_1": group_1,
+	"group_2": group_2,
 }
 
 func _ready():
