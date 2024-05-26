@@ -32,7 +32,7 @@ var level_time: int = 500
 	"orders": [],
 	"served": false,
 	"spawned": false,
-	"spawn_time": 18
+	"spawn_time": 19
 }
 
 @onready var group_4 = {
