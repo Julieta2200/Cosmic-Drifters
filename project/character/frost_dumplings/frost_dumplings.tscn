@@ -85,6 +85,7 @@ size = Vector2(14, 16)
 [node name="frost_dumplings" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_ek06i")
+speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0.6875, 5.75)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://7k6qxbu2nrsc"]
+[gd_scene load_steps=13 format=3 uid="uid://7k6qxbu2nrsc"]
 
+[ext_resource type="Script" path="res://project/character/enemy.gd" id="1_0n30y"]
 [ext_resource type="Texture2D" uid="uid://5lxyems8rjy1" path="res://assets/Munchkin Morsels/shadow.png" id="1_a728u"]
 [ext_resource type="Texture2D" uid="uid://dhmapyedvnixt" path="res://assets/Munchkin Morsels/back-walk-1.png" id="2_gxwkm"]
 [ext_resource type="Texture2D" uid="uid://btkwws02wvi8" path="res://assets/Munchkin Morsels/back-base.png" id="3_bjmih"]
@@ -77,6 +78,9 @@ animations = [{
 }]
 
 [node name="munchkin_morsels" type="CharacterBody2D"]
+scale = Vector2(16, 16)
+script = ExtResource("1_0n30y")
+speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 8)

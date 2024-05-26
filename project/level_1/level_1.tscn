@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=82 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -64,7 +64,10 @@
 [ext_resource type="PackedScene" uid="uid://bt7yhx8mojj0m" path="res://project/character/bunnyboo_sippes/bunnyboo_sippers.tscn" id="61_yheks"]
 [ext_resource type="PackedScene" uid="uid://bsncelllnchub" path="res://project/character/cerulean_hoppers/cerulean_hoppers.tscn" id="62_wvuod"]
 [ext_resource type="PackedScene" uid="uid://cjagok857by7o" path="res://project/character/waiter_1/waiter_1.tscn" id="63_7uax7"]
+[ext_resource type="PackedScene" uid="uid://bxr0iy23ubcla" path="res://project/character/frost_dumplings/frost_dumplings.tscn" id="64_nlrb5"]
 [ext_resource type="Script" path="res://project/level/kitchen.gd" id="65_bnd8v"]
+[ext_resource type="PackedScene" uid="uid://7njhwo26o2yf" path="res://project/character/prismarities/prismarities.tscn" id="65_pvxf5"]
+[ext_resource type="PackedScene" uid="uid://7k6qxbu2nrsc" path="res://project/character/munchkin_morsels/munchkin_morsels.tscn" id="66_82ike"]
 [ext_resource type="Script" path="res://project/level_1/desk_plates.gd" id="66_hi4ob"]
 [ext_resource type="PackedScene" uid="uid://dlhg3xr3k7hc8" path="res://project/character/waiter_2/waiter_2.tscn" id="67_uro2u"]
 
@@ -918,9 +921,8 @@ speed = 800.0
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="cerulean_hoppers2" parent="group_3" instance=ExtResource("62_wvuod")]
-position = Vector2(-3081, -1828)
-speed = 800.0
+[node name="frost_dumplings" parent="group_3" instance=ExtResource("64_nlrb5")]
+position = Vector2(5582.36, 3381.9)
 
 [node name="twilight_tarsiers" parent="group_3" instance=ExtResource("60_rjade")]
 position = Vector2(-3073, -1944)
@@ -928,10 +930,6 @@ speed = 800.0
 
 [node name="group_5" type="Node2D" parent="."]
 position = Vector2(2678, 1274)
-
-[node name="bunnyboo_sippers" parent="group_5" instance=ExtResource("61_yheks")]
-position = Vector2(-3081, -1828)
-speed = 800.0
 
 [node name="cerulean_hoppers" parent="group_5" instance=ExtResource("62_wvuod")]
 position = Vector2(-3081, -1828)
@@ -941,9 +939,11 @@ speed = 800.0
 position = Vector2(-3073, -1944)
 speed = 800.0
 
-[node name="twilight_tarsiers2" parent="group_5" instance=ExtResource("60_rjade")]
-position = Vector2(-3073, -1944)
-speed = 800.0
+[node name="prismarities" parent="group_5" instance=ExtResource("65_pvxf5")]
+position = Vector2(-3862, -2395)
+
+[node name="munchkin_morsels" parent="group_5" instance=ExtResource("66_82ike")]
+position = Vector2(-3862, -2395)
 
 [node name="group_2" type="Node2D" parent="."]
 position = Vector2(2678, 1274)
