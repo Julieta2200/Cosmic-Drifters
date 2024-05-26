@@ -25,4 +25,4 @@ func order(node : Node2D, action: String):
 func _on_order_timer_timeout():
 	food.visible = false
 	$AnimatedSprite2D.play("idle")
-	level.action_complete(ch_action)
+	level.action_complete(ch_action, null)

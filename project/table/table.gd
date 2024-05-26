@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var chairs: Array[Node2D]
 @onready var plate = $plate
 var rng = RandomNumberGenerator.new()
 
@@ -9,23 +8,23 @@ var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/pla
 				"res://assets/Food/Plate/plate_5.png","res://assets/Food/Plate/plate_6.png"]
 
 func add_character(ch: Character):
-	for chair in chairs:
+	for chair in $chairs.get_children():
 		if chair.visible:
 			ch.position = chair.position
 			chair.visible = false
 			return
 
 func get_chair(index):
-	return chairs[index]
+	return $chairs.get_children()[index]
 	
 func get_serve_point():
 	return $serve_point.global_position
 
 func sit_down(index):
-	chairs[index].visible = false
+	$chairs.get_children()[index].visible = false
 	
 func get_up(index):
-	chairs[index].visible = true
+	$chairs.get_children()[index].visible = true
 
 func add_plates():
 	for p in plate.get_children():

@@ -22,7 +22,7 @@ func move() -> void:
 		path.remove_at(0)
 		animation()
 		if path.is_empty() and level != null:
-			level.action_complete(ch_action)
+			level.action_complete(ch_action, self)
 	
 
 

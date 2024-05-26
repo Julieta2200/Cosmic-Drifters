@@ -33,4 +33,4 @@ func prepare(a, lvl):
 
 
 func _on_timer_timeout():
-	level.action_complete(action+":order_prepared")
+	level.action_complete(action+":order_prepared", null)

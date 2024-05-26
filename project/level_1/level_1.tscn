@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=79 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -66,6 +66,7 @@
 [ext_resource type="PackedScene" uid="uid://cjagok857by7o" path="res://project/character/waiter_1/waiter_1.tscn" id="63_7uax7"]
 [ext_resource type="Script" path="res://project/level/kitchen.gd" id="65_bnd8v"]
 [ext_resource type="Script" path="res://project/level_1/desk_plates.gd" id="66_hi4ob"]
+[ext_resource type="PackedScene" uid="uid://dlhg3xr3k7hc8" path="res://project/character/waiter_2/waiter_2.tscn" id="67_uro2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -846,32 +847,26 @@ limit_bottom = 8900
 [node name="Table" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2865, 2656)
 
-[node name="Table2" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("61_44c81")]
+[node name="Table2" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(4800, 2277)
-chairs = [NodePath("../Table/chair1"), NodePath("../Table/chair2"), NodePath("../Table/chair3"), NodePath("../Table/chair4")]
 
-[node name="Table3" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("61_44c81")]
+[node name="Table3" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(6526, 2656)
-chairs = [NodePath("../Table/chair1"), NodePath("../Table/chair2"), NodePath("../Table/chair3"), NodePath("../Table/chair4")]
 
-[node name="Table4" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("61_44c81")]
+[node name="Table4" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(6528, 4292)
-chairs = [NodePath("../Table/chair1"), NodePath("../Table/chair2"), NodePath("../Table/chair3"), NodePath("../Table/chair4")]
 
-[node name="Table5" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("61_44c81")]
+[node name="Table5" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(4781, 4889)
-chairs = [NodePath("../Table/chair1"), NodePath("../Table/chair2"), NodePath("../Table/chair3"), NodePath("../Table/chair4")]
 
-[node name="Table6" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("61_44c81")]
+[node name="Table6" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2839, 4290)
-chairs = [NodePath("../Table/chair1"), NodePath("../Table/chair2"), NodePath("../Table/chair3"), NodePath("../Table/chair4")]
 
 [node name="TableSmall" parent="clickable_objects" instance=ExtResource("59_80aps")]
 position = Vector2(3631, 3351)
 
-[node name="TableSmall2" parent="clickable_objects" node_paths=PackedStringArray("chairs") instance=ExtResource("59_80aps")]
+[node name="TableSmall2" parent="clickable_objects" instance=ExtResource("59_80aps")]
 position = Vector2(5700, 3345)
-chairs = [NodePath("../TableSmall/chair1"), NodePath("../TableSmall/chair2")]
 
 [node name="spawn_point" type="Node2D" parent="."]
 position = Vector2(3288, 1117)
@@ -913,6 +908,44 @@ speed = 800.0
 position = Vector2(-3073, -1944)
 speed = 800.0
 
+[node name="group_3" type="Node2D" parent="."]
+position = Vector2(2678, 1274)
+
+[node name="bunnyboo_sippers" parent="group_3" instance=ExtResource("61_yheks")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="cerulean_hoppers" parent="group_3" instance=ExtResource("62_wvuod")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="cerulean_hoppers2" parent="group_3" instance=ExtResource("62_wvuod")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="twilight_tarsiers" parent="group_3" instance=ExtResource("60_rjade")]
+position = Vector2(-3073, -1944)
+speed = 800.0
+
+[node name="group_5" type="Node2D" parent="."]
+position = Vector2(2678, 1274)
+
+[node name="bunnyboo_sippers" parent="group_5" instance=ExtResource("61_yheks")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="cerulean_hoppers" parent="group_5" instance=ExtResource("62_wvuod")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="twilight_tarsiers" parent="group_5" instance=ExtResource("60_rjade")]
+position = Vector2(-3073, -1944)
+speed = 800.0
+
+[node name="twilight_tarsiers2" parent="group_5" instance=ExtResource("60_rjade")]
+position = Vector2(-3073, -1944)
+speed = 800.0
+
 [node name="group_2" type="Node2D" parent="."]
 position = Vector2(2678, 1274)
 
@@ -924,13 +957,33 @@ speed = 800.0
 position = Vector2(-3073, -1944)
 speed = 800.0
 
-[node name="Waiter_1" parent="." node_paths=PackedStringArray("lvl") instance=ExtResource("63_7uax7")]
-position = Vector2(6536, 1327)
-lvl = NodePath("..")
+[node name="group_4" type="Node2D" parent="."]
+position = Vector2(2678, 1274)
+
+[node name="bunnyboo_sippers3" parent="group_4" instance=ExtResource("61_yheks")]
+position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="desk" type="Marker2D" parent="."]
-position = Vector2(7926, 1141)
+[node name="cerulean_hoppers2" parent="group_4" instance=ExtResource("62_wvuod")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="Waiter_1" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("63_7uax7")]
+position = Vector2(6536, 1327)
+lvl = NodePath("..")
+desk_point = NodePath("../waiter_1_point")
+speed = 800.0
+
+[node name="waiter_2" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("67_uro2u")]
+position = Vector2(6909, 1320)
+lvl = NodePath("..")
+desk_point = NodePath("../waiter_2_point")
+
+[node name="waiter_1_point" type="Marker2D" parent="."]
+position = Vector2(7727, 1197)
+
+[node name="waiter_2_point" type="Marker2D" parent="."]
+position = Vector2(7966, 1196)
 
 [node name="order_desk" type="Marker2D" parent="."]
 position = Vector2(6917, 1269)

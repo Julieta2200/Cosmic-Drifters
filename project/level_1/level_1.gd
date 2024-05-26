@@ -25,8 +25,42 @@ var level_time: int = 500
 	"spawn_time": 10
 }
 
+@onready var group_3 = {
+	"group": $group_3,
+	"table": $clickable_objects/Table3,
+	"name": "group_3",
+	"orders": [],
+	"served": false,
+	"spawned": false,
+	"spawn_time": 18
+}
+
+@onready var group_4 = {
+	"group": $group_4,
+	"table": $clickable_objects/TableSmall2,
+	"name": "group_4",
+	"orders": [],
+	"served": false,
+	"spawned": false,
+	"spawn_time": 26
+}
+
+@onready var group_5 = {
+	"group": $group_5,
+	"table": $clickable_objects/Table2,
+	"name": "group_5",
+	"orders": [],
+	"served": false,
+	"spawned": false,
+	"spawn_time": 33
+}
+
 @onready var groups = {
 	"group_1": group_1,
+	"group_2": group_2,
+	"group_3": group_3,
+	"group_4": group_4,
+	"group_5": group_5,
 }
 
 var waiter_queue = []
@@ -65,7 +99,7 @@ func serve(group):
 	var serve_point = group["table"].get_serve_point()
 	waiter_queue.append({"func": "walk_to", "params": serve_point, "action": group["name"]+"::ask_order"})
 	
-func action_complete(a: String):
+func action_complete(a: String, caller):
 	var action := a.split(":")
 	if len(action) < 3:
 		return
@@ -75,7 +109,7 @@ func action_complete(a: String):
 			groups[action[0]]["table"].sit_down(int(action[1]))
 			serve(groups[action[0]])
 		"ask_order":
-			ask_order(groups[action[0]])
+			ask_order(groups[action[0]], caller)
 		"order":
 			if len(action) == 3:
 				waiter_to_desk(groups[action[0]], int(action[1]))
@@ -84,19 +118,21 @@ func action_complete(a: String):
 					"order_prepared":
 						order_prepared(groups[action[0]], int(action[1]))
 		"pick_order":
-			pick_order(groups[action[0]])
+			pick_order(groups[action[0]], caller)
 		"serve_food":
-			serve_food(groups[action[0]])
+			serve_food(groups[action[0]], caller)
 
-func serve_food(group):
+func serve_food(group, waiter):
 	group["table"].add_plates()
+	waiter.busy = false
 			
-func pick_order(group):
+func pick_order(group, caller):
 	$desk_plates.remove_plate()
 	var serve_point = group["table"].get_serve_point()
-	waiter_queue.append({"func": "walk_to", "params": serve_point, "action": group["name"]+"::serve_food"})
+	caller.walk_to(self, serve_point, group["name"]+"::serve_food")
 
-func ask_order(group):
+func ask_order(group, waiter):
+	group["waiter"] = waiter
 	call_deferred("get_orders", group)
 	
 func get_orders(group):
@@ -111,7 +147,7 @@ func get_orders(group):
 func waiter_to_desk(group, num):
 	if num != len(group["group"].get_children()) - 1:
 		return
-	# remove this method
+	group["waiter"].busy = false
 	
 func order_prepared(group, num):
 	group["orders"][num] = true
