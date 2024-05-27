@@ -1,30 +1,47 @@
 extends Node2D
 
+class_name Table
+
 @onready var plate = $plate
 var rng = RandomNumberGenerator.new()
+const ORDER_INTERVAL: int = 1
+var waiter
+var level
+var group
 
 var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/plate_2.png",
 				"res://assets/Food/Plate/plate_3.png","res://assets/Food/Plate/plate_4.png",
 				"res://assets/Food/Plate/plate_5.png","res://assets/Food/Plate/plate_6.png"]
 
-func add_character(ch: Character):
-	for chair in $chairs.get_children():
-		if chair.visible:
-			ch.position = chair.position
-			chair.visible = false
-			return
+var enemies = {}
+
+func sit(enemy, chair_i, lvl, gr):
+	level = lvl
+	group = gr
+	enemies[chair_i] = {"enemy": enemy}
+	var chair = $chairs.get_children()[chair_i]
+	enemy.global_position = chair.global_position
+	chair.visible = false
+
+func add_order(food, chair_i):
+	enemies[chair_i]["order"] = food
+	
+func call_orders(w):
+	waiter = w
+	call_deferred("_call_orders")
+		
+func _call_orders():
+	for i in enemies:
+		var food = enemies[i]["enemy"].order(self, i)
+		add_order(food, i)
+		await get_tree().create_timer(ORDER_INTERVAL).timeout
+	
 
 func get_chair(index):
 	return $chairs.get_children()[index]
 	
 func get_serve_point():
 	return $serve_point.global_position
-
-func sit_down(index):
-	$chairs.get_children()[index].visible = false
-	
-func get_up(index):
-	$chairs.get_children()[index].visible = true
 
 func add_plates():
 	for p in plate.get_children():
@@ -34,4 +51,19 @@ func add_plates():
 func remove_plates():
 	for p in plate.get_children():
 		p.visible = false
+
+func ordered(chair_i):
+	if chair_i == len($chairs.get_children()) - 1:
+		waiter.busy = false
+		waiter = null
+
+func order_prepared():
+	for i in enemies:
+		if !enemies[i]["order"].prepared:
+			return
+	level.order_prepared(group["name"])
 	
+
+
+func call_lumina():
+	$status.start()

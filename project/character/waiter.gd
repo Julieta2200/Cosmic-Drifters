@@ -31,3 +31,6 @@ func check_queue():
 	match action["func"]:
 		"walk_to":
 			walk_to(lvl, action["params"], action["action"])
+
+func ask_order(table):
+	table.call_orders(self)

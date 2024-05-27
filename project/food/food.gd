@@ -4,6 +4,9 @@ extends Node2D
 @onready var food_sp = $food
 var action
 var level
+var table
+
+var prepared: bool = false
 
 var foods = ["res://assets/Food/Dessert/cake_1.png","res://assets/Food/Dessert/cake_2.png",
  			"res://assets/Food/Dessert/cracker.png","res://assets/Food/Dessert/easter_cake.png",
@@ -25,12 +28,12 @@ var foods = ["res://assets/Food/Dessert/cake_1.png","res://assets/Food/Dessert/c
 			"res://assets/Food/Hot_dish/rice_balls2.png","res://assets/Food/Hot_dish/rice_balls3.png",
 			"res://assets/Food/Hot_dish/rice_balls4.png","res://assets/Food/Hot_dish/tuna.png"]
 
-func prepare(a, lvl):
+func prepare(t):
 	$Timer.wait_time = 10
 	$Timer.start()
-	action = a
-	level = lvl
+	table = t
 
 
 func _on_timer_timeout():
-	level.action_complete(action+":order_prepared", null)
+	prepared = true
+	table.order_prepared()

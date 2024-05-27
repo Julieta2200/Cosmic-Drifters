@@ -12,7 +12,7 @@ var level_time: int = 500
 	"orders": [],
 	"served": false,
 	"spawned": false,
-	"spawn_time": 5
+	"spawn_time": 5,
 }
 
 @onready var group_2 = {
@@ -32,7 +32,7 @@ var level_time: int = 500
 	"orders": [],
 	"served": false,
 	"spawned": false,
-	"spawn_time": 19
+	"spawn_time": 19,
 }
 
 @onready var group_4 = {
@@ -104,24 +104,27 @@ func action_complete(a: String, caller):
 	if len(action) < 3:
 		return
 	
+	var group = groups[action[0]]
+	var enemies = group["group"].get_children()
+	var number = int(action[1])
 	match action[2]:
 		"sit":
-			groups[action[0]]["table"].sit_down(int(action[1]))
-			if int(action[1]) == len(groups[action[0]]["group"].get_children()) - 1:
-				serve(groups[action[0]])
+			group["table"].sit(caller, number, self, group)
+			if number == len(enemies) - 1:
+				serve(group)
 		"ask_order":
-			ask_order(groups[action[0]], caller)
-		"order":
-			if len(action) == 3:
-				waiter_to_desk(groups[action[0]], int(action[1]))
-			else:
-				match action[3]:
-					"order_prepared":
-						order_prepared(groups[action[0]], int(action[1]))
+			caller.ask_order(group["table"])
 		"pick_order":
-			pick_order(groups[action[0]], caller)
+			pick_order(group, caller)
 		"serve_food":
-			serve_food(groups[action[0]], caller)
+			serve_food(group, caller)
+
+func order_prepared(group_name):
+	$desk_plates.add_plate()
+	waiter_queue.append({"func": "walk_to", "params": $order_desk.global_position, "action": group_name+"::pick_order"})
+
+func call_lumina(group):
+	group["table"].call_lumina()
 
 func serve_food(group, waiter):
 	group["table"].add_plates()
@@ -144,19 +147,5 @@ func get_orders(group):
 		group["orders"].append(false)
 		await get_tree().create_timer(ORDER_TIME).timeout
 		i += 1
-
-func waiter_to_desk(group, num):
-	if num != len(group["group"].get_children()) - 1:
-		return
-	group["waiter"].busy = false
-	
-func order_prepared(group, num):
-	group["orders"][num] = true
-	for order in group["orders"]:
-		if !order:
-			return # pending order
-	# order done
-	$desk_plates.add_plate()
-	waiter_queue.append({"func": "walk_to", "params": $order_desk.global_position, "action": group["name"]+"::pick_order"})
 
 	

@@ -357,6 +357,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(191, 542, 385, 540, 384
 
 [node name="level_1" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(0, -1)
 script = ExtResource("1_pbq2x")
 
 [node name="details" type="Node2D" parent="."]
