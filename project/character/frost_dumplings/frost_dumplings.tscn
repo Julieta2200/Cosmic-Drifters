@@ -111,3 +111,5 @@ position = Vector2(4.625, -26.5625)
 [node name="order_timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

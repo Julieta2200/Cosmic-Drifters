@@ -107,7 +107,8 @@ func action_complete(a: String, caller):
 	match action[2]:
 		"sit":
 			groups[action[0]]["table"].sit_down(int(action[1]))
-			serve(groups[action[0]])
+			if int(action[1]) == len(groups[action[0]]["group"].get_children()) - 1:
+				serve(groups[action[0]])
 		"ask_order":
 			ask_order(groups[action[0]], caller)
 		"order":
