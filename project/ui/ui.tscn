@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://biihx11v7nxj1"]
+[gd_scene load_steps=11 format=3 uid="uid://biihx11v7nxj1"]
 
 [ext_resource type="Texture2D" uid="uid://t3e0lwkfv53e" path="res://assets/Game_UI/Panel.png" id="1_xvuwc"]
 [ext_resource type="Texture2D" uid="uid://b2ppmldare2ty" path="res://assets/Game_UI/Item.png" id="2_evno3"]
 [ext_resource type="Texture2D" uid="uid://hlripqj84fj7" path="res://assets/Game_UI/Coin/Coin1.png" id="3_px6ff"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_f84f5"]
+[ext_resource type="Texture2D" uid="uid://gf73lgnir20i" path="res://assets/Game_UI/Coin/Coin2.png" id="4_rv2fc"]
 [ext_resource type="Texture2D" uid="uid://drpbp0cf6evgg" path="res://assets/Game_UI/lvl/Stroke.png" id="5_3rs2e"]
 [ext_resource type="Texture2D" uid="uid://b4t3i5gcxwsh" path="res://assets/Game_UI/lvl/Scale_1.png" id="6_vw0ko"]
 [ext_resource type="Texture2D" uid="uid://dl3nwavm241pv" path="res://assets/Game_UI/lvl/Scale_2.png" id="7_5n7hw"]
@@ -14,7 +15,7 @@ font_size = 100
 
 [sub_resource type="LabelSettings" id="LabelSettings_7m0iq"]
 font = ExtResource("4_f84f5")
-font_size = 100
+font_size = 120
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -29,7 +30,7 @@ offset_bottom = 24.0
 scale = Vector2(16, 16)
 texture = ExtResource("1_xvuwc")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="item" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 1225.0
 offset_top = 27.0
@@ -37,22 +38,22 @@ offset_right = 2049.0
 offset_bottom = 227.0
 theme_override_constants/separation = 100
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="item"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 texture = ExtResource("2_evno3")
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="item"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 texture = ExtResource("2_evno3")
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="item"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 texture = ExtResource("2_evno3")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="coin" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 2212.0
 offset_top = 28.0
@@ -60,32 +61,32 @@ offset_right = 3372.0
 offset_bottom = 228.0
 theme_override_constants/separation = 30
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="coin"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 texture = ExtResource("3_px6ff")
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="coin"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 texture = ExtResource("3_px6ff")
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer2"]
+[node name="TextureRect3" type="TextureRect" parent="coin"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 texture = ExtResource("3_px6ff")
 
-[node name="TextureRect4" type="TextureRect" parent="HBoxContainer2"]
+[node name="TextureRect4" type="TextureRect" parent="coin"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 texture = ExtResource("3_px6ff")
 
-[node name="TextureRect5" type="TextureRect" parent="HBoxContainer2"]
+[node name="TextureRect5" type="TextureRect" parent="coin"]
 custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
-texture = ExtResource("3_px6ff")
+texture = ExtResource("4_rv2fc")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+[node name="progress_bar1" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 54.0
@@ -93,13 +94,13 @@ offset_right = 877.0
 offset_bottom = 170.0
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="HBoxContainer3"]
+[node name="Label" type="Label" parent="progress_bar1"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Lv1"
 label_settings = SubResource("LabelSettings_ebnn8")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HBoxContainer3"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="progress_bar1"]
 custom_minimum_size = Vector2(576, 112)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -109,7 +110,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("5_3rs2e")
 texture_progress = ExtResource("6_vw0ko")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+[node name="progress_bar2" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 211.0
@@ -117,14 +118,14 @@ offset_right = 877.0
 offset_bottom = 327.0
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="HBoxContainer4"]
+[node name="Label" type="Label" parent="progress_bar2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Lv1"
 label_settings = SubResource("LabelSettings_ebnn8")
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="HBoxContainer4"]
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="progress_bar2"]
 custom_minimum_size = Vector2(576, 112)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -134,11 +135,11 @@ nine_patch_stretch = true
 texture_under = ExtResource("5_3rs2e")
 texture_progress = ExtResource("7_5n7hw")
 
-[node name="Label" type="Label" parent="."]
+[node name="time" type="Label" parent="."]
 layout_mode = 0
 offset_left = 3575.0
-offset_top = 87.0
+offset_top = 108.0
 offset_right = 3925.0
-offset_bottom = 203.0
+offset_bottom = 224.0
 text = "00:00"
 label_settings = SubResource("LabelSettings_7m0iq")
