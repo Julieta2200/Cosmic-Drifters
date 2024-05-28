@@ -1087,6 +1087,5 @@ position = Vector2(7247, 867)
 scale = Vector2(16, 16)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ui" parent="CanvasLayer" instance=ExtResource("72_xu1wm")]
