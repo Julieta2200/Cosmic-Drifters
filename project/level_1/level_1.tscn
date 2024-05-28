@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=122 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -185,7 +185,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bar",
-"speed": 1.5
+"speed": 2.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gjh1g"]
@@ -307,69 +307,6 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="Animation" id="Animation_acfg0"]
-length = 6.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door_animatedSprite2D:sprite_frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("SpriteFrames_yhfc6")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("door_animatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-
-[sub_resource type="Animation" id="Animation_gg404"]
-resource_name = "details"
-length = 3.0
-step = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door_animatedSprite2D:sprite_frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("SpriteFrames_yhfc6")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("door_animatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpf3s"]
-_data = {
-"RESET": SubResource("Animation_acfg0"),
-"details": SubResource("Animation_gg404")
-}
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_1cs46"]
 animations = [{
 "frames": [{
@@ -457,189 +394,6 @@ animations = [{
 "name": &"kristal",
 "speed": 7.0
 }]
-
-[sub_resource type="Animation" id="Animation_55bo8"]
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("animation/seaweed_AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"seaweed"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("animation/seaweed_AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("animation/mushroom_AnimatedSprite2D2:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"mushroom"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("animation/mushroom_AnimatedSprite2D2:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("animation/fountain_AnimatedSprite2D:animation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"fountain"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("animation/fountain_AnimatedSprite2D:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("animation/herb_AnimatedSprite2D2:animation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"herb"]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("animation/herb_AnimatedSprite2D2:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("animation/kristal_AnimatedSprite2D3:animation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"kristal"]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("animation/kristal_AnimatedSprite2D3:frame")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_514y5"]
-resource_name = "new_animation"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("animation/seaweed_AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"seaweed"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("animation/seaweed_AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("animation/mushroom_AnimatedSprite2D2:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"mushroom"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("animation/mushroom_AnimatedSprite2D2:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_61slv"]
-_data = {
-"RESET": SubResource("Animation_55bo8"),
-"new_animation": SubResource("Animation_514y5")
-}
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bs06d"]
 vertices = PackedVector2Array(384, 416, 31, 411, 386, 410, 405, 410, 576, 416, 179, 229, 249.5, 219.875, 333.188, 218.812, 379.5, 218.812, 576, 221, 566, 247, 548, 247, 195, 401, 335.125, 317.188, 374, 312, 564, 308.063, 576, 332, 410, 401, 380, 402, -61, 210, -1, 214, -137, 215, -68, 210, 694, 188, 597, 188, 631, 183, 656, 183, 204.062, 220.25, 179, 224, 360, 312, 346, 150, 364, 150, 337.625, 153.812, 627, 183, 538, 72, 558, 71, 575.938, 175.938, 564, 182.125, 445.125, 177.562, 444, 144.812, 695, 183, 705, 163, 712, 154, 712, 221, 694, 221, 580, 263, 713, 263, 691, 276, 596, 276, 370.438, 145, 370.75, 178.312, 363, 143, 713, 332, 690, 295, 596, 295, 577, 332, 577, 304, 563.938, 282.313, 567, 258, 576, 263, 575.875, 276.25, 576.938, 297.438, 577, 289.938, 336.75, 121.875, 346, 143, 0, 323, 0, 301, 12, 306, 31, 399, 13, 399, 0, 215, 0, 189, 12, 194, 563.938, 208.875, 575.938, 204.125, 378.75, 200.25, -20, 196, -20, 185, -1, 189, 576, 304, -32, 301, -32, 291, -1, 291, -1, 312, -19, 311, 215.312, 176.938, 333.188, 199.938, 249.125, 200.75, 203.812, 200.875, 263.062, 154.25, 214.5, 143.438, 263.062, 121.875, -1, 176, 691, 183, 334.562, 284.25, 360, 306, 243, 315, 260.875, 284.188, 260.688, 318, 243, 307, 370.75, 246.875, 370.688, 280.562, 324, 252, 321, 245, 213.875, 279, 306, 256, 279, 256, 260, 253, 213.438, 245.875, 227, 315, 163, 402, 261, 245, 140.625, 245.312, 140.562, 280.188, 27, 248, 27, 237, 374, 306, 564, 299.813, 563.938, 197.563, 385, 540, 191, 542, 191, 416, 596, 183, 597, 221, 577, 221, 577.063, 196, 592, 183, 566, 60, 576, 60, 505, 60, 533, 68, 499, 64, -91, 308, -68, 308, -68, 316, -111, 323, -111, 309, -61, 316, -61, 308, -39, 308, -19, 323, -136, 309, -136, 256, -132, 264, -132, 256, -92, 264, -98, 291, -92, 256, -17.1758, 256, -17, 263, -1, 263, -1, 273, -112, 185, -112, 160, -108, 185, -108, 195, -117, 195, 0, 147, 0, 59, 5, 59, 12, 71, 533, 60, 492, 64, 466, 60, 484, 60, 459, 65, 404, 65, 577, 176, 577, 154, 583.938, 154, 584, 163, 705, 154, 695, 169, 656, 169, 660, 183, 660, 181, 691, 181, 596, 181, 627, 181, 577, 276, 577, 263, 564, 291.375, -7.23927, 146.947, -1, 147, -1, 161, -8, 159, 444.625, 280.5, 443.812, 247.438, 548, 258, 563.938, 188.375, -32, 159, -31.5462, 146.77, -24.4744, 146.821, -24, 159, 227, 307, -61, 202, -29, 201, -68, 202, -101, 201, -125, 160, -132, 156, -137, 146, -49.0104, 146.642, -48, 159, 166, 224, 351, 76, 360, 66, 367, 60, 397, 60, 273, 76, 33, 71, -1, 170, -131, 195, 192, 410, 37, 60, 258, 60, 0, 416, 13, 411, 12, 296, 13, 167, 0, 160, 265, 67, 13, 177, 140.625, 143.062, 12, 278, 0, 272, 0, 263, 166, 229, -1, 283, 140.812, 177.938, 170, 410, 12, 182, 592, 169, 576.938, 187.688, -135, 187, -135, 158, 10, 237, 0, 256, 10, 248, -98, 301, 12, 288, 631, 169)
@@ -774,7 +528,8 @@ position = Vector2(3281, 561)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_yhfc6")
 animation = &"door"
-frame = 12
+autoplay = "door"
+frame = 4
 
 [node name="bar_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
 position = Vector2(4992, 720)
@@ -782,43 +537,39 @@ scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_dd88m")
 animation = &"bar"
 autoplay = "bar"
-frame = 3
-frame_progress = 0.805366
+frame = 2
 
 [node name="galagrama_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
 position = Vector2(1808, 176)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_gjh1g")
 animation = &"galagrama"
+autoplay = "galagrama"
 frame = 2
-frame_progress = 0.133245
 
 [node name="order_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
 position = Vector2(6144, 640)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_f7k7j")
 animation = &"order"
-frame = 11
-frame_progress = 0.154912
+autoplay = "order"
+frame = 4
 
 [node name="order_board_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
 position = Vector2(6896, 448)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_f640u")
 animation = &"order_board"
-frame = 2
-frame_progress = 0.617028
+autoplay = "order_board"
+frame = 4
 
 [node name="gaming_machine_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
 position = Vector2(1776, 704)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_42jf0")
 animation = &"gaming_machine"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="details"]
-libraries = {
-"": SubResource("AnimationLibrary_hpf3s")
-}
+autoplay = "gaming_machine"
+frame = 3
 
 [node name="details_y_sort_enabled" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1080,8 +831,9 @@ animation = &"herb"
 autoplay = "herb"
 offset = Vector2(-0.75, -15.1875)
 
-[node name="herb_AnimatedSprite2D3" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation/herb_AnimatedSprite2D2"]
-position = Vector2(-118.75, 162.813)
+[node name="herb_AnimatedSprite2D3" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
+position = Vector2(3776, 4928.01)
+scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_8klqh")
 animation = &"herb"
 autoplay = "herb"
@@ -1128,11 +880,6 @@ frame = 2
 frame_progress = 0.388809
 offset = Vector2(-1.75, -22.9375)
 flip_h = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="details_y_sort_enabled"]
-libraries = {
-"": SubResource("AnimationLibrary_61slv")
-}
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 scale = Vector2(16, 16)
