@@ -1,12 +1,9 @@
-[gd_scene load_steps=84 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=128 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
 [ext_resource type="Texture2D" uid="uid://ckcbeq5wub8uv" path="res://assets/details/Wall2.png" id="2_66qcg"]
 [ext_resource type="Texture2D" uid="uid://bfhtpurh4w2nb" path="res://assets/details/Wall (2).png" id="2_dql83"]
-[ext_resource type="Texture2D" uid="uid://drdy1y8153apn" path="res://assets/details/Gaming Machine.png" id="3_vw5no"]
-[ext_resource type="Texture2D" uid="uid://8em3q8k8n88e" path="res://assets/details/Galagrama.png" id="4_28ynh"]
-[ext_resource type="Texture2D" uid="uid://bfv8sam4lhder" path="res://assets/details/Bar.png" id="5_gi08y"]
 [ext_resource type="Texture2D" uid="uid://b356vwrt2xp4g" path="res://assets/details/Security Room.png" id="6_40ikp"]
 [ext_resource type="Texture2D" uid="uid://4vu842bxn5u5" path="res://assets/details/Manager Room.png" id="7_1rb70"]
 [ext_resource type="Texture2D" uid="uid://dxyxybdy2bsua" path="res://assets/details/Carpet.png" id="8_s8wtl"]
@@ -19,41 +16,79 @@
 [ext_resource type="Texture2D" uid="uid://dn7s0jw0u2lak" path="res://assets/details/Bench.png" id="13_nx1ir"]
 [ext_resource type="Texture2D" uid="uid://bgp0cjigqm8kc" path="res://assets/details/Securety_table .png" id="14_l4uwd"]
 [ext_resource type="Texture2D" uid="uid://nyrddmf7wkcc" path="res://assets/details/Computer.png" id="15_08wu6"]
-[ext_resource type="Texture2D" uid="uid://2c8ncp05p7by" path="res://assets/details/Order Board.png" id="16_a1qfs"]
+[ext_resource type="Texture2D" uid="uid://wqcscuq768tc" path="res://assets/Door/Door1.png" id="16_3f0id"]
 [ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="16_n4wgm"]
-[ext_resource type="Texture2D" uid="uid://doqmo0nwllqjb" path="res://assets/details/Order (1).png" id="17_01yp3"]
+[ext_resource type="Texture2D" uid="uid://edoc1kwx6wdg" path="res://assets/Door/Door2.png" id="17_gi6xb"]
+[ext_resource type="Texture2D" uid="uid://c00s67q7mgtv5" path="res://assets/Door/Door3.png" id="18_g3jl1"]
 [ext_resource type="Texture2D" uid="uid://c3wqkdjvmvlnh" path="res://assets/details/Bookcase.png" id="18_wyra1"]
+[ext_resource type="Texture2D" uid="uid://c0pgm8kd8j75d" path="res://assets/Door/Door4.png" id="19_legbo"]
+[ext_resource type="Texture2D" uid="uid://duvdwyse38qm8" path="res://assets/Door/Door5.png" id="20_hcjb1"]
+[ext_resource type="Texture2D" uid="uid://dtjef5iytw0ij" path="res://assets/Door/Door6.png" id="21_54h1s"]
 [ext_resource type="Texture2D" uid="uid://c0v3ccyslqvy6" path="res://assets/details/chair2.png" id="22_a1tga"]
+[ext_resource type="Texture2D" uid="uid://chmylt01lbh80" path="res://assets/Bar/Bar1.png" id="22_wyo4j"]
 [ext_resource type="Texture2D" uid="uid://bqqaymukjxk20" path="res://assets/details/plant2.png" id="23_8goi7"]
+[ext_resource type="Texture2D" uid="uid://ci0akat08hw2n" path="res://assets/Bar/Bar2.png" id="23_rotwv"]
 [ext_resource type="Texture2D" uid="uid://cwcx0jbidj1hk" path="res://assets/details/plant1.png" id="24_6tpyt"]
+[ext_resource type="Texture2D" uid="uid://c67hfbywcr38f" path="res://assets/Bar/Bar3.png" id="24_xd81b"]
 [ext_resource type="PackedScene" uid="uid://sr7t5e8ttji0" path="res://project/player/player.tscn" id="25_6bfeo"]
 [ext_resource type="Texture2D" uid="uid://drehqytfm1p18" path="res://assets/details/plant 3.png" id="25_m3uav"]
+[ext_resource type="Texture2D" uid="uid://wdijw8vmhs33" path="res://assets/Bar/Bar4.png" id="25_ujini"]
+[ext_resource type="Texture2D" uid="uid://bnticmqo3cdvc" path="res://assets/Bar/Bar5.png" id="26_e7rvj"]
+[ext_resource type="Texture2D" uid="uid://bgcuktsdna7n5" path="res://assets/Bar/Bar6.png" id="27_ky1rw"]
+[ext_resource type="Texture2D" uid="uid://dhgebqpubjpjt" path="res://assets/Galagrama/Galagrama1.png" id="28_iwf8w"]
 [ext_resource type="Texture2D" uid="uid://kek2o3wvuvdq" path="res://assets/details/Table3.png" id="28_u0job"]
+[ext_resource type="Texture2D" uid="uid://chcoty87eeflq" path="res://assets/Galagrama/Galagrama2.png" id="29_a6jsw"]
 [ext_resource type="Texture2D" uid="uid://bf47icbmtqy2c" path="res://assets/details/Manager_table.png" id="29_rw71g"]
 [ext_resource type="Texture2D" uid="uid://clkam3ofrmvwi" path="res://assets/details/Door_1.png" id="30_ptdti"]
-[ext_resource type="Texture2D" uid="uid://blruakifulty0" path="res://assets/details/Door.png" id="31_6gfxv"]
+[ext_resource type="Texture2D" uid="uid://d33k6lcapgot7" path="res://assets/Galagrama/Galagrama3.png" id="30_sqh2j"]
+[ext_resource type="Texture2D" uid="uid://dbmq8xr0o0prd" path="res://assets/Order/Order1.png" id="31_e4ipi"]
+[ext_resource type="Texture2D" uid="uid://dccut0cc2ygma" path="res://assets/Order/Order2.png" id="32_ageig"]
+[ext_resource type="Texture2D" uid="uid://dlrgijo3lh3o5" path="res://assets/Order/Order3.png" id="33_c1xjg"]
+[ext_resource type="Texture2D" uid="uid://ddts6d1b66yb8" path="res://assets/Order/Order4.png" id="34_dbwg2"]
 [ext_resource type="PackedScene" uid="uid://8csvtumgl1bu" path="res://project/game_manager/game_manager.tscn" id="34_h4sxy"]
 [ext_resource type="PackedScene" uid="uid://s1ay8d4kp6jm" path="res://project/cursor_manager/cursor_manager.tscn" id="34_k54hi"]
 [ext_resource type="Texture2D" uid="uid://c15o56tr7k33w" path="res://assets/details/Sink.png" id="35_nfcmx"]
+[ext_resource type="Texture2D" uid="uid://cwjhgw0y1hno2" path="res://assets/Order/Order5.png" id="35_of14v"]
 [ext_resource type="Texture2D" uid="uid://nxkupdik83g2" path="res://assets/details/Refrigerator.png" id="36_ol6cy"]
+[ext_resource type="Texture2D" uid="uid://cp741ygeqix87" path="res://assets/Order/Order6.png" id="36_r51s3"]
 [ext_resource type="Texture2D" uid="uid://intdhev6g1s" path="res://assets/details/Gas stove.png" id="37_fup5s"]
+[ext_resource type="Texture2D" uid="uid://dcmyi20x78a4b" path="res://assets/Order/Order7.png" id="37_ol6pr"]
+[ext_resource type="Texture2D" uid="uid://objikjijrkcv" path="res://assets/Order/Order8.png" id="38_r6r5d"]
 [ext_resource type="Texture2D" uid="uid://dgrkwx7d7idty" path="res://assets/details/Table (1).png" id="38_uwreu"]
 [ext_resource type="Texture2D" uid="uid://lnovun4kf4xj" path="res://assets/details/seaweed1.png" id="39_84dnd"]
+[ext_resource type="Texture2D" uid="uid://qodq02u1rjox" path="res://assets/Order/Order9.png" id="39_hmjnh"]
 [ext_resource type="Texture2D" uid="uid://drdfaiju45esa" path="res://assets/details/seaweed3.png" id="40_ltrj5"]
+[ext_resource type="Texture2D" uid="uid://mdfai7dwfnn3" path="res://assets/Order/Order10.png" id="40_ojrq0"]
+[ext_resource type="Texture2D" uid="uid://dpludhftow0mq" path="res://assets/Order/Order11.png" id="41_4pocn"]
 [ext_resource type="Texture2D" uid="uid://2473gq1p55vw" path="res://assets/details/seaweed2.png" id="41_b8gq1"]
 [ext_resource type="Texture2D" uid="uid://jekglhh1ntge" path="res://assets/details/Mushroom1.png" id="42_03hsw"]
+[ext_resource type="Texture2D" uid="uid://bwvdrtgx1s5l6" path="res://assets/Order/Order12.png" id="42_a2wnk"]
+[ext_resource type="Texture2D" uid="uid://cpu3u3ywi4dbo" path="res://assets/Order_Board/Order Board1.png" id="43_a0a10"]
 [ext_resource type="Texture2D" uid="uid://bj1cluacsl0ks" path="res://assets/details/Mushroom2.png" id="43_xrp3h"]
 [ext_resource type="Texture2D" uid="uid://b5yrrb8yl8rrq" path="res://assets/details/Mushroom3.png" id="44_d4772"]
+[ext_resource type="Texture2D" uid="uid://0vh423pirqh7" path="res://assets/Order_Board/Order Board2.png" id="44_u1xmb"]
+[ext_resource type="Texture2D" uid="uid://cj6ftehk2xow4" path="res://assets/Order_Board/Order Board3.png" id="45_e4ddc"]
 [ext_resource type="Texture2D" uid="uid://b0l03oc7ci8tr" path="res://assets/details/Fountain1.png" id="45_fupfh"]
+[ext_resource type="Texture2D" uid="uid://cg8jh60aetcd5" path="res://assets/Order_Board/Order Board4.png" id="46_216je"]
 [ext_resource type="Texture2D" uid="uid://c4lqxf1g5lgx6" path="res://assets/details/Fountain2.png" id="46_urq2q"]
 [ext_resource type="Texture2D" uid="uid://cjlbqyu1hci6y" path="res://assets/details/Fountain3.png" id="47_43cpa"]
+[ext_resource type="Texture2D" uid="uid://dwfnannbag1te" path="res://assets/Order_Board/Order Board5.png" id="47_f7tou"]
+[ext_resource type="Texture2D" uid="uid://ccse0wucumob3" path="res://assets/Order_Board/Order Board6.png" id="48_0cq7j"]
 [ext_resource type="Texture2D" uid="uid://b7biby5gxxg7f" path="res://assets/details/Fountain4.png" id="48_uesia"]
+[ext_resource type="Texture2D" uid="uid://dcwnch3q5bg3w" path="res://assets/Order_Board/Order Board7.png" id="49_548jg"]
 [ext_resource type="Texture2D" uid="uid://bdtgmvrrssfeb" path="res://assets/details/herb1.png" id="49_tfstv"]
+[ext_resource type="Texture2D" uid="uid://b5hxrytyrq0ux" path="res://assets/Order_Board/Order Board8.png" id="50_e3oww"]
 [ext_resource type="Texture2D" uid="uid://b2oabdbjvdlk4" path="res://assets/details/herb2.png" id="50_fnt3v"]
+[ext_resource type="Texture2D" uid="uid://bw5ujuy2i5om" path="res://assets/Order_Board/Order Board9.png" id="51_qltbc"]
 [ext_resource type="Texture2D" uid="uid://brgsdrvjqsre4" path="res://assets/details/herb3.png" id="51_u42x7"]
+[ext_resource type="Texture2D" uid="uid://udutd0kpi301" path="res://assets/Order_Board/Order Board10.png" id="52_3mrq8"]
 [ext_resource type="Texture2D" uid="uid://dv0n8bpk3ksgg" path="res://assets/details/Kristal1.png" id="52_vuctr"]
 [ext_resource type="Texture2D" uid="uid://duoal6ofs5elx" path="res://assets/details/Kristal2.png" id="53_46751"]
+[ext_resource type="Texture2D" uid="uid://pcdn8ca7oq5o" path="res://assets/Gaming_Machine/Gaming Machine1.png" id="53_ak5xd"]
 [ext_resource type="Texture2D" uid="uid://dnf600lmni3xh" path="res://assets/details/Kristal3.png" id="54_sbhpo"]
+[ext_resource type="Texture2D" uid="uid://bmu1o84bluhxj" path="res://assets/Gaming_Machine/Gaming Machine2.png" id="54_tnkup"]
+[ext_resource type="Texture2D" uid="uid://cqf2ywr3dob4h" path="res://assets/Gaming_Machine/Gaming Machine3.png" id="55_1orah"]
+[ext_resource type="Texture2D" uid="uid://cysmppb84devd" path="res://assets/Gaming_Machine/Gaming Machine4.png" id="56_1mc23"]
 [ext_resource type="Texture2D" uid="uid://d1qqxr8qw5r5i" path="res://assets/details/Fountain_Shadow.png" id="56_ymsb1"]
 [ext_resource type="Texture2D" uid="uid://br61rtwu6s2rk" path="res://assets/details/Herb_Shadow.png" id="57_0yhs7"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="57_iauci"]
@@ -79,6 +114,261 @@ texture = ExtResource("1_krjco")
 
 [sub_resource type="TileSet" id="TileSet_4kbvj"]
 sources/0 = SubResource("TileSetAtlasSource_5eypp")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhfc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_3f0id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gi6xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g3jl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_legbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hcjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_54h1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hcjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_54h1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hcjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_legbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g3jl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gi6xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3f0id")
+}],
+"loop": true,
+"name": &"door",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd88m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_wyo4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_rotwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xd81b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ujini")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_e7rvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ky1rw")
+}],
+"loop": true,
+"name": &"bar",
+"speed": 1.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjh1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_iwf8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_a6jsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sqh2j")
+}],
+"loop": true,
+"name": &"galagrama",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7k7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_e4ipi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ageig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_c1xjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dbwg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_of14v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_r51s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ol6pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_r6r5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hmjnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ojrq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_4pocn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_a2wnk")
+}],
+"loop": true,
+"name": &"order",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f640u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_a0a10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_u1xmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_e4ddc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_216je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_f7tou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_0cq7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_548jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_e3oww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_qltbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_3mrq8")
+}],
+"loop": true,
+"name": &"order_board",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_42jf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_ak5xd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_tnkup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_1orah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_1mc23")
+}],
+"loop": true,
+"name": &"gaming_machine",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_acfg0"]
+length = 6.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_animatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_yhfc6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_animatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_gg404"]
+resource_name = "details"
+length = 3.0
+step = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_animatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_yhfc6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_animatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpf3s"]
+_data = {
+"RESET": SubResource("Animation_acfg0"),
+"details": SubResource("Animation_gg404")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1cs46"]
 animations = [{
@@ -374,21 +664,6 @@ position = Vector2(4624, 480)
 scale = Vector2(16, 16)
 texture = ExtResource("2_dql83")
 
-[node name="GamingMachine" type="Sprite2D" parent="details"]
-position = Vector2(1776, 704)
-scale = Vector2(16, 16)
-texture = ExtResource("3_vw5no")
-
-[node name="Galagrama" type="Sprite2D" parent="details"]
-position = Vector2(1808, 176)
-scale = Vector2(16, 16)
-texture = ExtResource("4_28ynh")
-
-[node name="Bar" type="Sprite2D" parent="details"]
-position = Vector2(4992, 720)
-scale = Vector2(16, 16)
-texture = ExtResource("5_gi08y")
-
 [node name="SecurityRoom" type="Sprite2D" parent="details"]
 position = Vector2(-1088, 2576)
 scale = Vector2(16, 16)
@@ -493,6 +768,57 @@ texture = ExtResource("15_08wu6")
 position = Vector2(6912, 896)
 scale = Vector2(16, 16)
 texture = ExtResource("28_u0job")
+
+[node name="door_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
+position = Vector2(3281, 561)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_yhfc6")
+animation = &"door"
+frame = 12
+
+[node name="bar_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
+position = Vector2(4992, 720)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_dd88m")
+animation = &"bar"
+autoplay = "bar"
+frame = 3
+frame_progress = 0.805366
+
+[node name="galagrama_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
+position = Vector2(1808, 176)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_gjh1g")
+animation = &"galagrama"
+frame = 2
+frame_progress = 0.133245
+
+[node name="order_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
+position = Vector2(6144, 640)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_f7k7j")
+animation = &"order"
+frame = 11
+frame_progress = 0.154912
+
+[node name="order_board_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
+position = Vector2(6896, 448)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_f640u")
+animation = &"order_board"
+frame = 2
+frame_progress = 0.617028
+
+[node name="gaming_machine_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
+position = Vector2(1776, 704)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_42jf0")
+animation = &"gaming_machine"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="details"]
+libraries = {
+"": SubResource("AnimationLibrary_hpf3s")
+}
 
 [node name="details_y_sort_enabled" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -602,11 +928,6 @@ scale = Vector2(16, 16)
 texture = ExtResource("30_ptdti")
 flip_h = true
 
-[node name="Door" type="Sprite2D" parent="details_y_sort_enabled/door"]
-position = Vector2(3296, 560)
-scale = Vector2(16, 16)
-texture = ExtResource("31_6gfxv")
-
 [node name="Door1" type="Sprite2D" parent="details_y_sort_enabled/door"]
 position = Vector2(112, 2863.98)
 scale = Vector2(16, 16)
@@ -656,16 +977,6 @@ texture = ExtResource("13_nx1ir")
 position = Vector2(9776, 2848)
 scale = Vector2(16, 16)
 texture = ExtResource("13_nx1ir")
-
-[node name="OrderBoard" type="Sprite2D" parent="details_y_sort_enabled"]
-position = Vector2(6896, 448)
-scale = Vector2(16, 16)
-texture = ExtResource("16_a1qfs")
-
-[node name="Order(1)" type="Sprite2D" parent="details_y_sort_enabled"]
-position = Vector2(6144, 640)
-scale = Vector2(16, 16)
-texture = ExtResource("17_01yp3")
 
 [node name="Bookcase" type="Sprite2D" parent="details_y_sort_enabled"]
 position = Vector2(-1808, 4144)
@@ -769,9 +1080,8 @@ animation = &"herb"
 autoplay = "herb"
 offset = Vector2(-0.75, -15.1875)
 
-[node name="herb_AnimatedSprite2D3" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation"]
-position = Vector2(3776, 4928)
-scale = Vector2(16, 16)
+[node name="herb_AnimatedSprite2D3" type="AnimatedSprite2D" parent="details_y_sort_enabled/animation/herb_AnimatedSprite2D2"]
+position = Vector2(-118.75, 162.813)
 sprite_frames = SubResource("SpriteFrames_8klqh")
 animation = &"herb"
 autoplay = "herb"
@@ -1030,5 +1340,6 @@ position = Vector2(7247, 867)
 scale = Vector2(16, 16)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ui" parent="CanvasLayer" instance=ExtResource("72_xu1wm")]
