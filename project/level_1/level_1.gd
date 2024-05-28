@@ -85,6 +85,8 @@ func spawn(group):
 func spawn_and_sit(group):
 	var enemies= group["group"].get_children()
 	var i: int = 0
+	$details/door_animatedSprite2D.play("open")
+	await get_tree().create_timer(4).timeout
 	for enemy in enemies:
 		enemy.spawn($spawn_point.global_position)
 		var chair = group["table"].get_chair(i)
@@ -149,3 +151,7 @@ func get_orders(group):
 		i += 1
 
 	
+
+
+func _on_door_animated_sprite_2d_animation_finished():
+	$details/door_animatedSprite2D.play("idle")

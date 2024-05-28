@@ -123,42 +123,44 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_gi6xb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
 }, {
-"duration": 1.0,
-"texture": ExtResource("18_g3jl1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_legbo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_hcjb1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_54h1s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_hcjb1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_54h1s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_hcjb1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_legbo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_g3jl1")
-}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("17_gi6xb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_3f0id")
+"texture": ExtResource("18_g3jl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_legbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hcjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_54h1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hcjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_54h1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hcjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_legbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g3jl1")
 }],
-"loop": true,
-"name": &"door",
+"loop": false,
+"name": &"open",
 "speed": 2.0
 }]
 
@@ -527,9 +529,8 @@ texture = ExtResource("28_u0job")
 position = Vector2(3281, 561)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_yhfc6")
-animation = &"door"
-autoplay = "door"
-frame = 4
+animation = &"open"
+autoplay = "idle"
 
 [node name="bar_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
 position = Vector2(4992, 720)
@@ -895,14 +896,14 @@ walking_area = NodePath("../walking_area")
 y_sort_enabled = true
 
 [node name="player" parent="clickable_objects" instance=ExtResource("25_6bfeo")]
-position = Vector2(2208, 2064)
+position = Vector2(2479, 1157)
 scale = Vector2(16, 16)
 speed = 800.0
 
 [node name="Camera2D" type="Camera2D" parent="clickable_objects/player"]
 position = Vector2(-2, -1)
 limit_left = -2200
-limit_top = 0
+limit_top = -256
 limit_right = 11500
 limit_bottom = 8900
 
@@ -931,7 +932,7 @@ position = Vector2(3631, 3351)
 position = Vector2(5700, 3345)
 
 [node name="spawn_point" type="Node2D" parent="."]
-position = Vector2(3288, 1117)
+position = Vector2(3269, 958)
 
 [node name="walking_area" type="Area2D" parent="."]
 
@@ -1089,3 +1090,5 @@ scale = Vector2(16, 16)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ui" parent="CanvasLayer" instance=ExtResource("72_xu1wm")]
+
+[connection signal="animation_finished" from="details/door_animatedSprite2D" to="." method="_on_door_animated_sprite_2d_animation_finished"]
