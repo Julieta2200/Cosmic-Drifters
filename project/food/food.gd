@@ -29,7 +29,7 @@ var foods = ["res://assets/Food/Dessert/cake_1.png","res://assets/Food/Dessert/c
 			"res://assets/Food/Hot_dish/rice_balls4.png","res://assets/Food/Hot_dish/tuna.png"]
 
 func prepare(t):
-	$Timer.wait_time = 10
+	$Timer.wait_time =  RandomNumberGenerator.new().randf_range(10,20)
 	$Timer.start()
 	table = t
 
