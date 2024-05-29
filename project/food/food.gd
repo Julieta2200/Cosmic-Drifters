@@ -1,5 +1,6 @@
 extends Node2D
 
+var rng = RandomNumberGenerator.new()
 
 @onready var food_sp = $food
 @onready var cloud = $cloud
@@ -38,3 +39,11 @@ func prepare(t):
 func _on_timer_timeout():
 	prepared = true
 	table.order_prepared()
+
+func generate(flipped):
+	food_sp.texture = load(foods[rng.randf_range(0,foods.size())])
+	if flipped:
+		cloud.offset.x= -30
+		food_sp.offset.x = -32
+		cloud.flip_h = true
+	visible = true
