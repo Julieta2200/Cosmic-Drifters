@@ -4,6 +4,7 @@ const SPAWN_DELAY = 1
 const ORDER_TIME: int = 1
 
 var level_time: int = 500
+@export var computer: Node2D
 
 @onready var group_1 = {
 	"group": $group_1,
@@ -13,6 +14,7 @@ var level_time: int = 500
 	"served": false,
 	"spawned": false,
 	"spawn_time": 5,
+	"for_lumina": true
 }
 
 @onready var group_2 = {
@@ -95,6 +97,9 @@ func spawn_and_sit(group):
 		await get_tree().create_timer(SPAWN_DELAY).timeout
 		
 func serve(group):
+	if group.has("for_lumina"):
+		group["table"].ask_waiter()
+		return
 	if group["served"]:
 		return
 	group["served"] = true
@@ -149,8 +154,6 @@ func get_orders(group):
 		group["orders"].append(false)
 		await get_tree().create_timer(ORDER_TIME).timeout
 		i += 1
-
-	
 
 
 func _on_door_animated_sprite_2d_animation_finished():

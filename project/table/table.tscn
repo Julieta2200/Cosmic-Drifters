@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="2_qedio"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="3_s58k2"]
 [ext_resource type="Script" path="res://project/table/status.gd" id="5_jduwx"]
-[ext_resource type="Texture2D" uid="uid://dc2hmv6wsdcik" path="res://assets/Food/cloud.png" id="5_o3so6"]
+[ext_resource type="Texture2D" uid="uid://cbuvioy1gsa6i" path="res://assets/Emotions /Exclamation_point.png" id="6_0ucrw"]
 
 [node name="Table" type="Node2D"]
 position = Vector2(614, 450)
@@ -61,7 +61,7 @@ texture = ExtResource("2_qedio")
 [node name="status" type="Node2D" parent="."]
 script = ExtResource("5_jduwx")
 
-[node name="sprite" type="Sprite2D" parent="status"]
+[node name="ask_waiter" type="Sprite2D" parent="status"]
 visible = false
 position = Vector2(32.125, -34.75)
-texture = ExtResource("5_o3so6")
+texture = ExtResource("6_0ucrw")

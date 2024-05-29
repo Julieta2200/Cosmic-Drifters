@@ -8,6 +8,12 @@ const ORDER_INTERVAL: int = 1
 var waiter
 var level
 var group
+var for_lumina: bool = false
+
+enum {STATUS_EMPTY, STATUS_WAITING1}
+var status = STATUS_EMPTY
+
+var table_status = "empty"
 
 var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/plate_2.png",
 				"res://assets/Food/Plate/plate_3.png","res://assets/Food/Plate/plate_4.png",
@@ -55,7 +61,10 @@ func remove_plates():
 func ordered(chair_i):
 	if chair_i == len($chairs.get_children()) - 1:
 		waiter.busy = false
-		waiter = null
+		if !for_lumina:
+			waiter = null
+		else:
+			level.computer.add_table(self)
 
 func order_prepared():
 	for i in enemies:
@@ -64,6 +73,12 @@ func order_prepared():
 	level.order_prepared(group["name"])
 	
 
-
-func call_lumina():
-	$status.start()
+func ask_waiter():
+	status = STATUS_WAITING1
+	$status.ask_waiter()
+	
+func action_complete(action, caller):
+	match action:
+		"ask_order":
+			for_lumina = true
+			call_orders(caller)
