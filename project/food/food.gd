@@ -2,6 +2,7 @@ extends Node2D
 
 
 @onready var food_sp = $food
+@onready var cloud = $cloud
 var action
 var level
 var table

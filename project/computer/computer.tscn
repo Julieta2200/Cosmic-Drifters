@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://project/computer/computer.gd" id="1_5jjaq"]
 [ext_resource type="Texture2D" uid="uid://nyrddmf7wkcc" path="res://assets/details/Computer.png" id="1_57rk5"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="2_7353f"]
-[ext_resource type="Texture2D" uid="uid://cbuvioy1gsa6i" path="res://assets/Emotions /Exclamation_point.png" id="4_epubf"]
+[ext_resource type="Texture2D" uid="uid://cbuvioy1gsa6i" path="res://assets/Emotions/Exclamation_point.png" id="4_epubf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdpta"]
 size = Vector2(32.3125, 28.625)

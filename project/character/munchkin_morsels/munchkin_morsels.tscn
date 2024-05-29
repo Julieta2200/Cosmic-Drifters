@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dydfvm68plof4" path="res://assets/Munchkin Morsels/walk-1.png" id="7_1s2pc"]
 [ext_resource type="Texture2D" uid="uid://dhydnhug1i6je" path="res://assets/Munchkin Morsels/walk-2.png" id="8_a8up6"]
 [ext_resource type="Texture2D" uid="uid://dcjlj1absawkx" path="res://assets/Munchkin Morsels/talk.png" id="9_ho4dj"]
-[ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="10_q8krf"]
+[ext_resource type="PackedScene" uid="uid://qfllko52y25d" path="res://project/food/food.tscn" id="10_q8krf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nriwt"]
 animations = [{
@@ -96,7 +96,7 @@ frame_progress = 0.881726
 
 [node name="food" parent="." instance=ExtResource("10_q8krf")]
 visible = false
-position = Vector2(4.625, -26.5625)
+position = Vector2(5, -24)
 
 [node name="order_timer" type="Timer" parent="."]
 wait_time = 2.0

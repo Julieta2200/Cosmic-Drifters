@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4efpx4cuvc4u"]
+[gd_scene load_steps=4 format=3 uid="uid://qfllko52y25d"]
 
 [ext_resource type="Script" path="res://project/food/food.gd" id="1_nam7q"]
 [ext_resource type="Texture2D" uid="uid://dc2hmv6wsdcik" path="res://assets/Food/cloud.png" id="2_4ypwa"]
-[ext_resource type="Texture2D" uid="uid://yttmqlisr86f" path="res://assets/Food/Dessert/muffin_2.png" id="3_q8c1c"]
+[ext_resource type="Texture2D" uid="uid://cimfd3dlrgoqx" path="res://assets/Food/Hot_dish/Mushroom.png" id="3_6rc3x"]
 
 [node name="food" type="Node2D"]
 z_index = 1
@@ -13,8 +13,8 @@ position = Vector2(10, 7)
 texture = ExtResource("2_4ypwa")
 
 [node name="food" type="Sprite2D" parent="."]
-position = Vector2(12.1429, 5.57143)
-texture = ExtResource("3_q8c1c")
+position = Vector2(11, 6)
+texture = ExtResource("3_6rc3x")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br33ka7kgufw8"
-path="res://.godot/imported/Fire.png-c2227e3e80fdbe39f3e10d0b4a8c9330.ctex"
+path="res://.godot/imported/Fire.png-3fb335b63aa410eca7b5d6693ea2ba9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Emotions /Fire.png"
-dest_files=["res://.godot/imported/Fire.png-c2227e3e80fdbe39f3e10d0b4a8c9330.ctex"]
+source_file="res://assets/Emotions/Fire.png"
+dest_files=["res://.godot/imported/Fire.png-3fb335b63aa410eca7b5d6693ea2ba9d.ctex"]
 
 [params]
 
