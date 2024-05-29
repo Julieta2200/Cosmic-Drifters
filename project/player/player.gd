@@ -12,6 +12,8 @@ func _ready():
 	animation()
 
 func ask_order(table):
+	if table.status != table.STATUS_WAITING1:
+		return	
 	busy = true
 	var serve_point = table.get_serve_point()
 	walk_to(table, serve_point, "ask_order")
