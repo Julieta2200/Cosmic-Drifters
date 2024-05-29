@@ -13,7 +13,7 @@ position = Vector2(10, 7)
 texture = ExtResource("2_4ypwa")
 
 [node name="food" type="Sprite2D" parent="."]
-position = Vector2(10, 6)
+position = Vector2(11, 6)
 texture = ExtResource("3_6rc3x")
 
 [node name="Timer" type="Timer" parent="."]

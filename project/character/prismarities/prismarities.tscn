@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://8yfwfcb37euq" path="res://assets/Prismarities/walk-1.png" id="7_m52mk"]
 [ext_resource type="Texture2D" uid="uid://d2tnytjb3yl2k" path="res://assets/Prismarities/talk-2.png" id="8_sgbwi"]
 [ext_resource type="Texture2D" uid="uid://bk5pbm8cyfsi7" path="res://assets/Prismarities/walk-2.png" id="8_w40ut"]
-[ext_resource type="PackedScene" uid="uid://d4efpx4cuvc4u" path="res://project/food/food.tscn" id="9_n3y1t"]
+[ext_resource type="PackedScene" uid="uid://qfllko52y25d" path="res://project/food/food.tscn" id="9_n3y1t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3fmdn"]
 animations = [{
@@ -95,7 +95,7 @@ animation = &"talk"
 
 [node name="food" parent="." instance=ExtResource("9_n3y1t")]
 visible = false
-position = Vector2(4.625, -26.5625)
+position = Vector2(5, -24)
 
 [node name="order_timer" type="Timer" parent="."]
 wait_time = 2.0

@@ -9,6 +9,7 @@ var waiter
 var level
 var group
 var for_lumina: bool = false
+@onready var chairs = $chairs
 
 enum {STATUS_EMPTY, STATUS_WAITING1}
 var status = STATUS_EMPTY
