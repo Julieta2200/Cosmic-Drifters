@@ -69,4 +69,4 @@ visible = false
 position = Vector2(16.3125, -11.875)
 sprite_frames = SubResource("SpriteFrames_i70my")
 autoplay = "default"
-frame_progress = 0.719608
+frame_progress = 0.737623
