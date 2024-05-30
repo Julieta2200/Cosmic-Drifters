@@ -1,12 +1,55 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1su8qlgqhwlk"]
+[gd_scene load_steps=15 format=3 uid="uid://c1su8qlgqhwlk"]
 
 [ext_resource type="Script" path="res://project/computer/computer.gd" id="1_5jjaq"]
 [ext_resource type="Texture2D" uid="uid://nyrddmf7wkcc" path="res://assets/details/Computer.png" id="1_57rk5"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="2_7353f"]
-[ext_resource type="Texture2D" uid="uid://cbuvioy1gsa6i" path="res://assets/Emotions/Exclamation_point.png" id="4_epubf"]
+[ext_resource type="Texture2D" uid="uid://p511f2nvd3wc" path="res://assets/Order_Button/Order_Button1.png" id="4_ct1tb"]
+[ext_resource type="Texture2D" uid="uid://c373cpindu46r" path="res://assets/Order_Button/Order_Button2.png" id="5_tds1h"]
+[ext_resource type="Texture2D" uid="uid://c5japf3rhksqt" path="res://assets/Order_Button/Order_Button3.png" id="6_ou0e1"]
+[ext_resource type="Texture2D" uid="uid://dy8t8cyv4rjh5" path="res://assets/Order_Button/Order_Button4.png" id="7_k0633"]
+[ext_resource type="Texture2D" uid="uid://bivy4ckxw0prx" path="res://assets/Order_Button/Order_Button5.png" id="8_mlq8b"]
+[ext_resource type="Texture2D" uid="uid://bub34lowck58k" path="res://assets/Order_Button/Order_Button6.png" id="9_buqd1"]
+[ext_resource type="Texture2D" uid="uid://y3maq8mwau45" path="res://assets/Order_Button/Order_Button7.png" id="10_yob18"]
+[ext_resource type="Texture2D" uid="uid://dk56u0cf7xc4a" path="res://assets/Order_Button/Order_Button8.png" id="11_y6d74"]
+[ext_resource type="Texture2D" uid="uid://bd7m17blmd17a" path="res://assets/Order_Button/Order_Button9.png" id="12_jxqc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdpta"]
 size = Vector2(32.3125, 28.625)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i70my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ct1tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tds1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ou0e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k0633")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mlq8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_buqd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yob18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y6d74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jxqc4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="computer" type="Node2D"]
 scale = Vector2(16, 16)
@@ -21,7 +64,9 @@ texture = ExtResource("1_57rk5")
 position = Vector2(2.21875, 1.5625)
 shape = SubResource("RectangleShape2D_sdpta")
 
-[node name="status" type="Sprite2D" parent="."]
+[node name="status" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(16.3125, -11.875)
-texture = ExtResource("4_epubf")
+sprite_frames = SubResource("SpriteFrames_i70my")
+autoplay = "default"
+frame_progress = 0.719608
