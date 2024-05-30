@@ -1,0 +1,951 @@
+[gd_scene load_steps=57 format=3 uid="uid://uqiq7ol038uw"]
+
+[ext_resource type="Texture2D" uid="uid://l3sq32eps0vr" path="res://assets/Menu_UI/Table_Number.png" id="1_547g1"]
+[ext_resource type="Texture2D" uid="uid://bcglbg7y8b6s3" path="res://assets/Menu_UI/Menu/Menu1.png" id="1_y2ks4"]
+[ext_resource type="FontFile" uid="uid://dbw6u161nxy7t" path="res://assets/Fonts/Mystery Font2.ttf" id="2_dw0ar"]
+[ext_resource type="Texture2D" uid="uid://cfwr8f6mw68or" path="res://assets/Menu_UI/Menu/Menu2.png" id="2_nhaqe"]
+[ext_resource type="Texture2D" uid="uid://7855q06cm2pn" path="res://assets/Menu_UI/Menu/Menu3.png" id="3_tj27b"]
+[ext_resource type="Texture2D" uid="uid://ckk5sn4rpsalp" path="res://assets/Menu_UI/Panel_Drinks/Drinks1.png" id="4_wumch"]
+[ext_resource type="Texture2D" uid="uid://tnyd6rhj7fmq" path="res://assets/Menu_UI/Panel_Dessert/Dessert2.png" id="5_rgi2o"]
+[ext_resource type="Texture2D" uid="uid://c7nn6kaedy4mf" path="res://assets/Menu_UI/Panel_Hot_Dishes/Hot_dishes2.png" id="6_roksp"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="7_jqssa"]
+[ext_resource type="Texture2D" uid="uid://b2ltlwl224rtp" path="res://assets/Menu_UI/Cell_Small/Cell_Small2.png" id="10_ka53w"]
+[ext_resource type="Texture2D" uid="uid://b02jwseg31vwg" path="res://assets/Food/Drinks/beer.png" id="11_u46jc"]
+[ext_resource type="Texture2D" uid="uid://c0okgjuem8fkg" path="res://assets/Food/Drinks/cocktail.png" id="12_cvwtr"]
+[ext_resource type="Texture2D" uid="uid://7q3jgnbtmm54" path="res://assets/Food/Drinks/cocoa.png" id="13_30lar"]
+[ext_resource type="Texture2D" uid="uid://bmxypj4auvmyp" path="res://assets/Food/Drinks/coffee.png" id="14_8ben8"]
+[ext_resource type="Texture2D" uid="uid://dltfovk5mwcb7" path="res://assets/Food/Drinks/green_tea.png" id="15_vy4b3"]
+[ext_resource type="Texture2D" uid="uid://bivcaj5sjgryk" path="res://assets/Food/Drinks/juice_1.png" id="16_le21u"]
+[ext_resource type="Texture2D" uid="uid://bhjeqonkwx8ly" path="res://assets/Food/Drinks/water.png" id="17_rdj15"]
+[ext_resource type="Texture2D" uid="uid://cd30gd1g801o3" path="res://assets/Food/Drinks/juice_2.png" id="18_mr33c"]
+[ext_resource type="Texture2D" uid="uid://bgfgrw0v8jfl6" path="res://assets/Menu_UI/Panel_Drinks/Drinks2.png" id="19_f2ual"]
+[ext_resource type="Texture2D" uid="uid://df32mayhigwie" path="res://assets/Menu_UI/Cell_Big/Cell_Big2.png" id="19_pp1qu"]
+[ext_resource type="Texture2D" uid="uid://dfoo33nxr8q5u" path="res://assets/Menu_UI/Cancel_button/Cancel_Button(Normal).png" id="20_2e31y"]
+[ext_resource type="Texture2D" uid="uid://c121iqo2ndqo8" path="res://assets/Menu_UI/Panel_Dessert/Dessert1.png" id="20_yi1mo"]
+[ext_resource type="Texture2D" uid="uid://deixw1xma0ewv" path="res://assets/Food/Dessert/cake_1.png" id="21_n44gm"]
+[ext_resource type="Texture2D" uid="uid://cotkrcf0qcai8" path="res://assets/Menu_UI/Cancel_button/Cancel_button(click).png" id="21_umnl8"]
+[ext_resource type="Texture2D" uid="uid://d3j87o4efhv8d" path="res://assets/Menu_UI/Cancel_button/Cancel_Button(hover).png" id="22_bhr04"]
+[ext_resource type="Texture2D" uid="uid://d1bja5kedtstf" path="res://assets/Food/Dessert/cake_2.png" id="22_nkghv"]
+[ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="23_32s55"]
+[ext_resource type="Texture2D" uid="uid://cq0i5ttd3e1ob" path="res://assets/Food/Dessert/cracker.png" id="23_osvjp"]
+[ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="24_dn0lp"]
+[ext_resource type="Texture2D" uid="uid://c5f7tnetuo0cd" path="res://assets/Food/Dessert/easter_cake.png" id="24_jxgxt"]
+[ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="25_bt8lu"]
+[ext_resource type="Texture2D" uid="uid://elrvy5bvu56v" path="res://assets/Food/Dessert/ice_cream_1.png" id="25_dn13g"]
+[ext_resource type="Texture2D" uid="uid://bstevq1unf8gn" path="res://assets/Food/Dessert/ice_cream_2.png" id="26_4sd1e"]
+[ext_resource type="Texture2D" uid="uid://cb3kit4sls2ad" path="res://assets/Food/Dessert/muffin_1.png" id="27_in8dq"]
+[ext_resource type="Texture2D" uid="uid://yttmqlisr86f" path="res://assets/Food/Dessert/muffin_2.png" id="28_wmi6n"]
+[ext_resource type="Texture2D" uid="uid://6m2hch4l0087" path="res://assets/Food/Dessert/pancakes.png" id="29_lxj4n"]
+[ext_resource type="Texture2D" uid="uid://dv5t6pf8bqwyx" path="res://assets/Food/Dessert/roll.png" id="30_a324x"]
+[ext_resource type="Texture2D" uid="uid://7kekda2kqqca" path="res://assets/Menu_UI/Panel_Hot_Dishes/Hot_dishes1.png" id="32_4ewof"]
+[ext_resource type="Texture2D" uid="uid://6bbs4iw2f27j" path="res://assets/Food/Hot_dish/becon.png" id="33_nxu0a"]
+[ext_resource type="Texture2D" uid="uid://0gshhqseo0v7" path="res://assets/Food/Hot_dish/beef.png" id="34_qg37b"]
+[ext_resource type="Texture2D" uid="uid://v8qi00wcvlut" path="res://assets/Food/Hot_dish/burger.png" id="35_qul3w"]
+[ext_resource type="Texture2D" uid="uid://bdfenuuroag1t" path="res://assets/Food/Hot_dish/chicken.png" id="36_rxcle"]
+[ext_resource type="Texture2D" uid="uid://bija3tnt3ibf7" path="res://assets/Food/Hot_dish/hot_dog.png" id="37_nc3kd"]
+[ext_resource type="Texture2D" uid="uid://cimfd3dlrgoqx" path="res://assets/Food/Hot_dish/Mushroom.png" id="38_jhce1"]
+[ext_resource type="Texture2D" uid="uid://cx511qwu24fa7" path="res://assets/Food/Hot_dish/omelette.png" id="39_isn4j"]
+[ext_resource type="Texture2D" uid="uid://duf2ttt4g2gre" path="res://assets/Food/Hot_dish/pepper.png" id="40_0thof"]
+[ext_resource type="Texture2D" uid="uid://bxgdojwwpsy6k" path="res://assets/Food/Hot_dish/pizza.png" id="41_b0p4v"]
+[ext_resource type="Texture2D" uid="uid://bgfd220jo6bin" path="res://assets/Food/Hot_dish/ramen.png" id="42_ura4w"]
+[ext_resource type="Texture2D" uid="uid://j3y7kkikeu8c" path="res://assets/Food/Hot_dish/rice_balls1.png" id="43_4qojw"]
+[ext_resource type="Texture2D" uid="uid://dx20l1yn8hlem" path="res://assets/Food/Hot_dish/rice_balls2.png" id="44_fyfrc"]
+[ext_resource type="Texture2D" uid="uid://bg3ra7681mrkc" path="res://assets/Food/Hot_dish/rice_balls3.png" id="45_8ky2c"]
+[ext_resource type="Texture2D" uid="uid://cs3682oumqvj6" path="res://assets/Food/Hot_dish/rice_balls4.png" id="46_jrqrw"]
+[ext_resource type="Texture2D" uid="uid://phj6opv38o5a" path="res://assets/Food/Hot_dish/tuna.png" id="47_md8qm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qm8v5"]
+font = ExtResource("2_dw0ar")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_dh2r8"]
+font = ExtResource("7_jqssa")
+font_size = 88
+
+[sub_resource type="LabelSettings" id="LabelSettings_dq8ak"]
+font = ExtResource("7_jqssa")
+font_size = 88
+
+[node name="food_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 773.0
+offset_top = -267.0
+offset_right = 813.0
+offset_bottom = -247.0
+scale = Vector2(12, 12)
+texture = ExtResource("1_547g1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 864.0
+offset_top = -176.0
+offset_right = 1150.0
+offset_bottom = -113.0
+text = "N 12"
+label_settings = SubResource("LabelSettings_qm8v5")
+
+[node name="drinks" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="drinks"]
+layout_mode = 0
+offset_right = 119.0
+offset_bottom = 119.0
+scale = Vector2(16, 16)
+texture = ExtResource("3_tj27b")
+
+[node name="MenuButton" type="MenuButton" parent="drinks"]
+layout_mode = 2
+offset_left = 1305.0
+offset_top = -159.0
+offset_right = 1345.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("4_wumch")
+
+[node name="MenuButton2" type="MenuButton" parent="drinks"]
+layout_mode = 2
+offset_left = 698.0
+offset_top = -159.0
+offset_right = 745.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("5_rgi2o")
+
+[node name="MenuButton3" type="MenuButton" parent="drinks"]
+layout_mode = 2
+offset_left = -48.0
+offset_top = -159.0
+offset_right = 8.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("6_roksp")
+
+[node name="Label" type="Label" parent="drinks"]
+layout_mode = 0
+offset_left = 1463.0
+offset_top = 132.0
+offset_right = 1840.0
+offset_bottom = 248.0
+text = "Drinks"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="Label2" type="Label" parent="drinks"]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 104.0
+offset_right = 1370.0
+offset_bottom = 220.0
+text = "Dessert"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="Label3" type="Label" parent="drinks"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 104.0
+offset_right = 767.0
+offset_bottom = 220.0
+text = "Hot dishes"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="drinks"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 206.0
+offset_bottom = 440.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="drinks/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="drinks/HBoxContainer/TextureButton"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_u46jc")
+
+[node name="TextureButton2" type="TextureButton" parent="drinks/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect2" type="TextureRect" parent="drinks/HBoxContainer/TextureButton2"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_cvwtr")
+
+[node name="TextureButton3" type="TextureButton" parent="drinks/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect3" type="TextureRect" parent="drinks/HBoxContainer/TextureButton3"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("13_30lar")
+
+[node name="TextureButton4" type="TextureButton" parent="drinks/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect4" type="TextureRect" parent="drinks/HBoxContainer/TextureButton4"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_8ben8")
+
+[node name="TextureButton5" type="TextureButton" parent="drinks/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect5" type="TextureRect" parent="drinks/HBoxContainer/TextureButton5"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("15_vy4b3")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="drinks"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 750.0
+offset_right = 206.0
+offset_bottom = 790.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="drinks/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="drinks/HBoxContainer2/TextureButton"]
+layout_mode = 0
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("16_le21u")
+
+[node name="TextureButton2" type="TextureButton" parent="drinks/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="drinks/HBoxContainer2/TextureButton2"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("17_rdj15")
+
+[node name="TextureButton3" type="TextureButton" parent="drinks/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="drinks/HBoxContainer2/TextureButton3"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("18_mr33c")
+
+[node name="TextureButton4" type="TextureButton" parent="drinks/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton5" type="TextureButton" parent="drinks/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="drinks"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1100.0
+offset_right = 206.0
+offset_bottom = 1140.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="drinks/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton2" type="TextureButton" parent="drinks/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton3" type="TextureButton" parent="drinks/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton4" type="TextureButton" parent="drinks/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton5" type="TextureButton" parent="drinks/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="drinks"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 1482.0
+offset_right = 200.0
+offset_bottom = 1522.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="drinks/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton2" type="TextureButton" parent="drinks/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton3" type="TextureButton" parent="drinks/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton4" type="TextureButton" parent="drinks/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="dessert" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="dessert"]
+layout_mode = 0
+offset_right = 119.0
+offset_bottom = 119.0
+scale = Vector2(16, 16)
+texture = ExtResource("2_nhaqe")
+
+[node name="MenuButton" type="MenuButton" parent="dessert"]
+layout_mode = 2
+offset_left = 1305.0
+offset_top = -159.0
+offset_right = 1377.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("19_f2ual")
+
+[node name="MenuButton2" type="MenuButton" parent="dessert"]
+layout_mode = 2
+offset_left = 698.0
+offset_top = -159.0
+offset_right = 745.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("20_yi1mo")
+
+[node name="MenuButton3" type="MenuButton" parent="dessert"]
+layout_mode = 2
+offset_left = -48.0
+offset_top = -159.0
+offset_right = 8.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("6_roksp")
+
+[node name="Label" type="Label" parent="dessert"]
+layout_mode = 0
+offset_left = 1463.0
+offset_top = 132.0
+offset_right = 1840.0
+offset_bottom = 248.0
+text = "Drinks"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="Label2" type="Label" parent="dessert"]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 104.0
+offset_right = 1370.0
+offset_bottom = 220.0
+text = "Dessert"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="Label3" type="Label" parent="dessert"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 104.0
+offset_right = 767.0
+offset_bottom = 220.0
+text = "Hot dishes"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="dessert"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 206.0
+offset_bottom = 440.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="dessert/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="dessert/HBoxContainer/TextureButton"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("21_n44gm")
+
+[node name="TextureButton2" type="TextureButton" parent="dessert/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect2" type="TextureRect" parent="dessert/HBoxContainer/TextureButton2"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("22_nkghv")
+
+[node name="TextureButton3" type="TextureButton" parent="dessert/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect3" type="TextureRect" parent="dessert/HBoxContainer/TextureButton3"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("23_osvjp")
+
+[node name="TextureButton4" type="TextureButton" parent="dessert/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect4" type="TextureRect" parent="dessert/HBoxContainer/TextureButton4"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("24_jxgxt")
+
+[node name="TextureButton5" type="TextureButton" parent="dessert/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect5" type="TextureRect" parent="dessert/HBoxContainer/TextureButton5"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("25_dn13g")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="dessert"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 750.0
+offset_right = 206.0
+offset_bottom = 790.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="dessert/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="dessert/HBoxContainer2/TextureButton"]
+layout_mode = 0
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("26_4sd1e")
+
+[node name="TextureButton2" type="TextureButton" parent="dessert/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="dessert/HBoxContainer2/TextureButton2"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("27_in8dq")
+
+[node name="TextureButton3" type="TextureButton" parent="dessert/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="dessert/HBoxContainer2/TextureButton3"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("28_wmi6n")
+
+[node name="TextureButton4" type="TextureButton" parent="dessert/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="dessert/HBoxContainer2/TextureButton4"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("29_lxj4n")
+
+[node name="TextureButton5" type="TextureButton" parent="dessert/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="dessert/HBoxContainer2/TextureButton5"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("30_a324x")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="dessert"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1100.0
+offset_right = 206.0
+offset_bottom = 1140.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="dessert/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton2" type="TextureButton" parent="dessert/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton3" type="TextureButton" parent="dessert/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton4" type="TextureButton" parent="dessert/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureButton5" type="TextureButton" parent="dessert/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="dessert"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 1482.0
+offset_right = 200.0
+offset_bottom = 1522.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="dessert/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton2" type="TextureButton" parent="dessert/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton3" type="TextureButton" parent="dessert/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton4" type="TextureButton" parent="dessert/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="hot_dishes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="hot_dishes"]
+layout_mode = 0
+offset_right = 119.0
+offset_bottom = 119.0
+scale = Vector2(16, 16)
+texture = ExtResource("1_y2ks4")
+
+[node name="MenuButton" type="MenuButton" parent="hot_dishes"]
+layout_mode = 2
+offset_left = 1305.0
+offset_top = -159.0
+offset_right = 1377.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("19_f2ual")
+
+[node name="MenuButton2" type="MenuButton" parent="hot_dishes"]
+layout_mode = 2
+offset_left = 698.0
+offset_top = -159.0
+offset_right = 745.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("5_rgi2o")
+
+[node name="MenuButton3" type="MenuButton" parent="hot_dishes"]
+layout_mode = 2
+offset_left = -48.0
+offset_top = -159.0
+offset_right = 8.0
+offset_bottom = -119.0
+scale = Vector2(16, 16)
+icon = ExtResource("32_4ewof")
+
+[node name="Label" type="Label" parent="hot_dishes"]
+layout_mode = 0
+offset_left = 1463.0
+offset_top = 132.0
+offset_right = 1840.0
+offset_bottom = 248.0
+text = "Drinks"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="Label2" type="Label" parent="hot_dishes"]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 104.0
+offset_right = 1370.0
+offset_bottom = 220.0
+text = "Dessert"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="Label3" type="Label" parent="hot_dishes"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 104.0
+offset_right = 767.0
+offset_bottom = 220.0
+text = "Hot dishes"
+label_settings = SubResource("LabelSettings_dh2r8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hot_dishes"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 206.0
+offset_bottom = 440.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="hot_dishes/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer/TextureButton"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("33_nxu0a")
+
+[node name="TextureButton2" type="TextureButton" parent="hot_dishes/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect2" type="TextureRect" parent="hot_dishes/HBoxContainer/TextureButton2"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("34_qg37b")
+
+[node name="TextureButton3" type="TextureButton" parent="hot_dishes/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect3" type="TextureRect" parent="hot_dishes/HBoxContainer/TextureButton3"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("35_qul3w")
+
+[node name="TextureButton4" type="TextureButton" parent="hot_dishes/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect4" type="TextureRect" parent="hot_dishes/HBoxContainer/TextureButton4"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("36_rxcle")
+
+[node name="TextureButton5" type="TextureButton" parent="hot_dishes/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect5" type="TextureRect" parent="hot_dishes/HBoxContainer/TextureButton5"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("37_nc3kd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="hot_dishes"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 750.0
+offset_right = 206.0
+offset_bottom = 790.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="hot_dishes/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer2/TextureButton"]
+layout_mode = 0
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("38_jhce1")
+
+[node name="TextureButton2" type="TextureButton" parent="hot_dishes/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer2/TextureButton2"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("39_isn4j")
+
+[node name="TextureButton3" type="TextureButton" parent="hot_dishes/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer2/TextureButton3"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("40_0thof")
+
+[node name="TextureButton4" type="TextureButton" parent="hot_dishes/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer2/TextureButton4"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("41_b0p4v")
+
+[node name="TextureButton5" type="TextureButton" parent="hot_dishes/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer2/TextureButton5"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("42_ura4w")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="hot_dishes"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1100.0
+offset_right = 206.0
+offset_bottom = 1140.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="hot_dishes/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer3/TextureButton"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("43_4qojw")
+
+[node name="TextureButton2" type="TextureButton" parent="hot_dishes/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer3/TextureButton2"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("44_fyfrc")
+
+[node name="TextureButton3" type="TextureButton" parent="hot_dishes/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer3/TextureButton3"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("45_8ky2c")
+
+[node name="TextureButton4" type="TextureButton" parent="hot_dishes/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer3/TextureButton4"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("46_jrqrw")
+
+[node name="TextureButton5" type="TextureButton" parent="hot_dishes/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_ka53w")
+
+[node name="TextureRect" type="TextureRect" parent="hot_dishes/HBoxContainer3/TextureButton5"]
+offset_left = 3.75
+offset_top = 3.75
+offset_right = 13.75
+offset_bottom = 13.75
+texture = ExtResource("47_md8qm")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="hot_dishes"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 1482.0
+offset_right = 200.0
+offset_bottom = 1522.0
+scale = Vector2(16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="hot_dishes/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton2" type="TextureButton" parent="hot_dishes/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton3" type="TextureButton" parent="hot_dishes/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton4" type="TextureButton" parent="hot_dishes/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("19_pp1qu")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 1976.0
+offset_right = 844.0
+offset_bottom = 2016.0
+scale = Vector2(16, 16)
+texture_normal = ExtResource("20_2e31y")
+texture_pressed = ExtResource("21_umnl8")
+texture_hover = ExtResource("22_bhr04")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1376.0
+offset_top = 1976.0
+offset_right = 1416.0
+offset_bottom = 2016.0
+scale = Vector2(16, 16)
+texture_normal = ExtResource("23_32s55")
+texture_pressed = ExtResource("24_dn0lp")
+texture_hover = ExtResource("25_bt8lu")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 2035.0
+offset_right = 1243.0
+offset_bottom = 2137.0
+text = "Cencel"
+label_settings = SubResource("LabelSettings_dq8ak")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1541.0
+offset_top = 2043.0
+offset_right = 1915.0
+offset_bottom = 2145.0
+text = "Ok"
+label_settings = SubResource("LabelSettings_dq8ak")
