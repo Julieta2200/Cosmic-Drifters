@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://uqiq7ol038uw"]
+[gd_scene load_steps=29 format=3 uid="uid://uqiq7ol038uw"]
 
 [ext_resource type="Texture2D" uid="uid://l3sq32eps0vr" path="res://assets/Menu_UI/Table_Number.png" id="1_547g1"]
 [ext_resource type="Script" path="res://project/food_menu/food_menu.gd" id="1_lrmo0"]
@@ -21,9 +21,6 @@ texture = ExtResource("1_547g1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8hl4"]
 texture = ExtResource("3_yc1tq")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ov3uu"]
-texture = ExtResource("1_y2ks4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjvmk"]
 texture = ExtResource("6_otr7g")
@@ -110,7 +107,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_p8hl4")
 
-[node name="main_panel" type="Panel" parent="."]
+[node name="main_panel" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -123,7 +120,7 @@ offset_right = 952.0
 offset_bottom = 945.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ov3uu")
+texture = ExtResource("1_y2ks4")
 
 [node name="hot_dishes" type="TextureRect" parent="main_panel"]
 layout_mode = 1
@@ -495,3 +492,7 @@ theme_override_fonts/font = ExtResource("7_jqssa")
 theme_override_font_sizes/font_size = 80
 text = "Ok"
 horizontal_alignment = 1
+
+[connection signal="gui_input" from="main_panel/hot_dishes" to="." method="_on_hot_dishes_gui_input"]
+[connection signal="gui_input" from="main_panel/dessert" to="." method="_on_dessert_gui_input"]
+[connection signal="gui_input" from="main_panel/drinks" to="." method="_on_drinks_gui_input"]
