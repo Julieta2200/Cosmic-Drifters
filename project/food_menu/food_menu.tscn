@@ -1,10 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://uqiq7ol038uw"]
+[gd_scene load_steps=30 format=3 uid="uid://uqiq7ol038uw"]
 
 [ext_resource type="Texture2D" uid="uid://l3sq32eps0vr" path="res://assets/Menu_UI/Table_Number.png" id="1_547g1"]
+[ext_resource type="Script" path="res://project/food_menu/food_menu.gd" id="1_lrmo0"]
 [ext_resource type="Texture2D" uid="uid://bcglbg7y8b6s3" path="res://assets/Menu_UI/Menu/Menu1.png" id="1_y2ks4"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="3_yc1tq"]
-[ext_resource type="Texture2D" uid="uid://ckk5sn4rpsalp" path="res://assets/Menu_UI/Panel_Drinks/Drinks1.png" id="4_wumch"]
 [ext_resource type="Texture2D" uid="uid://dhsp6mllm30yk" path="res://assets/Menu_UI/Cell_Small/Cell_Small1.png" id="6_otr7g"]
+[ext_resource type="Texture2D" uid="uid://7kekda2kqqca" path="res://assets/Menu_UI/Panel_Hot_Dishes/Hot_dishes1.png" id="6_vmx4f"]
+[ext_resource type="Texture2D" uid="uid://tnyd6rhj7fmq" path="res://assets/Menu_UI/Panel_Dessert/Dessert2.png" id="7_41j6o"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="7_jqssa"]
 [ext_resource type="Texture2D" uid="uid://bytwwxbannxxn" path="res://assets/Menu_UI/Cell_Big/Cell_Big1.png" id="9_scbmh"]
 [ext_resource type="Texture2D" uid="uid://b2ltlwl224rtp" path="res://assets/Menu_UI/Cell_Small/Cell_Small2.png" id="10_ka53w"]
@@ -22,18 +24,6 @@ texture = ExtResource("3_yc1tq")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ov3uu"]
 texture = ExtResource("1_y2ks4")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xoy5u"]
-texture = ExtResource("19_f2ual")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v60um"]
-texture = ExtResource("19_f2ual")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgibt"]
-texture = ExtResource("4_wumch")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khkg7"]
-texture = ExtResource("4_wumch")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjvmk"]
 texture = ExtResource("6_otr7g")
@@ -78,6 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_lrmo0")
 
 [node name="table_number" type="Panel" parent="."]
 layout_mode = 1
@@ -134,48 +125,86 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ov3uu")
 
-[node name="hot_dishes" type="Button" parent="main_panel"]
+[node name="hot_dishes" type="TextureRect" parent="main_panel"]
 layout_mode = 1
 offset_left = 15.0
 offset_top = 16.0
 offset_right = 783.0
 offset_bottom = 304.0
+texture = ExtResource("6_vmx4f")
+
+[node name="Label" type="Label" parent="main_panel/hot_dishes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -41.0
+offset_right = 265.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_jqssa")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxTexture_xoy5u")
-theme_override_styles/hover = SubResource("StyleBoxTexture_v60um")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_vgibt")
-theme_override_styles/focus = SubResource("StyleBoxTexture_khkg7")
-text = "Hot Dishes"
+text = "Hot dishes"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="dessert" type="Button" parent="main_panel"]
+[node name="dessert" type="TextureRect" parent="main_panel"]
 layout_mode = 1
 offset_left = 768.0
 offset_top = 16.0
 offset_right = 1392.0
 offset_bottom = 304.0
+texture = ExtResource("7_41j6o")
+
+[node name="Label" type="Label" parent="main_panel/dessert"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -41.0
+offset_right = 265.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_jqssa")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxTexture_xoy5u")
-theme_override_styles/hover = SubResource("StyleBoxTexture_v60um")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_vgibt")
-theme_override_styles/focus = SubResource("StyleBoxTexture_khkg7")
 text = "Dessert"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="drinks" type="Button" parent="main_panel"]
+[node name="drinks" type="TextureRect" parent="main_panel"]
 layout_mode = 1
 offset_left = 1363.0
 offset_top = 16.0
 offset_right = 1875.0
 offset_bottom = 304.0
+texture = ExtResource("19_f2ual")
+
+[node name="Label" type="Label" parent="main_panel/drinks"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -41.0
+offset_right = 265.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_jqssa")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxTexture_xoy5u")
-theme_override_styles/hover = SubResource("StyleBoxTexture_v60um")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_vgibt")
-theme_override_styles/focus = SubResource("StyleBoxTexture_khkg7")
-text = "Drinks
-"
+text = "Drinks"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="food_container" type="Control" parent="main_panel"]
 layout_mode = 1

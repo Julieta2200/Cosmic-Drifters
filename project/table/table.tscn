@@ -7,6 +7,21 @@
 [ext_resource type="Script" path="res://project/table/status.gd" id="5_jduwx"]
 [ext_resource type="Texture2D" uid="uid://c1jk4iwtrbe0a" path="res://assets/Order_Button/Exclamation_mark(Big).png" id="6_53kp0"]
 
+[sub_resource type="Animation" id="Animation_vnrf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.375, -31.687)]
+}
+
 [sub_resource type="Animation" id="Animation_ahaxa"]
 resource_name = "bounce"
 length = 0.5
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.375, -31.687), Vector2(0.375, -29.9375)]
-}
-
-[sub_resource type="Animation" id="Animation_vnrf4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.375, -31.687)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lbfqs"]
