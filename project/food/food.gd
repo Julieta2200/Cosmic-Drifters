@@ -22,13 +22,14 @@ var foods = ["res://assets/Food/Dessert/cake_1.png","res://assets/Food/Dessert/c
 			"res://assets/Food/Fruits/apple_1.png","res://assets/Food/Fruits/apple_2.png",
 			"res://assets/Food/Fruits/Orange.png","res://assets/Food/Fruits/strawberry.png",
 			"res://assets/Food/Fruits/watermelon.png","res://assets/Food/Hot_dish/becon.png",
-			"res://assets/Food/Hot_dish/beef.png","res://assets/Food/Hot_dish/burger.png",
-			"res://assets/Food/Hot_dish/chicken.png","res://assets/Food/Hot_dish/hot_dog.png",
-			"res://assets/Food/Hot_dish/Mushroom.png","res://assets/Food/Hot_dish/omelette.png",
-			"res://assets/Food/Hot_dish/pepper.png","res://assets/Food/Hot_dish/pizza.png",
-			"res://assets/Food/Hot_dish/ramen.png","res://assets/Food/Hot_dish/rice_balls1.png",
-			"res://assets/Food/Hot_dish/rice_balls2.png","res://assets/Food/Hot_dish/rice_balls3.png",
-			"res://assets/Food/Hot_dish/rice_balls4.png","res://assets/Food/Hot_dish/tuna.png"]
+			"res://assets/Food/Hot_dish/becon.png","res://assets/Food/Hot_dish/beef.png",
+			"res://assets/Food/Hot_dish/burger.png","res://assets/Food/Hot_dish/chicken.png",
+			"res://assets/Food/Hot_dish/hot_dog.png","res://assets/Food/Hot_dish/Mushroom.png",
+			"res://assets/Food/Hot_dish/omelette.png","res://assets/Food/Hot_dish/pepper.png",
+			"res://assets/Food/Hot_dish/pizza.png","res://assets/Food/Hot_dish/ramen.png",
+			"res://assets/Food/Hot_dish/rice_balls1.png","res://assets/Food/Hot_dish/rice_balls2.png",
+			"res://assets/Food/Hot_dish/rice_balls3.png","res://assets/Food/Hot_dish/rice_balls4.png",
+			"res://assets/Food/Hot_dish/tuna.png"]
 
 func prepare(t):
 	$Timer.wait_time =  RandomNumberGenerator.new().randf_range(10,20)
