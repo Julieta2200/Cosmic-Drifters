@@ -1,0 +1,468 @@
+[gd_scene load_steps=32 format=3 uid="uid://uqiq7ol038uw"]
+
+[ext_resource type="Texture2D" uid="uid://l3sq32eps0vr" path="res://assets/Menu_UI/Table_Number.png" id="1_547g1"]
+[ext_resource type="Texture2D" uid="uid://bcglbg7y8b6s3" path="res://assets/Menu_UI/Menu/Menu1.png" id="1_y2ks4"]
+[ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="3_yc1tq"]
+[ext_resource type="Texture2D" uid="uid://ckk5sn4rpsalp" path="res://assets/Menu_UI/Panel_Drinks/Drinks1.png" id="4_wumch"]
+[ext_resource type="Texture2D" uid="uid://dhsp6mllm30yk" path="res://assets/Menu_UI/Cell_Small/Cell_Small1.png" id="6_otr7g"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="7_jqssa"]
+[ext_resource type="Texture2D" uid="uid://bytwwxbannxxn" path="res://assets/Menu_UI/Cell_Big/Cell_Big1.png" id="9_scbmh"]
+[ext_resource type="Texture2D" uid="uid://b2ltlwl224rtp" path="res://assets/Menu_UI/Cell_Small/Cell_Small2.png" id="10_ka53w"]
+[ext_resource type="Texture2D" uid="uid://bgfgrw0v8jfl6" path="res://assets/Menu_UI/Panel_Drinks/Drinks2.png" id="19_f2ual"]
+[ext_resource type="Texture2D" uid="uid://df32mayhigwie" path="res://assets/Menu_UI/Cell_Big/Cell_Big2.png" id="19_pp1qu"]
+[ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="23_32s55"]
+[ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="24_dn0lp"]
+[ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="25_bt8lu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raq75"]
+texture = ExtResource("1_547g1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8hl4"]
+texture = ExtResource("3_yc1tq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ov3uu"]
+texture = ExtResource("1_y2ks4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xoy5u"]
+texture = ExtResource("19_f2ual")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v60um"]
+texture = ExtResource("19_f2ual")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgibt"]
+texture = ExtResource("4_wumch")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khkg7"]
+texture = ExtResource("4_wumch")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjvmk"]
+texture = ExtResource("6_otr7g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hq71b"]
+texture = ExtResource("10_ka53w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nue74"]
+texture = ExtResource("10_ka53w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6v0i"]
+texture = ExtResource("10_ka53w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqra0"]
+texture = ExtResource("19_pp1qu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2m7ei"]
+texture = ExtResource("9_scbmh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5lcjy"]
+texture = ExtResource("9_scbmh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xdh6"]
+texture = ExtResource("9_scbmh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tp0bn"]
+texture = ExtResource("23_32s55")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ccc7m"]
+texture = ExtResource("25_bt8lu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7hmg"]
+texture = ExtResource("24_dn0lp")
+
+[node name="food_menu" type="Control"]
+self_modulate = Color(1, 1, 1, 0.219608)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="table_number" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -263.5
+offset_top = 493.0
+offset_right = 264.5
+offset_bottom = 733.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_raq75")
+
+[node name="Label" type="Label" parent="table_number"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.5
+offset_top = -150.0
+offset_right = 157.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 120
+text = "N 12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="backgroun_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p8hl4")
+
+[node name="main_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -952.0
+offset_top = -959.0
+offset_right = 952.0
+offset_bottom = 945.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ov3uu")
+
+[node name="hot_dishes" type="Button" parent="main_panel"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 783.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_xoy5u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v60um")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vgibt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_khkg7")
+text = "Hot Dishes"
+
+[node name="dessert" type="Button" parent="main_panel"]
+layout_mode = 1
+offset_left = 768.0
+offset_top = 16.0
+offset_right = 1392.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_xoy5u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v60um")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vgibt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_khkg7")
+text = "Dessert"
+
+[node name="drinks" type="Button" parent="main_panel"]
+layout_mode = 1
+offset_left = 1363.0
+offset_top = 16.0
+offset_right = 1875.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_xoy5u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v60um")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vgibt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_khkg7")
+text = "Drinks
+"
+
+[node name="food_container" type="Control" parent="main_panel"]
+layout_mode = 1
+anchor_left = 0.511
+anchor_top = 0.472
+anchor_right = 0.511
+anchor_bottom = 0.472
+offset_left = -352.944
+offset_top = -233.688
+offset_right = 354.056
+offset_bottom = 235.312
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="food_placeholder" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = -504.0
+offset_top = -279.0
+offset_right = -216.0
+offset_bottom = 9.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder2" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = -156.0
+offset_top = -279.0
+offset_right = 132.0
+offset_bottom = 9.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder3" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -279.0
+offset_right = 480.0
+offset_bottom = 9.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder4" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = -279.0
+offset_right = 828.0
+offset_bottom = 9.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder5" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = -279.0
+offset_right = 1176.0
+offset_bottom = 9.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder6" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = -504.0
+offset_top = 69.0
+offset_right = -216.0
+offset_bottom = 357.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder7" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = -156.0
+offset_top = 69.0
+offset_right = 132.0
+offset_bottom = 357.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder8" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 69.0
+offset_right = 480.0
+offset_bottom = 357.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder9" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 69.0
+offset_right = 828.0
+offset_bottom = 357.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder10" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 69.0
+offset_right = 1176.0
+offset_bottom = 357.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+
+[node name="food_placeholder11" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = -504.0
+offset_top = 417.0
+offset_right = -216.0
+offset_bottom = 705.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
+
+[node name="food_placeholder12" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = -156.0
+offset_top = 417.0
+offset_right = 132.0
+offset_bottom = 705.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
+
+[node name="food_placeholder13" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 417.0
+offset_right = 480.0
+offset_bottom = 705.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
+
+[node name="food_placeholder14" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 417.0
+offset_right = 828.0
+offset_bottom = 705.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
+
+[node name="food_placeholder15" type="Button" parent="main_panel/food_container"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 417.0
+offset_right = 1176.0
+offset_bottom = 705.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
+
+[node name="selected_foods" type="Control" parent="main_panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="selected_food_1" type="Button" parent="main_panel/selected_foods"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1474.0
+offset_right = 484.0
+offset_bottom = 1858.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqra0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
+
+[node name="selected_food_2" type="Button" parent="main_panel/selected_foods"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 1474.0
+offset_right = 903.0
+offset_bottom = 1858.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqra0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
+
+[node name="selected_food_3" type="Button" parent="main_panel/selected_foods"]
+layout_mode = 0
+offset_left = 933.0
+offset_top = 1474.0
+offset_right = 1317.0
+offset_bottom = 1858.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqra0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
+
+[node name="selected_food_4" type="Button" parent="main_panel/selected_foods"]
+layout_mode = 0
+offset_left = 1347.0
+offset_top = 1474.0
+offset_right = 1731.0
+offset_bottom = 1858.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqra0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
+
+[node name="cancel" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2129.0
+offset_top = -807.0
+offset_right = -1633.0
+offset_bottom = -631.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_tp0bn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ccc7m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h7hmg")
+
+[node name="Label" type="Label" parent="cancel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 80
+text = "Cancel"
+
+[node name="ok" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1569.0
+offset_top = -807.0
+offset_right = -1137.0
+offset_bottom = -631.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_tp0bn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ccc7m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h7hmg")
+
+[node name="Label" type="Label" parent="ok"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_font_sizes/font_size = 80
+text = "Ok"
+horizontal_alignment = 1
