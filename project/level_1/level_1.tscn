@@ -508,7 +508,7 @@ scale = Vector2(16, 16)
 texture = ExtResource("16_n4wgm")
 
 [node name="Background7" type="Sprite2D" parent="details"]
-position = Vector2(11269, -4)
+position = Vector2(11269, -7)
 scale = Vector2(16, 16)
 texture = ExtResource("16_n4wgm")
 
@@ -983,7 +983,7 @@ position = Vector2(-3081, -1828)
 speed = 800.0
 
 [node name="frost_dumplings" parent="group_3" instance=ExtResource("64_nlrb5")]
-position = Vector2(5582.36, 3381.9)
+position = Vector2(-3868, -1771)
 
 [node name="twilight_tarsiers" parent="group_3" instance=ExtResource("60_rjade")]
 position = Vector2(-3073, -1944)

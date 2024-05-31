@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="2_qedio"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="3_s58k2"]
 [ext_resource type="Script" path="res://project/table/status.gd" id="5_jduwx"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Exclamation_mark(Big).png" id="6_53kp0"]
+[ext_resource type="Texture2D" uid="uid://c1jk4iwtrbe0a" path="res://assets/Order_Button/Exclamation_mark(Big).png" id="6_53kp0"]
 
 [sub_resource type="Animation" id="Animation_ahaxa"]
 resource_name = "bounce"

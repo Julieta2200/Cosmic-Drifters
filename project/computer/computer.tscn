@@ -3,15 +3,16 @@
 [ext_resource type="Script" path="res://project/computer/computer.gd" id="1_5jjaq"]
 [ext_resource type="Texture2D" uid="uid://nyrddmf7wkcc" path="res://assets/details/Computer.png" id="1_57rk5"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="2_7353f"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button1.png" id="4_ct1tb"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button2.png" id="5_tds1h"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button3.png" id="6_ou0e1"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button4.png" id="7_k0633"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button5.png" id="8_mlq8b"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button6.png" id="9_buqd1"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button7.png" id="10_yob18"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button8.png" id="11_y6d74"]
-[ext_resource type="Texture2D" path="res://assets/Order_Button/Order_Button9.png" id="12_jxqc4"]
+[ext_resource type="Texture2D" uid="uid://p511f2nvd3wc" path="res://assets/Order_Button/Order_Button1.png" id="4_ct1tb"]
+[ext_resource type="Texture2D" uid="uid://c373cpindu46r" path="res://assets/Order_Button/Order_Button2.png" id="5_tds1h"]
+[ext_resource type="Texture2D" uid="uid://c5japf3rhksqt" path="res://assets/Order_Button/Order_Button3.png" id="6_ou0e1"]
+[ext_resource type="Texture2D" uid="uid://dy8t8cyv4rjh5" path="res://assets/Order_Button/Order_Button4.png" id="7_k0633"]
+[ext_resource type="Texture2D" uid="uid://bivy4ckxw0prx" path="res://assets/Order_Button/Order_Button5.png" id="8_mlq8b"]
+[ext_resource type="Texture2D" uid="uid://bub34lowck58k" path="res://assets/Order_Button/Order_Button6.png" id="9_buqd1"]
+[ext_resource type="Texture2D" uid="uid://y3maq8mwau45" path="res://assets/Order_Button/Order_Button7.png" id="10_yob18"]
+[ext_resource type="Texture2D" uid="uid://dk56u0cf7xc4a" path="res://assets/Order_Button/Order_Button8.png" id="11_y6d74"]
+[ext_resource type="Texture2D" uid="uid://bd7m17blmd17a" path="res://assets/Order_Button/Order_Button9.png" id="12_jxqc4"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdpta"]
 size = Vector2(32.3125, 28.625)
@@ -69,4 +70,4 @@ visible = false
 position = Vector2(16.3125, -11.875)
 sprite_frames = SubResource("SpriteFrames_i70my")
 autoplay = "default"
-frame_progress = 0.282299
+frame_progress = 0.737623
