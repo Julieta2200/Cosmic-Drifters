@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=123 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -107,6 +107,7 @@
 [ext_resource type="PackedScene" uid="uid://bs2hl8onbsd3q" path="res://project/character/waiter_3/waiter_3.tscn" id="69_3w8ui"]
 [ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://project/ui/ui.tscn" id="72_xu1wm"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
+[ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -1089,5 +1090,8 @@ scale = Vector2(16, 16)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ui" parent="CanvasLayer" instance=ExtResource("72_xu1wm")]
+z_index = 1
+
+[node name="food_menu" parent="CanvasLayer" instance=ExtResource("108_02bey")]
 
 [connection signal="animation_finished" from="details/door_animatedSprite2D" to="." method="_on_door_animated_sprite_2d_animation_finished"]
