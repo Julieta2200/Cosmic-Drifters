@@ -5,6 +5,7 @@ const ORDER_TIME: int = 1
 
 var level_time: int = 500
 @export var computer: Node2D
+@onready var kitchen = $kitchen
 
 @onready var group_1 = {
 	"group": $group_1,
@@ -126,7 +127,7 @@ func action_complete(a: String, caller):
 		"serve_food":
 			serve_food(group, caller)
 
-func order_prepared(group_name):
+func order_delivered(group_name):
 	$desk_plates.add_plate()
 	waiter_queue.append({"func": "walk_to", "params": $order_desk.global_position, "action": group_name+"::pick_order"})
 

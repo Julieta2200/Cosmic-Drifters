@@ -11,7 +11,7 @@ var group
 var for_lumina: bool = false
 @onready var chairs = $chairs
 
-enum {STATUS_EMPTY, STATUS_WAITING1}
+enum {STATUS_EMPTY, STATUS_WAITING1, STATUS_WAITING_FOR_FOOD}
 var status = STATUS_EMPTY
 
 var table_status = "empty"
@@ -61,17 +61,15 @@ func remove_plates():
 
 func ordered(chair_i):
 	if chair_i == len($chairs.get_children()) - 1:
+		level.kitchen.add_order(self)
 		waiter.busy = false
 		if !for_lumina:
 			waiter = null
 		else:
 			level.computer.add_table(self)
 
-func order_prepared():
-	for i in enemies:
-		if !enemies[i]["order"].prepared:
-			return
-	level.order_prepared(group["name"])
+func order_delivered():
+	level.order_delivered(group["name"])
 	
 
 func ask_waiter():

@@ -31,15 +31,6 @@ var foods = ["res://assets/Food/Dessert/cake_1.png","res://assets/Food/Dessert/c
 			"res://assets/Food/Hot_dish/rice_balls3.png","res://assets/Food/Hot_dish/rice_balls4.png",
 			"res://assets/Food/Hot_dish/tuna.png"]
 
-func prepare(t):
-	$Timer.wait_time =  RandomNumberGenerator.new().randf_range(10,20)
-	$Timer.start()
-	table = t
-
-
-func _on_timer_timeout():
-	prepared = true
-	table.order_prepared()
 
 func generate(flipped):
 	food_sp.texture = load(foods[rng.randf_range(0,foods.size())])

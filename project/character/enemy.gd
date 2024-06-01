@@ -22,7 +22,6 @@ func order(t, i):
 	$order_timer.start()
 	table = t
 	chair_i = i
-	food.prepare(table)
 	return food	
 
 func _on_order_timer_timeout():

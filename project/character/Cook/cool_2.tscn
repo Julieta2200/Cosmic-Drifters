@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj3ar22p8x1jc"]
+[gd_scene load_steps=11 format=3 uid="uid://bj3ar22p8x1jc"]
 
+[ext_resource type="Script" path="res://project/character/cook.gd" id="1_f7rur"]
 [ext_resource type="Texture2D" uid="uid://bs1dfatbokd4g" path="res://assets/Kitchen/Cook 2/Back-Walk-1.png" id="1_i3y23"]
 [ext_resource type="Texture2D" uid="uid://c8n7v5n3ms1hs" path="res://assets/Kitchen/Cook 2/Back-base.png" id="2_e0ydv"]
 [ext_resource type="Texture2D" uid="uid://cmwld78xcrri8" path="res://assets/Kitchen/Cook 2/Back-Walk-2.png" id="3_j51fd"]
@@ -65,6 +66,8 @@ animations = [{
 
 [node name="Cool_2" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+script = ExtResource("1_f7rur")
+speed = 800.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ajb0j")
