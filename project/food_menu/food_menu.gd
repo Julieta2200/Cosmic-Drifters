@@ -1,5 +1,7 @@
 extends Control
 
+var s
+
 var dessert = ["res://assets/Food/Dessert/cake_1.png","res://assets/Food/Dessert/cake_2.png",
  				"res://assets/Food/Dessert/cracker.png","res://assets/Food/Dessert/easter_cake.png",
 				"res://assets/Food/Dessert/ice_cream_1.png","res://assets/Food/Dessert/ice_cream_2.png",
@@ -19,6 +21,9 @@ var hot_dishes = ["res://assets/Food/Hot_dish/becon.png","res://assets/Food/Hot_
 					"res://assets/Food/Hot_dish/rice_balls1.png","res://assets/Food/Hot_dish/rice_balls2.png",
 					"res://assets/Food/Hot_dish/rice_balls3.png","res://assets/Food/Hot_dish/rice_balls4.png",
 					"res://assets/Food/Hot_dish/tuna.png"]
+
+func _ready():
+		fill_food_container(hot_dishes)
 
 func _on_hot_dishes_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed():
@@ -54,7 +59,14 @@ func fill_food_container(food_array):
 	var index = 0
 	for placeholder in $main_panel/food_container.get_children():
 		if  index < food_array.size():
-			placeholder.get_child(0).texture = load(food_array[index]) 
+			placeholder.set_food(load(food_array[index])) 
 		else:
-			placeholder.get_child(0).texture = Enemy
+			placeholder.set_food(null) 
 		index=index+1
+		
+func selected_food(food):
+	pass
+	
+	
+
+
