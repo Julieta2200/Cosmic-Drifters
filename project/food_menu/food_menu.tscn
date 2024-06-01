@@ -1,53 +1,25 @@
-[gd_scene load_steps=44 format=3 uid="uid://uqiq7ol038uw"]
+[gd_scene load_steps=24 format=3 uid="uid://uqiq7ol038uw"]
 
 [ext_resource type="Texture2D" uid="uid://l3sq32eps0vr" path="res://assets/Menu_UI/Table_Number.png" id="1_547g1"]
 [ext_resource type="Script" path="res://project/food_menu/food_menu.gd" id="1_lrmo0"]
 [ext_resource type="Texture2D" uid="uid://bcglbg7y8b6s3" path="res://assets/Menu_UI/Menu/Menu1.png" id="1_y2ks4"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="3_yc1tq"]
-[ext_resource type="Texture2D" uid="uid://dhsp6mllm30yk" path="res://assets/Menu_UI/Cell_Small/Cell_Small1.png" id="6_otr7g"]
 [ext_resource type="Texture2D" uid="uid://7kekda2kqqca" path="res://assets/Menu_UI/Panel_Hot_Dishes/Hot_dishes1.png" id="6_vmx4f"]
 [ext_resource type="Texture2D" uid="uid://tnyd6rhj7fmq" path="res://assets/Menu_UI/Panel_Dessert/Dessert2.png" id="7_41j6o"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="7_jqssa"]
 [ext_resource type="Texture2D" uid="uid://bytwwxbannxxn" path="res://assets/Menu_UI/Cell_Big/Cell_Big1.png" id="9_scbmh"]
-[ext_resource type="Texture2D" uid="uid://b2ltlwl224rtp" path="res://assets/Menu_UI/Cell_Small/Cell_Small2.png" id="10_ka53w"]
-[ext_resource type="Texture2D" uid="uid://6bbs4iw2f27j" path="res://assets/Food/Hot_dish/becon.png" id="11_vauey"]
-[ext_resource type="Texture2D" uid="uid://0gshhqseo0v7" path="res://assets/Food/Hot_dish/beef.png" id="12_1p6ch"]
-[ext_resource type="Texture2D" uid="uid://v8qi00wcvlut" path="res://assets/Food/Hot_dish/burger.png" id="13_lq65h"]
-[ext_resource type="Texture2D" uid="uid://bdfenuuroag1t" path="res://assets/Food/Hot_dish/chicken.png" id="14_kvjq3"]
-[ext_resource type="Texture2D" uid="uid://bija3tnt3ibf7" path="res://assets/Food/Hot_dish/hot_dog.png" id="15_k64sb"]
-[ext_resource type="Texture2D" uid="uid://cimfd3dlrgoqx" path="res://assets/Food/Hot_dish/Mushroom.png" id="16_kg4hq"]
-[ext_resource type="Texture2D" uid="uid://cx511qwu24fa7" path="res://assets/Food/Hot_dish/omelette.png" id="17_i4tom"]
-[ext_resource type="Texture2D" uid="uid://duf2ttt4g2gre" path="res://assets/Food/Hot_dish/pepper.png" id="18_el22c"]
 [ext_resource type="Texture2D" uid="uid://bgfgrw0v8jfl6" path="res://assets/Menu_UI/Panel_Drinks/Drinks2.png" id="19_f2ual"]
-[ext_resource type="Texture2D" uid="uid://bxgdojwwpsy6k" path="res://assets/Food/Hot_dish/pizza.png" id="19_phjut"]
 [ext_resource type="Texture2D" uid="uid://df32mayhigwie" path="res://assets/Menu_UI/Cell_Big/Cell_Big2.png" id="19_pp1qu"]
-[ext_resource type="Texture2D" uid="uid://bgfd220jo6bin" path="res://assets/Food/Hot_dish/ramen.png" id="20_pn8wy"]
-[ext_resource type="Texture2D" uid="uid://j3y7kkikeu8c" path="res://assets/Food/Hot_dish/rice_balls1.png" id="21_c64c1"]
-[ext_resource type="Texture2D" uid="uid://dx20l1yn8hlem" path="res://assets/Food/Hot_dish/rice_balls2.png" id="22_teid7"]
 [ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="23_32s55"]
-[ext_resource type="Texture2D" uid="uid://bg3ra7681mrkc" path="res://assets/Food/Hot_dish/rice_balls3.png" id="23_fim2s"]
 [ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="24_dn0lp"]
-[ext_resource type="Texture2D" uid="uid://cs3682oumqvj6" path="res://assets/Food/Hot_dish/rice_balls4.png" id="24_yuear"]
+[ext_resource type="PackedScene" uid="uid://bcyifjrddsg0x" path="res://project/food_menu/food_placeholder.tscn" id="25_6mjy8"]
 [ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="25_bt8lu"]
-[ext_resource type="Texture2D" uid="uid://phj6opv38o5a" path="res://assets/Food/Hot_dish/tuna.png" id="25_y02c8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raq75"]
 texture = ExtResource("1_547g1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8hl4"]
 texture = ExtResource("3_yc1tq")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjvmk"]
-texture = ExtResource("6_otr7g")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hq71b"]
-texture = ExtResource("10_ka53w")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nue74"]
-texture = ExtResource("10_ka53w")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6v0i"]
-texture = ExtResource("10_ka53w")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqra0"]
 texture = ExtResource("19_pp1qu")
@@ -231,385 +203,110 @@ offset_bottom = 235.312
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="food_placeholder" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = -504.0
 offset_top = -279.0
 offset_right = -216.0
 offset_bottom = 9.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_vauey")
-
-[node name="food_placeholder2" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder2" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = -156.0
 offset_top = -279.0
 offset_right = 132.0
 offset_bottom = 9.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_1p6ch")
-
-[node name="food_placeholder3" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder3" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 192.0
 offset_top = -279.0
 offset_right = 480.0
 offset_bottom = 9.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("13_lq65h")
-
-[node name="food_placeholder4" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder4" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 540.0
 offset_top = -279.0
 offset_right = 828.0
 offset_bottom = 9.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder4"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_kvjq3")
-
-[node name="food_placeholder5" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder5" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 888.0
 offset_top = -279.0
 offset_right = 1176.0
 offset_bottom = 9.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder5"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("15_k64sb")
-
-[node name="food_placeholder6" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder6" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = -504.0
 offset_top = 69.0
 offset_right = -216.0
 offset_bottom = 357.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder6"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("16_kg4hq")
-
-[node name="food_placeholder7" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder7" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = -156.0
 offset_top = 69.0
 offset_right = 132.0
 offset_bottom = 357.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder7"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("17_i4tom")
-
-[node name="food_placeholder8" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder8" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 69.0
 offset_right = 480.0
 offset_bottom = 357.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder8"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("18_el22c")
-
-[node name="food_placeholder9" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder9" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 540.0
 offset_top = 69.0
 offset_right = 828.0
 offset_bottom = 357.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder9"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("19_phjut")
-
-[node name="food_placeholder10" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder10" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 888.0
 offset_top = 69.0
 offset_right = 1176.0
 offset_bottom = 357.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder10"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("20_pn8wy")
-
-[node name="food_placeholder11" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder11" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = -504.0
 offset_top = 417.0
 offset_right = -216.0
 offset_bottom = 705.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
-theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder11"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("21_c64c1")
-
-[node name="food_placeholder12" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder12" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = -156.0
 offset_top = 417.0
 offset_right = 132.0
 offset_bottom = 705.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
-theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder12"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("22_teid7")
-
-[node name="food_placeholder13" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder13" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 417.0
 offset_right = 480.0
 offset_bottom = 705.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
-theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder13"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("23_fim2s")
-
-[node name="food_placeholder14" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder14" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 540.0
 offset_top = 417.0
 offset_right = 828.0
 offset_bottom = 705.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
-theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
 
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder14"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("24_yuear")
-
-[node name="food_placeholder15" type="Button" parent="main_panel/food_container"]
+[node name="food_placeholder15" parent="main_panel/food_container" instance=ExtResource("25_6mjy8")]
 layout_mode = 0
 offset_left = 888.0
 offset_top = 417.0
 offset_right = 1176.0
 offset_bottom = 705.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjvmk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hq71b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nue74")
-theme_override_styles/focus = SubResource("StyleBoxTexture_v6v0i")
-
-[node name="TextureRect" type="TextureRect" parent="main_panel/food_container/food_placeholder15"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("25_y02c8")
 
 [node name="selected_foods" type="Control" parent="main_panel"]
 anchors_preset = 0
@@ -627,6 +324,20 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
 theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
 
+[node name="TextureRect" type="TextureRect" parent="main_panel/selected_foods/selected_food_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="selected_food_2" type="Button" parent="main_panel/selected_foods"]
 layout_mode = 0
 offset_left = 519.0
@@ -637,6 +348,20 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_bqra0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
 theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
+
+[node name="TextureRect" type="TextureRect" parent="main_panel/selected_foods/selected_food_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="selected_food_3" type="Button" parent="main_panel/selected_foods"]
 layout_mode = 0
@@ -649,6 +374,20 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
 theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
 
+[node name="TextureRect" type="TextureRect" parent="main_panel/selected_foods/selected_food_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="selected_food_4" type="Button" parent="main_panel/selected_foods"]
 layout_mode = 0
 offset_left = 1347.0
@@ -659,6 +398,20 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_bqra0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
 theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
+
+[node name="TextureRect" type="TextureRect" parent="main_panel/selected_foods/selected_food_4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="cancel" type="Button" parent="."]
 layout_mode = 1
