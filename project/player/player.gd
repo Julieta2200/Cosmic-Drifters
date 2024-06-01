@@ -17,3 +17,7 @@ func ask_order(table):
 	busy = true
 	var serve_point = table.get_serve_point()
 	walk_to(table, serve_point, "ask_order")
+
+func input_order(computer):
+	busy = true
+	walk_to(computer, computer.use_point.global_position, "input_order")

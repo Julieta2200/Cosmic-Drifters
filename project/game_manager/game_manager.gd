@@ -16,7 +16,7 @@ func start_movement():
 	elif clicked_obj is Table:
 		player.ask_order(clicked_obj)
 	elif clicked_obj is Computer:
-		print("computer")
+		player.input_order(clicked_obj)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("left_click"):
