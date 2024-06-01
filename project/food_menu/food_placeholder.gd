@@ -1,8 +1,11 @@
 extends Button
 
-func set_food(texture):
+var menu
+
+func set_food(texture, m):
 	$TextureRect.texture = texture
+	menu = m
 
 
 func _on_button_down():
-	print($TextureRect.texture)
+	menu.select_food($TextureRect.texture)

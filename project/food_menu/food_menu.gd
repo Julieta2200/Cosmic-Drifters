@@ -59,13 +59,16 @@ func fill_food_container(food_array):
 	var index = 0
 	for placeholder in $main_panel/food_container.get_children():
 		if  index < food_array.size():
-			placeholder.set_food(load(food_array[index])) 
+			placeholder.set_food(load(food_array[index]), self) 
 		else:
-			placeholder.set_food(null) 
+			placeholder.set_food(null, self) 
 		index=index+1
 		
-func selected_food(food):
-	pass
+func select_food(food):
+	for selected_food in $main_panel/selected_foods.get_children():
+		if selected_food.get_food() == null:
+			selected_food.set_food(food)
+			return
 	
 	
 

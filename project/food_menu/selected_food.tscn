@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dau66ack38vrt"]
+
+[ext_resource type="Texture2D" uid="uid://df32mayhigwie" path="res://assets/Menu_UI/Cell_Big/Cell_Big2.png" id="1_pvvxy"]
+[ext_resource type="Texture2D" uid="uid://bytwwxbannxxn" path="res://assets/Menu_UI/Cell_Big/Cell_Big1.png" id="2_tmxm3"]
+[ext_resource type="Script" path="res://project/food_menu/selected_food.gd" id="3_ya1yj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqra0"]
+texture = ExtResource("1_pvvxy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2m7ei"]
+texture = ExtResource("2_tmxm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5lcjy"]
+texture = ExtResource("2_tmxm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xdh6"]
+texture = ExtResource("2_tmxm3")
+
+[node name="selected_food_1" type="Button"]
+offset_right = 384.0
+offset_bottom = 384.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqra0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2m7ei")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5lcjy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0xdh6")
+script = ExtResource("3_ya1yj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2

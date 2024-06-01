@@ -12,6 +12,5 @@ func add_table(table):
 	$status.visible = true
 
 func action_complete(_action, player):
-	print("open_computer")
-	pass
+	$"../../CanvasLayer/food_menu".visible = true
 	
