@@ -61,10 +61,10 @@ func remove_plates():
 
 func ordered(chair_i):
 	if chair_i == len($chairs.get_children()) - 1:
-		level.kitchen.add_order(self)
 		waiter.busy = false
 		if !for_lumina:
 			waiter = null
+			level.kitchen.add_order(self)
 		else:
 			level.computer.add_table(self)
 
