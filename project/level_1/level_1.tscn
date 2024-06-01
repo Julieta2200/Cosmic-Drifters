@@ -897,27 +897,35 @@ limit_bottom = 8900
 
 [node name="Table" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2865, 2656)
+number = 1
 
 [node name="Table2" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(4800, 2277)
+number = 2
 
 [node name="Table3" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(6526, 2656)
+number = 3
 
 [node name="Table4" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(6528, 4292)
+number = 4
 
 [node name="Table5" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(4781, 4889)
+number = 5
 
 [node name="Table6" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2839, 4290)
+number = 6
 
 [node name="TableSmall" parent="clickable_objects" instance=ExtResource("59_80aps")]
 position = Vector2(3631, 3351)
+number = 7
 
 [node name="TableSmall2" parent="clickable_objects" instance=ExtResource("59_80aps")]
 position = Vector2(5700, 3345)
+number = 8
 
 [node name="computer" parent="clickable_objects" instance=ExtResource("95_1m0fq")]
 position = Vector2(7938, 769)

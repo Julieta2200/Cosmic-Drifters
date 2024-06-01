@@ -11,6 +11,8 @@ var group
 var for_lumina: bool = false
 @onready var chairs = $chairs
 
+@export var number: int
+
 enum {STATUS_EMPTY, STATUS_WAITING1, STATUS_WAITING_FOR_FOOD}
 var status = STATUS_EMPTY
 
