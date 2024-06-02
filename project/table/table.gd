@@ -23,6 +23,7 @@ var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/pla
 				"res://assets/Food/Plate/plate_5.png","res://assets/Food/Plate/plate_6.png"]
 
 var enemies = {}
+var actual_order = []
 
 func sit(enemy, chair_i, lvl, gr):
 	level = lvl
@@ -83,3 +84,9 @@ func action_complete(action, caller):
 		"ask_order":
 			for_lumina = true
 			call_orders(caller)
+
+func set_actual_order(foods):
+	actual_order = foods
+	waiter.busy = false
+	level.computer.order_inserted(self)
+	level.kitchen.add_order(self)

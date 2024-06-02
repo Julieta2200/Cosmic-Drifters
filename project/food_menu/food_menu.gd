@@ -45,7 +45,7 @@ func fill_food_container(food_type):
 		
 	for food in Food.foods:
 		if Food.get_food(food)["type"] == food_type:
-			placeholders[index].set_food(load(Food.get_food(food)["texture"]), self)
+			placeholders[index].set_food(Food.get_food(food), self)
 			index += 1
 		
 func select_food(food):
@@ -73,3 +73,20 @@ func check_ok_status():
 	
 	ok_btn.disabled = false
 	
+
+	
+
+func close_menu():
+	for selected_food in selected_foods.get_children():
+		selected_food.set_food(null, self)
+	visible = false
+	
+
+
+func _on_ok_pressed():
+	var foods = []
+	for selected_food in selected_foods.get_children():
+		foods.append(selected_food.get_food())
+	
+	table.set_actual_order(foods)
+	close_menu()
