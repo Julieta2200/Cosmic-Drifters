@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://db5ni7xhg3prs"]
+[gd_scene load_steps=18 format=3 uid="uid://db5ni7xhg3prs"]
 
 [ext_resource type="Script" path="res://project/orders_menu/orders_menu.gd" id="1_840mt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_lwmvx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://6bbs4iw2f27j" path="res://assets/Food/Hot_dish/becon.png" id="5_2mtat"]
 [ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="6_y4jqj"]
 [ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="7_gythv"]
+[ext_resource type="Script" path="res://project/orders_menu/order.gd" id="8_da06d"]
 [ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="8_m0d3o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lxp4"]
@@ -115,6 +116,7 @@ offset_top = 163.0
 offset_right = 1801.0
 offset_bottom = 474.0
 grow_horizontal = 2
+script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order"]
 layout_mode = 0
@@ -280,6 +282,7 @@ offset_top = 599.0
 offset_right = 1801.0
 offset_bottom = 910.0
 grow_horizontal = 2
+script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order2"]
 layout_mode = 0
@@ -445,6 +448,7 @@ offset_top = 1005.0
 offset_right = 1801.0
 offset_bottom = 1316.0
 grow_horizontal = 2
+script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order3"]
 layout_mode = 0
@@ -610,6 +614,7 @@ offset_top = 1420.0
 offset_right = 1801.0
 offset_bottom = 1731.0
 grow_horizontal = 2
+script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order4"]
 layout_mode = 0
