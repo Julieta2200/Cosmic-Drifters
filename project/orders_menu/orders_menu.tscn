@@ -1,0 +1,765 @@
+[gd_scene load_steps=17 format=3 uid="uid://db5ni7xhg3prs"]
+
+[ext_resource type="Script" path="res://project/orders_menu/orders_menu.gd" id="1_840mt"]
+[ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_lwmvx"]
+[ext_resource type="Texture2D" uid="uid://bcglbg7y8b6s3" path="res://assets/Menu_UI/Menu/Menu1.png" id="1_x6es1"]
+[ext_resource type="Texture2D" uid="uid://dhsp6mllm30yk" path="res://assets/Menu_UI/Cell_Small/Cell_Small1.png" id="3_sy5on"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_410ax"]
+[ext_resource type="Texture2D" uid="uid://6bbs4iw2f27j" path="res://assets/Food/Hot_dish/becon.png" id="5_2mtat"]
+[ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="6_y4jqj"]
+[ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="7_gythv"]
+[ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="8_m0d3o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lxp4"]
+texture = ExtResource("1_lwmvx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ugeu"]
+texture = ExtResource("6_y4jqj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12scm"]
+texture = ExtResource("7_gythv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71yku"]
+texture = ExtResource("8_m0d3o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkfn8"]
+texture = ExtResource("6_y4jqj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jx3w"]
+texture = ExtResource("7_gythv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5mf4"]
+texture = ExtResource("8_m0d3o")
+
+[node name="orders_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_840mt")
+
+[node name="backgroun_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2lxp4")
+
+[node name="main_panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -952.0
+offset_top = -952.0
+offset_right = 952.0
+offset_bottom = 952.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x6es1")
+
+[node name="cancel" type="Button" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -496.0
+offset_top = 45.0
+offset_bottom = 221.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_5ugeu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_12scm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_71yku")
+
+[node name="Label" type="Label" parent="main_panel/cancel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "Cancel"
+
+[node name="orders" type="Control" parent="main_panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="order" type="Control" parent="main_panel/orders"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 65.0
+offset_top = 163.0
+offset_right = 1801.0
+offset_bottom = 474.0
+grow_horizontal = 2
+
+[node name="table_number" type="TextureRect" parent="main_panel/orders/order"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="table_number" type="Label" parent="main_panel/orders/order/table_number"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -23.0
+offset_right = 77.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "N 1"
+
+[node name="foods" type="Control" parent="main_panel/orders/order"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="food1" type="TextureRect" parent="main_panel/orders/order/foods"]
+layout_mode = 0
+offset_left = 348.0
+offset_right = 636.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food2" type="TextureRect" parent="main_panel/orders/order/foods"]
+layout_mode = 0
+offset_left = 696.0
+offset_right = 984.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food3" type="TextureRect" parent="main_panel/orders/order/foods"]
+layout_mode = 0
+offset_left = 1044.0
+offset_right = 1332.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food4" type="TextureRect" parent="main_panel/orders/order/foods"]
+layout_mode = 0
+offset_left = 1392.0
+offset_right = 1680.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="ok" type="Button" parent="main_panel/orders/order"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -91.5
+offset_right = 526.0
+offset_bottom = 84.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+
+[node name="Label" type="Label" parent="main_panel/orders/order/ok"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "Pick"
+horizontal_alignment = 1
+
+[node name="order2" type="Control" parent="main_panel/orders"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 65.0
+offset_top = 599.0
+offset_right = 1801.0
+offset_bottom = 910.0
+grow_horizontal = 2
+
+[node name="table_number" type="TextureRect" parent="main_panel/orders/order2"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="table_number" type="Label" parent="main_panel/orders/order2/table_number"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -23.0
+offset_right = 77.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "N 1"
+
+[node name="foods" type="Control" parent="main_panel/orders/order2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="food1" type="TextureRect" parent="main_panel/orders/order2/foods"]
+layout_mode = 0
+offset_left = 348.0
+offset_right = 636.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food2" type="TextureRect" parent="main_panel/orders/order2/foods"]
+layout_mode = 0
+offset_left = 696.0
+offset_right = 984.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food3" type="TextureRect" parent="main_panel/orders/order2/foods"]
+layout_mode = 0
+offset_left = 1044.0
+offset_right = 1332.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food4" type="TextureRect" parent="main_panel/orders/order2/foods"]
+layout_mode = 0
+offset_left = 1392.0
+offset_right = 1680.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="ok" type="Button" parent="main_panel/orders/order2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -91.5
+offset_right = 526.0
+offset_bottom = 84.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+
+[node name="Label" type="Label" parent="main_panel/orders/order2/ok"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "Pick"
+horizontal_alignment = 1
+
+[node name="order3" type="Control" parent="main_panel/orders"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 65.0
+offset_top = 1005.0
+offset_right = 1801.0
+offset_bottom = 1316.0
+grow_horizontal = 2
+
+[node name="table_number" type="TextureRect" parent="main_panel/orders/order3"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="table_number" type="Label" parent="main_panel/orders/order3/table_number"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -23.0
+offset_right = 77.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "N 1"
+
+[node name="foods" type="Control" parent="main_panel/orders/order3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="food1" type="TextureRect" parent="main_panel/orders/order3/foods"]
+layout_mode = 0
+offset_left = 348.0
+offset_right = 636.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food2" type="TextureRect" parent="main_panel/orders/order3/foods"]
+layout_mode = 0
+offset_left = 696.0
+offset_right = 984.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food3" type="TextureRect" parent="main_panel/orders/order3/foods"]
+layout_mode = 0
+offset_left = 1044.0
+offset_right = 1332.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food4" type="TextureRect" parent="main_panel/orders/order3/foods"]
+layout_mode = 0
+offset_left = 1392.0
+offset_right = 1680.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="ok" type="Button" parent="main_panel/orders/order3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -91.5
+offset_right = 526.0
+offset_bottom = 84.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+
+[node name="Label" type="Label" parent="main_panel/orders/order3/ok"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "Pick"
+horizontal_alignment = 1
+
+[node name="order4" type="Control" parent="main_panel/orders"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 65.0
+offset_top = 1420.0
+offset_right = 1801.0
+offset_bottom = 1731.0
+grow_horizontal = 2
+
+[node name="table_number" type="TextureRect" parent="main_panel/orders/order4"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="table_number" type="Label" parent="main_panel/orders/order4/table_number"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -23.0
+offset_right = 77.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "N 1"
+
+[node name="foods" type="Control" parent="main_panel/orders/order4"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="food1" type="TextureRect" parent="main_panel/orders/order4/foods"]
+layout_mode = 0
+offset_left = 348.0
+offset_right = 636.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food2" type="TextureRect" parent="main_panel/orders/order4/foods"]
+layout_mode = 0
+offset_left = 696.0
+offset_right = 984.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food3" type="TextureRect" parent="main_panel/orders/order4/foods"]
+layout_mode = 0
+offset_left = 1044.0
+offset_right = 1332.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="food4" type="TextureRect" parent="main_panel/orders/order4/foods"]
+layout_mode = 0
+offset_left = 1392.0
+offset_right = 1680.0
+offset_bottom = 288.0
+texture = ExtResource("3_sy5on")
+
+[node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2mtat")
+
+[node name="ok" type="Button" parent="main_panel/orders/order4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -91.5
+offset_right = 526.0
+offset_bottom = 84.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+
+[node name="Label" type="Label" parent="main_panel/orders/order4/ok"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_font_sizes/font_size = 80
+text = "Pick"
+horizontal_alignment = 1

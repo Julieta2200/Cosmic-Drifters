@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=123 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -103,6 +103,7 @@
 [ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://project/ui/ui.tscn" id="72_xu1wm"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
 [ext_resource type="PackedScene" uid="uid://rskgob6ktuy5" path="res://project/level_1/desk_plates.tscn" id="103_6qy7u"]
+[ext_resource type="PackedScene" uid="uid://db5ni7xhg3prs" path="res://project/orders_menu/orders_menu.tscn" id="105_2ytgh"]
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="106_vukck"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="107_c12nv"]
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
@@ -1063,6 +1064,9 @@ desk_point = NodePath("../order_desk")
 z_index = 1
 
 [node name="food_menu" parent="CanvasLayer" instance=ExtResource("108_02bey")]
+visible = false
+
+[node name="orders_menu" parent="CanvasLayer" instance=ExtResource("105_2ytgh")]
 visible = false
 
 [node name="Cook_1" parent="." instance=ExtResource("106_vukck")]
