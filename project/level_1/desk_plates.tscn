@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://rskgob6ktuy5"]
+
+[ext_resource type="Script" path="res://project/level_1/desk_plates.gd" id="1_t7x4x"]
+[ext_resource type="Texture2D" uid="uid://kek2o3wvuvdq" path="res://assets/details/Table3.png" id="2_mt473"]
+[ext_resource type="Texture2D" uid="uid://cpu3u3ywi4dbo" path="res://assets/Order_Board/Order Board1.png" id="3_mowmt"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_0xvte"]
+
+[node name="desk_plates" type="Node2D"]
+scale = Vector2(16, 16)
+script = ExtResource("1_t7x4x")
+
+[node name="plate1" type="Sprite2D" parent="."]
+position = Vector2(-21, -2)
+
+[node name="plate2" type="Sprite2D" parent="."]
+position = Vector2(-11.3125, -2)
+
+[node name="plate3" type="Sprite2D" parent="."]
+position = Vector2(-0.875, -2)
+
+[node name="plate4" type="Sprite2D" parent="."]
+position = Vector2(11.25, -2)
+
+[node name="plate5" type="Sprite2D" parent="."]
+position = Vector2(22.3125, -2.0625)
+
+[node name="desk" type="Sprite2D" parent="."]
+texture = ExtResource("2_mt473")
+
+[node name="board" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.375, -27.125)
+texture = ExtResource("3_mowmt")
+
+[node name="texts" type="Control" parent="board"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 0.375
+offset_top = 27.125
+offset_right = 40.375
+offset_bottom = 67.125
+
+[node name="1" type="Label" parent="board/texts"]
+visible = false
+offset_left = -15.875
+offset_top = -33.0625
+offset_right = 24.125
+offset_bottom = -10.0625
+theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
+theme_override_fonts/font = ExtResource("4_0xvte")
+theme_override_font_sizes/font_size = 8
+text = "N 1"
+
+[node name="2" type="Label" parent="board/texts"]
+visible = false
+offset_left = 2.8125
+offset_top = -33.0625
+offset_right = 42.8125
+offset_bottom = -10.0625
+theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
+theme_override_fonts/font = ExtResource("4_0xvte")
+theme_override_font_sizes/font_size = 8
+text = "N 1"
+
+[node name="3" type="Label" parent="board/texts"]
+visible = false
+offset_left = -15.875
+offset_top = -21.6875
+offset_right = 24.125
+offset_bottom = 1.3125
+theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
+theme_override_fonts/font = ExtResource("4_0xvte")
+theme_override_font_sizes/font_size = 8
+text = "N 1"
+
+[node name="4" type="Label" parent="board/texts"]
+visible = false
+offset_left = 2.8125
+offset_top = -22.125
+offset_right = 42.8125
+offset_bottom = 0.875
+theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
+theme_override_fonts/font = ExtResource("4_0xvte")
+theme_override_font_sizes/font_size = 8
+text = "N 1"

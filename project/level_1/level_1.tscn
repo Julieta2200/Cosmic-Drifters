@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=122 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://bnticmqo3cdvc" path="res://assets/Bar/Bar5.png" id="26_e7rvj"]
 [ext_resource type="Texture2D" uid="uid://bgcuktsdna7n5" path="res://assets/Bar/Bar6.png" id="27_ky1rw"]
 [ext_resource type="Texture2D" uid="uid://dhgebqpubjpjt" path="res://assets/Galagrama/Galagrama1.png" id="28_iwf8w"]
-[ext_resource type="Texture2D" uid="uid://kek2o3wvuvdq" path="res://assets/details/Table3.png" id="28_u0job"]
 [ext_resource type="Texture2D" uid="uid://chcoty87eeflq" path="res://assets/Galagrama/Galagrama2.png" id="29_a6jsw"]
 [ext_resource type="Texture2D" uid="uid://bf47icbmtqy2c" path="res://assets/details/Manager_table.png" id="29_rw71g"]
 [ext_resource type="Texture2D" uid="uid://clkam3ofrmvwi" path="res://assets/details/Door_1.png" id="30_ptdti"]
@@ -98,12 +97,12 @@
 [ext_resource type="Script" path="res://project/level/kitchen.gd" id="65_bnd8v"]
 [ext_resource type="PackedScene" uid="uid://7njhwo26o2yf" path="res://project/character/prismarities/prismarities.tscn" id="65_pvxf5"]
 [ext_resource type="PackedScene" uid="uid://7k6qxbu2nrsc" path="res://project/character/munchkin_morsels/munchkin_morsels.tscn" id="66_82ike"]
-[ext_resource type="Script" path="res://project/level_1/desk_plates.gd" id="66_hi4ob"]
 [ext_resource type="PackedScene" uid="uid://dlhg3xr3k7hc8" path="res://project/character/waiter_2/waiter_2.tscn" id="67_uro2u"]
 [ext_resource type="PackedScene" uid="uid://bs2hl8onbsd3q" path="res://project/character/waiter_3/waiter_3.tscn" id="69_3w8ui"]
 [ext_resource type="Texture2D" uid="uid://cn5hrae18lhmx" path="res://assets/Kitchen/Table/Table2.png" id="69_f70wo"]
 [ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://project/ui/ui.tscn" id="72_xu1wm"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
+[ext_resource type="PackedScene" uid="uid://rskgob6ktuy5" path="res://project/level_1/desk_plates.tscn" id="103_6qy7u"]
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="106_vukck"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="107_c12nv"]
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
@@ -524,11 +523,6 @@ texture = ExtResource("16_n4wgm")
 position = Vector2(4995, 10504)
 scale = Vector2(16, 16)
 texture = ExtResource("16_n4wgm")
-
-[node name="Table3" type="Sprite2D" parent="details"]
-position = Vector2(6912, 896)
-scale = Vector2(16, 16)
-texture = ExtResource("28_u0job")
 
 [node name="door_animatedSprite2D" type="AnimatedSprite2D" parent="details"]
 position = Vector2(3281, 561)
@@ -1060,33 +1054,8 @@ script = ExtResource("65_bnd8v")
 cooks = [NodePath("../Cook_1"), NodePath("../Cook_2")]
 desk_point = NodePath("../order_desk")
 
-[node name="desk_plates" type="Node2D" parent="."]
-script = ExtResource("66_hi4ob")
-
-[node name="plate1" type="Sprite2D" parent="desk_plates"]
-visible = false
-position = Vector2(6571, 863)
-scale = Vector2(16, 16)
-
-[node name="plate2" type="Sprite2D" parent="desk_plates"]
-visible = false
-position = Vector2(6746, 863)
-scale = Vector2(16, 16)
-
-[node name="plate3" type="Sprite2D" parent="desk_plates"]
-visible = false
-position = Vector2(6924, 863)
-scale = Vector2(16, 16)
-
-[node name="plate4" type="Sprite2D" parent="desk_plates"]
-visible = false
-position = Vector2(7096, 863)
-scale = Vector2(16, 16)
-
-[node name="plate5" type="Sprite2D" parent="desk_plates"]
-visible = false
-position = Vector2(7247, 867)
-scale = Vector2(16, 16)
+[node name="desk_plates" parent="." instance=ExtResource("103_6qy7u")]
+position = Vector2(6911, 896)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

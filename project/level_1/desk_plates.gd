@@ -5,16 +5,29 @@ var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/pla
 				"res://assets/Food/Plate/plate_5.png","res://assets/Food/Plate/plate_6.png"]
 var rng = RandomNumberGenerator.new()
 
-func add_plate():
+var for_lumina = {}
+
+func add_plate(group):
 	for plate in get_children():
 		if !plate.visible:
 			plate.texture = load(plates[rng.randf_range(0,plates.size())])
 			plate.visible = true
+			if group.has("for_lumina"):
+				for_lumina[plate] = true
+				update_board(group)
 			return
 	
 	
 func remove_plate():
 	for plate in get_children():
-		if plate.visible:
+		if plate.visible and !for_lumina.has(plate):
 			plate.visible = false
 			return
+
+func update_board(group):
+	for text in $board/texts.get_children():
+		if !text.visible:
+			text.text = "N " + str(group["table"].number)
+			text.visible = true
+			break
+	$board.visible = true

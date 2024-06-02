@@ -72,7 +72,7 @@ func ordered(chair_i):
 			level.computer.add_table(self)
 
 func order_delivered():
-	level.order_delivered(group["name"])
+	level.order_delivered(group)
 	
 
 func ask_waiter():

@@ -128,9 +128,12 @@ func action_complete(a: String, caller):
 		"serve_food":
 			serve_food(group, caller)
 
-func order_delivered(group_name):
-	$desk_plates.add_plate()
-	waiter_queue.append({"func": "walk_to", "params": $order_desk.global_position, "action": group_name+"::pick_order"})
+func order_delivered(group):
+	$desk_plates.add_plate(group)
+	if group.has("for_lumina"):
+		print("for_lumina")
+	else:
+		waiter_queue.append({"func": "walk_to", "params": $order_desk.global_position, "action": group["name"]+"::pick_order"})
 
 func call_lumina(group):
 	group["table"].call_lumina()
