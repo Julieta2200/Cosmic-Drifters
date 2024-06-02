@@ -21,3 +21,7 @@ func ask_order(table):
 func input_order(computer):
 	busy = true
 	walk_to(computer, computer.use_point.global_position, "input_order")
+
+func pick_order(desk):
+	busy = true
+	walk_to(desk, desk.use_point.global_position, "pick_order")

@@ -129,9 +129,9 @@ func action_complete(a: String, caller):
 			serve_food(group, caller)
 
 func order_delivered(group):
-	$desk_plates.add_plate(group)
+	$clickable_objects/desk_plates.add_plate(group)
 	if group.has("for_lumina"):
-		print("for_lumina")
+		return
 	else:
 		waiter_queue.append({"func": "walk_to", "params": $order_desk.global_position, "action": group["name"]+"::pick_order"})
 
@@ -143,7 +143,7 @@ func serve_food(group, waiter):
 	waiter.busy = false
 			
 func pick_order(group, caller):
-	$desk_plates.remove_plate()
+	$clickable_objects/desk_plates.remove_plate(group)
 	var serve_point = group["table"].get_serve_point()
 	caller.walk_to(self, serve_point, group["name"]+"::serve_food")
 

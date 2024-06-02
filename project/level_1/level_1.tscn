@@ -921,6 +921,9 @@ number = 7
 position = Vector2(5700, 3345)
 number = 8
 
+[node name="desk_plates" parent="clickable_objects" instance=ExtResource("103_6qy7u")]
+position = Vector2(6911, 896)
+
 [node name="computer" parent="clickable_objects" instance=ExtResource("95_1m0fq")]
 position = Vector2(7938, 769)
 
@@ -1053,9 +1056,6 @@ position = Vector2(6917, 1269)
 script = ExtResource("65_bnd8v")
 cooks = [NodePath("../Cook_1"), NodePath("../Cook_2")]
 desk_point = NodePath("../order_desk")
-
-[node name="desk_plates" parent="." instance=ExtResource("103_6qy7u")]
-position = Vector2(6911, 896)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
