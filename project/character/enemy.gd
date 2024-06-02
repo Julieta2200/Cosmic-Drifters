@@ -11,7 +11,7 @@ func _ready():
 func spawn(pos):
 	global_position = pos
 	
-func _process(delta):
+func _process(_delta):
 	move()
 
 

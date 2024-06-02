@@ -10,7 +10,7 @@ var on_desk: bool = true
 func _ready():
 	position_delta = speed / 60
 	
-func _process(delta):
+func _process(_delta):
 	check_queue()
 	move()
 

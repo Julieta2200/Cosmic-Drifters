@@ -25,7 +25,8 @@ var level_time: int = 500
 	"orders": [],
 	"served": false,
 	"spawned": false,
-	"spawn_time": 10
+	"spawn_time": 10,
+	"for_lumina": true
 }
 
 @onready var group_3 = {
@@ -72,7 +73,7 @@ func _ready():
 	$Timer.wait_time = level_time
 	$Timer.start()
 
-func _process(delta):
+func _process(_delta):
 	for k in groups:
 		if is_spawn_time(groups[k]):
 			spawn(groups[k])

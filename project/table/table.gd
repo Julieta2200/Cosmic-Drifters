@@ -47,7 +47,7 @@ func _call_orders():
 	
 
 func get_chair(index):
-	return $chairs.get_children()[index]
+	return chairs.get_children()[index]
 	
 func get_serve_point():
 	return $serve_point.global_position
@@ -62,7 +62,7 @@ func remove_plates():
 		p.visible = false
 
 func ordered(chair_i):
-	if chair_i == len($chairs.get_children()) - 1:
+	if chair_i == len(chairs.get_children()) - 1:
 		waiter.busy = false
 		if !for_lumina:
 			waiter = null

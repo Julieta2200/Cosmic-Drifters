@@ -6,11 +6,18 @@ enum {PENDING}
 var tables = []
 
 @onready var use_point = $use_point
+@onready var food_menu = $"../../CanvasLayer/food_menu"
 
 func add_table(table):
 	tables.append({"instance": table, "status": PENDING})
 	$status.visible = true
 
 func action_complete(_action, player):
-	$"../../CanvasLayer/food_menu".visible = true
+	for table in tables:
+		if table["status"] == PENDING:
+			food_menu.set_table(table["instance"])
+			food_menu.visible = true
+			return
+	
+	player.busy = false
 	

@@ -382,6 +382,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_tp0bn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ccc7m")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_h7hmg")
+disabled = true
 
 [node name="Label" type="Label" parent="ok"]
 layout_mode = 1
