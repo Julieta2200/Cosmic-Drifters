@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://project/orders_menu/orders_menu.gd" id="1_840mt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_lwmvx"]
-[ext_resource type="Texture2D" uid="uid://bcglbg7y8b6s3" path="res://assets/Menu_UI/Menu/Menu1.png" id="1_x6es1"]
+[ext_resource type="Texture2D" uid="uid://sq72t4hqm7b4" path="res://assets/Menu2_UI/Menu1.png" id="3_idacn"]
 [ext_resource type="Texture2D" uid="uid://dhsp6mllm30yk" path="res://assets/Menu_UI/Cell_Small/Cell_Small1.png" id="3_sy5on"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_410ax"]
 [ext_resource type="Texture2D" uid="uid://6bbs4iw2f27j" path="res://assets/Food/Hot_dish/becon.png" id="5_2mtat"]
@@ -63,7 +63,7 @@ offset_right = 952.0
 offset_bottom = 952.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_x6es1")
+texture = ExtResource("3_idacn")
 
 [node name="cancel" type="Button" parent="main_panel"]
 layout_mode = 1
@@ -101,12 +101,12 @@ theme_override_font_sizes/font_size = 80
 text = "Cancel"
 
 [node name="orders" type="Control" parent="main_panel"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="order" type="Control" parent="main_panel/orders"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

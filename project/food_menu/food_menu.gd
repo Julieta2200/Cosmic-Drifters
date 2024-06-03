@@ -86,7 +86,9 @@ func close_menu():
 func _on_ok_pressed():
 	var foods = []
 	for selected_food in selected_foods.get_children():
-		foods.append(selected_food.get_food())
+		var food = selected_food.get_food()
+		if food != null:
+			foods.append(food)
 	
 	table.set_actual_order(foods)
 	close_menu()
