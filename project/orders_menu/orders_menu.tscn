@@ -101,12 +101,12 @@ theme_override_font_sizes/font_size = 80
 text = "Cancel"
 
 [node name="orders" type="Control" parent="main_panel"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="order" type="Control" parent="main_panel/orders"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
