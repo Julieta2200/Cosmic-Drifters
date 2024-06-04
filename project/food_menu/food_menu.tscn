@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://uqiq7ol038uw"]
+[gd_scene load_steps=21 format=3 uid="uid://uqiq7ol038uw"]
 
 [ext_resource type="Texture2D" uid="uid://l3sq32eps0vr" path="res://assets/Menu_UI/Table_Number.png" id="1_547g1"]
 [ext_resource type="Script" path="res://project/food_menu/food_menu.gd" id="1_lrmo0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://tnyd6rhj7fmq" path="res://assets/Menu_UI/Panel_Dessert/Dessert2.png" id="7_41j6o"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="7_jqssa"]
 [ext_resource type="PackedScene" uid="uid://dau66ack38vrt" path="res://project/food_menu/selected_food.tscn" id="10_ngwlq"]
+[ext_resource type="Texture2D" uid="uid://d4moklghebpk6" path="res://assets/Menu_UI/OK_Button/Ok(disabled).png" id="14_n8v27"]
 [ext_resource type="Texture2D" uid="uid://bgfgrw0v8jfl6" path="res://assets/Menu_UI/Panel_Drinks/Drinks2.png" id="19_f2ual"]
 [ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="23_32s55"]
 [ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="24_dn0lp"]
@@ -28,6 +29,9 @@ texture = ExtResource("25_bt8lu")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7hmg"]
 texture = ExtResource("24_dn0lp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gs846"]
+texture = ExtResource("14_n8v27")
 
 [node name="food_menu" type="Control"]
 self_modulate = Color(1, 1, 1, 0.219608)
@@ -382,6 +386,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_tp0bn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ccc7m")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_h7hmg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_gs846")
 disabled = true
 
 [node name="Label" type="Label" parent="ok"]
