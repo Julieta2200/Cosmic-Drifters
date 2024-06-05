@@ -1,7 +1,5 @@
 extends Level
 
-#test commit
-
 const SPAWN_DELAY = 1
 const ORDER_TIME: int = 1
 
