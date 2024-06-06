@@ -3,9 +3,6 @@ extends Control
 var add_minutes = 15
 var items = {}
 
-func _ready():
-	$time.text = String("09:00")
-
 func get_time() -> String:
 	var time = $time.text.split(":")
 	var hour = int(time[0])
