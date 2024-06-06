@@ -18,8 +18,6 @@ func add_plate(group):
 		if !p.visible:
 			plate = p
 			break
-#			plate.texture = load(plate_textures[rng.randf_range(0,plate_textures.size())])
-#			plate.visible = true
 	plate.texture = load(plate_textures[rng.randf_range(0,plate_textures.size())])
 	plate.visible = true
 	plates[group] = {"plate": plate}
@@ -34,7 +32,7 @@ func remove_plate(group):
 	if plates[group].has("text"):
 		remove_from_board(plates[group]["text"])
 	plates.erase(group)
-			
+
 
 func add_to_board(group):
 	$board.visible = true
@@ -52,6 +50,6 @@ func remove_from_board(text):
 	$board.visible = false
 
 func action_complete(_action, player):
-	orders_menu.load_tables(plates)
+	orders_menu.load_tables(plates, player)
 	orders_menu.visible = true
 	pass

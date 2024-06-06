@@ -18,7 +18,7 @@ func order_inserted(table):
 			t["status"] = ORDERED
 	$status.visible = false
 	for t in tables:
-		if table["status"] == PENDING:
+		if t["status"] == PENDING:
 			$status.visible = true
 
 func action_complete(_action, player):

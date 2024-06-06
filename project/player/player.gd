@@ -4,6 +4,8 @@ class_name Player
 
 var busy: bool = false
 
+var items
+
 func _physics_process(_delta):
 	move()
 
@@ -25,3 +27,6 @@ func input_order(computer):
 func pick_order(desk):
 	busy = true
 	walk_to(desk, desk.use_point.global_position, "pick_order")
+
+func pick_plates(table):
+	print(table.group)

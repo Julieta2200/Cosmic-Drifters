@@ -1,15 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://db5ni7xhg3prs"]
+[gd_scene load_steps=19 format=3 uid="uid://db5ni7xhg3prs"]
 
 [ext_resource type="Script" path="res://project/orders_menu/orders_menu.gd" id="1_840mt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_lwmvx"]
 [ext_resource type="Texture2D" uid="uid://sq72t4hqm7b4" path="res://assets/Menu2_UI/Menu1.png" id="3_idacn"]
-[ext_resource type="Texture2D" uid="uid://dhsp6mllm30yk" path="res://assets/Menu_UI/Cell_Small/Cell_Small1.png" id="3_sy5on"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_410ax"]
 [ext_resource type="Texture2D" uid="uid://6bbs4iw2f27j" path="res://assets/Food/Hot_dish/becon.png" id="5_2mtat"]
 [ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="6_y4jqj"]
 [ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="7_gythv"]
 [ext_resource type="Script" path="res://project/orders_menu/order.gd" id="8_da06d"]
 [ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="8_m0d3o"]
+[ext_resource type="Texture2D" uid="uid://b5ejs1gag2sf2" path="res://assets/Menu2_UI/Table_number.png" id="9_f6fhl"]
+[ext_resource type="Texture2D" uid="uid://b2ltlwl224rtp" path="res://assets/Menu_UI/Cell_Small/Cell_Small2.png" id="10_3vike"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lxp4"]
 texture = ExtResource("1_lwmvx")
@@ -120,9 +121,10 @@ script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order"]
 layout_mode = 0
-offset_right = 288.0
-offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+offset_top = 44.0
+offset_right = 304.0
+offset_bottom = 252.0
+texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order/table_number"]
 layout_mode = 1
@@ -151,7 +153,7 @@ layout_mode = 0
 offset_left = 348.0
 offset_right = 636.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food1"]
 layout_mode = 1
@@ -173,7 +175,7 @@ layout_mode = 0
 offset_left = 696.0
 offset_right = 984.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food2"]
 layout_mode = 1
@@ -195,7 +197,7 @@ layout_mode = 0
 offset_left = 1044.0
 offset_right = 1332.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food3"]
 layout_mode = 1
@@ -217,7 +219,7 @@ layout_mode = 0
 offset_left = 1392.0
 offset_right = 1680.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order/foods/food4"]
 layout_mode = 1
@@ -234,16 +236,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_2mtat")
 
-[node name="ok" type="Button" parent="main_panel/orders/order"]
+[node name="pick" type="Button" parent="main_panel/orders/order"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 94.0
+offset_left = 143.0
 offset_top = -91.5
-offset_right = 526.0
+offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -253,7 +255,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 
-[node name="Label" type="Label" parent="main_panel/orders/order/ok"]
+[node name="Label" type="Label" parent="main_panel/orders/order/pick"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -278,17 +280,18 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 65.0
-offset_top = 599.0
+offset_top = 531.0
 offset_right = 1801.0
-offset_bottom = 910.0
+offset_bottom = 842.0
 grow_horizontal = 2
 script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order2"]
 layout_mode = 0
-offset_right = 288.0
-offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+offset_top = 44.0
+offset_right = 304.0
+offset_bottom = 252.0
+texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order2/table_number"]
 layout_mode = 1
@@ -317,7 +320,7 @@ layout_mode = 0
 offset_left = 348.0
 offset_right = 636.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food1"]
 layout_mode = 1
@@ -339,7 +342,7 @@ layout_mode = 0
 offset_left = 696.0
 offset_right = 984.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food2"]
 layout_mode = 1
@@ -361,7 +364,7 @@ layout_mode = 0
 offset_left = 1044.0
 offset_right = 1332.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food3"]
 layout_mode = 1
@@ -383,7 +386,7 @@ layout_mode = 0
 offset_left = 1392.0
 offset_right = 1680.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order2/foods/food4"]
 layout_mode = 1
@@ -400,16 +403,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_2mtat")
 
-[node name="ok" type="Button" parent="main_panel/orders/order2"]
+[node name="pick" type="Button" parent="main_panel/orders/order2"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 94.0
+offset_left = 143.0
 offset_top = -91.5
-offset_right = 526.0
+offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -419,7 +422,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 
-[node name="Label" type="Label" parent="main_panel/orders/order2/ok"]
+[node name="Label" type="Label" parent="main_panel/orders/order2/pick"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -444,17 +447,18 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 65.0
-offset_top = 1005.0
+offset_top = 899.0
 offset_right = 1801.0
-offset_bottom = 1316.0
+offset_bottom = 1210.0
 grow_horizontal = 2
 script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order3"]
 layout_mode = 0
-offset_right = 288.0
-offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+offset_top = 44.0
+offset_right = 304.0
+offset_bottom = 252.0
+texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order3/table_number"]
 layout_mode = 1
@@ -483,7 +487,7 @@ layout_mode = 0
 offset_left = 348.0
 offset_right = 636.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food1"]
 layout_mode = 1
@@ -505,7 +509,7 @@ layout_mode = 0
 offset_left = 696.0
 offset_right = 984.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food2"]
 layout_mode = 1
@@ -527,7 +531,7 @@ layout_mode = 0
 offset_left = 1044.0
 offset_right = 1332.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food3"]
 layout_mode = 1
@@ -549,7 +553,7 @@ layout_mode = 0
 offset_left = 1392.0
 offset_right = 1680.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order3/foods/food4"]
 layout_mode = 1
@@ -566,16 +570,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_2mtat")
 
-[node name="ok" type="Button" parent="main_panel/orders/order3"]
+[node name="pick" type="Button" parent="main_panel/orders/order3"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 94.0
+offset_left = 143.0
 offset_top = -91.5
-offset_right = 526.0
+offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -585,7 +589,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 
-[node name="Label" type="Label" parent="main_panel/orders/order3/ok"]
+[node name="Label" type="Label" parent="main_panel/orders/order3/pick"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -610,17 +614,18 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 65.0
-offset_top = 1420.0
+offset_top = 1267.0
 offset_right = 1801.0
-offset_bottom = 1731.0
+offset_bottom = 1578.0
 grow_horizontal = 2
 script = ExtResource("8_da06d")
 
 [node name="table_number" type="TextureRect" parent="main_panel/orders/order4"]
 layout_mode = 0
-offset_right = 288.0
-offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+offset_top = 44.0
+offset_right = 304.0
+offset_bottom = 252.0
+texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order4/table_number"]
 layout_mode = 1
@@ -649,7 +654,7 @@ layout_mode = 0
 offset_left = 348.0
 offset_right = 636.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food1"]
 layout_mode = 1
@@ -671,7 +676,7 @@ layout_mode = 0
 offset_left = 696.0
 offset_right = 984.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food2"]
 layout_mode = 1
@@ -693,7 +698,7 @@ layout_mode = 0
 offset_left = 1044.0
 offset_right = 1332.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food3"]
 layout_mode = 1
@@ -715,7 +720,7 @@ layout_mode = 0
 offset_left = 1392.0
 offset_right = 1680.0
 offset_bottom = 288.0
-texture = ExtResource("3_sy5on")
+texture = ExtResource("10_3vike")
 
 [node name="food" type="TextureRect" parent="main_panel/orders/order4/foods/food4"]
 layout_mode = 1
@@ -732,16 +737,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_2mtat")
 
-[node name="ok" type="Button" parent="main_panel/orders/order4"]
+[node name="pick" type="Button" parent="main_panel/orders/order4"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 94.0
+offset_left = 143.0
 offset_top = -91.5
-offset_right = 526.0
+offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -751,7 +756,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 
-[node name="Label" type="Label" parent="main_panel/orders/order4/ok"]
+[node name="Label" type="Label" parent="main_panel/orders/order4/pick"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -768,3 +773,9 @@ theme_override_fonts/font = ExtResource("4_410ax")
 theme_override_font_sizes/font_size = 80
 text = "Pick"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="main_panel/cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="main_panel/orders/order/pick" to="main_panel/orders/order" method="_on_pick_pressed"]
+[connection signal="pressed" from="main_panel/orders/order2/pick" to="main_panel/orders/order2" method="_on_pick_pressed"]
+[connection signal="pressed" from="main_panel/orders/order3/pick" to="main_panel/orders/order3" method="_on_pick_pressed"]
+[connection signal="pressed" from="main_panel/orders/order4/pick" to="main_panel/orders/order4" method="_on_pick_pressed"]
