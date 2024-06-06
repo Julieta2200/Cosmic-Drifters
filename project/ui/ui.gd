@@ -19,24 +19,23 @@ func get_time() -> String:
 		hour = "00"
 	return str(hour)+ ":"+ str(minute)
 
-
 func _on_timer_timeout():
 	$time.text = get_time()
 
 
 func add_item(table):
-	var item_index = 0
+	var index = 0
 	for item in $item.get_children():
-		item_index  =  item_index + 1
-		if item.get_child(0).text == null:
+		index = index + 1
+		if item.get_child(0).text == "":
 			item.get_child(0).text = "N : " + str(table.number)
-			items.append({ item_index : table})
+			items[index] = table
 			return 
 
 func get_table(index):
 	return items[index]
 
-func remove_item(item_index):
-	$item.get_child(item_index).get_child(0).text = ""
-	items.erase(item_index)
+func remove_item(index):
+	$item.get_child(index).get_child(0).text = ""
+	items.erase(index)
 	
