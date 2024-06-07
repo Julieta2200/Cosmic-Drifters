@@ -29,7 +29,7 @@ func add_item(table):
 			items[index] = table
 			return 
 
-func get_table(index):
+func get_item(index):
 	return items[index]
 
 func remove_item(index):
