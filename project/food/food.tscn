@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://project/food/food.gd" id="1_nam7q"]
 [ext_resource type="Texture2D" uid="uid://dc2hmv6wsdcik" path="res://assets/Food/cloud.png" id="2_4ypwa"]
-[ext_resource type="Texture2D" uid="uid://cimfd3dlrgoqx" path="res://assets/Food/Hot_dish/Mushroom.png" id="3_6rc3x"]
+[ext_resource type="Texture2D" uid="uid://kc6gg221he53" path="res://assets/Food/Hot_dish/Mushroom.png" id="3_6rc3x"]
 
 [node name="food" type="Node2D"]
 z_index = 1
