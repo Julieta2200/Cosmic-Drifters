@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="2_qedio"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="3_s58k2"]
 [ext_resource type="Script" path="res://project/table/status.gd" id="5_jduwx"]
-[ext_resource type="Texture2D" uid="uid://c1jk4iwtrbe0a" path="res://assets/Order_Button/Exclamation_mark(Big).png" id="6_53kp0"]
+[ext_resource type="Texture2D" uid="uid://rg6e7pvhaeq2" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png" id="6_ge4ve"]
 
 [sub_resource type="Animation" id="Animation_vnrf4"]
 length = 0.001
@@ -102,10 +102,14 @@ script = ExtResource("5_jduwx")
 [node name="ask_waiter" type="Sprite2D" parent="status"]
 visible = false
 position = Vector2(0.375, -31.687)
-texture = ExtResource("6_53kp0")
+texture = ExtResource("6_ge4ve")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="status/ask_waiter"]
 autoplay = "bounce"
 libraries = {
 "": SubResource("AnimationLibrary_lbfqs")
 }
+
+[node name="Timer" type="Timer" parent="status"]
+
+[connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]

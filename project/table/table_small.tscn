@@ -67,7 +67,7 @@ visible = false
 polygon = PackedVector2Array(-5, -8.1875, 4.1875, -8.125, 10.875, -3.9375, 19.75, -3.875, 20, 3, 12.6875, 2.9375, 2.9375, 3, 3, 6.9375, -4.25, 6.875, -4.1875, 3, -13.8125, 2.9375, -21.125, 3, -21.25, -4.125, -12.0625, -4.1875)
 
 [node name="serve_point" type="Marker2D" parent="."]
-position = Vector2(14.6875, 11.1875)
+position = Vector2(0.0625, -10.6875)
 
 [node name="chairs" type="Node2D" parent="."]
 
@@ -92,3 +92,5 @@ autoplay = "bounce"
 libraries = {
 "": SubResource("AnimationLibrary_lbfqs")
 }
+
+[node name="Timer" type="Timer" parent="status"]
