@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://db5ni7xhg3prs"]
+[gd_scene load_steps=21 format=3 uid="uid://db5ni7xhg3prs"]
 
 [ext_resource type="Script" path="res://project/orders_menu/orders_menu.gd" id="1_840mt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_lwmvx"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c61kodct7jo0c" path="res://assets/Menu_UI/OK_Button/OK_Button(click).png" id="8_m0d3o"]
 [ext_resource type="Texture2D" uid="uid://b5ejs1gag2sf2" path="res://assets/Menu2_UI/Table_number.png" id="9_f6fhl"]
 [ext_resource type="Texture2D" uid="uid://b2ltlwl224rtp" path="res://assets/Menu_UI/Cell_Small/Cell_Small2.png" id="10_3vike"]
+[ext_resource type="Texture2D" uid="uid://d4moklghebpk6" path="res://assets/Menu_UI/OK_Button/Ok(disabled).png" id="12_vqh7j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lxp4"]
 texture = ExtResource("1_lwmvx")
@@ -32,6 +33,9 @@ texture = ExtResource("7_gythv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5mf4"]
 texture = ExtResource("8_m0d3o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvpf8"]
+texture = ExtResource("12_vqh7j")
 
 [node name="orders_menu" type="Control"]
 layout_mode = 3
@@ -99,7 +103,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_410ax")
 theme_override_font_sizes/font_size = 80
-text = "Cancel"
+text = "Close"
 
 [node name="orders" type="Control" parent="main_panel"]
 anchors_preset = 0
@@ -254,6 +258,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
 
 [node name="Label" type="Label" parent="main_panel/orders/order/pick"]
 layout_mode = 1
@@ -421,6 +426,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
 
 [node name="Label" type="Label" parent="main_panel/orders/order2/pick"]
 layout_mode = 1
@@ -588,6 +594,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
 
 [node name="Label" type="Label" parent="main_panel/orders/order3/pick"]
 layout_mode = 1
@@ -755,6 +762,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
 
 [node name="Label" type="Label" parent="main_panel/orders/order4/pick"]
 layout_mode = 1

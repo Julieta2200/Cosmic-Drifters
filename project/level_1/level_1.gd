@@ -6,6 +6,7 @@ const ORDER_TIME: int = 1
 var level_time: int = 500
 @export var computer: Node2D
 @onready var kitchen = $kitchen
+@onready var ui = $CanvasLayer/ui
 
 @onready var group_1 = {
 	"group": $group_1,
@@ -37,6 +38,7 @@ var level_time: int = 500
 	"served": false,
 	"spawned": false,
 	"spawn_time": 19,
+	"for_lumina": true
 }
 
 @onready var group_4 = {
@@ -46,7 +48,8 @@ var level_time: int = 500
 	"orders": [],
 	"served": false,
 	"spawned": false,
-	"spawn_time": 26
+	"spawn_time": 26,
+	"for_lumina": true
 }
 
 @onready var group_5 = {

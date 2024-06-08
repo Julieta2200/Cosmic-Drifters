@@ -19,6 +19,7 @@ func load_tables(plates, p):
 			ords[index].visible = true
 			ords[index].table_number.text = "N "+str(group["table"].number)
 			orders_tables[ords[index]] = group["table"]
+			ords[index].pick_btn.disabled = !player.have_empty_slot()
 			var j = 0
 			for food in group["table"].actual_order:
 				var f = ords[index].foods.get_children()[j]

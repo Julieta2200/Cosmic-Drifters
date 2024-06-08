@@ -18,6 +18,7 @@ func _process(_delta):
 	for order in kitchen.orders:
 		if order["status"] == kitchen.PREPARED:
 			pick_order(order)
+			break
 
 func pick_order(order):
 	busy = true

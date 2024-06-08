@@ -8,6 +8,7 @@ var plate_textures = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/P
 var rng = RandomNumberGenerator.new()
 @onready var use_point = $use_point
 @onready var orders_menu = $"../../CanvasLayer/orders_menu"
+var player 
 
 var plates = {}
 
@@ -32,6 +33,8 @@ func remove_plate(group):
 	if plates[group].has("text"):
 		remove_from_board(plates[group]["text"])
 	plates.erase(group)
+	orders_menu.load_tables(plates, player)
+	
 
 
 func add_to_board(group):
@@ -49,7 +52,8 @@ func remove_from_board(text):
 			return
 	$board.visible = false
 
-func action_complete(_action, player):
+func action_complete(_action, p):
+	player = p
 	orders_menu.load_tables(plates, player)
 	orders_menu.visible = true
 	pass

@@ -866,6 +866,7 @@ offset = Vector2(-1.75, -22.9375)
 flip_h = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 scale = Vector2(16, 16)
 navigation_polygon = SubResource("NavigationPolygon_bs06d")
 
@@ -878,9 +879,10 @@ walking_area = NodePath("../walking_area")
 [node name="clickable_objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="player" parent="clickable_objects" instance=ExtResource("25_6bfeo")]
+[node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui") instance=ExtResource("25_6bfeo")]
 position = Vector2(2479, 1157)
 scale = Vector2(16, 16)
+ui = NodePath("../../CanvasLayer/ui")
 speed = 800.0
 
 [node name="Camera2D" type="Camera2D" parent="clickable_objects/player"]
