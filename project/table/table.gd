@@ -45,7 +45,6 @@ func _call_orders():
 		var food = enemies[i]["enemy"].order(self, i)
 		add_order(food, i)
 		await get_tree().create_timer(ORDER_INTERVAL).timeout
-	waiting_for_food()
 
 func get_chair(index):
 	return chairs.get_children()[index]
@@ -70,6 +69,7 @@ func ordered(chair_i):
 			level.kitchen.add_order(self)
 		else:
 			level.computer.add_table(self)
+		waiting_for_food()
 
 func order_delivered():
 	level.order_delivered(group)
