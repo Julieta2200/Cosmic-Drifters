@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywnqfqhp316f"
-path="res://.godot/imported/talk-2.png-f609b16010e9bbe0f1667dba00656490.ctex"
+uid="uid://bkl8ny0chboaj"
+path="res://.godot/imported/base.png-fcd232d193c4f23a59db0e4a6780d893.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lumina/Lumina Bunnyboo /talk-2.png"
-dest_files=["res://.godot/imported/talk-2.png-f609b16010e9bbe0f1667dba00656490.ctex"]
+source_file="res://assets/lumina/Lumina Bunnyboo/base.png"
+dest_files=["res://.godot/imported/base.png-fcd232d193c4f23a59db0e4a6780d893.ctex"]
 
 [params]
 

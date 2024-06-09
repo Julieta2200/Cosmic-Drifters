@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ng8x41ui2lsa"
-path="res://.godot/imported/idle.png-7a73c96a206d0922f5727ebb6868cafa.ctex"
+uid="uid://bpd06ikltlby4"
+path="res://.godot/imported/walk-2.png-27da4870f1e31235fa49e5e5ba2cfdea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lumina/Lumina Bunnyboo /idle.png"
-dest_files=["res://.godot/imported/idle.png-7a73c96a206d0922f5727ebb6868cafa.ctex"]
+source_file="res://assets/lumina/Lumina Bunnyboo/walk-2.png"
+dest_files=["res://.godot/imported/walk-2.png-27da4870f1e31235fa49e5e5ba2cfdea.ctex"]
 
 [params]
 

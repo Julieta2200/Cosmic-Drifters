@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b47ulamiv3ljt"
-path="res://.godot/imported/shadow.png-2c6f6a0f6318481612eef26f3f552733.ctex"
+uid="uid://ng8x41ui2lsa"
+path="res://.godot/imported/idle.png-a80b00979e1d124032fcf2ccd312f3b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lumina/Lumina Bunnyboo /shadow.png"
-dest_files=["res://.godot/imported/shadow.png-2c6f6a0f6318481612eef26f3f552733.ctex"]
+source_file="res://assets/lumina/Lumina Bunnyboo/idle.png"
+dest_files=["res://.godot/imported/idle.png-a80b00979e1d124032fcf2ccd312f3b6.ctex"]
 
 [params]
 

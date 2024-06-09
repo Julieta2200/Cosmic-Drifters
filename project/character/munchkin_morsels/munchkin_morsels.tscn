@@ -88,9 +88,7 @@ texture = ExtResource("1_a728u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nriwt")
-animation = &"talk"
-frame = 1
-frame_progress = 0.881726
+animation = &"walk"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

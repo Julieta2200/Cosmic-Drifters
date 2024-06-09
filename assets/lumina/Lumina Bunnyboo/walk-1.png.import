@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqh5nldq77erh"
-path="res://.godot/imported/back-walk-1.png-f2450453b9d5adf3b17b26d4bad5213c.ctex"
+uid="uid://qemafkdd82wb"
+path="res://.godot/imported/walk-1.png-44131adf3d58a54ff04a22fcacd8a1c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lumina/Lumina Bunnyboo /back-walk-1.png"
-dest_files=["res://.godot/imported/back-walk-1.png-f2450453b9d5adf3b17b26d4bad5213c.ctex"]
+source_file="res://assets/lumina/Lumina Bunnyboo/walk-1.png"
+dest_files=["res://.godot/imported/walk-1.png-44131adf3d58a54ff04a22fcacd8a1c4.ctex"]
 
 [params]
 
