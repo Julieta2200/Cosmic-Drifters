@@ -84,7 +84,7 @@ static var foods = [
 ]
 
 func generate(flipped):
-	var food = get_food(Food.foods[rng.randf_range(0,foods.size())])
+	var food = Food.get_food(Food.foods[rng.randf_range(0,foods.size())])
 	food_sp.texture = load(food["texture"])
 	if flipped:
 		cloud.offset.x= -30
