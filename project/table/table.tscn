@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3eghgca6xgvb"]
+[gd_scene load_steps=11 format=3 uid="uid://d3eghgca6xgvb"]
 
 [ext_resource type="Texture2D" uid="uid://dp37y5m0a4hx8" path="res://assets/details/Table_Big.png" id="1_7bdqp"]
 [ext_resource type="Script" path="res://project/table/table.gd" id="1_xte3g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="3_s58k2"]
 [ext_resource type="Script" path="res://project/table/status.gd" id="5_jduwx"]
 [ext_resource type="Texture2D" uid="uid://rg6e7pvhaeq2" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png" id="6_ge4ve"]
+[ext_resource type="Texture2D" uid="uid://dkvkq1jpbb3hn" path="res://assets/Emotions/Wait-for-food/wait-for-food1.png" id="7_5q06x"]
 
 [sub_resource type="Animation" id="Animation_vnrf4"]
 length = 0.001
@@ -111,5 +112,16 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="status"]
+
+[node name="waiting_for_food" type="Sprite2D" parent="status"]
+visible = false
+position = Vector2(0.375, -31.687)
+texture = ExtResource("7_5q06x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="status/waiting_for_food"]
+autoplay = "bounce"
+libraries = {
+"": SubResource("AnimationLibrary_lbfqs")
+}
 
 [connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]

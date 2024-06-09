@@ -9,6 +9,12 @@ class_name Status
 		2: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Orange).png", "duration": 3},
 		3: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Red).png", "duration": 3},
 		4: {"texture": "res://assets/Emotions/Exclamation_mark/ExclamationMark(Fier1).png", "duration": 3}
+	},
+	$waiting_for_food: {
+		1: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food1.png", "duration": 3},
+		2: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food2.png", "duration": 3},
+		3: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food3.png", "duration": 3},
+		4: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food4.png", "duration": 3}
 	}
 }
 
@@ -16,6 +22,13 @@ class_name Status
 
 var current_status = 1
 var active_status
+
+func waiting_for_food():
+	$ask_waiter.visible = false
+	$waiting_for_food.visible = true
+	active_status = $waiting_for_food
+	current_status = 1
+	timer_reset_start(get_current_stage()["duration"])
 
 func ask_waiter():
 	$ask_waiter.visible = true

@@ -45,7 +45,7 @@ func _call_orders():
 		var food = enemies[i]["enemy"].order(self, i)
 		add_order(food, i)
 		await get_tree().create_timer(ORDER_INTERVAL).timeout
-	
+	waiting_for_food()
 
 func get_chair(index):
 	return chairs.get_children()[index]
@@ -74,6 +74,9 @@ func ordered(chair_i):
 func order_delivered():
 	level.order_delivered(group)
 	
+func waiting_for_food():
+	status = STATUS_WAITING_FOR_FOOD
+	$status.waiting_for_food()
 
 func ask_waiter():
 	status = STATUS_WAITING1
