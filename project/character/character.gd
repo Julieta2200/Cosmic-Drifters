@@ -7,6 +7,20 @@ var ch_action
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
 
+enum {LUMINA, BUNNYBOO, FROST, HOPPER, MORSEL, PRISMA, TWILIGHT}
+var current_mask = LUMINA
+var masks = {
+	LUMINA: "",
+	BUNNYBOO: "bunnyboo_",
+	FROST: "frost_",
+	HOPPER: "hopper_",
+	MORSEL: "morsel_",
+	PRISMA: "prisma_",
+	TWILIGHT: "twilight_"
+}
+	
+func set_mask(mask = LUMINA):
+	current_mask = mask
 
 #character movement
 func move() -> void:
@@ -29,13 +43,13 @@ func move() -> void:
 #character animation
 func animation()-> void:
 	if path.is_empty():
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play(masks[current_mask] + "idle")
 		return
 
 	if (path[0] - position ).y > 0:
-		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.play(masks[current_mask] + "walk")
 	else:
-		$AnimatedSprite2D.play("back_walk")
+		$AnimatedSprite2D.play(masks[current_mask] + "back_walk")
 		
 #start character movement
 func start_movement(target: Vector2) -> void:
