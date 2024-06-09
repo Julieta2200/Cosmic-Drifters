@@ -881,7 +881,6 @@ y_sort_enabled = true
 
 [node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui") instance=ExtResource("25_6bfeo")]
 position = Vector2(2479, 1157)
-scale = Vector2(16, 16)
 ui = NodePath("../../CanvasLayer/ui")
 speed = 800.0
 

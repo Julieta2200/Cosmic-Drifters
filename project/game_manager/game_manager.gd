@@ -19,6 +19,9 @@ func start_movement():
 		player.input_order(clicked_obj)
 	elif clicked_obj is Desk:
 		player.pick_order(clicked_obj)
+	elif clicked_obj is Player:
+		player.open_characters_panel()
+	
 
 func _process(_delta):
 	if Input.is_action_just_pressed("left_click"):
