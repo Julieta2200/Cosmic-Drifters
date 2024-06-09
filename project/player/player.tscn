@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=20 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://cr7uia36672nj" path="res://assets/player/shadow.png" id="2_kp23c"]
@@ -10,6 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cgexs8oi2fk4j" path="res://assets/player/Walk_1.png" id="8_0hfms"]
 [ext_resource type="Texture2D" uid="uid://cuuimitxcmskl" path="res://assets/player/Walk_2.png" id="9_6nqac"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_4r0lb"]
+[ext_resource type="Texture2D" uid="uid://sq72t4hqm7b4" path="res://assets/Menu2_UI/Menu1.png" id="11_3ns1l"]
+[ext_resource type="Texture2D" uid="uid://dwibqn78nnood" path="res://assets/Munchkin Morsels/base.png" id="12_up8ej"]
+[ext_resource type="Texture2D" uid="uid://bid8428apnfre" path="res://assets/Frost Dumplings/base.png" id="13_nl41o"]
+[ext_resource type="Texture2D" uid="uid://1v6yyjbpgsgr" path="res://assets/Bunnyboo Sippers/base.png" id="14_qwom4"]
+[ext_resource type="Texture2D" uid="uid://1uxhmsu7k6ec" path="res://assets/Cerulean Hoppers/base.png" id="15_aeucg"]
+[ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="16_5ii64"]
+[ext_resource type="Texture2D" uid="uid://df4baooeu4510" path="res://assets/Prismarities/base.png" id="17_1blsd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u1gh"]
 animations = [{
@@ -69,6 +76,7 @@ animations = [{
 size = Vector2(13, 16)
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(16, 16)
 script = ExtResource("1_r3jtw")
 
 [node name="shadow" type="Sprite2D" parent="."]
@@ -87,3 +95,74 @@ offset = Vector2(0, -6)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
 position = Vector2(0.5, -4)
 shape = SubResource("RectangleShape2D_r21ao")
+
+[node name="characters_panel" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="TextureRect" parent="characters_panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -33.0
+offset_right = 126.0
+offset_bottom = -13.0
+texture = ExtResource("11_3ns1l")
+expand_mode = 1
+
+[node name="munchkin_morsel" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
+offset_left = 9.625
+offset_top = -31.0
+offset_right = 25.625
+offset_bottom = -15.0
+texture_normal = ExtResource("12_up8ej")
+
+[node name="frost_dumpling" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
+offset_left = 29.125
+offset_top = -31.0
+offset_right = 45.125
+offset_bottom = -15.0
+texture_normal = ExtResource("13_nl41o")
+
+[node name="bunnyboo_sipper" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = -31.0
+offset_right = 63.0
+offset_bottom = -15.0
+texture_normal = ExtResource("14_qwom4")
+
+[node name="cerulean_hopper" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
+offset_left = 63.625
+offset_top = -31.0
+offset_right = 79.625
+offset_bottom = -15.0
+texture_normal = ExtResource("15_aeucg")
+
+[node name="twilight_tarsier" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
+offset_left = 81.625
+offset_top = -31.0
+offset_right = 97.625
+offset_bottom = -15.0
+texture_normal = ExtResource("16_5ii64")
+
+[node name="prismarity" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
+offset_left = 103.812
+offset_top = -31.0
+offset_right = 119.812
+offset_bottom = -15.0
+texture_normal = ExtResource("17_1blsd")
+
+[connection signal="pressed" from="characters_panel/munchkin_morsel" to="." method="_on_munchkin_morsel_pressed"]
+[connection signal="pressed" from="characters_panel/frost_dumpling" to="." method="_on_frost_dumpling_pressed"]
+[connection signal="pressed" from="characters_panel/bunnyboo_sipper" to="." method="_on_bunnyboo_sipper_pressed"]
+[connection signal="pressed" from="characters_panel/cerulean_hopper" to="." method="_on_cerulean_hopper_pressed"]
+[connection signal="pressed" from="characters_panel/twilight_tarsier" to="." method="_on_twilight_tarsier_pressed"]
+[connection signal="pressed" from="characters_panel/prismarity" to="." method="_on_prismarity_pressed"]

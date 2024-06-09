@@ -39,3 +39,31 @@ func pick_plates(table):
 
 func have_empty_slot():
 	return ui.items.size() != 3
+
+func open_characters_panel():
+	busy = true
+	print("open")
+	pass
+
+func _on_munchkin_morsel_pressed():
+	pass # Replace with function body.
+
+
+func _on_frost_dumpling_pressed():
+	pass # Replace with function body.
+
+
+func _on_bunnyboo_sipper_pressed():
+	pass # Replace with function body.
+
+
+func _on_cerulean_hopper_pressed():
+	pass # Replace with function body.
+
+
+func _on_twilight_tarsier_pressed():
+	pass # Replace with function body.
+
+
+func _on_prismarity_pressed():
+	pass # Replace with function body.
