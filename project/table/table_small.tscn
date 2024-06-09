@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kaxdb53bb6c" path="res://assets/details/chair1.png" id="3_die76"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="4_8lav6"]
 [ext_resource type="Script" path="res://project/table/status.gd" id="5_7ra1y"]
-[ext_resource type="Texture2D" uid="uid://c1jk4iwtrbe0a" path="res://assets/Order_Button/Exclamation_mark(Big).png" id="6_iixs5"]
+[ext_resource type="Texture2D" uid="uid://rg6e7pvhaeq2" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png" id="6_w2jnu"]
 [ext_resource type="Texture2D" uid="uid://dkvkq1jpbb3hn" path="res://assets/Emotions/Wait-for-food/wait-for-food1.png" id="7_xevj6"]
 
 [sub_resource type="Animation" id="Animation_vnrf4"]
@@ -86,7 +86,7 @@ script = ExtResource("5_7ra1y")
 [node name="ask_waiter" type="Sprite2D" parent="status"]
 visible = false
 position = Vector2(0.375, -31.687)
-texture = ExtResource("6_iixs5")
+texture = ExtResource("6_w2jnu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="status/ask_waiter"]
 autoplay = "bounce"
@@ -106,3 +106,5 @@ autoplay = "bounce"
 libraries = {
 "": SubResource("AnimationLibrary_lbfqs")
 }
+
+[connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
