@@ -6,6 +6,7 @@ var busy: bool = false
 
 var desk
 var computer
+var expected_mask
 
 @export var ui: Control
 
@@ -42,28 +43,53 @@ func have_empty_slot():
 
 func open_characters_panel():
 	busy = true
-	print("open")
+	$characters_panel.visible = true
 	pass
 
+func morph(mask = LUMINA):
+	$AnimationPlayer.play("morph")
+	expected_mask = mask
+	
+
+func set_mask(mask = LUMINA):
+	current_mask = mask
+	animation()
+
 func _on_munchkin_morsel_pressed():
-	pass # Replace with function body.
+	morph(MORSEL)
+	print(current_mask)
+	$characters_panel.visible = false
 
 
 func _on_frost_dumpling_pressed():
-	pass # Replace with function body.
+	morph(FROST)
+	$characters_panel.visible = false
 
 
 func _on_bunnyboo_sipper_pressed():
-	pass # Replace with function body.
+	morph(BUNNYBOO)
+	$characters_panel.visible = false
 
 
 func _on_cerulean_hopper_pressed():
-	pass # Replace with function body.
+	morph(HOPPER)
+	$characters_panel.visible = false
 
 
 func _on_twilight_tarsier_pressed():
-	pass # Replace with function body.
+	morph(TWILIGHT)
+	$characters_panel.visible = false
 
 
 func _on_prismarity_pressed():
-	pass # Replace with function body.
+	morph(PRISMA)
+	$characters_panel.visible = false
+
+
+func _on_animation_player_animation_finished(anim_name):
+	match anim_name:
+		"morph":
+			set_mask(expected_mask)
+			$AnimationPlayer.play("morph_back")
+		"morph_back":
+			busy = false

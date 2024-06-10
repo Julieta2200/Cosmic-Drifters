@@ -9,7 +9,7 @@ var ch_action
 
 enum {LUMINA, BUNNYBOO, FROST, HOPPER, MORSEL, PRISMA, TWILIGHT}
 var current_mask = LUMINA
-var masks = {
+static var masks = {
 	LUMINA: "",
 	BUNNYBOO: "bunnyboo_",
 	FROST: "frost_",
@@ -18,9 +18,6 @@ var masks = {
 	PRISMA: "prisma_",
 	TWILIGHT: "twilight_"
 }
-	
-func set_mask(mask = LUMINA):
-	current_mask = mask
 
 #character movement
 func move() -> void:

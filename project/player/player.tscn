@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=66 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://cr7uia36672nj" path="res://assets/player/shadow.png" id="2_kp23c"]
@@ -17,10 +17,17 @@
 [ext_resource type="Texture2D" uid="uid://cuuimitxcmskl" path="res://assets/player/Walk_2.png" id="9_6nqac"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_4r0lb"]
 [ext_resource type="Texture2D" uid="uid://ng8x41ui2lsa" path="res://assets/lumina/Lumina Bunnyboo/idle.png" id="10_ltgsy"]
+[ext_resource type="Texture2D" uid="uid://sq72t4hqm7b4" path="res://assets/Menu2_UI/Menu1.png" id="11_3ns1l"]
+[ext_resource type="Texture2D" uid="uid://dwibqn78nnood" path="res://assets/Munchkin Morsels/base.png" id="12_up8ej"]
+[ext_resource type="Texture2D" uid="uid://bid8428apnfre" path="res://assets/Frost Dumplings/base.png" id="13_nl41o"]
 [ext_resource type="Texture2D" uid="uid://clme0tfpm2bu3" path="res://assets/lumina/Lumina Frost/base-walk-1.png" id="13_w4etm"]
 [ext_resource type="Texture2D" uid="uid://c4bgw3r7u8tlw" path="res://assets/lumina/Lumina Frost/back-base.png" id="14_45xj7"]
+[ext_resource type="Texture2D" uid="uid://1v6yyjbpgsgr" path="res://assets/Bunnyboo Sippers/base.png" id="14_qwom4"]
+[ext_resource type="Texture2D" uid="uid://1uxhmsu7k6ec" path="res://assets/Cerulean Hoppers/base.png" id="15_aeucg"]
 [ext_resource type="Texture2D" uid="uid://dp36vwglefj0i" path="res://assets/lumina/Lumina Frost/base-walk-2.png" id="15_p7l8l"]
 [ext_resource type="Texture2D" uid="uid://bwn8ppalpk1cr" path="res://assets/lumina/Lumina Frost/base.png" id="16_5acka"]
+[ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="16_5ii64"]
+[ext_resource type="Texture2D" uid="uid://df4baooeu4510" path="res://assets/Prismarities/base.png" id="17_1blsd"]
 [ext_resource type="Texture2D" uid="uid://bco0miyxf48cw" path="res://assets/lumina/Lumina Frost/idle.png" id="17_pgh0m"]
 [ext_resource type="Texture2D" uid="uid://dorsoilettfvj" path="res://assets/lumina/Lumina Frost/walk-1.png" id="18_5a6gj"]
 [ext_resource type="Texture2D" uid="uid://c4kg66n8hk1qp" path="res://assets/lumina/Lumina Frost/walk-2.png" id="19_keb4p"]
@@ -52,13 +59,6 @@
 [ext_resource type="Texture2D" uid="uid://it54a6hecsyv" path="res://assets/lumina/Lumina Twilight/idle.png" id="47_4stiw"]
 [ext_resource type="Texture2D" uid="uid://rfcffkivbgj0" path="res://assets/lumina/Lumina Twilight/walk-1.png" id="48_xwv2v"]
 [ext_resource type="Texture2D" uid="uid://frnqmwkm2kga" path="res://assets/lumina/Lumina Twilight/walk-2.png" id="49_bmru8"]
-[ext_resource type="Texture2D" uid="uid://sq72t4hqm7b4" path="res://assets/Menu2_UI/Menu1.png" id="11_3ns1l"]
-[ext_resource type="Texture2D" uid="uid://dwibqn78nnood" path="res://assets/Munchkin Morsels/base.png" id="12_up8ej"]
-[ext_resource type="Texture2D" uid="uid://bid8428apnfre" path="res://assets/Frost Dumplings/base.png" id="13_nl41o"]
-[ext_resource type="Texture2D" uid="uid://1v6yyjbpgsgr" path="res://assets/Bunnyboo Sippers/base.png" id="14_qwom4"]
-[ext_resource type="Texture2D" uid="uid://1uxhmsu7k6ec" path="res://assets/Cerulean Hoppers/base.png" id="15_aeucg"]
-[ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="16_5ii64"]
-[ext_resource type="Texture2D" uid="uid://df4baooeu4510" path="res://assets/Prismarities/base.png" id="17_1blsd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u1gh"]
 animations = [{
@@ -423,6 +423,60 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r21ao"]
 size = Vector2(13, 16)
 
+[sub_resource type="Animation" id="Animation_510t8"]
+resource_name = "morph"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_7ejxd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ybek3"]
+resource_name = "morph_back"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhkaa"]
+_data = {
+"RESET": SubResource("Animation_7ejxd"),
+"morph": SubResource("Animation_510t8"),
+"morph_back": SubResource("Animation_ybek3")
+}
+
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_r3jtw")
@@ -508,9 +562,15 @@ offset_right = 119.812
 offset_bottom = -15.0
 texture_normal = ExtResource("17_1blsd")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hhkaa")
+}
+
 [connection signal="pressed" from="characters_panel/munchkin_morsel" to="." method="_on_munchkin_morsel_pressed"]
 [connection signal="pressed" from="characters_panel/frost_dumpling" to="." method="_on_frost_dumpling_pressed"]
 [connection signal="pressed" from="characters_panel/bunnyboo_sipper" to="." method="_on_bunnyboo_sipper_pressed"]
 [connection signal="pressed" from="characters_panel/cerulean_hopper" to="." method="_on_cerulean_hopper_pressed"]
 [connection signal="pressed" from="characters_panel/twilight_tarsier" to="." method="_on_twilight_tarsier_pressed"]
 [connection signal="pressed" from="characters_panel/prismarity" to="." method="_on_prismarity_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
