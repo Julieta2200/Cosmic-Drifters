@@ -38,13 +38,8 @@ func add_order(food, chair_i):
 	
 func call_orders(w):
 	waiter = w
-	call_deferred("_call_orders")
-		
-func _call_orders():
-	for i in enemies:
-		var food = enemies[i]["enemy"].order(self, i)
-		add_order(food, i)
-		await get_tree().create_timer(ORDER_INTERVAL).timeout
+	group["group"].order(self)
+
 
 func get_chair(index):
 	return chairs.get_children()[index]

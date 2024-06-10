@@ -139,10 +139,6 @@ func pick_order(group, caller):
 	$clickable_objects/desk_plates.remove_plate(group)
 	var serve_point = group["table"].get_serve_point()
 	caller.walk_to(self, serve_point, group["name"]+"::serve_food")
-
-func ask_order(group, waiter):
-	group["waiter"] = waiter
-	call_deferred("get_orders", group)
 	
 func get_orders(group):
 	var enemies= group["group"].get_children()
