@@ -5,7 +5,7 @@ var click_area : bool
 var selected_object = null
 
 
-func start_movement():
+func click_action():
 	if player.busy:
 		return
 	
@@ -25,6 +25,8 @@ func start_movement():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("left_click"):
-		start_movement()
+		click_action()
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
 	
 
