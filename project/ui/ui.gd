@@ -29,10 +29,16 @@ func add_item(table):
 			items[index] = table
 			return 
 
+func get_item_index(item):
+	for index in items:
+		if items[index] == item:
+			return index
+	return -1
+
 func get_item(index):
 	return items[index]
 
 func remove_item(index):
-	$item.get_child(index).get_child(0).text = ""
+	$item.get_child(index-1).get_child(0).text = ""
 	items.erase(index)
 	

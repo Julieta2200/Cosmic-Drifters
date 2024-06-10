@@ -17,12 +17,33 @@ func _ready():
 	position_delta = speed / 60 # game is working approximately in 60 fps
 	animation()
 
+func interact_table(table):
+	match table.status:
+		table.STATUS_WAITING1:
+			ask_order(table)
+		table.STATUS_WAITING_FOR_FOOD:
+			serve_food(table)
+
 func ask_order(table):
-	if table.status != table.STATUS_WAITING1:
-		return	
 	busy = true
 	var serve_point = table.get_serve_point()
 	walk_to(table, serve_point, "ask_order")
+	
+func get_food(table):
+	var index = ui.get_item_index(table)
+	if index == -1:
+		busy = false
+		return
+	print(index)
+	ui.remove_item(index)
+	table.add_plates()
+	busy = false
+		
+
+func serve_food(table):
+	busy = true
+	var serve_point = table.get_serve_point()
+	walk_to(table, serve_point, "serve_food")
 
 func input_order(c):
 	computer = c

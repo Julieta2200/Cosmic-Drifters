@@ -87,6 +87,8 @@ func action_complete(action, caller):
 		"ask_order":
 			for_lumina = true
 			call_orders(caller)
+		"serve_food":
+			caller.get_food(self)
 
 func set_actual_order(foods):
 	actual_order = foods

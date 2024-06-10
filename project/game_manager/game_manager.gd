@@ -14,7 +14,7 @@ func start_movement():
 	if clicked_obj is Area2D:
 		player.walk_to(null, get_global_mouse_position(), "")
 	elif clicked_obj is Table:
-		player.ask_order(clicked_obj)
+		player.interact_table(clicked_obj)
 	elif clicked_obj is Computer:
 		player.input_order(clicked_obj)
 	elif clicked_obj is Desk:
