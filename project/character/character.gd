@@ -7,7 +7,7 @@ var ch_action
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
 
-enum {LUMINA, BUNNYBOO, FROST, HOPPER, MORSEL, PRISMA, TWILIGHT}
+enum {LUMINA, BUNNYBOO, FROST, HOPPER, MORSEL, PRISMA, TWILIGHT , OLIVER}
 var current_mask = LUMINA
 static var masks = {
 	LUMINA: "",
@@ -16,7 +16,8 @@ static var masks = {
 	HOPPER: "hopper_",
 	MORSEL: "morsel_",
 	PRISMA: "prisma_",
-	TWILIGHT: "twilight_"
+	TWILIGHT: "twilight_",
+	OLIVER : "oliver_"
 }
 
 #character movement

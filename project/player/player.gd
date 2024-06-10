@@ -106,6 +106,9 @@ func _on_prismarity_pressed():
 	morph(PRISMA)
 	$characters_panel.visible = false
 
+func _on_oliver_pressed():
+	morph(OLIVER)
+	$characters_panel.visible = false
 
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
@@ -114,3 +117,5 @@ func _on_animation_player_animation_finished(anim_name):
 			$AnimationPlayer.play("morph_back")
 		"morph_back":
 			busy = false
+
+
