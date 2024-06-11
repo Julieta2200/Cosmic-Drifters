@@ -5,10 +5,10 @@ class_name Status
 
 @onready var stages = {
 	$ask_waiter: {
-		1: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png", "duration": 3},
-		2: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Orange).png", "duration": 3},
-		3: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Red).png", "duration": 3},
-		4: {"texture": "res://assets/Emotions/Exclamation_mark/ExclamationMark(Fier1).png", "duration": 3}
+		1: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png", "duration": 1},
+		2: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Orange).png", "duration": 1},
+		3: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Red).png", "duration": 1},
+		4: {"texture": "res://assets/Emotions/Exclamation_mark/ExclamationMark(Fier1).png", "duration": 1}
 	},
 	$waiting_for_food: {
 		1: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food1.png", "duration": 3},
@@ -70,10 +70,16 @@ func next_stage():
 	if current_status > stages[active_status].size():
 		stage_overflow()
 		return
+	if current_status == stages[active_status].size():
+		last_stage()
 	active_status.texture = load(get_current_stage()["texture"])
 
 func stage_overflow():
-	print("overflow")
+	pass
+	
+func last_stage():
+	if active_status == $ask_waiter:
+		table.leave()
 
 func timer_reset_start(time):
 	stage_timer.wait_time = time
