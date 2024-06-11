@@ -13,7 +13,13 @@ var for_lumina: bool = false
 
 @export var number: int
 
-enum {STATUS_EMPTY, STATUS_WAITING1, STATUS_WAITING_FOR_FOOD}
+enum {
+	STATUS_EMPTY,
+	STATUS_WAITING1,
+	STATUS_WAITING_FOR_FOOD,
+	STATUS_EATING_FOOD,
+	STATUS_WAITING_FOR_CHECK
+}
 var status = STATUS_EMPTY
 
 var table_status = "empty"
@@ -51,10 +57,12 @@ func add_plates():
 	for p in plate.get_children():
 		p.texture = load(plates[rng.randf_range(0,plates.size())])
 		p.visible = true
+	eating_food()
 	
 func remove_plates():
 	for p in plate.get_children():
 		p.visible = false
+	waiting_for_check()
 
 func ordered(chair_i):
 	if chair_i == len(chairs.get_children()) - 1:
@@ -72,6 +80,15 @@ func order_delivered():
 func waiting_for_food():
 	status = STATUS_WAITING_FOR_FOOD
 	$status.waiting_for_food()
+	
+func eating_food():
+	status = STATUS_EATING_FOOD
+	$status.set_table(self)
+	$status.eating_food()
+	
+func waiting_for_check():
+	status = STATUS_WAITING_FOR_CHECK
+	$status.waiting_for_check()
 
 func ask_waiter():
 	status = STATUS_WAITING1
