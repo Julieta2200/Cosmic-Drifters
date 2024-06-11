@@ -9,7 +9,7 @@ var _loaded_resource: PackedScene
 var _scene_path: String
 var _progress: Array = []
 
-var use_sub_threads: bool = false
+var use_sub_threads: bool = true
 
 
 func load_scene(scene_path: String) -> void:
@@ -26,7 +26,7 @@ func load_scene(scene_path: String) -> void:
 	start_load()
 
 func start_load() -> void:
-	var state = ResourceLoader.load_threaded_request(_scene_path, "", use_sub_threads)
+	var state = ResourceLoader.load_threaded_request(_scene_path)
 	if state == OK:
 		set_process(true)
 
