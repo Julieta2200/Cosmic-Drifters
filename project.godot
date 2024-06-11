@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Cosmic-drifters"
-run/main_scene="res://project/level_1/level_1.tscn"
+run/main_scene="res://project/menu/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LoadManager="*res://project/autoloads/LoadManager.gd"
 
 [display]
 

@@ -15,17 +15,46 @@ class_name Status
 		2: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food2.png", "duration": 3},
 		3: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food3.png", "duration": 3},
 		4: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food4.png", "duration": 3}
+	},
+	"eating": {
+		1: {"duration": 5}
+	}, 
+	$waiting_for_check: {
+		1: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check1.png", "duration": 3},
+		2: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check2.png", "duration": 3},
+		3: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check3.png", "duration": 3},
+		4: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check4.png", "duration": 3},
 	}
 }
 
 @onready var stage_timer = $Timer
+@onready var eating_stage_timer = $EatingTimer
+
+@onready var table = $".."
 
 var current_status = 1
 var active_status
 
+func eating_food():
+	$ask_waiter.visible = false
+	$waiting_for_food.visible = false
+	$waiting_for_check.visible = false
+	active_status = "eating"
+	current_status = 1
+	eating_timer_reset_start(get_current_stage()["duration"])
+
+func waiting_for_check():
+	$ask_waiter.visible = false
+	$waiting_for_food.visible = false
+	$waiting_for_check.visible = true
+	active_status = $waiting_for_check
+	current_status = 1
+	timer_reset_start(get_current_stage()["duration"])
+
 func waiting_for_food():
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = true
+	$waiting_for_check.visible = false
 	active_status = $waiting_for_food
 	current_status = 1
 	timer_reset_start(get_current_stage()["duration"])
@@ -50,8 +79,16 @@ func timer_reset_start(time):
 	stage_timer.wait_time = time
 	stage_timer.start()
 
+func eating_timer_reset_start(time):
+	eating_stage_timer.wait_time = time
+	eating_stage_timer.start()
+
 func get_current_stage():
 	return stages[active_status][current_status]
+	
 
 func _on_timer_timeout():
 	next_stage()
+
+func _on_eating_timer_timeout():
+	table.remove_plates()

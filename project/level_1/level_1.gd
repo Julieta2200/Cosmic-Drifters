@@ -7,6 +7,8 @@ var level_time: int = 500
 @export var computer: Node2D
 @onready var kitchen = $kitchen
 @onready var ui = $CanvasLayer/ui
+@onready var spawn_point = $spawn_point
+@onready var door = $details/door_animatedSprite2D
 
 @onready var group_1 = {
 	"group": $group_1,
@@ -87,19 +89,7 @@ func is_spawn_time(group) -> bool:
 
 func spawn(group):
 	group["spawned"] = true
-	call_deferred("spawn_and_sit", group)
-
-func spawn_and_sit(group):
-	var enemies= group["group"].get_children()
-	var i: int = 0
-	$details/door_animatedSprite2D.play("open")
-	await get_tree().create_timer(4).timeout
-	for enemy in enemies:
-		enemy.spawn($spawn_point.global_position)
-		var chair = group["table"].get_chair(i)
-		enemy.walk_to(self, chair.global_position, group["name"]+":"+str(i)+":sit")
-		i += 1
-		await get_tree().create_timer(SPAWN_DELAY).timeout
+	group["group"].spawn(self, group)
 		
 func serve(group):
 	if group.has("for_lumina"):
@@ -117,7 +107,7 @@ func action_complete(a: String, caller):
 		return
 	
 	var group = groups[action[0]]
-	var enemies = group["group"].get_children()
+	var enemies = group["group"].enemies
 	var number = int(action[1])
 	match action[2]:
 		"sit":
@@ -149,10 +139,6 @@ func pick_order(group, caller):
 	$clickable_objects/desk_plates.remove_plate(group)
 	var serve_point = group["table"].get_serve_point()
 	caller.walk_to(self, serve_point, group["name"]+"::serve_food")
-
-func ask_order(group, waiter):
-	group["waiter"] = waiter
-	call_deferred("get_orders", group)
 	
 func get_orders(group):
 	var enemies= group["group"].get_children()
