@@ -83,7 +83,6 @@ func waiting_for_food():
 	
 func eating_food():
 	status = STATUS_EATING_FOOD
-	$status.set_table(self)
 	$status.eating_food()
 	
 func waiting_for_check():

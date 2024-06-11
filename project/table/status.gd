@@ -30,7 +30,7 @@ class_name Status
 @onready var stage_timer = $Timer
 @onready var eating_stage_timer = $EatingTimer
 
-var table:Table
+@onready var table = $".."
 
 var current_status = 1
 var active_status
@@ -71,7 +71,6 @@ func next_stage():
 		stage_overflow()
 		return
 	active_status.texture = load(get_current_stage()["texture"])
-	print(get_current_stage()["texture"])
 
 func stage_overflow():
 	print("overflow")
@@ -87,8 +86,6 @@ func eating_timer_reset_start(time):
 func get_current_stage():
 	return stages[active_status][current_status]
 	
-func set_table(table1):
-	table = table1
 
 func _on_timer_timeout():
 	next_stage()
