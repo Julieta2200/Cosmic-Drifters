@@ -120,6 +120,8 @@ func action_complete(a: String, caller):
 			pick_order(group, caller)
 		"serve_food":
 			serve_food(group, caller)
+		"leave":
+			enemies[number].spawn(Vector2(-1000, -1000))
 
 func order_delivered(group):
 	$clickable_objects/desk_plates.add_plate(group)

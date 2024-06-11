@@ -38,6 +38,14 @@ func sit(enemy, chair_i, lvl, gr):
 	var chair = $chairs.get_children()[chair_i]
 	enemy.global_position = chair.global_position
 	chair.visible = false
+	
+func leave_chair(chair_i):
+	var chair = $chairs.get_children()[chair_i]
+	chair.visible = true
+	return chair
+	
+func leave():
+	group.group.leave()
 
 func add_order(food, chair_i):
 	enemies[chair_i]["order"] = food

@@ -16,6 +16,26 @@ var order_timer
 
 func _ready():
 	enemies = get_children()
+	
+func leave():
+	spawn_timer = Timer.new()
+	add_child(spawn_timer)
+	spawn_timer.wait_time = 1.0
+	spawn_timer.one_shot = true
+	spawn_timer.connect("timeout", _leave)
+	spawn_timer.start()
+	
+func _leave():
+	if _spawn_index == enemies.size():
+		_spawn_index = 0
+		return
+	var enemy = enemies[_spawn_index]
+	var chair = group_obj["table"].leave_chair(_spawn_index)
+	enemy.spawn(chair.global_position)
+	enemy.walk_to(level, level.door.global_position, group_obj["name"]+":"+str(_spawn_index)+":leave")
+	_spawn_index += 1
+	spawn_timer.wait_time = SPAWN_DELAY
+	spawn_timer.start()
 
 func spawn(lvl, g_obj):
 	level = lvl
@@ -30,6 +50,7 @@ func spawn(lvl, g_obj):
 
 func _spawn():
 	if _spawn_index == enemies.size():
+		_spawn_index = 0
 		return
 	var enemy = enemies[_spawn_index]
 	enemy.spawn(level.spawn_point.global_position)
