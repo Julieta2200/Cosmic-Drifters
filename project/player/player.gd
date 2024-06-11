@@ -7,8 +7,8 @@ var busy: bool = false
 var desk
 var computer
 var expected_mask
-var h = load("res://assets/lumina/Base (3).png")
-var n
+var lumina_sp = load("res://assets/lumina/Base (3).png")
+var previous_character
 
 @export var ui: Control
 
@@ -79,53 +79,53 @@ func set_mask(mask = LUMINA):
 	animation()
 
 func _on_munchkin_morsel_pressed():
-	character($characters_panel/munchkin_morsel/TextureRect,MORSEL)
-	n = load("res://assets/Munchkin Morsels/base.png")
+	change_character($characters_panel/munchkin_morsel/TextureRect,MORSEL)
+	previous_character = load("res://assets/Munchkin Morsels/base.png")
 
 func _on_frost_dumpling_pressed():
-	character($characters_panel/frost_dumpling/TextureRect,FROST)
-	n = load("res://assets/Frost Dumplings/base.png")
+	change_character($characters_panel/frost_dumpling/TextureRect,FROST)
+	previous_character = load("res://assets/Frost Dumplings/base.png")
 
 
 func _on_bunnyboo_sipper_pressed():
-	character($characters_panel/bunnyboo_sipper/TextureRect,BUNNYBOO)
-	n = load("res://assets/Bunnyboo Sippers/base.png")
+	change_character($characters_panel/bunnyboo_sipper/TextureRect,BUNNYBOO)
+	previous_character = load("res://assets/Bunnyboo Sippers/base.png")
 
 
 
 func _on_cerulean_hopper_pressed():
-	character($characters_panel/cerulean_hopper/TextureRect,HOPPER)
-	n = load("res://assets/Cerulean Hoppers/base.png")
+	change_character($characters_panel/cerulean_hopper/TextureRect,HOPPER)
+	previous_character = load("res://assets/Cerulean Hoppers/base.png")
 
 
 func _on_twilight_tarsier_pressed():
-	character($characters_panel/twilight_tarsier/TextureRect,TWILIGHT)
-	n = load("res://assets/Twilight Tarsiers/base.png")
+	change_character($characters_panel/twilight_tarsier/TextureRect,TWILIGHT)
+	previous_character = load("res://assets/Twilight Tarsiers/base.png")
 
 func _on_prismarity_pressed():
-	character($characters_panel/prismarity/TextureRect,PRISMA)
-	n = load("res://assets/Prismarities/base.png")
+	change_character($characters_panel/prismarity/TextureRect,PRISMA)
+	previous_character = load("res://assets/Prismarities/base.png")
 	
 
 func _on_oliver_pressed():
-	character($characters_panel/oliver/TextureRect,OLIVER)
-	n = load("res://assets/Security guard/Oliver_16px.png")
+	change_character($characters_panel/oliver/TextureRect,OLIVER)
+	previous_character = load("res://assets/Security guard/Oliver_16px.png")
 
 
 func _on_animated_sprite_2d_animation_finished():
 	set_mask(expected_mask)
 	busy = false
 
-func character(v, name):
-	if v.texture != h:
+func change_character(character, name):
+	if character.texture != lumina_sp:
 		for i in $characters_panel.get_child_count():
 			if i > 0 :
-				if $characters_panel.get_child(i).get_child(0).texture == h:
-					$characters_panel.get_child(i).get_child(0).texture = n
+				if $characters_panel.get_child(i).get_child(0).texture == lumina_sp:
+					$characters_panel.get_child(i).get_child(0).texture = previous_character
 					
-		v.texture = h
+		character.texture = lumina_sp
 		morph(name)
 	else:
 		morph(LUMINA)
-		v.texture = n
+		character.texture = previous_character
 
