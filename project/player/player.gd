@@ -7,6 +7,8 @@ var busy: bool = false
 var desk
 var computer
 var expected_mask
+var h = load("res://assets/lumina/Base (3).png")
+var n
 
 @export var ui: Control
 
@@ -68,54 +70,62 @@ func open_characters_panel():
 	pass
 
 func morph(mask = LUMINA):
-	$AnimationPlayer.play("morph")
+	$characters_panel.visible = false
+	$AnimatedSprite2D.play("lumina")
 	expected_mask = mask
-	
 
 func set_mask(mask = LUMINA):
 	current_mask = mask
 	animation()
 
 func _on_munchkin_morsel_pressed():
-	morph(MORSEL)
-	print(current_mask)
-	$characters_panel.visible = false
-
+	character($characters_panel/munchkin_morsel/TextureRect,MORSEL)
+	n = load("res://assets/Munchkin Morsels/base.png")
 
 func _on_frost_dumpling_pressed():
-	morph(FROST)
-	$characters_panel.visible = false
+	character($characters_panel/frost_dumpling/TextureRect,FROST)
+	n = load("res://assets/Frost Dumplings/base.png")
 
 
 func _on_bunnyboo_sipper_pressed():
-	morph(BUNNYBOO)
-	$characters_panel.visible = false
+	character($characters_panel/bunnyboo_sipper/TextureRect,BUNNYBOO)
+	n = load("res://assets/Bunnyboo Sippers/base.png")
+
 
 
 func _on_cerulean_hopper_pressed():
-	morph(HOPPER)
-	$characters_panel.visible = false
+	character($characters_panel/cerulean_hopper/TextureRect,HOPPER)
+	n = load("res://assets/Cerulean Hoppers/base.png")
 
 
 func _on_twilight_tarsier_pressed():
-	morph(TWILIGHT)
-	$characters_panel.visible = false
-
+	character($characters_panel/twilight_tarsier/TextureRect,TWILIGHT)
+	n = load("res://assets/Twilight Tarsiers/base.png")
 
 func _on_prismarity_pressed():
-	morph(PRISMA)
-	$characters_panel.visible = false
+	character($characters_panel/prismarity/TextureRect,PRISMA)
+	n = load("res://assets/Prismarities/base.png")
+	
 
 func _on_oliver_pressed():
-	morph(OLIVER)
-	$characters_panel.visible = false
+	character($characters_panel/oliver/TextureRect,OLIVER)
+	n = load("res://assets/Security guard/Oliver_16px.png")
 
-func _on_animation_player_animation_finished(anim_name):
-	match anim_name:
-		"morph":
-			set_mask(expected_mask)
-			$AnimationPlayer.play("morph_back")
-		"morph_back":
-			busy = false
 
+func _on_animated_sprite_2d_animation_finished():
+	set_mask(expected_mask)
+	busy = false
+
+func character(v, name):
+	if v.texture != h:
+		for i in $characters_panel.get_child_count():
+			if i > 0 :
+				if $characters_panel.get_child(i).get_child(0).texture == h:
+					$characters_panel.get_child(i).get_child(0).texture = n
+					
+		v.texture = h
+		morph(name)
+	else:
+		morph(LUMINA)
+		v.texture = n
 

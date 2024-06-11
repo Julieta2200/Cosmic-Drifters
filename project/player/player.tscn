@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=72 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://bh64gw7aghagg" path="res://assets/lumina/shadow (4).png" id="2_fktkq"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://c64svgxd8uldq" path="res://assets/lumina/Lumina Hopper/walk-1.png" id="25_tfxp2"]
 [ext_resource type="Texture2D" uid="uid://deetyt8qx2iq2" path="res://assets/lumina/Lumina Hopper/walk-2.png" id="26_b2jd4"]
 [ext_resource type="Texture2D" uid="uid://c8b8xa8lkv2w3" path="res://assets/lumina/idle (2).png" id="28_rhnkw"]
+[ext_resource type="Texture2D" uid="uid://bot5gb0o1dree" path="res://assets/lumina/Animation/Lumina.png" id="29_5k8cw"]
 [ext_resource type="Texture2D" uid="uid://clp2ftn7p4bd4" path="res://assets/lumina/Lumina Morsel/back-walk-1.png" id="29_noera"]
 [ext_resource type="Texture2D" uid="uid://b0qjbljngvamr" path="res://assets/lumina/Lumina Morsel/back-base.png" id="30_h7t4k"]
 [ext_resource type="Texture2D" uid="uid://bmnqi247pu0tn" path="res://assets/lumina/Lumina Morsel/back-walk-2.png" id="31_hyjx2"]
@@ -260,6 +261,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("29_5k8cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_an1sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5k8cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_an1sl")
+}],
+"loop": false,
+"name": &"lumina",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("29_noera")
 }, {
 "duration": 1.0,
@@ -474,60 +492,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r21ao"]
 size = Vector2(13, 16)
 
-[sub_resource type="Animation" id="Animation_7ejxd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_510t8"]
-resource_name = "morph"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1e-05)]
-}
-
-[sub_resource type="Animation" id="Animation_ybek3"]
-resource_name = "morph_back"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1e-05), Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhkaa"]
-_data = {
-"RESET": SubResource("Animation_7ejxd"),
-"morph": SubResource("Animation_510t8"),
-"morph_back": SubResource("Animation_ybek3")
-}
-
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_r3jtw")
@@ -538,8 +502,9 @@ texture = ExtResource("2_fktkq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-animation = &"idle"
-frame_progress = 0.935843
+animation = &"lumina"
+frame = 2
+frame_progress = 0.887088
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -566,17 +531,17 @@ offset_bottom = 38.5
 texture = ExtResource("53_1g8ki")
 expand_mode = 1
 
-[node name="munchkin_morsel" type="TextureButton" parent="characters_panel"]
+[node name="bunnyboo_sipper" type="TextureButton" parent="characters_panel"]
 layout_mode = 0
-offset_left = 16.25
-offset_top = -39.875
-offset_right = 45.25
-offset_bottom = -12.875
+offset_left = 2.3125
+offset_top = 19.0625
+offset_right = 31.3125
+offset_bottom = 46.0625
 texture_normal = ExtResource("54_lxmk1")
 texture_pressed = ExtResource("55_m0tuj")
 texture_hover = ExtResource("55_m0tuj")
 
-[node name="TextureRect" type="TextureRect" parent="characters_panel/munchkin_morsel"]
+[node name="TextureRect" type="TextureRect" parent="characters_panel/bunnyboo_sipper"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -589,7 +554,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("12_up8ej")
+texture = ExtResource("14_qwom4")
 
 [node name="frost_dumpling" type="TextureButton" parent="characters_panel"]
 layout_mode = 0
@@ -616,31 +581,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_nl41o")
 
-[node name="bunnyboo_sipper" type="TextureButton" parent="characters_panel"]
-layout_mode = 0
-offset_left = 2.3125
-offset_top = 19.0625
-offset_right = 31.3125
-offset_bottom = 46.0625
-texture_normal = ExtResource("54_lxmk1")
-texture_pressed = ExtResource("55_m0tuj")
-texture_hover = ExtResource("55_m0tuj")
-
-[node name="TextureRect" type="TextureRect" parent="characters_panel/bunnyboo_sipper"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_qwom4")
-
 [node name="cerulean_hopper" type="TextureButton" parent="characters_panel"]
 layout_mode = 0
 offset_left = -30.125
@@ -666,17 +606,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("15_aeucg")
 
-[node name="twilight_tarsier" type="TextureButton" parent="characters_panel"]
+[node name="munchkin_morsel" type="TextureButton" parent="characters_panel"]
 layout_mode = 0
-offset_left = -51.5
-offset_top = -7.625
-offset_right = -22.5
-offset_bottom = 19.375
+offset_left = 16.25
+offset_top = -39.875
+offset_right = 45.25
+offset_bottom = -12.875
 texture_normal = ExtResource("54_lxmk1")
 texture_pressed = ExtResource("55_m0tuj")
 texture_hover = ExtResource("55_m0tuj")
 
-[node name="TextureRect" type="TextureRect" parent="characters_panel/twilight_tarsier"]
+[node name="TextureRect" type="TextureRect" parent="characters_panel/munchkin_morsel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -689,7 +629,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("16_5ii64")
+texture = ExtResource("12_up8ej")
 
 [node name="prismarity" type="TextureButton" parent="characters_panel"]
 layout_mode = 0
@@ -716,7 +656,33 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_1blsd")
 
+[node name="twilight_tarsier" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
+offset_left = -51.5
+offset_top = -7.625
+offset_right = -22.5
+offset_bottom = 19.375
+texture_normal = ExtResource("54_lxmk1")
+texture_pressed = ExtResource("55_m0tuj")
+texture_hover = ExtResource("55_m0tuj")
+
+[node name="TextureRect" type="TextureRect" parent="characters_panel/twilight_tarsier"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_5ii64")
+
 [node name="oliver" type="TextureButton" parent="characters_panel"]
+layout_mode = 0
 offset_left = -14.125
 offset_top = -57.5625
 offset_right = 14.875
@@ -740,16 +706,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("62_2pgch")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_hhkaa")
-}
-
-[connection signal="pressed" from="characters_panel/munchkin_morsel" to="." method="_on_munchkin_morsel_pressed"]
-[connection signal="pressed" from="characters_panel/frost_dumpling" to="." method="_on_frost_dumpling_pressed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="characters_panel/bunnyboo_sipper" to="." method="_on_bunnyboo_sipper_pressed"]
+[connection signal="pressed" from="characters_panel/frost_dumpling" to="." method="_on_frost_dumpling_pressed"]
 [connection signal="pressed" from="characters_panel/cerulean_hopper" to="." method="_on_cerulean_hopper_pressed"]
-[connection signal="pressed" from="characters_panel/twilight_tarsier" to="." method="_on_twilight_tarsier_pressed"]
+[connection signal="pressed" from="characters_panel/munchkin_morsel" to="." method="_on_munchkin_morsel_pressed"]
 [connection signal="pressed" from="characters_panel/prismarity" to="." method="_on_prismarity_pressed"]
+[connection signal="pressed" from="characters_panel/twilight_tarsier" to="." method="_on_twilight_tarsier_pressed"]
 [connection signal="pressed" from="characters_panel/oliver" to="." method="_on_oliver_pressed"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
