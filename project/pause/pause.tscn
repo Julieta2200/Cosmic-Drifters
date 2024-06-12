@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5cci4tas6o75"]
+[gd_scene load_steps=13 format=3 uid="uid://b5cci4tas6o75"]
 
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_ehl15"]
+[ext_resource type="Script" path="res://project/pause/pause.gd" id="1_i1ju8"]
 [ext_resource type="Texture2D" uid="uid://cnv8e1wdu7i00" path="res://assets/Game_UI/Pause/Pause1.png" id="2_qnyx6"]
 [ext_resource type="Texture2D" uid="uid://d2g4x4gbkyhvi" path="res://assets/Game_UI/Pause/Pause(Click).png" id="3_ehc2f"]
 [ext_resource type="Texture2D" uid="uid://d4kf3dqxtqj4r" path="res://assets/Game_UI/Pause/Menu1.png" id="4_05pho"]
@@ -21,14 +22,17 @@ texture = ExtResource("7_3upqn")
 texture = ExtResource("6_w5843")
 
 [node name="pause" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i1ju8")
 
 [node name="backgroun_panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,13 +43,16 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_un4fm")
 
 [node name="pause" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 640.0
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 386.0
+offset_bottom = 736.0
 texture_normal = ExtResource("2_qnyx6")
 texture_pressed = ExtResource("3_ehc2f")
 stretch_mode = 4
 
 [node name="menu" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 100
 
-[node name="Button" type="Button" parent="menu/VBoxContainer"]
+[node name="resume" type="Button" parent="menu/VBoxContainer"]
 custom_minimum_size = Vector2(928, 272)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -86,7 +93,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_myrca")
 theme_override_styles/hover = SubResource("StyleBoxTexture_55km0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tudx4")
 
-[node name="Label" type="Label" parent="menu/VBoxContainer/Button"]
+[node name="Label" type="Label" parent="menu/VBoxContainer/resume"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -105,14 +112,14 @@ text = "Resume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button2" type="Button" parent="menu/VBoxContainer"]
+[node name="start_oven" type="Button" parent="menu/VBoxContainer"]
 custom_minimum_size = Vector2(928, 272)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_myrca")
 theme_override_styles/hover = SubResource("StyleBoxTexture_55km0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tudx4")
 
-[node name="Label" type="Label" parent="menu/VBoxContainer/Button2"]
+[node name="Label" type="Label" parent="menu/VBoxContainer/start_oven"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,14 +138,14 @@ text = "Srart Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button3" type="Button" parent="menu/VBoxContainer"]
+[node name="settings" type="Button" parent="menu/VBoxContainer"]
 custom_minimum_size = Vector2(928, 272)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_myrca")
 theme_override_styles/hover = SubResource("StyleBoxTexture_55km0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tudx4")
 
-[node name="Label" type="Label" parent="menu/VBoxContainer/Button3"]
+[node name="Label" type="Label" parent="menu/VBoxContainer/settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -157,14 +164,14 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button4" type="Button" parent="menu/VBoxContainer"]
+[node name="exit" type="Button" parent="menu/VBoxContainer"]
 custom_minimum_size = Vector2(928, 272)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_myrca")
 theme_override_styles/hover = SubResource("StyleBoxTexture_55km0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tudx4")
 
-[node name="Label" type="Label" parent="menu/VBoxContainer/Button4"]
+[node name="Label" type="Label" parent="menu/VBoxContainer/exit"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -182,3 +189,6 @@ theme_override_font_sizes/font_size = 110
 text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/resume" to="." method="_on_resume_pressed"]
