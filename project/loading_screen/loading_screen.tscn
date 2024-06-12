@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7gc43matufoc"]
+[gd_scene load_steps=6 format=3 uid="uid://c7gc43matufoc"]
 
 [ext_resource type="Script" path="res://project/loading_screen/loading_screen.gd" id="1_cthcr"]
 
@@ -70,9 +70,6 @@ _data = {
 "start_load": SubResource("Animation_nmmh2")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opinm"]
-bg_color = Color(0.215686, 0.215686, 0.215686, 1)
-
 [node name="loading_screen" type="CanvasLayer"]
 layer = 10
 follow_viewport_enabled = true
@@ -84,7 +81,7 @@ libraries = {
 "": SubResource("AnimationLibrary_1ef0q")
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -92,7 +89,6 @@ offset_right = 4096.0
 offset_bottom = 3584.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_opinm")
 
 [node name="ProgressBar" type="ProgressBar" parent="Panel"]
 layout_mode = 1
