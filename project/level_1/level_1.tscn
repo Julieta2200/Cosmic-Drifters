@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=125 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -106,6 +106,7 @@
 [ext_resource type="PackedScene" uid="uid://rskgob6ktuy5" path="res://project/level_1/desk_plates.tscn" id="103_6qy7u"]
 [ext_resource type="PackedScene" uid="uid://db5ni7xhg3prs" path="res://project/orders_menu/orders_menu.tscn" id="105_2ytgh"]
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="106_vukck"]
+[ext_resource type="PackedScene" uid="uid://b5cci4tas6o75" path="res://project/pause/pause.tscn" id="107_20isj"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="107_c12nv"]
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
 
@@ -874,6 +875,7 @@ navigation_polygon = SubResource("NavigationPolygon_bs06d")
 [node name="game_manager" parent="." instance=ExtResource("34_h4sxy")]
 
 [node name="cursor_manager" parent="." node_paths=PackedStringArray("clickable_objects", "walking_area") instance=ExtResource("34_k54hi")]
+process_mode = 3
 clickable_objects = NodePath("../clickable_objects")
 walking_area = NodePath("../walking_area")
 
@@ -1075,6 +1077,8 @@ visible = false
 
 [node name="orders_menu" parent="CanvasLayer" instance=ExtResource("105_2ytgh")]
 visible = false
+
+[node name="pause" parent="CanvasLayer" instance=ExtResource("107_20isj")]
 
 [node name="Cook_1" parent="." instance=ExtResource("106_vukck")]
 position = Vector2(9570, 5002)
