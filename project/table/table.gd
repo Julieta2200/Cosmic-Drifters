@@ -31,6 +31,8 @@ var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/pla
 var enemies = {}
 var actual_order = []
 
+var plates_to_remove = []
+
 func sit(enemy, chair_i, lvl, gr):
 	level = lvl
 	group = gr
@@ -65,11 +67,32 @@ func add_plates():
 	for p in plate.get_children():
 		p.texture = load(plates[rng.randf_range(0,plates.size())])
 		p.visible = true
-	eating_food()
+	
+	var right_count = 0
+		
+	var found_indexes = {}
+	for ac_ind in actual_order.size():
+		found_indexes[ac_ind] = false
+	for f in enemies.size():
+		var food_index = enemies[f]["enemy"].get_food_index()
+		var enemy_food = Food.get_food_by_index(food_index)
+		var found = false
+		for ac_ind in actual_order.size():
+			if !found_indexes[ac_ind] && actual_order[ac_ind]["name"] == enemy_food:
+				right_count+=1
+				found_indexes[ac_ind] = true
+				enemies[f]["enemy"].set_heart()
+				plates_to_remove.append(f)
+				found = true
+				break
+		if !found:
+			enemies[f]["enemy"].set_angry()
+	eating_food(right_count)
 	
 func remove_plates():
-	for p in plate.get_children():
-		p.visible = false
+	for p in plate.get_children().size():
+		if plates_to_remove.has(p):
+			plate.get_children()[p].visible = false
 	waiting_for_check()
 
 func ordered(chair_i):
@@ -89,9 +112,9 @@ func waiting_for_food():
 	status = STATUS_WAITING_FOR_FOOD
 	$status.waiting_for_food()
 	
-func eating_food():
+func eating_food(count):
 	status = STATUS_EATING_FOOD
-	$status.eating_food()
+	$status.eating_food(count)
 	
 func waiting_for_check():
 	status = STATUS_WAITING_FOR_CHECK

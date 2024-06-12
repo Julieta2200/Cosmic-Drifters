@@ -479,10 +479,10 @@ animations = [{
 "texture": ExtResource("71_an1sl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_sbb40")
+"texture": ExtResource("71_an1sl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("71_an1sl")
+"texture": ExtResource("57_sbb40")
 }],
 "loop": true,
 "name": &"walk",
@@ -502,7 +502,9 @@ texture = ExtResource("2_fktkq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-animation = &"walk"
+animation = &"lumina"
+frame = 2
+frame_progress = 0.887088
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
