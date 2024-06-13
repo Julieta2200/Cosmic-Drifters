@@ -11,5 +11,3 @@ func _update_progress_bar(new_value: float) -> void:
 func _start_outro_animation() -> void:
 	self.queue_free()
 
-
-			

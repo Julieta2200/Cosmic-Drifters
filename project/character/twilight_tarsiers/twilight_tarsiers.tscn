@@ -93,9 +93,7 @@ texture = ExtResource("2_hkg40")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fbfcc")
-animation = &"talk"
-frame = 1
-frame_progress = 0.251337
+animation = &"back_walk"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

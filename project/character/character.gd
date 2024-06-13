@@ -44,7 +44,7 @@ func animation()-> void:
 		$AnimatedSprite2D.play(masks[current_mask] + "idle")
 		return
 
-	if (path[0] - position ).y > 0:
+	if (path[0] - global_position ).y > 0:
 		$AnimatedSprite2D.play(masks[current_mask] + "walk")
 	else:
 		$AnimatedSprite2D.play(masks[current_mask] + "back_walk")

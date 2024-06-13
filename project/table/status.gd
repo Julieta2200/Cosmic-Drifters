@@ -68,11 +68,12 @@ func ask_waiter():
 
 func next_stage():
 	current_status += 1
-	if current_status >= stages[active_status].size():
+	if current_status == stages[active_status].size():
+		print('last')
+		last_stage()
+	if current_status > stages[active_status].size():
 		stage_overflow()
 		return
-	if current_status == stages[active_status].size():
-		last_stage()
 	active_status.texture = load(get_current_stage()["texture"])
 
 func stage_overflow():
