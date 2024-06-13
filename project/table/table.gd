@@ -10,7 +10,7 @@ var level
 var group
 var for_lumina: bool = false
 @onready var chairs = $chairs
-
+@export var eavesdropping_extent = 0
 @export var number: int
 
 enum {
@@ -114,3 +114,37 @@ func set_actual_order(foods):
 	waiter.busy = false
 	level.computer.order_inserted(self)
 	level.kitchen.add_order(self)
+
+
+func _on_whisper_area_body_entered(body):
+	if body.name == "player":
+		if eavesdropping_extent < 100:
+			$whisper_area/Timer.start()
+		else:
+			print("kkk")
+
+
+func _on_whisper_area_body_exited(body):
+	$whisper_area/Timer.stop()
+	$whisper_area/Timer2.start()
+	
+
+
+
+
+func _on_timer_timeout():
+	if eavesdropping_extent < 100:
+		eavesdropping_extent = eavesdropping_extent + 10
+	else:
+		$whisper_area/Timer.stop()
+		print(eavesdropping_extent)
+
+
+func _on_timer_2_timeout():
+	if eavesdropping_extent > 0:
+		eavesdropping_extent = eavesdropping_extent - 10
+	else:
+		$whisper_area/Timer2.stop()
+		print(eavesdropping_extent)
+
+	

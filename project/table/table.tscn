@@ -142,7 +142,15 @@ one_shot = true
 [node name="whisper_area" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="whisper_area"]
-polygon = PackedVector2Array(34.875, -20.875, 34.9375, 12.9375, -35.9375, 12.9375, -35.9375, -20.625)
+polygon = PackedVector2Array(51.25, -25.75, 50.875, 18.625, -44.375, 18.4375, -44.1875, -25.4375)
+
+[node name="Timer" type="Timer" parent="whisper_area"]
+
+[node name="Timer2" type="Timer" parent="whisper_area"]
 
 [connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]
+[connection signal="body_entered" from="whisper_area" to="." method="_on_whisper_area_body_entered"]
+[connection signal="body_exited" from="whisper_area" to="." method="_on_whisper_area_body_exited"]
+[connection signal="timeout" from="whisper_area/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="whisper_area/Timer2" to="." method="_on_timer_2_timeout"]
