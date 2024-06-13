@@ -1,13 +1,13 @@
-class_name Desk extends Node2D
+extends Node2D
+
+class_name Desk
 
 var plate_textures = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/plate_2.png",
 				"res://assets/Food/Plate/plate_3.png","res://assets/Food/Plate/plate_4.png",
 				"res://assets/Food/Plate/plate_5.png","res://assets/Food/Plate/plate_6.png"]
 var rng = RandomNumberGenerator.new()
-@onready var use_point: Node2D = $use_point
-
-signal open_orders_menu(plates)
-
+@onready var use_point = $use_point
+@onready var orders_menu = $"../../CanvasLayer/orders_menu"
 var player 
 
 var plates = {}
@@ -33,6 +33,7 @@ func remove_plate(group):
 	if plates[group].has("text"):
 		remove_from_board(plates[group]["text"])
 	plates.erase(group)
+	orders_menu.load_tables(plates, player)
 	
 
 
@@ -53,5 +54,6 @@ func remove_from_board(text):
 
 func action_complete(_action, p):
 	player = p
-	emit_signal("open_orders_menu", plates)
+	orders_menu.load_tables(plates, player)
+	orders_menu.visible = true
 	pass

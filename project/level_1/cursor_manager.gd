@@ -1,10 +1,8 @@
 extends Node2D
 
-@onready var cafe: Cafe = $"../cafe"
-@onready var clickable_objects: Node2D =  cafe.clickable_objects
-@onready var walking_area: Area2D = cafe.walking_area
-
-#cursor texture dictionary
+@export var clickable_objects : Node2D 
+@export var walking_area: Area2D
+#corsor texture dictionary
 var mouse_cursor_texture : Dictionary = {
 	8 :  preload("res://assets/mouse_cursor/Mouse.png"),
 	16 :  preload("res://assets/mouse_cursor/Mouse 16px.png"),
@@ -17,7 +15,6 @@ var click_cursor_texture : Dictionary = {
 func _ready():
 	update_cursor()
 	get_window().size_changed.connect(update_cursor)
-	get_clickable_component(walking_area).active = true
 
 func _process(_delta):
 #	if Input.is_action_just_pressed("left_click"):
@@ -54,9 +51,9 @@ func _on_timer_timeout():
 	
 func detect_object() :
 	for object in clickable_objects.get_children():
-		if get_clickable_component(object).active:
+		if get_clickable_component(object).active == true:
 			return object
-	if get_clickable_component(walking_area).active:
+	if get_clickable_component(walking_area).active == true:
 		return walking_area
 			
 func get_clickable_component(object) -> ClickableComponent:

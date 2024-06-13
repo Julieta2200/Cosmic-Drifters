@@ -116,7 +116,7 @@ func _on_animated_sprite_2d_animation_finished():
 	set_mask(expected_mask)
 	busy = false
 
-func change_character(character, n):
+func change_character(character, name):
 	if character.texture != lumina_sp:
 		for i in $characters_panel.get_child_count():
 			if i > 0 :
@@ -124,7 +124,7 @@ func change_character(character, n):
 					$characters_panel.get_child(i).get_child(0).texture = previous_character
 					
 		character.texture = lumina_sp
-		morph(n)
+		morph(name)
 	else:
 		morph(LUMINA)
 		character.texture = previous_character

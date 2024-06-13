@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player  = $"../player"
+@onready var player  = $"../clickable_objects/player"
 var click_area : bool
 var selected_object = null
 
@@ -11,7 +11,6 @@ func click_action():
 	
 	click_area = true
 	var clicked_obj = $"../cursor_manager".detect_object()
-	
 	if clicked_obj is Area2D:
 		player.walk_to(null, get_global_mouse_position(), "")
 	elif clicked_obj is Table:

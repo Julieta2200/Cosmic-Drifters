@@ -1,11 +1,12 @@
-class_name Computer extends Node2D
+extends Node2D
 
-signal open_food_menu(table)
+class_name Computer
 
 enum {PENDING, ORDERED}
 var tables = []
 
 @onready var use_point = $use_point
+@onready var food_menu = $"../../CanvasLayer/food_menu"
 
 func add_table(table):
 	tables.append({"instance": table, "status": PENDING})
@@ -22,8 +23,9 @@ func order_inserted(table):
 
 func action_complete(_action, player):
 	for table in tables:
-#		if table["status"] == PENDING:
-			emit_signal("open_food_menu", table["instance"])
+		if table["status"] == PENDING:
+			food_menu.set_table(table["instance"])
+			food_menu.visible = true
 			return
 	
 	player.busy = false
