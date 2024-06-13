@@ -40,7 +40,7 @@ func _leave():
 func spawn(lvl, g_obj):
 	level = lvl
 	group_obj = g_obj
-	level.door.play("open")
+	level.cafe.door.play("open")
 	spawn_timer = Timer.new()
 	add_child(spawn_timer)
 	spawn_timer.wait_time = 4.0

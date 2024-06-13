@@ -1,7 +1,7 @@
-extends Character
+class_name Cook extends Character
 
-var kitchen
-var origin_position
+var kitchen: Kitchen
+var origin_position: Vector2
 var busy: bool = false
 
 func _ready():

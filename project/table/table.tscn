@@ -48,6 +48,7 @@ _data = {
 }
 
 [node name="Table" type="Node2D"]
+y_sort_enabled = true
 position = Vector2(614, 450)
 scale = Vector2(16, 16)
 script = ExtResource("1_xte3g")

@@ -1,10 +1,10 @@
-extends Node2D
+class_name Kitchen extends Node2D
 
 var orders = []
 enum {PENDING, PREPARED, PICKED, DELIVERED}
 
-@export var cooks: Array[Node2D]
-@export var desk_point: Node2D
+@export var cooks: Array[Cook]
+@onready var desk_point: Node2D = $"../cafe".desk.use_point
 
 func _ready():
 	for cook in cooks:
