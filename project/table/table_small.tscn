@@ -133,3 +133,7 @@ polygon = PackedVector2Array(-28, -16, 28, -16, 28, 16, -28.5, 16)
 
 [connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]
+[connection signal="body_entered" from="whisper_area" to="." method="_on_whisper_area_body_entered"]
+[connection signal="body_exited" from="whisper_area" to="." method="_on_whisper_area_body_exited"]
+[connection signal="timeout" from="whisper_area/suspect_timer" to="." method="_on_suspect_timer_timeout"]
+[connection signal="timeout" from="whisper_area/cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
