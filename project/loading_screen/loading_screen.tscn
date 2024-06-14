@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://project/loading_screen/loading_screen.gd" id="1_cthcr"]
 [ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="2_hntbd"]
-[ext_resource type="Texture2D" uid="uid://dtoavcj0vqp6u" path="res://assets/Loading /shadow.png" id="3_a0wub"]
-[ext_resource type="Texture2D" uid="uid://tnn071aqw0me" path="res://assets/Loading /Kitchen.png" id="4_36sqf"]
-[ext_resource type="Texture2D" uid="uid://bhnaj8264qmip" path="res://assets/Loading /Copy of Table1.png" id="5_xjrlm"]
-[ext_resource type="Texture2D" uid="uid://nbs2aneaq5jn" path="res://assets/Loading /Copy of Table2.png" id="6_x11pd"]
-[ext_resource type="Texture2D" uid="uid://drjd4lxdcrph7" path="res://assets/Loading /Loading.png" id="7_thrjw"]
+[ext_resource type="Texture2D" uid="uid://dtoavcj0vqp6u" path="res://assets/Loading/shadow.png" id="3_a0wub"]
+[ext_resource type="Texture2D" uid="uid://tnn071aqw0me" path="res://assets/Loading/Kitchen.png" id="4_36sqf"]
+[ext_resource type="Texture2D" uid="uid://bhnaj8264qmip" path="res://assets/Loading/Copy of Table1.png" id="5_xjrlm"]
+[ext_resource type="Texture2D" uid="uid://nbs2aneaq5jn" path="res://assets/Loading/Copy of Table2.png" id="6_x11pd"]
+[ext_resource type="Texture2D" uid="uid://drjd4lxdcrph7" path="res://assets/Loading/Loading.png" id="7_thrjw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yigm6"]
 animations = [{

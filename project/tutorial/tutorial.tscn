@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://bi8ib8la8mkeo"]
+[gd_scene load_steps=126 format=3 uid="uid://bi8ib8la8mkeo"]
 
 [ext_resource type="Script" path="res://project/tutorial/tutorial.gd" id="1_751tf"]
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="2_rn7it"]
@@ -109,6 +109,7 @@
 [ext_resource type="PackedScene" uid="uid://b5cci4tas6o75" path="res://project/pause/pause.tscn" id="107_ie7yw"]
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="108_xna3f"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="109_g2ovh"]
+[ext_resource type="Script" path="res://project/tutorial/tutorial_manager.gd" id="110_r86d5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("2_rn7it")
@@ -1086,5 +1087,8 @@ position = Vector2(9570, 5002)
 
 [node name="Cook_2" parent="." instance=ExtResource("109_g2ovh")]
 position = Vector2(10869, 5009)
+
+[node name="tutorial_manager" type="Node2D" parent="."]
+script = ExtResource("110_r86d5")
 
 [connection signal="animation_finished" from="details/door_animatedSprite2D" to="." method="_on_door_animated_sprite_2d_animation_finished"]
