@@ -122,5 +122,14 @@ libraries = {
 [node name="EatingTimer" type="Timer" parent="status"]
 one_shot = true
 
+[node name="whisper_area" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="whisper_area"]
+polygon = PackedVector2Array(-28, -16, 28, -16, 28, 16, -28.5, 16)
+
+[node name="Timer" type="Timer" parent="whisper_area"]
+
+[node name="Timer2" type="Timer" parent="whisper_area"]
+
 [connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]
