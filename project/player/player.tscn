@@ -505,7 +505,6 @@ polygon = PackedVector2Array(-6.5625, -14.3125, 7.1875, -14.375, 6.875, 3.125, -
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-
 animation = &"lumina"
 frame = 2
 frame_progress = 0.887088
