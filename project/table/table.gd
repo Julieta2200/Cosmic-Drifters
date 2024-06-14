@@ -10,8 +10,9 @@ var level
 var group
 var for_lumina: bool = false
 @onready var chairs = $chairs
-@export var eavesdropping_extent = 0
 @export var number: int
+var eavesdropping_extent = 0
+@export var whisper_time : float = 1
 
 enum {
 	STATUS_EMPTY,
@@ -30,6 +31,10 @@ var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/pla
 
 var enemies = {}
 var actual_order = []
+
+func _ready():
+	$whisper_area/Timer.set_wait_time(whisper_time)
+	$whisper_area/Timer2.set_wait_time(whisper_time)
 
 func sit(enemy, chair_i, lvl, gr):
 	level = lvl
@@ -118,33 +123,27 @@ func set_actual_order(foods):
 
 func _on_whisper_area_body_entered(body):
 	if body.name == "player":
-		if eavesdropping_extent < 100:
-			$whisper_area/Timer.start()
-		else:
-			print("kkk")
-
+		$whisper_area/Timer.start()
+		$whisper_area/Timer2.stop()
 
 func _on_whisper_area_body_exited(body):
-	$whisper_area/Timer.stop()
-	$whisper_area/Timer2.start()
+	if body.name == "player":
+		$whisper_area/Timer.stop()
+		$whisper_area/Timer2.start()
 	
-
-
-
 
 func _on_timer_timeout():
 	if eavesdropping_extent < 100:
 		eavesdropping_extent = eavesdropping_extent + 10
+		print(eavesdropping_extent)
 	else:
 		$whisper_area/Timer.stop()
-		print(eavesdropping_extent)
-
 
 func _on_timer_2_timeout():
 	if eavesdropping_extent > 0:
 		eavesdropping_extent = eavesdropping_extent - 10
+		print(eavesdropping_extent)
 	else:
 		$whisper_area/Timer2.stop()
-		print(eavesdropping_extent)
 
 	

@@ -312,13 +312,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_rdsfa")
+"texture": ExtResource("35_jhde1")
 }, {
 "duration": 1.0,
 "texture": ExtResource("32_8sv4p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_jhde1")
+"texture": ExtResource("34_rdsfa")
 }, {
 "duration": 1.0,
 "texture": ExtResource("32_8sv4p")
@@ -505,7 +505,7 @@ polygon = PackedVector2Array(-6.5625, -14.3125, 7.1875, -14.375, 6.875, 3.125, -
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-animation = &"morsel_walk"
+animation = &"prisma_walk"
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
