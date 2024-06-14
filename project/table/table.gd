@@ -47,6 +47,7 @@ func leave_chair(chair_i):
 	return chair
 	
 func leave():
+	status = STATUS_EMPTY
 	group.group.leave()
 
 func add_order(food, chair_i):
@@ -54,6 +55,7 @@ func add_order(food, chair_i):
 	
 func call_orders(w):
 	waiter = w
+	$status.pause_timer()
 	group["group"].order(self)
 
 

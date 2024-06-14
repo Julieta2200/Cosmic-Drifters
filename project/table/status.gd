@@ -35,6 +35,9 @@ class_name Status
 var current_status = 1
 var active_status
 
+func pause_timer():
+	stage_timer.paused = true
+
 func eating_food(count):
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = false

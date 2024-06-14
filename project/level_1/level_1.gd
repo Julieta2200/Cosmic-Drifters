@@ -18,6 +18,7 @@ var level_time: int = 500
 	"served": false,
 	"spawned": false,
 	"spawn_time": 5,
+	"for_lumina": true
 }
 
 @onready var group_2 = {
