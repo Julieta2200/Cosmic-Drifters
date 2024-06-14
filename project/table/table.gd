@@ -31,10 +31,13 @@ var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/pla
 
 var enemies = {}
 var actual_order = []
+var plates_to_remove = []
+
 
 func _ready():
 	$whisper_area/Timer.set_wait_time(whisper_time)
 	$whisper_area/Timer2.set_wait_time(whisper_time)
+
 
 func sit(enemy, chair_i, lvl, gr):
 	level = lvl
@@ -50,6 +53,7 @@ func leave_chair(chair_i):
 	return chair
 	
 func leave():
+	status = STATUS_EMPTY
 	group.group.leave()
 
 func add_order(food, chair_i):
@@ -57,6 +61,7 @@ func add_order(food, chair_i):
 	
 func call_orders(w):
 	waiter = w
+	$status.pause_timer()
 	group["group"].order(self)
 
 
@@ -70,17 +75,41 @@ func add_plates():
 	for p in plate.get_children():
 		p.texture = load(plates[rng.randf_range(0,plates.size())])
 		p.visible = true
-	eating_food()
+	
+	var right_count = 0
+		
+	var found_indexes = {}
+	for ac_ind in actual_order.size():
+		found_indexes[ac_ind] = false
+	for f in enemies:
+		var food = enemies[f]["enemy"].get_food()
+		var found = false
+		for ac_ind in actual_order.size():
+			if !found_indexes[ac_ind] && actual_order[ac_ind] == food:
+				right_count+=1
+				found_indexes[ac_ind] = true
+				enemies[f]["enemy"].set_heart()
+				plates_to_remove.append(f)
+				found = true
+				break
+		if !found:
+			enemies[f]["enemy"].set_angry()
+	eating_food(right_count)
 	
 func remove_plates():
-	for p in plate.get_children():
-		p.visible = false
+	for p in plate.get_children().size():
+		if plates_to_remove.has(p):
+			plate.get_children()[p].visible = false
 	waiting_for_check()
 
 func ordered(chair_i):
 	if chair_i == len(chairs.get_children()) - 1:
 		waiter.busy = false
 		if !for_lumina:
+			var a_orders = []
+			for i in enemies:
+				a_orders.append(enemies[i]["enemy"].get_food())
+			set_actual_order(a_orders)
 			waiter = null
 			level.kitchen.add_order(self)
 		else:
@@ -94,9 +123,9 @@ func waiting_for_food():
 	status = STATUS_WAITING_FOR_FOOD
 	$status.waiting_for_food()
 	
-func eating_food():
+func eating_food(count):
 	status = STATUS_EATING_FOOD
-	$status.eating_food()
+	$status.eating_food(count)
 	
 func waiting_for_check():
 	status = STATUS_WAITING_FOR_CHECK

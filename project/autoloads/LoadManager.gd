@@ -21,8 +21,6 @@ func load_scene(scene_path: String) -> void:
 	self.progress_changed.connect(new_loading_screen._update_progress_bar)
 	self.load_done.connect(new_loading_screen._start_outro_animation)
 	
-	await Signal(new_loading_screen, "loading_screen_has_full_coverage")
-	
 	start_load()
 
 func start_load() -> void:

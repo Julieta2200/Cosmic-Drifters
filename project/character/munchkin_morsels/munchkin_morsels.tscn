@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7k6qxbu2nrsc"]
+[gd_scene load_steps=14 format=3 uid="uid://7k6qxbu2nrsc"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_0n30y"]
 [ext_resource type="Texture2D" uid="uid://5lxyems8rjy1" path="res://assets/Munchkin Morsels/shadow.png" id="1_a728u"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dhydnhug1i6je" path="res://assets/Munchkin Morsels/walk-2.png" id="8_a8up6"]
 [ext_resource type="Texture2D" uid="uid://dcjlj1absawkx" path="res://assets/Munchkin Morsels/talk.png" id="9_ho4dj"]
 [ext_resource type="PackedScene" uid="uid://qfllko52y25d" path="res://project/food/food.tscn" id="10_q8krf"]
+[ext_resource type="Texture2D" uid="uid://qop4hda82ats" path="res://assets/Emotions/Heart.png" id="12_q5rl5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nriwt"]
 animations = [{
@@ -99,5 +100,10 @@ position = Vector2(5, -24)
 [node name="order_timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="review" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.375, -11)
+texture = ExtResource("12_q5rl5")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bt7yhx8mojj0m"]
+[gd_scene load_steps=17 format=3 uid="uid://bt7yhx8mojj0m"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_gitro"]
 [ext_resource type="Texture2D" uid="uid://d0gmsjk3nceok" path="res://assets/Bunnyboo Sippers/shadow.png" id="2_0e3tl"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://qfllko52y25d" path="res://project/food/food.tscn" id="11_a2b33"]
 [ext_resource type="Texture2D" uid="uid://bt6eg4tfuq0c2" path="res://assets/Bunnyboo Sippers/walk-1.png" id="11_wne1m"]
 [ext_resource type="Texture2D" uid="uid://1v6yyjbpgsgr" path="res://assets/Bunnyboo Sippers/base.png" id="12_088qh"]
+[ext_resource type="Texture2D" uid="uid://qop4hda82ats" path="res://assets/Emotions/Heart.png" id="14_xhkro"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2mwg"]
 animations = [{
@@ -111,5 +112,10 @@ one_shot = true
 [node name="food" parent="." instance=ExtResource("11_a2b33")]
 visible = false
 position = Vector2(5, -24)
+
+[node name="review" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.375, -11)
+texture = ExtResource("14_xhkro")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

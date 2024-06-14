@@ -4,6 +4,8 @@ class_name Food
 
 var rng = RandomNumberGenerator.new()
 
+var instance = null
+
 @onready var food_sp = $food
 @onready var cloud = $cloud
 var action
@@ -83,9 +85,14 @@ static var foods = [
 	"tuna"
 ]
 
+func get_instance():
+	return instance
+	
+
 func generate(flipped):
-	var food = Food.get_food(Food.foods[rng.randf_range(0,foods.size())])
-	food_sp.texture = load(food["texture"])
+	var selected_food_index = rng.randf_range(0,foods.size())
+	instance = Food.get_food(Food.get_food_by_index(selected_food_index))
+	food_sp.texture = load(instance["texture"])
 	if flipped:
 		cloud.offset.x= -30
 		food_sp.offset.x = -32
@@ -94,3 +101,6 @@ func generate(flipped):
 
 static func get_food(food_name):
 	return food_objs[food_name]
+	
+static func get_food_by_index(food_index):
+	return Food.foods[food_index]

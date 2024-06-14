@@ -1,112 +1,98 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7gc43matufoc"]
+[gd_scene load_steps=12 format=3 uid="uid://c7gc43matufoc"]
 
 [ext_resource type="Script" path="res://project/loading_screen/loading_screen.gd" id="1_cthcr"]
+[ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="2_hntbd"]
+[ext_resource type="Texture2D" uid="uid://dtoavcj0vqp6u" path="res://assets/Loading /shadow.png" id="3_a0wub"]
+[ext_resource type="Texture2D" uid="uid://tnn071aqw0me" path="res://assets/Loading /Kitchen.png" id="4_36sqf"]
+[ext_resource type="Texture2D" uid="uid://bhnaj8264qmip" path="res://assets/Loading /Copy of Table1.png" id="5_xjrlm"]
+[ext_resource type="Texture2D" uid="uid://nbs2aneaq5jn" path="res://assets/Loading /Copy of Table2.png" id="6_x11pd"]
+[ext_resource type="Texture2D" uid="uid://drjd4lxdcrph7" path="res://assets/Loading /Loading.png" id="7_thrjw"]
 
-[sub_resource type="Animation" id="Animation_13htn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yigm6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xjrlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x11pd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vnhvn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_yj4rb"]
-resource_name = "end_load"
-length = 1.5
+[sub_resource type="Animation" id="Animation_87d3x"]
+resource_name = "roll"
+length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.00246045, 0.798895),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(4096, 2.08165e-12)]
+"values": [0.0, 6.28319]
 }
 
-[sub_resource type="Animation" id="Animation_nmmh2"]
-resource_name = "start_load"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(4096, 2.08165e-12), Vector2(0, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.899858),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"loading_screen_has_full_coverage"],
-"method": &"emit_signal"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ef0q"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_64e0j"]
 _data = {
-"RESET": SubResource("Animation_13htn"),
-"end_load": SubResource("Animation_yj4rb"),
-"start_load": SubResource("Animation_nmmh2")
+"RESET": SubResource("Animation_vnhvn"),
+"roll": SubResource("Animation_87d3x")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opinm"]
-bg_color = Color(0.215686, 0.215686, 0.215686, 1)
-
-[node name="loading_screen" type="CanvasLayer"]
-layer = 10
-follow_viewport_enabled = true
+[node name="loading_screen" type="Node2D"]
 script = ExtResource("1_cthcr")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "start_load"
+[node name="Panel" type="Sprite2D" parent="."]
+scale = Vector2(16, 16)
+texture = ExtResource("2_hntbd")
+centered = false
+
+[node name="shadow" type="Sprite2D" parent="."]
+scale = Vector2(16, 16)
+texture = ExtResource("3_a0wub")
+centered = false
+
+[node name="kitchen" type="Sprite2D" parent="."]
+position = Vector2(0, 1857)
+scale = Vector2(16, 16)
+texture = ExtResource("4_36sqf")
+centered = false
+
+[node name="chef" type="AnimatedSprite2D" parent="."]
+position = Vector2(2085, 2966)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_yigm6")
+autoplay = "default"
+frame_progress = 0.183321
+
+[node name="Loading" type="Sprite2D" parent="."]
+position = Vector2(2036, 1614)
+scale = Vector2(16, 16)
+texture = ExtResource("7_thrjw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loading"]
+autoplay = "roll"
 libraries = {
-"": SubResource("AnimationLibrary_1ef0q")
+"": SubResource("AnimationLibrary_64e0j")
 }
-
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 8192.0
-offset_bottom = 7168.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_opinm")
-
-[node name="ProgressBar" type="ProgressBar" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1118.5
-offset_top = -201.0
-offset_right = 1116.5
-offset_bottom = 201.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

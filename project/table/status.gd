@@ -5,25 +5,25 @@ class_name Status
 
 @onready var stages = {
 	$ask_waiter: {
-		1: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png", "duration": 1},
-		2: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Orange).png", "duration": 1},
-		3: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Red).png", "duration": 1},
-		4: {"texture": "res://assets/Emotions/Exclamation_mark/ExclamationMark(Fier1).png", "duration": 1}
+		1: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png", "duration": 10},
+		2: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Orange).png", "duration": 10},
+		3: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Red).png", "duration": 10},
+		4: {"texture": "res://assets/Emotions/Exclamation_mark/ExclamationMark(Fier1).png", "duration": 10}
 	},
 	$waiting_for_food: {
-		1: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food1.png", "duration": 3},
-		2: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food2.png", "duration": 3},
-		3: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food3.png", "duration": 3},
-		4: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food4.png", "duration": 3}
+		1: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food1.png", "duration": 10},
+		2: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food2.png", "duration": 10},
+		3: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food3.png", "duration": 10},
+		4: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food4.png", "duration": 10}
 	},
 	"eating": {
-		1: {"duration": 5}
+		1: {"duration": 20}
 	}, 
 	$waiting_for_check: {
-		1: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check1.png", "duration": 3},
-		2: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check2.png", "duration": 3},
-		3: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check3.png", "duration": 3},
-		4: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check4.png", "duration": 3},
+		1: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check1.png", "duration": 10},
+		2: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check2.png", "duration": 10},
+		3: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check3.png", "duration": 10},
+		4: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check4.png", "duration": 10},
 	}
 }
 
@@ -35,12 +35,16 @@ class_name Status
 var current_status = 1
 var active_status
 
-func eating_food():
+func pause_timer():
+	stage_timer.paused = true
+
+func eating_food(count):
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = false
 	$waiting_for_check.visible = false
 	active_status = "eating"
 	current_status = 1
+	stages["eating"][current_status]["duration"] = count * 5
 	eating_timer_reset_start(get_current_stage()["duration"])
 
 func waiting_for_check():
@@ -67,18 +71,19 @@ func ask_waiter():
 
 func next_stage():
 	current_status += 1
+	if current_status == stages[active_status].size():
+		print('last')
+		last_stage()
 	if current_status > stages[active_status].size():
 		stage_overflow()
 		return
-	if current_status == stages[active_status].size():
-		last_stage()
 	active_status.texture = load(get_current_stage()["texture"])
 
 func stage_overflow():
-	pass
+	print("overflow")
 	
 func last_stage():
-	if active_status == $ask_waiter:
+	if typeof(active_status) != TYPE_STRING && active_status == $ask_waiter:
 		table.leave()
 
 func timer_reset_start(time):

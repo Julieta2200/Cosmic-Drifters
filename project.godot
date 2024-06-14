@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Cosmic-drifters"
+config/name="Cosmic Whispers"
 run/main_scene="res://project/menu/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://assets/Game_Icon2.png"
 
 [autoload]
 

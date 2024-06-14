@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl1thhd2djkjj"]
+[gd_scene load_steps=17 format=3 uid="uid://dl1thhd2djkjj"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_sig5f"]
 [ext_resource type="Texture2D" uid="uid://bcy06wkftxe6v" path="res://assets/Twilight Tarsiers/shadow.png" id="2_hkg40"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dmya7n1tixfng" path="res://assets/Twilight Tarsiers/walk-1.png" id="10_310rt"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_anb0r"]
 [ext_resource type="PackedScene" uid="uid://qfllko52y25d" path="res://project/food/food.tscn" id="11_taqb0"]
+[ext_resource type="Texture2D" uid="uid://qop4hda82ats" path="res://assets/Emotions/Heart.png" id="14_msye4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fbfcc"]
 animations = [{
@@ -92,9 +93,7 @@ texture = ExtResource("2_hkg40")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fbfcc")
-animation = &"talk"
-frame = 1
-frame_progress = 0.251337
+animation = &"back_walk"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
@@ -111,5 +110,10 @@ position = Vector2(5, -24)
 [node name="order_timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="review" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.375, -11)
+texture = ExtResource("14_msye4")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

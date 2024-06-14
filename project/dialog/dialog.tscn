@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://gu560mqym0x1"]
+
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="1_blfxm"]
+[ext_resource type="Script" path="res://project/dialog/dialog.gd" id="1_fdnhb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8p0r"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fdnhb")
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -896.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q8p0r")
+
+[node name="text" type="TextEdit" parent="background"]
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 83.0
+offset_right = 3575.0
+offset_bottom = 927.0
+theme_override_fonts/font = ExtResource("1_blfxm")
+theme_override_font_sizes/font_size = 100
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+editable = false
+wrap_mode = 1

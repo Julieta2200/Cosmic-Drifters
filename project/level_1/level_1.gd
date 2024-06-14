@@ -1,4 +1,4 @@
-extends Level
+class_name Level extends Node2D
 
 const SPAWN_DELAY = 1
 const ORDER_TIME: int = 1
