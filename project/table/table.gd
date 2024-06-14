@@ -73,12 +73,11 @@ func add_plates():
 	var found_indexes = {}
 	for ac_ind in actual_order.size():
 		found_indexes[ac_ind] = false
-	for f in enemies.size():
-		var food_index = enemies[f]["enemy"].get_food_index()
-		var enemy_food = Food.get_food_by_index(food_index)
+	for f in enemies:
+		var food = enemies[f]["enemy"].get_food()
 		var found = false
 		for ac_ind in actual_order.size():
-			if !found_indexes[ac_ind] && actual_order[ac_ind]["name"] == enemy_food:
+			if !found_indexes[ac_ind] && actual_order[ac_ind] == food:
 				right_count+=1
 				found_indexes[ac_ind] = true
 				enemies[f]["enemy"].set_heart()
@@ -99,6 +98,10 @@ func ordered(chair_i):
 	if chair_i == len(chairs.get_children()) - 1:
 		waiter.busy = false
 		if !for_lumina:
+			var a_orders = []
+			for i in enemies:
+				a_orders.append(enemies[i]["enemy"].get_food())
+			set_actual_order(a_orders)
 			waiter = null
 			level.kitchen.add_order(self)
 		else:

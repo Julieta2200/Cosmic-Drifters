@@ -39,8 +39,8 @@ func spawn(pos):
 func _process(_delta):
 	move()
 
-func get_food_index():
-	return food.get_selected_food_index()
+func get_food():
+	return food.get_instance()
 
 func order(t, i):
 	var flipped = ((i == 1 && t.chairs.get_children().size() != 2) ||  i == 0)
