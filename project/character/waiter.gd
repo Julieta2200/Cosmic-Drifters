@@ -15,6 +15,7 @@ func _process(_delta):
 	move()
 
 func check_queue():
+	return
 	if busy:
 		return
 	

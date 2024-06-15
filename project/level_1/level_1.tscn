@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=126 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -101,6 +101,7 @@
 [ext_resource type="PackedScene" uid="uid://bs2hl8onbsd3q" path="res://project/character/waiter_3/waiter_3.tscn" id="69_3w8ui"]
 [ext_resource type="Texture2D" uid="uid://cn5hrae18lhmx" path="res://assets/Kitchen/Table/Table2.png" id="69_f70wo"]
 [ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://project/ui/ui.tscn" id="72_xu1wm"]
+[ext_resource type="Script" path="res://project/level_1/Camera2D.gd" id="88_f7d8e"]
 [ext_resource type="Script" path="res://project/character/group.gd" id="93_twl1g"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
 [ext_resource type="PackedScene" uid="uid://rskgob6ktuy5" path="res://project/level_1/desk_plates.tscn" id="103_6qy7u"]
@@ -893,6 +894,7 @@ limit_left = -2200
 limit_top = -256
 limit_right = 11500
 limit_bottom = 8900
+script = ExtResource("88_f7d8e")
 
 [node name="Table" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2865, 2656)
