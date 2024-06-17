@@ -495,6 +495,8 @@ size = Vector2(13, 16)
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_r3jtw")
+character_name = "LUMINA"
+charackter_sprite = ExtResource("71_an1sl")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(1, 1)
