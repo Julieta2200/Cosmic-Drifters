@@ -45,20 +45,22 @@ layout_mode = 0
 offset_left = 960.0
 offset_top = 48.0
 offset_right = 3516.0
-offset_bottom = 198.0
+offset_bottom = 179.0
 theme_override_colors/background_color = Color(0.0745098, 0.054902, 0.317647, 1)
+theme_override_constants/line_spacing = 30
 theme_override_fonts/font = ExtResource("1_blfxm")
 theme_override_font_sizes/font_size = 120
-text = "Name"
+text = "Harry"
 wrap_mode = 1
 
 [node name="text" type="TextEdit" parent="background"]
 layout_mode = 0
 offset_left = 960.0
-offset_top = 192.0
+offset_top = 204.0
 offset_right = 3516.0
-offset_bottom = 792.0
+offset_bottom = 804.0
 theme_override_colors/background_color = Color(0.0745098, 0.054902, 0.317647, 1)
+theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_blfxm")
 theme_override_font_sizes/font_size = 80
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "

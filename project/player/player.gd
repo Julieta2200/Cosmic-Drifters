@@ -116,13 +116,13 @@ func _on_animated_sprite_2d_animation_finished():
 	busy = false
 
 func change_character(character, name):
-	if character.texture != charackter_sprite:
+	if character.texture != character_sprite:
 		for i in $characters_panel.get_child_count():
 			if i > 0 :
-				if $characters_panel.get_child(i).get_child(0).texture == charackter_sprite:
+				if $characters_panel.get_child(i).get_child(0).texture == character_sprite:
 					$characters_panel.get_child(i).get_child(0).texture = previous_character
 					
-		character.texture = charackter_sprite
+		character.texture = character_sprite
 		morph(name)
 	else:
 		morph(LUMINA)
