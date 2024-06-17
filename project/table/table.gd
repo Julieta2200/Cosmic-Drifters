@@ -1,21 +1,33 @@
-extends Node2D
+class_name Table extends Node2D
 
-class_name Table
+const ORDER_INTERVAL: int = 1
 
 @onready var plate = $plate
+@onready var chairs = $chairs
+
+
+@export var suspect_limit = 100
+@export var suspect_time : float = 1
+@export var cooldown_time : float = 1
+@export var number: int
+
 var rng = RandomNumberGenerator.new()
-const ORDER_INTERVAL: int = 1
 var waiter
 var level
 var group
 var for_lumina: bool = false
-@onready var chairs = $chairs
-@export var number: int
 var eavesdropping_extent = 0
-@export var suspect_time : float = 1
-@export var cooldown_time : float = 1
 var suspect_unit  = 10
 var cooldown_unit = 10
+
+
+var whisper_meter_sprites = {
+	0: "res://assets/Game_UI/Scale/Scale1.png",
+	1: "res://assets/Game_UI/Scale/Scale2.png",
+	2: "res://assets/Game_UI/Scale/Scale3.png",
+	3: "res://assets/Game_UI/Scale/Scale4.png",
+	4: "res://assets/Game_UI/Scale/Scale5.png",
+}
 
 enum {
 	STATUS_EMPTY,
@@ -148,6 +160,8 @@ func set_actual_order(foods):
 
 
 func _on_whisper_area_body_entered(body):
+	if status == STATUS_EMPTY:
+		return
 	if body is Player:
 		$whisper_area/suspect_timer.start()
 		$whisper_area/cooldown_timer.stop()
@@ -158,15 +172,19 @@ func _on_whisper_area_body_exited(body):
 		$whisper_area/cooldown_timer.start()
 	
 func _on_suspect_timer_timeout():
-	if eavesdropping_extent < 100:
+	if eavesdropping_extent < suspect_limit:
 		eavesdropping_extent = eavesdropping_extent + suspect_unit
-		print(eavesdropping_extent)
+		set_whispere_meter()
 	else:
 		$whisper_area/suspect_timer.stop()
 
 func _on_cooldown_timer_timeout():
 	if eavesdropping_extent > 0:
 		eavesdropping_extent = eavesdropping_extent - cooldown_unit
-		print(eavesdropping_extent)
+		set_whispere_meter()
 	else:
 		$whisper_area/cooldown_timer.stop()
+		
+func set_whispere_meter():
+	$whisper_meter/sprite.texture = load(whisper_meter_sprites[int(eavesdropping_extent/20)])
+		
