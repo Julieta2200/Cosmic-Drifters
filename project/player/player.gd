@@ -7,7 +7,6 @@ var busy: bool = false
 var desk
 var computer
 var expected_mask
-var lumina_sp = load("res://assets/lumina/Base (3).png")
 var previous_character
 
 @export var ui: Control
@@ -117,13 +116,13 @@ func _on_animated_sprite_2d_animation_finished():
 	busy = false
 
 func change_character(character, name):
-	if character.texture != lumina_sp:
+	if character.texture != charackter_sprite:
 		for i in $characters_panel.get_child_count():
 			if i > 0 :
-				if $characters_panel.get_child(i).get_child(0).texture == lumina_sp:
+				if $characters_panel.get_child(i).get_child(0).texture == charackter_sprite:
 					$characters_panel.get_child(i).get_child(0).texture = previous_character
 					
-		character.texture = lumina_sp
+		character.texture = charackter_sprite
 		morph(name)
 	else:
 		morph(LUMINA)

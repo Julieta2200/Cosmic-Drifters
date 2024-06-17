@@ -81,6 +81,8 @@ animations = [{
 [node name="munchkin_morsels" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_0n30y")
+character_name = "MORSEL"
+charackter_sprite = ExtResource("5_n6ylb")
 speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]

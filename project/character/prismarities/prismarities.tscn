@@ -82,6 +82,8 @@ animations = [{
 [node name="prismarities" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_qh3jx")
+character_name = "PRISMA"
+charackter_sprite = ExtResource("5_iajly")
 speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]

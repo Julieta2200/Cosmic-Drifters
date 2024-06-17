@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://gu560mqym0x1"]
+[gd_scene load_steps=12 format=3 uid="uid://gu560mqym0x1"]
 
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="1_blfxm"]
 [ext_resource type="Script" path="res://project/dialog/dialog.gd" id="1_fdnhb"]
+[ext_resource type="Texture2D" uid="uid://basqdveofhxjk" path="res://assets/Game_UI/dialog panel/panel.png" id="2_xghlj"]
+[ext_resource type="Texture2D" uid="uid://bid2hrx7fxeqn" path="res://assets/Game_UI/dialog panel/Stroke.png" id="4_yvi0r"]
+[ext_resource type="Texture2D" uid="uid://by44jvax86ync" path="res://assets/Game_UI/dialog panel/Skip_button1.png" id="5_m4r4h"]
+[ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="5_xodep"]
+[ext_resource type="Texture2D" uid="uid://dmw2e05sril5v" path="res://assets/Game_UI/dialog panel/Skip_button2.png" id="6_tf7ig"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8p0r"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhe3b"]
+texture = ExtResource("2_xghlj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otvcl"]
+texture = ExtResource("5_m4r4h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ysbrc"]
+texture = ExtResource("5_m4r4h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3uean"]
+texture = ExtResource("6_tf7ig")
 
 [node name="dialog" type="Control"]
 layout_mode = 3
@@ -24,16 +38,61 @@ anchor_bottom = 1.0
 offset_top = -896.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_q8p0r")
+theme_override_styles/panel = SubResource("StyleBoxTexture_hhe3b")
+
+[node name="name" type="TextEdit" parent="background"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 48.0
+offset_right = 3516.0
+offset_bottom = 198.0
+theme_override_colors/background_color = Color(0.0745098, 0.054902, 0.317647, 1)
+theme_override_fonts/font = ExtResource("1_blfxm")
+theme_override_font_sizes/font_size = 120
+text = "Name"
+wrap_mode = 1
 
 [node name="text" type="TextEdit" parent="background"]
 layout_mode = 0
-offset_left = 1019.0
-offset_top = 83.0
-offset_right = 3575.0
-offset_bottom = 927.0
+offset_left = 960.0
+offset_top = 192.0
+offset_right = 3516.0
+offset_bottom = 792.0
+theme_override_colors/background_color = Color(0.0745098, 0.054902, 0.317647, 1)
 theme_override_fonts/font = ExtResource("1_blfxm")
-theme_override_font_sizes/font_size = 100
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-editable = false
+theme_override_font_sizes/font_size = 80
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 wrap_mode = 1
+
+[node name="stroke" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 128.0
+offset_right = 816.0
+offset_bottom = 784.0
+texture = ExtResource("4_yvi0r")
+
+[node name="sprite" type="TextureRect" parent="background/stroke"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.0
+offset_top = -309.0
+offset_right = 307.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xodep")
+
+[node name="skip" type="Button" parent="background"]
+layout_mode = 0
+offset_left = 3527.0
+offset_top = 664.0
+offset_right = 4023.0
+offset_bottom = 824.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_otvcl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysbrc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3uean")

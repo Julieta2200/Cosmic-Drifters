@@ -86,6 +86,8 @@ size = Vector2(13, 15)
 [node name="cerulean_hoppers" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_rc42d")
+character_name = "HOPPER"
+charackter_sprite = ExtResource("5_6huyq")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(1.1875, 6.5625)
@@ -93,7 +95,7 @@ texture = ExtResource("1_osyae")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_grrju")
-animation = &"talk"
+animation = &"back_walk"
 autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
