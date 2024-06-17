@@ -5,3 +5,7 @@ func _on_play_button_pressed():
 
 func splash_screen_ends():
 	$AnimationPlayer.play("load")
+
+func planets_stars_animation_start():
+	$AnimationPlayer.play("planets_stars")
+	
