@@ -22,8 +22,8 @@ animations = [{
 [node name="boss" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_w3827")
-character_name = "Boss"
-charackter_sprite = ExtResource("1_dqxdh")
+character_name = "Nebula"
+character_sprite = ExtResource("1_dqxdh")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 33)
