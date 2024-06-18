@@ -5,7 +5,7 @@ var path: PackedVector2Array
 var action_holder :Node2D
 var ch_action
 @export var character_name : String
-@export var charackter_sprite : Texture
+@export var character_sprite : Texture
 @onready var navigation_agent = $NavigationAgent2D
 @export var speed: float
 
