@@ -16,7 +16,7 @@ func appear(text: String , name :String , sprite : Texture):
 	visible = true
 	$background/name.text = ""
 	$background/text.text = ""
-	write_text(0.2)
+	write_text(0.02)
 	
 func disappear():
 	visible = false

@@ -4,7 +4,7 @@ var tutorial_mode: bool = false
 @onready var text_dialog: Dialog = $CanvasLayer/dialog
 @onready var boss: Boss = $boss
 @onready var player: Player = $clickable_objects/player
-
+@onready var arrows: TextureRect = $CanvasLayer/tutorial_assets/arrows
 var _timer: Timer
 
 func _ready():
@@ -45,4 +45,21 @@ func _lumina_dialog_rendered2():
 	_reset_timer(2.0, _lumina_dialog_rendered2, _start_instructions)
 
 func _start_instructions():
-	pass
+	text_dialog.appear("You seem like a very talkative person, anyways let’s start with your instructions, shall we?", boss.character_name, boss.character_sprite)
+	_reset_timer(2.0, _start_instructions, _greetings)
+
+func _greetings():
+	text_dialog.appear("Welcome to Cosmic Whispers cafe!!!", boss.character_name, boss.character_sprite)
+	_reset_timer(2.0, _greetings, _objective)
+
+func _objective():
+	text_dialog.appear("Your main objective is to get intel from some visitors who are connected with intergalactic crime organizations.", boss.character_name, boss.character_sprite)
+	_reset_timer(2.0, _objective, _warning)
+
+func _warning():
+	text_dialog.appear("Cafes manager Frostwirl has no idea that you’re an agent, so you should be careful to not to get fired.", boss.character_name, boss.character_sprite)
+	_reset_timer(2.0, _warning, _use_arrows)
+
+func _use_arrows():
+	arrows.visible = true
+	text_dialog.appear("Use arrows to navigate through cafe", boss.character_name, boss.character_sprite)

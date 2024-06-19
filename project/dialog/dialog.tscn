@@ -1,24 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://gu560mqym0x1"]
+[gd_scene load_steps=7 format=3 uid="uid://gu560mqym0x1"]
 
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="1_blfxm"]
 [ext_resource type="Script" path="res://project/dialog/dialog.gd" id="1_fdnhb"]
 [ext_resource type="Texture2D" uid="uid://basqdveofhxjk" path="res://assets/Game_UI/dialog panel/panel.png" id="2_xghlj"]
 [ext_resource type="Texture2D" uid="uid://bid2hrx7fxeqn" path="res://assets/Game_UI/dialog panel/Stroke.png" id="4_yvi0r"]
-[ext_resource type="Texture2D" uid="uid://by44jvax86ync" path="res://assets/Game_UI/dialog panel/Skip_button1.png" id="5_m4r4h"]
 [ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="5_xodep"]
-[ext_resource type="Texture2D" uid="uid://dmw2e05sril5v" path="res://assets/Game_UI/dialog panel/Skip_button2.png" id="6_tf7ig"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhe3b"]
 texture = ExtResource("2_xghlj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otvcl"]
-texture = ExtResource("5_m4r4h")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ysbrc"]
-texture = ExtResource("5_m4r4h")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3uean"]
-texture = ExtResource("6_tf7ig")
 
 [node name="dialog" type="Control"]
 layout_mode = 3
@@ -36,36 +25,54 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -896.0
+offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_hhe3b")
 
 [node name="name" type="TextEdit" parent="background"]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 48.0
-offset_right = 3516.0
-offset_bottom = 179.0
+offset_left = 949.0
+offset_top = 139.0
+offset_right = 3505.0
+offset_bottom = 312.0
 theme_override_colors/background_color = Color(0.0745098, 0.054902, 0.317647, 1)
+theme_override_colors/font_color = Color(0.823529, 0.984314, 0.984314, 1)
+theme_override_colors/font_readonly_color = Color(0.823529, 0.984314, 0.984314, 1)
 theme_override_constants/line_spacing = 30
 theme_override_fonts/font = ExtResource("1_blfxm")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 160
 text = "Name"
 editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
 wrap_mode = 1
 
 [node name="text" type="TextEdit" parent="background"]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 204.0
-offset_right = 3516.0
-offset_bottom = 804.0
+offset_left = 958.0
+offset_top = 336.0
+offset_right = 3514.0
+offset_bottom = 936.0
 theme_override_colors/background_color = Color(0.0745098, 0.054902, 0.317647, 1)
+theme_override_colors/font_readonly_color = Color(0.960784, 0.945098, 0.831373, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_blfxm")
-theme_override_font_sizes/font_size = 80
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+theme_override_font_sizes/font_size = 90
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam,"
 editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
 wrap_mode = 1
 
 [node name="stroke" type="TextureRect" parent="background"]
@@ -90,16 +97,6 @@ offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_xodep")
-
-[node name="skip" type="Button" parent="background"]
-layout_mode = 0
-offset_left = 3527.0
-offset_top = 664.0
-offset_right = 4023.0
-offset_bottom = 824.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_otvcl")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ysbrc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_3uean")
 
 [node name="Timer" type="Timer" parent="."]
 

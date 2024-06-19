@@ -110,7 +110,7 @@
 [ext_resource type="PackedScene" uid="uid://gu560mqym0x1" path="res://project/dialog/dialog.tscn" id="108_8qcgh"]
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="108_xna3f"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="109_g2ovh"]
-[ext_resource type="Script" path="res://project/tutorial/tutorial_manager.gd" id="110_r86d5"]
+[ext_resource type="Texture2D" uid="uid://dc2hmv6wsdcik" path="res://assets/Food/cloud.png" id="109_o6b1s"]
 [ext_resource type="PackedScene" uid="uid://cgrqn42lwwe1f" path="res://project/character/boss/boss.tscn" id="112_xthga"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
@@ -1115,20 +1115,39 @@ visible = false
 offset_top = -1.0
 offset_bottom = -1.0
 
+[node name="tutorial_assets" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="arrows" type="TextureRect" parent="CanvasLayer/tutorial_assets"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("109_o6b1s")
+
 [node name="Cook_1" parent="." instance=ExtResource("108_xna3f")]
 position = Vector2(9570, 5002)
 
 [node name="Cook_2" parent="." instance=ExtResource("109_g2ovh")]
 position = Vector2(10869, 5009)
 
-[node name="tutorial_manager" type="Node2D" parent="."]
-script = ExtResource("110_r86d5")
-
 [node name="boss" parent="." instance=ExtResource("112_xthga")]
 visible = false
 z_index = 10
 position = Vector2(6771, 1981)
-character_name = ""
 
 [node name="tutorial_animation" type="AnimationPlayer" parent="."]
 autoplay = "intro"
