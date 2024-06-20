@@ -150,6 +150,7 @@ polygon = PackedVector2Array(41.625, -24.125, 41.625, 18.375, -42.375, 18.375, -
 [node name="cooldown_timer" type="Timer" parent="whisper_area"]
 
 [node name="whisper_meter" type="Node2D" parent="."]
+visible = false
 
 [node name="sprite" type="Sprite2D" parent="whisper_meter"]
 position = Vector2(0, -44.9375)
