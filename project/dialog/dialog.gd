@@ -54,7 +54,7 @@ func highlight_text(text) -> String:
 			new_text += i
 	return new_text
 
-func coloring_index(_show_text_index,text_color):
+func coloring_index(_show_text_index,text_color) -> int:
 	var i = _show_text_index 
 	while _show_text_index <  i +  text_color.length():
 		_show_text_index += 1 
