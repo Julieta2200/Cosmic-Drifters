@@ -9,7 +9,7 @@ var tutorial_mode: bool = false
 @onready var game_manager = $game_manager
 @onready var table_statuses: Control = $CanvasLayer/tutorial_assets/table_statuses
 @onready var table_cursor: Sprite2D = $clickable_objects/Table/cursor
-@onready var left_click: Sprite2D = $CanvasLayer/tutorial_assets/left_click
+@onready var left_click: TextureRect = $CanvasLayer/tutorial_assets/left_click
 
 const _first_customers_cam_pos: Vector2 = Vector2(3230, 2044)
 
@@ -27,7 +27,7 @@ func _process(_delta):
 				_table_clicked()
 
 func intro_dialog():
-	text_dialog.appear("Agent Lumina, can you hear me?","????", boss.character_sprite)
+	text_dialog.appear("Agent (Lumina), can you hear me?","????", boss.character_sprite)
 	_timer = Timer.new()
 	add_child(_timer)
 	_timer.one_shot = true
