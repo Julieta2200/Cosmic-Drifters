@@ -3,9 +3,12 @@ extends Node2D
 @onready var player  = $"../clickable_objects/player"
 var click_area : bool
 var selected_object = null
-
+var locked: bool
 
 func click_action():
+	if locked:
+		return
+	
 	if player.busy:
 		return
 	

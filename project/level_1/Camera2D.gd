@@ -2,6 +2,7 @@ extends Camera2D
 
 var deltaMove = 1
 var deltaMouse = 300
+var locked: bool
 
 var moveToZero = false
 
@@ -9,6 +10,9 @@ func _ready():
 	pass
 
 func _process(delta):
+	if locked:
+		return
+	
 	if moveToZero:
 		var indexX = 0
 		if self.position.x < Vector2.ZERO.x:
