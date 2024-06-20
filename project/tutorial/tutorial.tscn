@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://bi8ib8la8mkeo"]
+[gd_scene load_steps=147 format=3 uid="uid://bi8ib8la8mkeo"]
 
 [ext_resource type="Script" path="res://project/tutorial/tutorial.gd" id="1_751tf"]
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="2_rn7it"]
@@ -115,6 +115,7 @@
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="109_g2ovh"]
 [ext_resource type="Texture2D" uid="uid://rg6e7pvhaeq2" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png" id="111_basir"]
 [ext_resource type="Texture2D" uid="uid://bkd7cxrwery4g" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Orange).png" id="112_jfnlt"]
+[ext_resource type="Texture2D" uid="uid://cgy2y3mcmjewm" path="res://assets/Game_UI/Mouse.png" id="112_m7hdo"]
 [ext_resource type="PackedScene" uid="uid://cgrqn42lwwe1f" path="res://project/character/boss/boss.tscn" id="112_xthga"]
 [ext_resource type="Texture2D" uid="uid://cbk6nsr76he3l" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Red).png" id="113_2jjyw"]
 [ext_resource type="Texture2D" uid="uid://dh8pxfgprigpu" path="res://assets/Emotions/Exclamation_mark/ExclamationMark(Fier1).png" id="114_1as2f"]
@@ -1048,6 +1049,7 @@ position = Vector2(2865, 2656)
 number = 1
 
 [node name="cursor" type="Sprite2D" parent="clickable_objects/Table"]
+visible = false
 position = Vector2(15.5, 5.4375)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("90_hupwy")
@@ -1272,6 +1274,29 @@ pivot_offset = Vector2(752, 464)
 texture = ExtResource("109_58dh0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/tutorial_assets/arrows"]
+autoplay = "scale"
+libraries = {
+"": SubResource("AnimationLibrary_3o0n6")
+}
+
+[node name="left_click" type="TextureRect" parent="CanvasLayer/tutorial_assets"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1847.0
+offset_top = -1415.0
+offset_right = -775.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(752, 464)
+texture = ExtResource("112_m7hdo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/tutorial_assets/left_click"]
 autoplay = "scale"
 libraries = {
 "": SubResource("AnimationLibrary_3o0n6")

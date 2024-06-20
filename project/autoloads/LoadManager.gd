@@ -18,7 +18,6 @@ func load_scene(scene_path: String) -> void:
 	var new_loading_screen = _load_screen.instantiate()
 	get_tree().get_root().add_child(new_loading_screen)
 	
-	self.progress_changed.connect(new_loading_screen._update_progress_bar)
 	self.load_done.connect(new_loading_screen._start_outro_animation)
 	
 	start_load()

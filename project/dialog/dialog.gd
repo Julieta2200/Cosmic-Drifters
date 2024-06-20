@@ -7,9 +7,9 @@ var _text = ""
 
 @onready var _timer = $Timer
 
-func appear(text: String , name :String , sprite : Texture):
+func appear(text: String , character_name :String , sprite : Texture):
 	_text = text
-	_name = name
+	_name = character_name
 	_show_text_index = 0
 	_show_name_index = 0
 	$background/stroke/sprite.texture = sprite

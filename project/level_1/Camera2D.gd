@@ -9,7 +9,7 @@ var moveToZero = false
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if locked:
 		return
 	

@@ -9,6 +9,7 @@ var tutorial_mode: bool = false
 @onready var game_manager = $game_manager
 @onready var table_statuses: Control = $CanvasLayer/tutorial_assets/table_statuses
 @onready var table_cursor: Sprite2D = $clickable_objects/Table/cursor
+@onready var left_click: Sprite2D = $CanvasLayer/tutorial_assets/left_click
 
 const _first_customers_cam_pos: Vector2 = Vector2(3230, 2044)
 
@@ -20,20 +21,22 @@ func _ready():
 	groups = {}
 
 func _process(_delta):
-	for k in groups:
-		if is_spawn_time(groups[k]):
-			spawn(groups[k])
+	if Input.is_action_just_pressed("left_click"):
+		if table_cursor.visible:
+			if groups["group_1"]["table"].get_clickable_component().active:
+				_table_clicked()
 
 func intro_dialog():
 	text_dialog.appear("Agent Lumina, can you hear me?","????", boss.character_sprite)
 	_timer = Timer.new()
 	add_child(_timer)
 	_timer.one_shot = true
-	_reset_timer(3.0, _intro_dialog_rendered, _intro_dialog_rendered)
+	_reset_timer(3.0, _intro_dialog_rendered, _intro_dialog_rendered, false)
 	
-func _reset_timer(time: float, prev: Callable, next: Callable):
+func _reset_timer(time: float, prev: Callable, next: Callable, has_prev: bool = true):
 #	time = 0.5 #for fast test
-	_timer.disconnect("timeout", prev)
+	if has_prev:
+		_timer.disconnect("timeout", prev)
 	_timer.wait_time = time
 	_timer.connect("timeout", next)
 	_timer.start()
@@ -78,11 +81,13 @@ func _use_arrows():
 
 func _use_left_click():
 	arrows.visible = false
+	left_click.visible = true
 	game_manager.locked = false
 	text_dialog.appear("Press left mouse button to walk around", boss.character_name, boss.character_sprite)
 	_reset_timer(8.0, _use_left_click, _first_customers)
 
 func _first_customers():
+	left_click.visible = false
 	camera.locked = true
 	game_manager.locked = true
 	camera.global_position = _first_customers_cam_pos
@@ -111,3 +116,6 @@ func _click_table():
 	game_manager.locked = false
 	camera.locked = false
 	text_dialog.appear("Click table", boss.character_name, boss.character_sprite)
+	
+func _table_clicked():
+	table_cursor.visible = false
