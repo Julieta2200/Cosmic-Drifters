@@ -50,7 +50,7 @@ func _lumina_dialog_rendered1():
 	_reset_timer(4.0, _lumina_dialog_rendered1, _name_reveal)
 
 func _name_reveal():
-	text_dialog.appear("My code name is Nebula, want to know my real name?", boss.character_name, boss.character_sprite)
+	text_dialog.appear("My code name is (Nebula), want to know my real name?", boss.character_name, boss.character_sprite)
 	_reset_timer(3.0, _name_reveal, _lumina_dialog_rendered2)
 
 func _lumina_dialog_rendered2():
@@ -62,7 +62,7 @@ func _start_instructions():
 	_reset_timer(4.0, _start_instructions, _greetings)
 
 func _greetings():
-	text_dialog.appear("Welcome to Cosmic Whispers cafe!!!", boss.character_name, boss.character_sprite)
+	text_dialog.appear("Welcome to (COSMIC WHISPERS) cafe!!!", boss.character_name, boss.character_sprite)
 	_reset_timer(3.0, _greetings, _objective)
 
 func _objective():
@@ -70,7 +70,7 @@ func _objective():
 	_reset_timer(4.0, _objective, _warning)
 
 func _warning():
-	text_dialog.appear("Cafes manager Frostwirl has no idea that you’re an agent, so you should be careful to not to get fired.", boss.character_name, boss.character_sprite)
+	text_dialog.appear("Cafes manager (Frostwirl) has no idea that you’re an agent, so you should be careful to not to get fired.", boss.character_name, boss.character_sprite)
 	_reset_timer(4.0, _warning, _use_arrows)
 
 func _use_arrows():

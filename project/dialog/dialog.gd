@@ -4,7 +4,7 @@ var _show_name_index = 0
 var _name = ""
 var _show_text_index = 0
 var _text = ""
-var highlight_text_color = "[color=red]"
+var highlight_text_color = "[color=#d2fbfb]"
 var normal_text_color = "[color=#d6d6d6]"
 
 @onready var _timer = $Timer
