@@ -39,7 +39,7 @@ func _on_timer_timeout():
 				_show_text_index = coloring_index(_show_text_index,normal_text_color)
 		else:
 			_show_text_index += 1
-			$background/text.text = _text.substr(0, _show_text_index)
+			$background/text.text = "\n"+_text.substr(0, _show_text_index)
 	else:
 		_timer.stop()
 
