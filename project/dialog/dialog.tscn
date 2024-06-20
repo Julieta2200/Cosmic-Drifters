@@ -52,28 +52,21 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
+scroll_past_end_of_file = true
 
-[node name="text" type="TextEdit" parent="background"]
+[node name="text" type="RichTextLabel" parent="background"]
 layout_mode = 0
 offset_left = 958.0
 offset_top = 336.0
 offset_right = 3514.0
 offset_bottom = 936.0
-theme_override_colors/background_color = Color(0.0745098, 0.054902, 0.317647, 1)
-theme_override_colors/font_readonly_color = Color(0.960784, 0.945098, 0.831373, 1)
-theme_override_constants/line_spacing = 20
-theme_override_fonts/font = ExtResource("1_blfxm")
-theme_override_font_sizes/font_size = 90
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam,"
-editable = false
-context_menu_enabled = false
+theme_override_colors/default_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_fonts/normal_font = ExtResource("1_blfxm")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit,( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam,"
 shortcut_keys_enabled = false
-selecting_enabled = false
 deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
 
 [node name="stroke" type="TextureRect" parent="background"]
 layout_mode = 0
