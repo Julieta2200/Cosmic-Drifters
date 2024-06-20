@@ -188,3 +188,5 @@ func _on_cooldown_timer_timeout():
 func set_whispere_meter():
 	$whisper_meter/sprite.texture = load(whisper_meter_sprites[int(eavesdropping_extent/20)])
 		
+func get_clickable_component():
+	return $clickable_component
