@@ -18,6 +18,8 @@ var reviews = {
 var table
 var chair_i
 
+var whisper_coef = 1
+
 func _ready():
 	position_delta = speed / 60
 
