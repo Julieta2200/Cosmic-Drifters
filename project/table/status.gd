@@ -55,6 +55,12 @@ func waiting_for_check():
 	current_status = 1
 	timer_reset_start(get_current_stage()["duration"])
 
+func serve_and():
+	$ask_waiter.visible = false
+	$waiting_for_food.visible = false
+	$waiting_for_check.visible = false
+	table.leave()
+
 func waiting_for_food():
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = true
@@ -80,6 +86,8 @@ func next_stage():
 	active_status.texture = load(get_current_stage()["texture"])
 
 func stage_overflow():
+#	if active_status == $waiting_for_check:
+#		table.leave()
 	print("overflow")
 	
 func last_stage():
