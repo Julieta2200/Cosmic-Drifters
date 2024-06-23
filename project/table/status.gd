@@ -86,8 +86,6 @@ func next_stage():
 	active_status.texture = load(get_current_stage()["texture"])
 
 func stage_overflow():
-#	if active_status == $waiting_for_check:
-#		table.leave()
 	print("overflow")
 	
 func last_stage():
