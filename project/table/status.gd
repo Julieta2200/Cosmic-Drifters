@@ -55,6 +55,12 @@ func waiting_for_check():
 	current_status = 1
 	timer_reset_start(get_current_stage()["duration"])
 
+func serve_end():
+	$ask_waiter.visible = false
+	$waiting_for_food.visible = false
+	$waiting_for_check.visible = false
+	table.leave()
+
 func waiting_for_food():
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = true

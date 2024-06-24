@@ -34,7 +34,8 @@ enum {
 	STATUS_WAITING1,
 	STATUS_WAITING_FOR_FOOD,
 	STATUS_EATING_FOOD,
-	STATUS_WAITING_FOR_CHECK
+	STATUS_WAITING_FOR_CHECK,
+	STATUS_SERVE_END
 }
 var status = STATUS_EMPTY
 
@@ -152,7 +153,11 @@ func eating_food(count):
 func waiting_for_check():
 	set_status(STATUS_WAITING_FOR_CHECK)
 	$status.waiting_for_check()
-
+	
+func serve_end():
+	set_status(STATUS_SERVE_END)
+	$status.serve_end()
+	
 func ask_waiter():
 	set_status(STATUS_WAITING1)
 	$status.ask_waiter()
@@ -171,6 +176,11 @@ func action_complete(action, caller):
 		"serve_food":
 			food_action = true
 			caller.get_food(self)
+		"serve_check":
+			food_action = true
+			caller.get_check(self)
+			serve_end()
+			
 
 func set_actual_order(foods):
 	actual_order = foods

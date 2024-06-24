@@ -24,7 +24,14 @@ func interact_table(table):
 			ask_order(table)
 		table.STATUS_WAITING_FOR_FOOD:
 			serve_food(table)
+		table.STATUS_WAITING_FOR_CHECK:
+			serve_check(table)
 
+func serve_check(table):
+	busy = true
+	var serve_point = table.get_serve_point()
+	walk_to(table, serve_point, "serve_check")
+	
 func ask_order(table):
 	busy = true
 	var serve_point = table.get_serve_point()
@@ -39,7 +46,9 @@ func get_food(table):
 	ui.remove_item(index)
 	table.add_plates()
 	busy = false
-		
+	
+func get_check(table):
+	busy = false
 
 func serve_food(table):
 	busy = true
