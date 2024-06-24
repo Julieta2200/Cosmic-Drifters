@@ -131,7 +131,7 @@ func ordered(chair_i):
 			var a_orders = []
 			for i in enemies:
 				a_orders.append(enemies[i]["enemy"].get_food())
-			set_actual_order(a_orders)
+			set_true_actual_order(a_orders)
 			waiter = null
 			level.kitchen.add_order(self)
 		else:
@@ -178,6 +178,8 @@ func set_actual_order(foods):
 	level.computer.order_inserted(self)
 	level.kitchen.add_order(self)
 
+func set_true_actual_order(foods):
+	actual_order = foods
 
 func _on_whisper_area_body_entered(body):
 	if body is Player:

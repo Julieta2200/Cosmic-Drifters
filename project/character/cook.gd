@@ -13,12 +13,6 @@ func set_kitchen(k):
 
 func _process(_delta):
 	move()
-	if busy:
-		return
-	for order in kitchen.orders:
-		if order["status"] == kitchen.PREPARED:
-			pick_order(order)
-			break
 
 func pick_order(order):
 	busy = true

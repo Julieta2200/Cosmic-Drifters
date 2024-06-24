@@ -18,6 +18,15 @@ func _process(_delta):
 	for order in orders:
 		if order["status"] == PENDING && order["timer"].time_left == 0.0:
 			order_prepared(order)
+	
+	for order in orders:
+		if order["status"] == PREPARED:
+			for cook in cooks:
+				if !cook.busy:
+					cook.pick_order(order)
+					break
+			if order["status"] == PICKED:
+				break
 
 func order_prepared(order):
 	order["status"] = PREPARED

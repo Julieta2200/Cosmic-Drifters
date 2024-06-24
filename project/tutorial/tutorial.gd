@@ -12,6 +12,8 @@ var tutorial_mode: bool = false
 @onready var left_click: TextureRect = $CanvasLayer/tutorial_assets/left_click
 
 const _first_customers_cam_pos: Vector2 = Vector2(3230, 2044)
+const _waiter_approaches_cam_pos: Vector2 = Vector2(6536, 1327)
+const _kitchen_cam_pos: Vector2 = Vector2(10242, 4510)
 
 var _timer: Timer
 
@@ -100,11 +102,39 @@ func _first_customers():
 		"served": false,
 		"spawned": false,
 		"spawn_time": 5,
-		"for_lumina": true
 	}
 	spawn(groups["group_1"])
-	_reset_timer(7.0, _first_customers, _table_status_instructions)
+	_reset_timer(9.0, _first_customers, _waiter_approaches)
 	
+func _waiter_approaches():
+	camera.global_position = _waiter_approaches_cam_pos
+	text_dialog.appear("Waiter approaches", boss.character_name, boss.character_sprite)
+	_reset_timer(2.0, _waiter_approaches, _waiter_takes_orders)
+
+func _waiter_takes_orders():
+	camera.global_position = _first_customers_cam_pos
+	text_dialog.appear("You should remember", boss.character_name, boss.character_sprite)
+	_reset_timer(7.0, _waiter_takes_orders, _cooking_process)
+
+func _cooking_process():
+	camera.position = Vector2.ZERO
+	text_dialog.appear("Explaining cooking", boss.character_name, boss.character_sprite)
+	_reset_timer(5.0, _cooking_process, _show_kitchen)
+
+func _show_kitchen():
+	camera.global_position = _kitchen_cam_pos
+	text_dialog.appear("Bob is making something", boss.character_name, boss.character_sprite)
+	_reset_timer(4.0, _show_kitchen, _cook_1_brings_food)
+
+func _cook_1_brings_food():
+	camera.position = Vector2.ZERO
+	text_dialog.appear("Food put on a desk", boss.character_name, boss.character_sprite)
+	_reset_timer(3.0, _cook_1_brings_food, _waiter_serves_food)
+	
+func _waiter_serves_food():
+	camera.global_position = _first_customers_cam_pos
+	text_dialog.appear("Food served", boss.character_name, boss.character_sprite)
+
 func _table_status_instructions():
 	table_statuses.visible = true
 	text_dialog.appear("Table statuses", boss.character_name, boss.character_sprite)
