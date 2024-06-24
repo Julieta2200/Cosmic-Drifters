@@ -154,9 +154,9 @@ func waiting_for_check():
 	set_status(STATUS_WAITING_FOR_CHECK)
 	$status.waiting_for_check()
 	
-func serve_and():
+func serve_end():
 	set_status(STATUS_SERVE_END)
-	$status.serve_and()
+	$status.serve_end()
 	
 func ask_waiter():
 	set_status(STATUS_WAITING1)
@@ -179,7 +179,7 @@ func action_complete(action, caller):
 		"serve_check":
 			food_action = true
 			caller.get_check(self)
-			serve_and()
+			serve_end()
 			
 
 func set_actual_order(foods):
