@@ -9,3 +9,9 @@ func splash_screen_ends():
 func planets_stars_animation_start():
 	$stars_and_planets.play("planets_stars")
 	
+func menu_music_start():
+	AudioPlayer.menu_music()
+	
+func _on_settings_button_pressed():
+	$settings.visible = true
+

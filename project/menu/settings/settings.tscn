@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5ageltnweicf"]
+[gd_scene load_steps=20 format=3 uid="uid://b5ageltnweicf"]
 
 [ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="1_1fmcr"]
+[ext_resource type="Script" path="res://project/menu/settings/settings.gd" id="1_57a0v"]
 [ext_resource type="Texture2D" uid="uid://x4e7gemlj63y" path="res://assets/menu/background/Background2.png" id="2_s11wm"]
 [ext_resource type="Texture2D" uid="uid://cktnfw3j50w7n" path="res://assets/menu/Settings/Panel.png" id="3_ooao7"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_pmoc4"]
@@ -42,6 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_57a0v")
 
 [node name="background" type="Panel" parent="."]
 layout_mode = 0
@@ -112,16 +114,16 @@ theme_override_fonts/font = ExtResource("4_pmoc4")
 theme_override_font_sizes/font_size = 150
 text = "MUSIC"
 
-[node name="switch" type="Button" parent="background_settings/music"]
+[node name="switch_music" type="Button" parent="background_settings/music"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1364.0
+offset_left = 1564.0
 offset_top = -72.0
-offset_right = 1684.0
+offset_right = 1884.0
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -131,6 +133,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_agfob")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_qwnkt")
 theme_override_styles/focus = SubResource("StyleBoxTexture_qpsoc")
 toggle_mode = true
+button_pressed = true
 
 [node name="sound" type="TextureRect" parent="background_settings"]
 layout_mode = 1
@@ -159,16 +162,16 @@ theme_override_fonts/font = ExtResource("4_pmoc4")
 theme_override_font_sizes/font_size = 150
 text = "SOUND"
 
-[node name="switch" type="Button" parent="background_settings/sound"]
+[node name="switch_sound" type="Button" parent="background_settings/sound"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1364.0
+offset_left = 1564.0
 offset_top = -72.0
-offset_right = 1684.0
+offset_right = 1884.0
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -196,3 +199,6 @@ scale = Vector2(16, 16)
 texture_normal = ExtResource("9_t1qdh")
 texture_pressed = ExtResource("10_gayuo")
 texture_hover = ExtResource("10_gayuo")
+
+[connection signal="toggled" from="background_settings/music/switch_music" to="." method="_on_switch_music_toggled"]
+[connection signal="pressed" from="background_settings/back" to="." method="_on_back_pressed"]
