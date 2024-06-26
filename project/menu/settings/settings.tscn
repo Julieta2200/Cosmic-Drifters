@@ -1,0 +1,204 @@
+[gd_scene load_steps=20 format=3 uid="uid://b5ageltnweicf"]
+
+[ext_resource type="Texture2D" uid="uid://dilldb5vga11c" path="res://assets/menu/background/Background1.png" id="1_1fmcr"]
+[ext_resource type="Script" path="res://project/menu/settings/settings.gd" id="1_57a0v"]
+[ext_resource type="Texture2D" uid="uid://x4e7gemlj63y" path="res://assets/menu/background/Background2.png" id="2_s11wm"]
+[ext_resource type="Texture2D" uid="uid://cktnfw3j50w7n" path="res://assets/menu/Settings/Panel.png" id="3_ooao7"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_pmoc4"]
+[ext_resource type="Texture2D" uid="uid://bjew0lph63wmr" path="res://assets/menu/Settings/Music_Icon.png" id="5_58i2c"]
+[ext_resource type="Texture2D" uid="uid://c7riaqodf8fus" path="res://assets/menu/Settings/Switch1.png" id="6_68uwx"]
+[ext_resource type="Texture2D" uid="uid://4y2pjgwhqybj" path="res://assets/menu/Settings/Switch2.png" id="7_3s32k"]
+[ext_resource type="Texture2D" uid="uid://crp255uf3jarx" path="res://assets/menu/Settings/Sound_Icon.png" id="8_u21tb"]
+[ext_resource type="Texture2D" uid="uid://c214lmdb1n427" path="res://assets/menu/Settings/Back_Button1.png" id="9_t1qdh"]
+[ext_resource type="Texture2D" uid="uid://t4lmy3k0jfph" path="res://assets/menu/Settings/Back_Button2.png" id="10_gayuo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40bvn"]
+texture = ExtResource("1_1fmcr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjnsx"]
+texture = ExtResource("2_s11wm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_imqts"]
+texture = ExtResource("3_ooao7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dg5v"]
+texture = ExtResource("6_68uwx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0qib"]
+texture = ExtResource("6_68uwx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agfob"]
+texture = ExtResource("7_3s32k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qwnkt"]
+texture = ExtResource("6_68uwx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpsoc"]
+texture = ExtResource("6_68uwx")
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_57a0v")
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 4096.0
+offset_bottom = 3584.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_40bvn")
+
+[node name="space" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 4096.0
+offset_bottom = 3584.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wjnsx")
+
+[node name="background_settings" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1288.0
+offset_top = -1208.0
+offset_right = 1288.0
+offset_bottom = 1208.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_imqts")
+
+[node name="settinds" type="Label" parent="background_settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -807.5
+offset_top = 200.0
+offset_right = 807.5
+offset_bottom = 541.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.619608, 0.85098, 1, 1)
+theme_override_fonts/font = ExtResource("4_pmoc4")
+theme_override_font_sizes/font_size = 300
+text = "SETTINGS"
+
+[node name="music" type="TextureRect" parent="background_settings"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 180.0
+offset_top = -458.0
+offset_right = 452.0
+offset_bottom = -170.0
+grow_vertical = 2
+texture = ExtResource("5_58i2c")
+
+[node name="music" type="Label" parent="background_settings/music"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 234.0
+offset_top = 100.0
+offset_right = 1849.0
+offset_bottom = 441.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.690196, 0.878431, 1, 1)
+theme_override_fonts/font = ExtResource("4_pmoc4")
+theme_override_font_sizes/font_size = 150
+text = "MUSIC"
+
+[node name="switch_music" type="Button" parent="background_settings/music"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1564.0
+offset_top = -72.0
+offset_right = 1884.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_5dg5v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e0qib")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_agfob")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qwnkt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qpsoc")
+toggle_mode = true
+button_pressed = true
+
+[node name="sound" type="TextureRect" parent="background_settings"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 180.0
+offset_top = 92.0
+offset_right = 452.0
+offset_bottom = 380.0
+grow_vertical = 2
+texture = ExtResource("8_u21tb")
+
+[node name="sound" type="Label" parent="background_settings/sound"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 234.0
+offset_top = 100.0
+offset_right = 1849.0
+offset_bottom = 441.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.690196, 0.878431, 1, 1)
+theme_override_fonts/font = ExtResource("4_pmoc4")
+theme_override_font_sizes/font_size = 150
+text = "SOUND"
+
+[node name="switch_sound" type="Button" parent="background_settings/sound"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1564.0
+offset_top = -72.0
+offset_right = 1884.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_5dg5v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e0qib")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_agfob")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qwnkt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qpsoc")
+toggle_mode = true
+
+[node name="back" type="TextureButton" parent="background_settings"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -416.0
+offset_right = -245.0
+offset_bottom = -403.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(16, 16)
+texture_normal = ExtResource("9_t1qdh")
+texture_pressed = ExtResource("10_gayuo")
+texture_hover = ExtResource("10_gayuo")
+
+[connection signal="toggled" from="background_settings/music/switch_music" to="." method="_on_switch_music_toggled"]
+[connection signal="pressed" from="background_settings/back" to="." method="_on_back_pressed"]

@@ -20,6 +20,7 @@ config/icon="res://assets/Game_Icon2.png"
 [autoload]
 
 LoadManager="*res://project/autoloads/LoadManager.gd"
+AudioPlayer="*res://project/music/music.tscn"
 
 [display]
 
