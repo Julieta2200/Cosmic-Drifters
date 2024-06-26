@@ -77,6 +77,7 @@ var waiter_queue = []
 func _ready():
 	$Timer.wait_time = level_time
 	$Timer.start()
+	AudioPlayer.main_music()
 
 func _process(_delta):
 	for k in groups:
