@@ -1,8 +1,8 @@
-extends Character
+extends Waiter
 
 class_name Player
 
-var busy: bool = false
+@onready var level = $"../.."
 
 var desk
 var computer
@@ -10,6 +10,9 @@ var expected_mask
 var previous_character
 
 @export var ui: Control
+
+func check_queue():
+	pass
 
 func _physics_process(_delta):
 	move()
@@ -19,12 +22,12 @@ func _ready():
 	animation()
 
 func interact_table(table):
-	match table.status:
-		table.STATUS_WAITING1:
+	match table.group.group_current_status:
+		table.group.STATUS_ASKING_FOR_WAITER:
 			ask_order(table)
-		table.STATUS_WAITING_FOR_FOOD:
+		table.group.STATUS_WAITING_FOR_FOOD:
 			serve_food(table)
-		table.STATUS_WAITING_FOR_CHECK:
+		table.group.STATUS_WAITING_FOR_CHECK:
 			serve_check(table)
 
 func serve_check(table):
@@ -42,7 +45,6 @@ func get_food(table):
 	if index == -1:
 		busy = false
 		return
-	print(index)
 	ui.remove_item(index)
 	table.add_plates()
 	busy = false
@@ -137,3 +139,6 @@ func change_character(character, character_name):
 		morph(LUMINA)
 		character.texture = previous_character
 
+func ordered(table):
+	busy = false
+	level.computer.add_table(table)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://biihx11v7nxj1"]
 
-[ext_resource type="Script" path="res://project/ui/ui.gd" id="1_384xp"]
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_384xp"]
 [ext_resource type="Texture2D" uid="uid://t3e0lwkfv53e" path="res://assets/Game_UI/Panel.png" id="1_xvuwc"]
 [ext_resource type="Texture2D" uid="uid://b2ppmldare2ty" path="res://assets/Game_UI/Item.png" id="2_evno3"]
 [ext_resource type="Texture2D" uid="uid://hlripqj84fj7" path="res://assets/Game_UI/Coin/Coin1.png" id="3_px6ff"]

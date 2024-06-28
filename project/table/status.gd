@@ -2,7 +2,6 @@ extends Node2D
 
 class_name Status
 
-
 @onready var stages = {
 	$ask_waiter: {
 		1: {"texture": "res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png", "duration": 10},
@@ -31,6 +30,7 @@ class_name Status
 @onready var eating_stage_timer = $EatingTimer
 
 @onready var table = $".."
+@onready var group = $"..".group
 
 var current_status = 1
 var active_status

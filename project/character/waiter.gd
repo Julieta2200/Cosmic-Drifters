@@ -34,3 +34,7 @@ func check_queue():
 
 func ask_order(table):
 	table.call_orders(self)
+	
+func ordered(table):
+	busy = false
+	lvl.kitchen.add_order(table)

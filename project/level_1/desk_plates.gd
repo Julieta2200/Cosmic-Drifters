@@ -22,7 +22,7 @@ func add_plate(group):
 	plate.texture = load(plate_textures[rng.randf_range(0,plate_textures.size())])
 	plate.visible = true
 	plates[group] = {"plate": plate}
-	if group.has("for_lumina"):
+	if group._for_lumina:
 		var text = add_to_board(group)
 		plates[group]["text"] = text	
 	
@@ -41,7 +41,7 @@ func add_to_board(group):
 	$board.visible = true
 	for text in $board/texts.get_children():
 		if !text.visible:
-			text.text = "N " + str(group["table"].number)
+			text.text = "N " + str(group._table.number)
 			text.visible = true
 			return text
 

@@ -43,6 +43,10 @@ pause={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/cosm-wh-tr.csv")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

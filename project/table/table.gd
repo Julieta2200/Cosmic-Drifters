@@ -4,6 +4,7 @@ const ORDER_INTERVAL: int = 1
 
 @onready var plate = $plate
 @onready var chairs = $chairs
+@onready var group_status = $status
 
 
 @export var suspect_limit = 100
@@ -13,9 +14,8 @@ const ORDER_INTERVAL: int = 1
 
 var rng = RandomNumberGenerator.new()
 var waiter
-var level
+@onready var level = $"../.."
 var group
-var for_lumina: bool = false
 var eavesdropping_extent = 0
 var suspect_unit  = 10
 var cooldown_unit = 10
@@ -29,23 +29,10 @@ var whisper_meter_sprites = {
 	4: "res://assets/Game_UI/Scale/Scale5.png",
 }
 
-enum {
-	STATUS_EMPTY,
-	STATUS_WAITING1,
-	STATUS_WAITING_FOR_FOOD,
-	STATUS_EATING_FOOD,
-	STATUS_WAITING_FOR_CHECK,
-	STATUS_SERVE_END
-}
-var status = STATUS_EMPTY
-
-var table_status = "empty"
-
 var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/plate_2.png",
 				"res://assets/Food/Plate/plate_3.png","res://assets/Food/Plate/plate_4.png",
 				"res://assets/Food/Plate/plate_5.png","res://assets/Food/Plate/plate_6.png"]
 
-var enemies = {}
 var actual_order = []
 var plates_to_remove = []
 
@@ -56,18 +43,15 @@ var whisper_step_time_cooldown = 2
 var food_action = false
 var player_in_whisper_area = false
 
-func sit(enemy, chair_i, lvl, gr):
-	level = lvl
-	group = gr
-	enemies[chair_i] = {"enemy": enemy}
+func sit(chair_i, whisper_coef):
 	var chair = $chairs.get_children()[chair_i]
-	enemy.global_position = chair.global_position
 	chair.visible = false
-	if whisper_step_time_init - enemy.whisper_coef < whisper_step_time_suspect:
-		whisper_step_time_suspect = whisper_step_time_init - enemy.whisper_coef
-		whisper_step_time_cooldown = whisper_step_time_init + enemy.whisper_coef
+	if whisper_step_time_init - whisper_coef < whisper_step_time_suspect:
+		whisper_step_time_suspect = whisper_step_time_init - whisper_coef
+		whisper_step_time_cooldown = whisper_step_time_init + whisper_coef
 	$whisper_area/suspect_timer.wait_time = whisper_step_time_suspect
 	$whisper_area/cooldown_timer.wait_time = whisper_step_time_cooldown
+	return chair
 	
 	
 func leave_chair(chair_i):
@@ -76,16 +60,11 @@ func leave_chair(chair_i):
 	return chair
 	
 func leave():
-	status = STATUS_EMPTY
-	group.group.leave()
-
-func add_order(food, chair_i):
-	enemies[chair_i]["order"] = food
+	group.leave()
 	
 func call_orders(w):
 	waiter = w
-	$status.pause_timer()
-	group["group"].order(self)
+	group.order()
 
 
 func get_chair(index):
@@ -98,80 +77,28 @@ func add_plates():
 	for p in plate.get_children():
 		p.texture = load(plates[rng.randf_range(0,plates.size())])
 		p.visible = true
-	
-	var right_count = 0
-		
-	var found_indexes = {}
-	for ac_ind in actual_order.size():
-		found_indexes[ac_ind] = false
-	for f in enemies:
-		var food = enemies[f]["enemy"].get_food()
-		var found = false
-		for ac_ind in actual_order.size():
-			if !found_indexes[ac_ind] && actual_order[ac_ind] == food:
-				right_count+=1
-				found_indexes[ac_ind] = true
-				enemies[f]["enemy"].set_heart()
-				plates_to_remove.append(f)
-				found = true
-				break
-		if !found:
-			enemies[f]["enemy"].set_angry()
-	eating_food(right_count)
+	plates_to_remove = group.eating_food(actual_order)
+	food_action = false
 	
 func remove_plates():
 	for p in plate.get_children().size():
 		if plates_to_remove.has(p):
 			plate.get_children()[p].visible = false
-	waiting_for_check()
+	group.waiting_for_check()
+	food_action = false
 
-func ordered(chair_i):
-	if chair_i == len(chairs.get_children()) - 1:
-		waiter.busy = false
-		if !for_lumina:
-			var a_orders = []
-			for i in enemies:
-				a_orders.append(enemies[i]["enemy"].get_food())
-			set_true_actual_order(a_orders)
-			waiter = null
-			level.kitchen.add_order(self)
-		else:
-			level.computer.add_table(self)
-		waiting_for_food()
+func ordered(a_orders):
+	set_true_actual_order(a_orders)
+	waiter.ordered(self)
+	food_action = false
 
 func order_delivered():
 	level.order_delivered(group)
 	
-func waiting_for_food():
-	set_status(STATUS_WAITING_FOR_FOOD)
-	$status.waiting_for_food()
-	
-func eating_food(count):
-	set_status(STATUS_EATING_FOOD)
-	$status.eating_food(count)
-	
-func waiting_for_check():
-	set_status(STATUS_WAITING_FOR_CHECK)
-	$status.waiting_for_check()
-	
-func serve_end():
-	set_status(STATUS_SERVE_END)
-	$status.serve_end()
-	
-func ask_waiter():
-	set_status(STATUS_WAITING1)
-	$status.ask_waiter()
-	
-func set_status(_status):
-	status = _status
-	food_action = false
-	
 func action_complete(action, caller):
-	print(action)
 	match action:
 		"ask_order":
 			food_action = true
-			for_lumina = true
 			call_orders(caller)
 		"serve_food":
 			food_action = true
@@ -179,7 +106,7 @@ func action_complete(action, caller):
 		"serve_check":
 			food_action = true
 			caller.get_check(self)
-			serve_end()
+			group.serve_end()
 			
 
 func set_actual_order(foods):
@@ -220,7 +147,7 @@ func get_clickable_component():
 	return $clickable_component
 	
 func _process(delta):
-	if status == STATUS_EMPTY:
+	if group && group.group_current_status == group.STATUS_EMPTY:
 		$whisper_meter.visible = false
 		return
 	if food_action:

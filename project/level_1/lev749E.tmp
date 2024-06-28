@@ -100,7 +100,7 @@
 [ext_resource type="PackedScene" uid="uid://dlhg3xr3k7hc8" path="res://project/character/waiter_2/waiter_2.tscn" id="67_uro2u"]
 [ext_resource type="PackedScene" uid="uid://bs2hl8onbsd3q" path="res://project/character/waiter_3/waiter_3.tscn" id="69_3w8ui"]
 [ext_resource type="Texture2D" uid="uid://cn5hrae18lhmx" path="res://assets/Kitchen/Table/Table2.png" id="69_f70wo"]
-[ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://ui/ui.tscn" id="72_xu1wm"]
+[ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://project/ui/ui.tscn" id="72_xu1wm"]
 [ext_resource type="Script" path="res://project/level_1/Camera2D.gd" id="88_f7d8e"]
 [ext_resource type="Script" path="res://project/character/group.gd" id="93_twl1g"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
@@ -898,34 +898,58 @@ script = ExtResource("88_f7d8e")
 
 [node name="Table" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2865, 2656)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 1
 
 [node name="Table2" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(4800, 2277)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 2
 
 [node name="Table3" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(6526, 2656)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 3
 
 [node name="Table4" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(6528, 4292)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 4
 
 [node name="Table5" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(4781, 4889)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 5
 
 [node name="Table6" parent="clickable_objects" instance=ExtResource("61_44c81")]
 position = Vector2(2839, 4290)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 6
 
 [node name="TableSmall" parent="clickable_objects" instance=ExtResource("59_80aps")]
 position = Vector2(3631, 3351)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 7
 
 [node name="TableSmall2" parent="clickable_objects" instance=ExtResource("59_80aps")]
 position = Vector2(5700, 3345)
+suspect_limit = 100
+suspect_time = 1.0
+cooldown_time = 1.0
 number = 8
 
 [node name="desk_plates" parent="clickable_objects" instance=ExtResource("103_6qy7u")]
