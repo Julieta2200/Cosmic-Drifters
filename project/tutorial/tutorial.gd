@@ -186,6 +186,5 @@ func _selected_food():
 	game_manager.locked = false
 	text_dialog.appear("Selected food", boss.character_name, boss.character_sprite)
 
-
 func _table_clicked():
 	table_cursor.visible = false
