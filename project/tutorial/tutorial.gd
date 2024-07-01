@@ -13,6 +13,7 @@ var tutorial_mode: bool = false
 @onready var door = $details/door_animatedSprite2D
 @onready var spawn_point = $spawn_point
 @onready var computer = $clickable_objects/computer
+@onready var kitchen = $kitchen
 
 const _first_customers_cam_pos: Vector2 = Vector2(3230, 2044)
 const _waiter_approaches_cam_pos: Vector2 = Vector2(6536, 1327)
@@ -27,9 +28,9 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("left_click"):
-		if table_cursor.visible:
-			if groups["group_1"]._table.get_clickable_component().active:
-				_table_clicked()
+#		if table_cursor.visible:
+#			if groups["group_1"]._table.get_clickable_component().active:
+#				_table_clicked()
 		var clicked_obj = $cursor_manager.detect_object()
 		if clicked_obj is Table:
 			_table_clicked()
@@ -174,7 +175,6 @@ func _click_table():
 	table_cursor.position = Vector2(140,-18)
 	table_cursor.visible = true
 	text_dialog.appear("Click on the table to pick up the order", boss.character_name, boss.character_sprite)
-		
 	
 func _click_computer():
 	table_cursor.position = Vector2(330,-110)
@@ -183,8 +183,9 @@ func _click_computer():
 	text_dialog.appear("Click on the computer to select the order", boss.character_name, boss.character_sprite)
 
 func _selected_food():
-	game_manager.locked = false
 	text_dialog.appear("Selected food", boss.character_name, boss.character_sprite)
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer/dialog.disappear()
 
 func _table_clicked():
 	table_cursor.visible = false
