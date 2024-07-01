@@ -31,8 +31,7 @@ func _process(_delta):
 				_table_clicked()
 
 func intro_dialog():
-	#text_dialog.appear("Agent (Lumina), can you hear me?","????", boss.character_sprite)
-	text_dialog.appear(tr("hellxdfo"),"????", boss.character_sprite)
+	text_dialog.appear("Agent (Lumina), can you hear me?","????", boss.character_sprite)
 	_timer = Timer.new()
 	add_child(_timer)
 	_timer.one_shot = true
