@@ -100,7 +100,7 @@
 [ext_resource type="PackedScene" uid="uid://dlhg3xr3k7hc8" path="res://project/character/waiter_2/waiter_2.tscn" id="67_uro2u"]
 [ext_resource type="PackedScene" uid="uid://bs2hl8onbsd3q" path="res://project/character/waiter_3/waiter_3.tscn" id="69_3w8ui"]
 [ext_resource type="Texture2D" uid="uid://cn5hrae18lhmx" path="res://assets/Kitchen/Table/Table2.png" id="69_f70wo"]
-[ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://ui/ui.tscn" id="72_xu1wm"]
+[ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://project/ui/ui.tscn" id="72_xu1wm"]
 [ext_resource type="Script" path="res://project/level_1/Camera2D.gd" id="88_f7d8e"]
 [ext_resource type="Script" path="res://project/character/group.gd" id="93_twl1g"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
@@ -959,21 +959,19 @@ one_shot = true
 position = Vector2(2678, 1274)
 script = ExtResource("93_twl1g")
 
-[node name="enemies" type="Node2D" parent="group_1"]
-
-[node name="bunnyboo_sippers" parent="group_1/enemies" instance=ExtResource("61_yheks")]
+[node name="bunnyboo_sippers" parent="group_1" instance=ExtResource("61_yheks")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="cerulean_hoppers" parent="group_1/enemies" instance=ExtResource("62_wvuod")]
+[node name="cerulean_hoppers" parent="group_1" instance=ExtResource("62_wvuod")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="bunnyboo_sippers2" parent="group_1/enemies" instance=ExtResource("61_yheks")]
+[node name="bunnyboo_sippers2" parent="group_1" instance=ExtResource("61_yheks")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="twilight_tarsiers" parent="group_1/enemies" instance=ExtResource("60_rjade")]
+[node name="twilight_tarsiers" parent="group_1" instance=ExtResource("60_rjade")]
 position = Vector2(-3073, -1944)
 speed = 800.0
 
@@ -981,20 +979,18 @@ speed = 800.0
 position = Vector2(2678, 1274)
 script = ExtResource("93_twl1g")
 
-[node name="enemies" type="Node2D" parent="group_3"]
-
-[node name="bunnyboo_sippers" parent="group_3/enemies" instance=ExtResource("61_yheks")]
+[node name="bunnyboo_sippers" parent="group_3" instance=ExtResource("61_yheks")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="cerulean_hoppers" parent="group_3/enemies" instance=ExtResource("62_wvuod")]
+[node name="cerulean_hoppers" parent="group_3" instance=ExtResource("62_wvuod")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="frost_dumplings" parent="group_3/enemies" instance=ExtResource("64_nlrb5")]
+[node name="frost_dumplings" parent="group_3" instance=ExtResource("64_nlrb5")]
 position = Vector2(-3868, -1771)
 
-[node name="twilight_tarsiers" parent="group_3/enemies" instance=ExtResource("60_rjade")]
+[node name="twilight_tarsiers" parent="group_3" instance=ExtResource("60_rjade")]
 position = Vector2(-3073, -1944)
 speed = 800.0
 
@@ -1002,33 +998,29 @@ speed = 800.0
 position = Vector2(2678, 1274)
 script = ExtResource("93_twl1g")
 
-[node name="enemies" type="Node2D" parent="group_5"]
-
-[node name="cerulean_hoppers" parent="group_5/enemies" instance=ExtResource("62_wvuod")]
+[node name="cerulean_hoppers" parent="group_5" instance=ExtResource("62_wvuod")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="twilight_tarsiers" parent="group_5/enemies" instance=ExtResource("60_rjade")]
+[node name="twilight_tarsiers" parent="group_5" instance=ExtResource("60_rjade")]
 position = Vector2(-3073, -1944)
 speed = 800.0
 
-[node name="prismarities" parent="group_5/enemies" instance=ExtResource("65_pvxf5")]
+[node name="prismarities" parent="group_5" instance=ExtResource("65_pvxf5")]
 position = Vector2(-3862, -2395)
 
-[node name="munchkin_morsels" parent="group_5/enemies" instance=ExtResource("66_82ike")]
+[node name="munchkin_morsels" parent="group_5" instance=ExtResource("66_82ike")]
 position = Vector2(-3862, -2395)
 
 [node name="group_2" type="Node2D" parent="."]
 position = Vector2(2678, 1274)
 script = ExtResource("93_twl1g")
 
-[node name="enemies" type="Node2D" parent="group_2"]
-
-[node name="cerulean_hoppers" parent="group_2/enemies" instance=ExtResource("62_wvuod")]
+[node name="cerulean_hoppers" parent="group_2" instance=ExtResource("62_wvuod")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="twilight_tarsiers" parent="group_2/enemies" instance=ExtResource("60_rjade")]
+[node name="twilight_tarsiers" parent="group_2" instance=ExtResource("60_rjade")]
 position = Vector2(-3073, -1944)
 speed = 800.0
 
@@ -1036,13 +1028,11 @@ speed = 800.0
 position = Vector2(2678, 1274)
 script = ExtResource("93_twl1g")
 
-[node name="enemies" type="Node2D" parent="group_4"]
-
-[node name="bunnyboo_sippers3" parent="group_4/enemies" instance=ExtResource("61_yheks")]
+[node name="bunnyboo_sippers3" parent="group_4" instance=ExtResource("61_yheks")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="cerulean_hoppers2" parent="group_4/enemies" instance=ExtResource("62_wvuod")]
+[node name="cerulean_hoppers2" parent="group_4" instance=ExtResource("62_wvuod")]
 position = Vector2(-3081, -1828)
 speed = 800.0
 

@@ -10,6 +10,8 @@ var tutorial_mode: bool = false
 @onready var table_statuses: Control = $CanvasLayer/tutorial_assets/table_statuses
 @onready var table_cursor: Sprite2D = $clickable_objects/Table/cursor
 @onready var left_click: TextureRect = $CanvasLayer/tutorial_assets/left_click
+@onready var door = $details/door_animatedSprite2D
+@onready var spawn_point = $spawn_point
 
 const _first_customers_cam_pos: Vector2 = Vector2(3230, 2044)
 const _waiter_approaches_cam_pos: Vector2 = Vector2(6536, 1327)
@@ -25,11 +27,12 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("left_click"):
 		if table_cursor.visible:
-			if groups["group_1"]["table"].get_clickable_component().active:
+			if groups["group_1"]._table.get_clickable_component().active:
 				_table_clicked()
 
 func intro_dialog():
-	text_dialog.appear("Agent (Lumina), can you hear me?","????", boss.character_sprite)
+	#text_dialog.appear("Agent (Lumina), can you hear me?","????", boss.character_sprite)
+	text_dialog.appear(tr("hellxdfo"),"????", boss.character_sprite)
 	_timer = Timer.new()
 	add_child(_timer)
 	_timer.one_shot = true
@@ -94,16 +97,15 @@ func _first_customers():
 	game_manager.locked = true
 	camera.global_position = _first_customers_cam_pos
 	text_dialog.appear("First customers", boss.character_name, boss.character_sprite)
-	groups["group_1"] = {
+	var group = $group_1
+	group.set_group_obj({
 		"group": $group_1,
 		"table": $clickable_objects/Table,
 		"name": "group_1",
-		"orders": [],
-		"served": false,
-		"spawned": false,
+		"for_lumina": true,
 		"spawn_time": 5,
-	}
-	spawn(groups["group_1"])
+	})
+	groups["group_1"] = group
 	_reset_timer(9.0, _first_customers, _waiter_approaches)
 	
 func _waiter_approaches():

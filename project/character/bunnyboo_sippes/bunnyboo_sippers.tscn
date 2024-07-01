@@ -87,7 +87,6 @@ size = Vector2(14, 17)
 scale = Vector2(16, 16)
 script = ExtResource("1_gitro")
 character_name = "BUNNYBOO"
-charackter_sprite = ExtResource("12_088qh")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0.5, 7.0625)
