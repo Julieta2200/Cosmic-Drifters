@@ -12,6 +12,7 @@ var tutorial_mode: bool = false
 @onready var left_click: TextureRect = $CanvasLayer/tutorial_assets/left_click
 @onready var door = $details/door_animatedSprite2D
 @onready var spawn_point = $spawn_point
+@onready var computer = $clickable_objects/computer
 
 const _first_customers_cam_pos: Vector2 = Vector2(3230, 2044)
 const _waiter_approaches_cam_pos: Vector2 = Vector2(6536, 1327)
@@ -29,6 +30,14 @@ func _process(_delta):
 		if table_cursor.visible:
 			if groups["group_1"]._table.get_clickable_component().active:
 				_table_clicked()
+		var clicked_obj = $cursor_manager.detect_object()
+		if clicked_obj is Table:
+			_table_clicked()
+			_reset_timer(7.0, _click_table , _click_computer)
+		elif clicked_obj is Computer:
+			_table_clicked()
+			_reset_timer(2.0,_click_computer, _selected_food)
+		
 
 func intro_dialog():
 	text_dialog.appear("Agent (Lumina), can you hear me?","????", boss.character_sprite)
@@ -135,18 +144,48 @@ func _cook_1_brings_food():
 func _waiter_serves_food():
 	camera.global_position = _first_customers_cam_pos
 	text_dialog.appear("Food served", boss.character_name, boss.character_sprite)
+	_reset_timer(3.0, _waiter_serves_food , _coming_customers)
 
-#func _table_status_instructions():
-#	table_statuses.visible = true
-#	text_dialog.appear("Table statuses", boss.character_name, boss.character_sprite)
-#	_reset_timer(4.0, _table_status_instructions, _click_table)
-#
-#func _click_table():
-#	table_statuses.visible = false
-#	table_cursor.visible = true
-#	game_manager.locked = false
-#	camera.locked = false
-#	text_dialog.appear("Click table", boss.character_name, boss.character_sprite)
+func _coming_customers():
+	camera.global_position = door.position
+	text_dialog.appear("The guests arrived", boss.character_name, boss.character_sprite)
+	var group = $group_3
+	group.set_group_obj({
+		"group": $group_3,
+		"table": $clickable_objects/Table2,
+		"name": "group_3",
+		"for_lumina": true,
+		"spawn_time": 2,
+	})
+	await get_tree().create_timer(4).timeout
+	camera.global_position = group._table.global_position
+	groups["group_3"] = group
+	_reset_timer(6.0, _coming_customers, _table_status_instructions)
 	
+func _table_status_instructions():
+	table_statuses.visible = true
+	text_dialog.appear("Explanation of statuses", boss.character_name, boss.character_sprite)
+	_reset_timer(7.0, _table_status_instructions, _click_table)
+
+func _click_table():
+	camera.locked = false
+	game_manager.locked = false
+	table_statuses.visible = false
+	table_cursor.position = Vector2(140,-18)
+	table_cursor.visible = true
+	text_dialog.appear("Click on the table to pick up the order", boss.character_name, boss.character_sprite)
+		
+	
+func _click_computer():
+	table_cursor.position = Vector2(330,-110)
+	table_cursor.visible = true
+	camera.global_position = computer.global_position
+	text_dialog.appear("Click on the computer to select the order", boss.character_name, boss.character_sprite)
+
+func _selected_food():
+	game_manager.locked = false
+	text_dialog.appear("Selected food", boss.character_name, boss.character_sprite)
+
+
 func _table_clicked():
 	table_cursor.visible = false
