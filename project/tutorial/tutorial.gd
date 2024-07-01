@@ -136,17 +136,17 @@ func _waiter_serves_food():
 	camera.global_position = _first_customers_cam_pos
 	text_dialog.appear("Food served", boss.character_name, boss.character_sprite)
 
-func _table_status_instructions():
-	table_statuses.visible = true
-	text_dialog.appear("Table statuses", boss.character_name, boss.character_sprite)
-	_reset_timer(4.0, _table_status_instructions, _click_table)
-	
-func _click_table():
-	table_statuses.visible = false
-	table_cursor.visible = true
-	game_manager.locked = false
-	camera.locked = false
-	text_dialog.appear("Click table", boss.character_name, boss.character_sprite)
+#func _table_status_instructions():
+#	table_statuses.visible = true
+#	text_dialog.appear("Table statuses", boss.character_name, boss.character_sprite)
+#	_reset_timer(4.0, _table_status_instructions, _click_table)
+#
+#func _click_table():
+#	table_statuses.visible = false
+#	table_cursor.visible = true
+#	game_manager.locked = false
+#	camera.locked = false
+#	text_dialog.appear("Click table", boss.character_name, boss.character_sprite)
 	
 func _table_clicked():
 	table_cursor.visible = false
