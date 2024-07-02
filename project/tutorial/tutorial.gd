@@ -189,3 +189,6 @@ func _selected_food():
 
 func _table_clicked():
 	table_cursor.visible = false
+
+func _on_door_animated_sprite_2d_animation_finished():
+	$details/door_animatedSprite2D.play("idle")
