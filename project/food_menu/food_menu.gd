@@ -1,9 +1,10 @@
-extends Control
+class_name FoodMenu extends Control
 
 var s
-var table
+var table: Table
 @onready var selected_foods = $main_panel/selected_foods
 @onready var ok_btn = $ok
+@onready var computer: Computer = $"../../clickable_objects/computer"
 func _ready():
 		fill_food_container(Food.HOT_DISH)
 
@@ -55,7 +56,7 @@ func select_food(food):
 			check_ok_status()
 			return
 	
-func set_table(t):
+func set_table(t: Table):
 	table = t
 	$table_number/Label.text = "N " + str(table.number)
 	set_selected_foods()
@@ -72,9 +73,7 @@ func check_ok_status():
 			return
 	
 	ok_btn.disabled = false
-	
 
-	
 
 func close_menu():
 	for selected_food in selected_foods.get_children():
@@ -91,4 +90,5 @@ func _on_ok_pressed():
 			foods.append(food)
 	
 	table.set_actual_order(foods)
+	computer.order_inserted()
 	close_menu()

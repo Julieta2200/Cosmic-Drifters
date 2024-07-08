@@ -1,10 +1,10 @@
-extends Control
+class_name OrdersMenu extends Control
 
 @onready var orders = $main_panel/orders
-var player
+var player: Player
 var orders_tables = {}
 
-func load_tables(plates, p):
+func load_tables(plates, p: Player):
 	player = p
 	var ords = orders.get_children()
 	for o in ords:
@@ -14,14 +14,14 @@ func load_tables(plates, p):
 	
 	# set orders
 	var index = 0
-	for group in plates:
-		if group._for_lumina:
+	for table in plates:
+		if table.for_lumina():
 			ords[index].visible = true
-			ords[index].table_number.text = "N "+str(group._table.number)
-			orders_tables[ords[index]] = group._table
+			ords[index].table_number.text = "N "+str(table.number)
+			orders_tables[ords[index]] = table
 			ords[index].pick_btn.disabled = !player.have_empty_slot()
 			var j = 0
-			for food in group._table.actual_order:
+			for food in table.actual_order:
 				var f = ords[index].foods.get_children()[j]
 				f.get_child(0).texture = load(food["texture"])
 				f.visible = true

@@ -12,10 +12,11 @@ const ORDER_INTERVAL: int = 1
 @export var cooldown_time : float = 1
 @export var number: int
 
+@export var level: Level
+
 var rng = RandomNumberGenerator.new()
-var waiter
-@onready var level = $"../.."
-var group
+var waiter: Waiter
+var group: Group
 var eavesdropping_extent = 0
 var suspect_unit  = 10
 var cooldown_unit = 10
@@ -85,6 +86,7 @@ func remove_plates():
 		if plates_to_remove.has(p):
 			plate.get_children()[p].visible = false
 	group.waiting_for_check()
+	level.cafe_manager.ask_for_check(self)
 	food_action = false
 
 func ordered(a_orders):
@@ -92,31 +94,20 @@ func ordered(a_orders):
 	waiter.ordered(self)
 	food_action = false
 
-func order_delivered():
-	level.order_delivered(group)
-	
-func action_complete(action, caller):
-	match action:
-		"ask_order":
-			food_action = true
-			call_orders(caller)
-		"serve_food":
-			food_action = true
-			caller.get_food(self)
-		"serve_check":
-			food_action = true
-			caller.get_check(self)
-			group.serve_end()
-			
+func serve_end():
+	group.serve_end()
+
 
 func set_actual_order(foods):
 	actual_order = foods
 	waiter.busy = false
-	level.computer.order_inserted(self)
-	level.kitchen.add_order(self)
+	level.cafe_manager.add_order(self)
 
 func set_true_actual_order(foods):
 	actual_order = foods
+
+func for_lumina() -> bool:
+	return group._for_lumina
 
 func _on_whisper_area_body_entered(body):
 	if body is Player:
@@ -146,8 +137,8 @@ func set_whispere_meter():
 func get_clickable_component():
 	return $clickable_component
 	
-func _process(delta):
-	if group && group.group_current_status == group.STATUS_EMPTY:
+func _process(_delta):
+	if group && group.current_status == group.STATUS_EMPTY:
 		$whisper_meter.visible = false
 		return
 	if food_action:

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://pat6q66q14uf"]
+
+[ext_resource type="Script" path="res://project/character/group.gd" id="1_6nk82"]
+[ext_resource type="PackedScene" uid="uid://bt7yhx8mojj0m" path="res://project/character/bunnyboo_sippes/bunnyboo_sippers.tscn" id="2_3frnm"]
+[ext_resource type="PackedScene" uid="uid://bsncelllnchub" path="res://project/character/cerulean_hoppers/cerulean_hoppers.tscn" id="3_a8fy3"]
+[ext_resource type="PackedScene" uid="uid://dl1thhd2djkjj" path="res://project/character/twilight_tarsiers/twilight_tarsiers.tscn" id="4_nxddn"]
+
+[node name="group_1" type="Node2D"]
+position = Vector2(2678, 1274)
+script = ExtResource("1_6nk82")
+_spawn_time = 5.0
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="bunnyboo_sippers" parent="enemies" instance=ExtResource("2_3frnm")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="cerulean_hoppers" parent="enemies" instance=ExtResource("3_a8fy3")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="bunnyboo_sippers2" parent="enemies" instance=ExtResource("2_3frnm")]
+position = Vector2(-3081, -1828)
+speed = 800.0
+
+[node name="twilight_tarsiers" parent="enemies" instance=ExtResource("4_nxddn")]
+position = Vector2(-3073, -1944)
+speed = 800.0
+
+[connection signal="ready_exit" from="." to="." method="_on_ready_exit"]
+[connection signal="ready_sit" from="." to="." method="_on_ready_sit"]

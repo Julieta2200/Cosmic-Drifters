@@ -2,8 +2,9 @@ class_name Character extends CharacterBody2D
 
 var position_delta: float
 var path: PackedVector2Array 
-var action_holder :Node2D
-var ch_action
+var _signal: Signal
+var _signal_param
+
 @export var character_name : String
 @export var character_sprite : Texture
 @onready var navigation_agent = $NavigationAgent2D
@@ -35,8 +36,11 @@ func move() -> void:
 	if global_position.distance_to(path[0]) < position_delta:
 		path.remove_at(0)
 		animation()
-		if path.is_empty() and action_holder != null:
-			action_holder.action_complete(ch_action, self)
+		if path.is_empty():
+			if _signal_param != null:
+				_signal.emit(_signal_param)
+			else:
+				_signal.emit()
 	
 
 
@@ -58,8 +62,9 @@ func start_movement(target: Vector2) -> void:
 	path = navigation_agent.get_current_navigation_path()
 	animation()
 
-func walk_to(node : Node2D ,pos: Vector2 , action):
+func walk_to(pos: Vector2 , sig: Signal, sig_param = null):
 	start_movement(pos)
-	action_holder = node
-	ch_action = action
+	_signal = sig
+	_signal_param = sig_param
+	
 	

@@ -1,15 +1,14 @@
-extends Waiter
+class_name Player extends Waiter
 
-class_name Player
-
-@onready var level = $"../.."
-
-var desk
-var computer
+var desk: Desk
+var computer: Computer
 var expected_mask
 var previous_character
 
-@export var ui: Control
+signal ready_input_order
+signal ready_choose_order
+
+@export var ui: TopUI
 
 func check_queue():
 	pass
@@ -22,53 +21,47 @@ func _ready():
 	animation()
 
 func interact_table(table):
-	match table.group.group_current_status:
+	match table.group.current_status:
 		table.group.STATUS_ASKING_FOR_WAITER:
-			ask_order(table)
+			walk_to_table(table, ready_take_order)
 		table.group.STATUS_WAITING_FOR_FOOD:
-			serve_food(table)
+			walk_to_table(table, ready_give_order)
 		table.group.STATUS_WAITING_FOR_CHECK:
-			serve_check(table)
+			walk_to_table(table, ready_give_check)
 
-func serve_check(table):
-	busy = true
-	var serve_point = table.get_serve_point()
-	walk_to(table, serve_point, "serve_check")
-	
-func ask_order(table):
-	busy = true
-	var serve_point = table.get_serve_point()
-	walk_to(table, serve_point, "ask_order")
-	
-func get_food(table):
+func give_order(table: Table):
 	var index = ui.get_item_index(table)
 	if index == -1:
 		busy = false
 		return
+	super.give_order(table)
 	ui.remove_item(index)
-	table.add_plates()
-	busy = false
-	
-func get_check(table):
-	busy = false
 
-func serve_food(table):
+func walk_to_table(table: Table, sig: Signal):
 	busy = true
 	var serve_point = table.get_serve_point()
-	walk_to(table, serve_point, "serve_food")
+	walk_to(serve_point, sig, table)
+	
+func ordered(table):
+	busy = false
+	level.computer.add_table(table)
 
-func input_order(c):
+
+func walk_to_computer(c: Computer):
 	computer = c
 	busy = true
-	walk_to(computer, computer.use_point.global_position, "input_order")
+	walk_to(computer.use_point.global_position, ready_input_order)
 
-func pick_order(d):
+func input_order():
+	computer.open(self)
+
+func walk_to_desk(d: Desk):
 	desk = d
 	busy = true
-	walk_to(desk, desk.use_point.global_position, "pick_order")
+	walk_to(desk.use_point.global_position, ready_choose_order)
 
 func pick_plates(table):
-	desk.remove_plate(table.group)
+	desk.remove_plate(table)
 	ui.add_item(table)
 
 func have_empty_slot():
@@ -126,7 +119,7 @@ func _on_animated_sprite_2d_animation_finished():
 	set_mask(expected_mask)
 	busy = false
 
-func change_character(character, character_name):
+func change_character(character, _character_name):
 	if character.texture != character_sprite:
 		for i in $characters_panel.get_child_count():
 			if i > 0 :
@@ -134,11 +127,15 @@ func change_character(character, character_name):
 					$characters_panel.get_child(i).get_child(0).texture = previous_character
 					
 		character.texture = character_sprite
-		morph(character_name)
+		morph(_character_name)
 	else:
 		morph(LUMINA)
 		character.texture = previous_character
 
-func ordered(table):
-	busy = false
-	level.computer.add_table(table)
+
+
+func _on_ready_input_order():
+	input_order()
+
+func _on_ready_choose_order():
+	desk.open(self)

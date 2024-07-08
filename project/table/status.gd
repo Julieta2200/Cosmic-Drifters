@@ -97,7 +97,7 @@ func timer_reset_start(time):
 	stage_timer.start()
 
 func eating_timer_reset_start(time):
-	eating_stage_timer.wait_time = time
+	eating_stage_timer.wait_time = time + 0.1
 	eating_stage_timer.start()
 
 func get_current_stage():

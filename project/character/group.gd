@@ -1,14 +1,4 @@
-extends Node2D
-
-var _spawn_time = 0
-var _for_lumina
-var _table
-var _served = false
-var _name
-var _orders = []
-
-@onready var _enemies_cont = $enemies
-var _status
+class_name Group extends Node2D
 
 enum {
 	STATUS_EMPTY,
@@ -18,55 +8,37 @@ enum {
 	STATUS_WAITING_FOR_CHECK,
 	STATUS_SERVE_END
 }
-var group_current_status = STATUS_EMPTY
+
+@export var level: Level
+@export var _spawn_time: float 
+@export var _for_lumina: bool
+@export var _table: Table
+
+@onready var _enemies_cont = $enemies
+
+var table_status
+
+
+var current_status = STATUS_EMPTY
 
 var enemies
 
 const SPAWN_DELAY = 1
 const ORDER_INTERVAL = 1
 
-@onready var level = $".."
-
 var _spawn_index = 0
 var _timer
 
 var _order_index = 0
 
+signal ready_sit(index: int)
+signal ready_exit(index: int)
+
 func _ready():
 	enemies = _enemies_cont.get_children()
-	
-func _create_timer(time, one_shot, timeout_callback):
-	_timer = Timer.new()
-	add_child(_timer)
-	_timer.wait_time = time
-	_timer.one_shot = one_shot
-	_timer.connect("timeout", timeout_callback)
-	_timer.start()
-	
-func set_group_obj(_group_obj):
-	_spawn_time = _group_obj["spawn_time"]
-	_for_lumina = _group_obj["for_lumina"]
-	_table = _group_obj["table"]
 	_table.group = self
-	_status = _table.group_status
-	_name = _group_obj["name"]
-	_create_timer(_group_obj["spawn_time"], true, _spawn)
-	
-func leave():
-	group_current_status = STATUS_EMPTY
-	_create_timer(1.0, true, _leave)
-	
-func _leave():
-	if _spawn_index == enemies.size():
-		_spawn_index = 0
-		return
-	var enemy = enemies[_spawn_index]
-	var chair = _table.leave_chair(_spawn_index)
-	enemy.spawn(chair.global_position)
-	enemy.walk_to(self, level.door.global_position, _name+":"+str(_spawn_index)+":leave")
-	_spawn_index += 1
-	_timer.wait_time = SPAWN_DELAY
-	_timer.start()
+	table_status = _table.group_status
+	_create_timer(_spawn_time, true, _spawn)
 
 func _spawn():
 	if _spawn_index == 0:
@@ -77,7 +49,31 @@ func _spawn():
 	var enemy = enemies[_spawn_index]
 	enemy.spawn(level.spawn_point.global_position)
 	var chair = _table.get_chair(_spawn_index)
-	enemy.walk_to(self, chair.global_position, _name+":"+str(_spawn_index)+":sit")
+	enemy.walk_to(chair.global_position, ready_sit, _spawn_index)
+	_spawn_index += 1
+	_timer.wait_time = SPAWN_DELAY
+	_timer.start()
+
+func _create_timer(time, one_shot, timeout_callback):
+	_timer = Timer.new()
+	add_child(_timer)
+	_timer.wait_time = time
+	_timer.one_shot = one_shot
+	_timer.connect("timeout", timeout_callback)
+	_timer.start()
+
+func leave():
+	current_status = STATUS_EMPTY
+	_create_timer(1.0, true, _leave)
+	
+func _leave():
+	if _spawn_index == enemies.size():
+		_spawn_index = 0
+		return
+	var enemy: Enemy = enemies[_spawn_index]
+	var chair = _table.leave_chair(_spawn_index)
+	enemy.spawn(chair.global_position)
+	enemy.walk_to(level.door.global_position, ready_exit, _spawn_index)
 	_spawn_index += 1
 	_timer.wait_time = SPAWN_DELAY
 	_timer.start()
@@ -89,48 +85,28 @@ func _order():
 	if _order_index == enemies.size():
 		return
 	var enemy = enemies[_order_index]
-	var food = enemy.order(_order_index)
+	enemy.order(_order_index)
 	_order_index += 1
 	_timer.wait_time = ORDER_INTERVAL
 	_timer.start()
-	
 
-func action_complete(a: String, caller):
-	var action := a.split(":")
-	if len(action) < 3:
-		return
-	
-	var number = int(action[1])
-	match action[2]:
-		"sit":
-			var chair = _table.sit(number, caller.whisper_coef)
-			caller.global_position = chair.global_position
-			if number == len(enemies) - 1:
-				serve()
-		"leave":
-			enemies[number].spawn(Vector2(-1000, -1000))
-
-
-func serve():
+func _ask_for_waiter():
 	if _for_lumina:
-		group_current_status = STATUS_ASKING_FOR_WAITER
-		_status.ask_waiter()
+		current_status = STATUS_ASKING_FOR_WAITER
+		table_status.ask_waiter()
 		return
-	if _served:
-		return
-	_served = true
-	var serve_point = _table.get_serve_point()
-	level.waiter_queue.append({"func": "walk_to", "params": serve_point, "action": _name+"::ask_order"})
+	level.cafe_manager.ask_waiters(self)
+	
 
 func ordered(enemy_i):
-	_status.pause_timer()
+	table_status.pause_timer()
 	if enemy_i == len(enemies) - 1:
 		_table.ordered(get_orders())
 		waiting_for_food()
 		
 func waiting_for_food():
-	group_current_status = STATUS_WAITING_FOR_FOOD
-	_status.waiting_for_food()
+	current_status = STATUS_WAITING_FOR_FOOD
+	table_status.waiting_for_food()
 	
 func eating_food(actual_order):
 	var right_count = 0
@@ -153,20 +129,33 @@ func eating_food(actual_order):
 				break
 		if !found:
 			enemies[f].set_angry()
-	group_current_status = STATUS_EATING_FOOD
-	_status.eating_food(right_count)
+	current_status = STATUS_EATING_FOOD
+	table_status.eating_food(right_count)
 	return plates_to_remove
 
 func waiting_for_check():
-	group_current_status = STATUS_WAITING_FOR_CHECK
-	_status.waiting_for_check()
+	current_status = STATUS_WAITING_FOR_CHECK
+	table_status.waiting_for_check()
 	
 func serve_end():
-	group_current_status = STATUS_SERVE_END
-	_status.serve_end()
+	current_status = STATUS_SERVE_END
+	table_status.serve_end()
+	leave()
 
 func get_orders():
 	var orders = []
 	for ei in enemies.size():
 		orders.append(enemies[ei].get_food())
 	return orders
+
+func _on_ready_sit(index: int):
+	var chair = _table.sit(index, enemies[index].whisper_coef)
+	enemies[index].global_position = chair.global_position
+	if index == len(enemies) - 1:
+		_ask_for_waiter()
+
+func get_table() -> Table:
+	return _table
+
+func _on_ready_exit(index):
+	enemies[index].spawn(Vector2(0,0))

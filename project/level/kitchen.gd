@@ -1,37 +1,31 @@
-extends Node2D
+class_name Kitchen extends Node2D
 
-var orders = []
-enum {PENDING, PREPARED, PICKED, DELIVERED}
+var orders: Array[Order] = []
 
-@export var cooks: Array[Node2D]
+@export var cooks: Array[Cook]
 @export var desk_point: Node2D
+
+@onready var cafe_manager: CafeManager = $"../cafe_manager"
 
 func _ready():
 	for cook in cooks:
 		cook.set_kitchen(self)
 
-func add_order(table):
-	var timer = get_tree().create_timer(5)
-	orders.append({"table": table, "timer": timer, "status": PENDING, "cook": null})
+func add_order(table: Table):
+	var order: Order = Order.new(table)
+	add_child(order)
+	orders.append(order)
 
 func _process(_delta):
 	for order in orders:
-		if order["status"] == PENDING && order["timer"].time_left == 0.0:
-			order_prepared(order)
-	
-	for order in orders:
-		if order["status"] == PREPARED:
+		if order.is_prepared():
 			for cook in cooks:
 				if !cook.busy:
 					cook.pick_order(order)
 					break
-			if order["status"] == PICKED:
+			if order.is_picked():
 				break
-
-func order_prepared(order):
-	order["status"] = PREPARED
 	
-func action_complete(order, cook):
-	order["status"] = DELIVERED
-	order["table"].order_delivered()
-	cook.walk_to(cook, cook.origin_position, null)
+func order_delivered(order: Order):
+	order.delivered()
+	cafe_manager.order_ready(order.table)

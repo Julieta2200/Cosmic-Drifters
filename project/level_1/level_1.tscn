@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=122 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -88,24 +88,20 @@
 [ext_resource type="Texture2D" uid="uid://d2efn21dqgvbb" path="res://assets/Kitchen/Table/Table1.png" id="58_6m4aq"]
 [ext_resource type="Texture2D" uid="uid://csg6bosdsvhsd" path="res://assets/details/Seaweed_Shadow.png" id="58_be5dh"]
 [ext_resource type="PackedScene" uid="uid://d34mkuf7wsay2" path="res://project/table/table_small.tscn" id="59_80aps"]
-[ext_resource type="PackedScene" uid="uid://dl1thhd2djkjj" path="res://project/character/twilight_tarsiers/twilight_tarsiers.tscn" id="60_rjade"]
 [ext_resource type="PackedScene" uid="uid://d3eghgca6xgvb" path="res://project/table/table.tscn" id="61_44c81"]
-[ext_resource type="PackedScene" uid="uid://bt7yhx8mojj0m" path="res://project/character/bunnyboo_sippes/bunnyboo_sippers.tscn" id="61_yheks"]
-[ext_resource type="PackedScene" uid="uid://bsncelllnchub" path="res://project/character/cerulean_hoppers/cerulean_hoppers.tscn" id="62_wvuod"]
 [ext_resource type="PackedScene" uid="uid://cjagok857by7o" path="res://project/character/waiter_1/waiter_1.tscn" id="63_7uax7"]
-[ext_resource type="PackedScene" uid="uid://bxr0iy23ubcla" path="res://project/character/frost_dumplings/frost_dumplings.tscn" id="64_nlrb5"]
 [ext_resource type="Script" path="res://project/level/kitchen.gd" id="65_bnd8v"]
-[ext_resource type="PackedScene" uid="uid://7njhwo26o2yf" path="res://project/character/prismarities/prismarities.tscn" id="65_pvxf5"]
-[ext_resource type="PackedScene" uid="uid://7k6qxbu2nrsc" path="res://project/character/munchkin_morsels/munchkin_morsels.tscn" id="66_82ike"]
 [ext_resource type="PackedScene" uid="uid://dlhg3xr3k7hc8" path="res://project/character/waiter_2/waiter_2.tscn" id="67_uro2u"]
 [ext_resource type="PackedScene" uid="uid://bs2hl8onbsd3q" path="res://project/character/waiter_3/waiter_3.tscn" id="69_3w8ui"]
 [ext_resource type="Texture2D" uid="uid://cn5hrae18lhmx" path="res://assets/Kitchen/Table/Table2.png" id="69_f70wo"]
 [ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://ui/ui.tscn" id="72_xu1wm"]
 [ext_resource type="Script" path="res://project/level_1/Camera2D.gd" id="88_f7d8e"]
-[ext_resource type="Script" path="res://project/character/group.gd" id="93_twl1g"]
+[ext_resource type="PackedScene" uid="uid://pat6q66q14uf" path="res://project/groups/level_1/group_1.tscn" id="94_fnmwe"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
+[ext_resource type="PackedScene" uid="uid://dhqgjvcudxrn3" path="res://project/groups/level_1/group_2.tscn" id="95_t1hhy"]
 [ext_resource type="PackedScene" uid="uid://rskgob6ktuy5" path="res://project/level_1/desk_plates.tscn" id="103_6qy7u"]
 [ext_resource type="PackedScene" uid="uid://db5ni7xhg3prs" path="res://project/orders_menu/orders_menu.tscn" id="105_2ytgh"]
+[ext_resource type="Script" path="res://project/level/cafe_manager.gd" id="105_glat7"]
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="106_vukck"]
 [ext_resource type="PackedScene" uid="uid://b5cci4tas6o75" path="res://project/pause/pause.tscn" id="107_20isj"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="107_c12nv"]
@@ -421,7 +417,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(191, 542, 385, 540, 384
 
 [node name="level_1" type="Node2D" node_paths=PackedStringArray("computer")]
 y_sort_enabled = true
-position = Vector2(0, -1)
+position = Vector2(0, 3)
 script = ExtResource("1_pbq2x")
 computer = NodePath("clickable_objects/computer")
 
@@ -883,9 +879,10 @@ walking_area = NodePath("../walking_area")
 [node name="clickable_objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui") instance=ExtResource("25_6bfeo")]
+[node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui", "level") instance=ExtResource("25_6bfeo")]
 position = Vector2(2479, 1157)
 ui = NodePath("../../CanvasLayer/ui")
+level = NodePath("../..")
 speed = 800.0
 
 [node name="Camera2D" type="Camera2D" parent="clickable_objects/player"]
@@ -896,37 +893,45 @@ limit_right = 11500
 limit_bottom = 8900
 script = ExtResource("88_f7d8e")
 
-[node name="Table" parent="clickable_objects" instance=ExtResource("61_44c81")]
+[node name="Table" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("61_44c81")]
 position = Vector2(2865, 2656)
 number = 1
+level = NodePath("../..")
 
-[node name="Table2" parent="clickable_objects" instance=ExtResource("61_44c81")]
+[node name="Table2" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("61_44c81")]
 position = Vector2(4800, 2277)
 number = 2
+level = NodePath("../..")
 
-[node name="Table3" parent="clickable_objects" instance=ExtResource("61_44c81")]
+[node name="Table3" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("61_44c81")]
 position = Vector2(6526, 2656)
 number = 3
+level = NodePath("../..")
 
-[node name="Table4" parent="clickable_objects" instance=ExtResource("61_44c81")]
+[node name="Table4" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("61_44c81")]
 position = Vector2(6528, 4292)
 number = 4
+level = NodePath("../..")
 
-[node name="Table5" parent="clickable_objects" instance=ExtResource("61_44c81")]
+[node name="Table5" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("61_44c81")]
 position = Vector2(4781, 4889)
 number = 5
+level = NodePath("../..")
 
-[node name="Table6" parent="clickable_objects" instance=ExtResource("61_44c81")]
+[node name="Table6" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("61_44c81")]
 position = Vector2(2839, 4290)
 number = 6
+level = NodePath("../..")
 
-[node name="TableSmall" parent="clickable_objects" instance=ExtResource("59_80aps")]
+[node name="TableSmall" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("59_80aps")]
 position = Vector2(3631, 3351)
 number = 7
+level = NodePath("../..")
 
-[node name="TableSmall2" parent="clickable_objects" instance=ExtResource("59_80aps")]
+[node name="TableSmall2" parent="clickable_objects" node_paths=PackedStringArray("level") instance=ExtResource("59_80aps")]
 position = Vector2(5700, 3345)
 number = 8
+level = NodePath("../..")
 
 [node name="desk_plates" parent="clickable_objects" instance=ExtResource("103_6qy7u")]
 position = Vector2(6911, 896)
@@ -955,111 +960,30 @@ polygon = PackedVector2Array(0, 416, 0, 323, -45, 323, -61, 316, -69, 316, -61, 
 wait_time = 500.0
 one_shot = true
 
-[node name="group_1" type="Node2D" parent="."]
-position = Vector2(2678, 1274)
-script = ExtResource("93_twl1g")
+[node name="group_1" parent="." node_paths=PackedStringArray("level", "_table") instance=ExtResource("94_fnmwe")]
+level = NodePath("..")
+_for_lumina = true
+_table = NodePath("../clickable_objects/Table")
 
-[node name="enemies" type="Node2D" parent="group_1"]
+[node name="group_2" parent="." node_paths=PackedStringArray("level", "_table") instance=ExtResource("95_t1hhy")]
+level = NodePath("..")
+_spawn_time = 10.0
+_table = NodePath("../clickable_objects/Table2")
 
-[node name="bunnyboo_sippers" parent="group_1/enemies" instance=ExtResource("61_yheks")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="cerulean_hoppers" parent="group_1/enemies" instance=ExtResource("62_wvuod")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="bunnyboo_sippers2" parent="group_1/enemies" instance=ExtResource("61_yheks")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="twilight_tarsiers" parent="group_1/enemies" instance=ExtResource("60_rjade")]
-position = Vector2(-3073, -1944)
-speed = 800.0
-
-[node name="group_3" type="Node2D" parent="."]
-position = Vector2(2678, 1274)
-script = ExtResource("93_twl1g")
-
-[node name="enemies" type="Node2D" parent="group_3"]
-
-[node name="bunnyboo_sippers" parent="group_3/enemies" instance=ExtResource("61_yheks")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="cerulean_hoppers" parent="group_3/enemies" instance=ExtResource("62_wvuod")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="frost_dumplings" parent="group_3/enemies" instance=ExtResource("64_nlrb5")]
-position = Vector2(-3868, -1771)
-
-[node name="twilight_tarsiers" parent="group_3/enemies" instance=ExtResource("60_rjade")]
-position = Vector2(-3073, -1944)
-speed = 800.0
-
-[node name="group_5" type="Node2D" parent="."]
-position = Vector2(2678, 1274)
-script = ExtResource("93_twl1g")
-
-[node name="enemies" type="Node2D" parent="group_5"]
-
-[node name="cerulean_hoppers" parent="group_5/enemies" instance=ExtResource("62_wvuod")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="twilight_tarsiers" parent="group_5/enemies" instance=ExtResource("60_rjade")]
-position = Vector2(-3073, -1944)
-speed = 800.0
-
-[node name="prismarities" parent="group_5/enemies" instance=ExtResource("65_pvxf5")]
-position = Vector2(-3862, -2395)
-
-[node name="munchkin_morsels" parent="group_5/enemies" instance=ExtResource("66_82ike")]
-position = Vector2(-3862, -2395)
-
-[node name="group_2" type="Node2D" parent="."]
-position = Vector2(2678, 1274)
-script = ExtResource("93_twl1g")
-
-[node name="enemies" type="Node2D" parent="group_2"]
-
-[node name="cerulean_hoppers" parent="group_2/enemies" instance=ExtResource("62_wvuod")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="twilight_tarsiers" parent="group_2/enemies" instance=ExtResource("60_rjade")]
-position = Vector2(-3073, -1944)
-speed = 800.0
-
-[node name="group_4" type="Node2D" parent="."]
-position = Vector2(2678, 1274)
-script = ExtResource("93_twl1g")
-
-[node name="enemies" type="Node2D" parent="group_4"]
-
-[node name="bunnyboo_sippers3" parent="group_4/enemies" instance=ExtResource("61_yheks")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="cerulean_hoppers2" parent="group_4/enemies" instance=ExtResource("62_wvuod")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="Waiter_1" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("63_7uax7")]
+[node name="Waiter_1" parent="." node_paths=PackedStringArray("level", "desk_point") instance=ExtResource("63_7uax7")]
 position = Vector2(6536, 1327)
-lvl = NodePath("..")
+level = NodePath("..")
 desk_point = NodePath("../waiter_1_point")
 speed = 800.0
 
-[node name="waiter_2" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("67_uro2u")]
+[node name="waiter_2" parent="." node_paths=PackedStringArray("level", "desk_point") instance=ExtResource("67_uro2u")]
 position = Vector2(6909, 1320)
-lvl = NodePath("..")
+level = NodePath("..")
 desk_point = NodePath("../waiter_2_point")
 
-[node name="Waiter_3" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("69_3w8ui")]
+[node name="Waiter_3" parent="." node_paths=PackedStringArray("level", "desk_point") instance=ExtResource("69_3w8ui")]
 position = Vector2(7286, 1334)
-lvl = NodePath("..")
+level = NodePath("..")
 desk_point = NodePath("../waiter_3_point")
 
 [node name="waiter_1_point" type="Marker2D" parent="."]
@@ -1099,4 +1023,5 @@ position = Vector2(9570, 5002)
 [node name="Cook_2" parent="." instance=ExtResource("107_c12nv")]
 position = Vector2(10869, 5009)
 
-[connection signal="animation_finished" from="details/door_animatedSprite2D" to="." method="_on_door_animated_sprite_2d_animation_finished"]
+[node name="cafe_manager" type="Node2D" parent="."]
+script = ExtResource("105_glat7")

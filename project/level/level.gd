@@ -8,6 +8,7 @@ const ORDER_TIME: int = 1
 var waiter_queue = []
 
 var groups = {}
+@onready var cafe_manager: CafeManager = $cafe_manager
 
 func _ready():
 	$Timer.wait_time = level_time

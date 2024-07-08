@@ -64,7 +64,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Cool_2" type="CharacterBody2D"]
+[node name="Cook_2" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_f7rur")
 speed = 800.0
@@ -80,3 +80,6 @@ autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickable_component"]
 polygon = PackedVector2Array(-6, -7, 5, -7, 5, 7, -6, 7)
+
+[connection signal="order_delivered" from="." to="." method="_on_order_delivered"]
+[connection signal="returned_to_origin" from="." to="." method="_on_returned_to_origin"]

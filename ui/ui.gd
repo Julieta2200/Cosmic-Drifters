@@ -1,4 +1,4 @@
-extends Control
+class_name TopUI extends Control
 
 var add_minutes = 15
 var items = {}
