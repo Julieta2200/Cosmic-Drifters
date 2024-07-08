@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7njhwo26o2yf"]
+[gd_scene load_steps=16 format=3 uid="uid://7njhwo26o2yf"]
 
 [ext_resource type="Texture2D" uid="uid://dn7d8mwyfamme" path="res://assets/Prismarities/shadow.png" id="1_ggkf8"]
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_qh3jx"]
@@ -79,11 +79,13 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pfxk"]
+size = Vector2(8.75, 5.8125)
+
 [node name="prismarities" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_qh3jx")
 character_name = "PRISMA"
-charackter_sprite = ExtResource("5_iajly")
 speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
@@ -108,5 +110,9 @@ one_shot = true
 visible = false
 position = Vector2(-7.375, -11)
 texture = ExtResource("13_t303v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5625, 6.0625)
+shape = SubResource("RectangleShape2D_3pfxk")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

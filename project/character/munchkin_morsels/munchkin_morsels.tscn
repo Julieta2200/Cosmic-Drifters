@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://7k6qxbu2nrsc"]
+[gd_scene load_steps=15 format=3 uid="uid://7k6qxbu2nrsc"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_0n30y"]
 [ext_resource type="Texture2D" uid="uid://5lxyems8rjy1" path="res://assets/Munchkin Morsels/shadow.png" id="1_a728u"]
@@ -78,11 +78,13 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s0sc"]
+size = Vector2(14.75, 7.125)
+
 [node name="munchkin_morsels" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_0n30y")
 character_name = "MORSEL"
-charackter_sprite = ExtResource("5_n6ylb")
 speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
@@ -107,5 +109,9 @@ one_shot = true
 visible = false
 position = Vector2(-7.375, -11)
 texture = ExtResource("12_q5rl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.8125, 6.625)
+shape = SubResource("RectangleShape2D_2s0sc")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

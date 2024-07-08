@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxr0iy23ubcla"]
+[gd_scene load_steps=16 format=3 uid="uid://bxr0iy23ubcla"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_ek06i"]
 [ext_resource type="Texture2D" uid="uid://cvpg5yfof2kns" path="res://assets/Frost Dumplings/shadow.png" id="1_jjwap"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://67c3rnubctj" path="res://assets/Frost Dumplings/talk-1.png" id="8_2q877"]
 [ext_resource type="Texture2D" uid="uid://e1pbotktfsp3" path="res://assets/Frost Dumplings/walk-2.png" id="8_w48ct"]
 [ext_resource type="Texture2D" uid="uid://pnryomenucj" path="res://assets/Frost Dumplings/talk-2.png" id="9_j4sj1"]
-[ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_baegv"]
 [ext_resource type="PackedScene" uid="uid://qfllko52y25d" path="res://project/food/food.tscn" id="11_f6w78"]
 [ext_resource type="Texture2D" uid="uid://qop4hda82ats" path="res://assets/Emotions/Heart.png" id="14_peygy"]
 
@@ -80,14 +79,13 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngn3d"]
-size = Vector2(14, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50752"]
+size = Vector2(8, 4.875)
 
 [node name="frost_dumplings" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_ek06i")
 character_name = "FROST"
-charackter_sprite = ExtResource("5_574q4")
 speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
@@ -101,12 +99,6 @@ autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="clickable_component" parent="." instance=ExtResource("10_baegv")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
-position = Vector2(0.5, 0.3125)
-shape = SubResource("RectangleShape2D_ngn3d")
-
 [node name="food" parent="." instance=ExtResource("11_f6w78")]
 visible = false
 position = Vector2(5, -24)
@@ -119,5 +111,9 @@ one_shot = true
 visible = false
 position = Vector2(-7.375, -11)
 texture = ExtResource("14_peygy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.375, 6.1875)
+shape = SubResource("RectangleShape2D_50752")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]
