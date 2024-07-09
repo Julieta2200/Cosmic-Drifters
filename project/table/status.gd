@@ -71,8 +71,7 @@ func waiting_for_check():
 func serve_end():
 	timer_delete()
 	table.leave()
-	await get_tree().create_timer(5).timeout
-	active_status.visible = false
+	$VisibleTimer.start()
 
 func next_stage():
 	current_status += 1
@@ -114,3 +113,7 @@ func _on_eating_timer_timeout():
 func timer_delete():
 	if stage_timer != null :
 		stage_timer.queue_free()
+
+
+func _on_visible_timer_timeout():
+	active_status.visible = false

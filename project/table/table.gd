@@ -154,3 +154,4 @@ func _process(_delta):
 		if $whisper_area/suspect_timer.is_stopped():
 			$whisper_area/suspect_timer.start()
 		$whisper_area/cooldown_timer.stop()
+
