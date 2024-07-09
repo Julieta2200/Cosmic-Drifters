@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dl1thhd2djkjj"]
+[gd_scene load_steps=18 format=3 uid="uid://dl1thhd2djkjj"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_sig5f"]
 [ext_resource type="Texture2D" uid="uid://bcy06wkftxe6v" path="res://assets/Twilight Tarsiers/shadow.png" id="2_hkg40"]
@@ -83,11 +83,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alwxn"]
 size = Vector2(17, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7pd"]
+size = Vector2(16, 7.375)
+
 [node name="twilight_tarsiers" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_sig5f")
+suspect_unit = 10.0
+cooldown_unit = 5.0
 character_name = "TWILIGHT"
-charackter_sprite = ExtResource("5_e4kla")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 7)
@@ -117,5 +121,9 @@ one_shot = true
 visible = false
 position = Vector2(-7.375, -11)
 texture = ExtResource("14_msye4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 6.3125)
+shape = SubResource("RectangleShape2D_5e7pd")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

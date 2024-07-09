@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=124 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -105,7 +105,9 @@
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="106_vukck"]
 [ext_resource type="PackedScene" uid="uid://b5cci4tas6o75" path="res://project/pause/pause.tscn" id="107_20isj"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="107_c12nv"]
+[ext_resource type="Script" path="res://project/level/whisper_manager.gd" id="107_pnclo"]
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
+[ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -1025,3 +1027,32 @@ position = Vector2(10869, 5009)
 
 [node name="cafe_manager" type="Node2D" parent="."]
 script = ExtResource("105_glat7")
+
+[node name="whisper_manager" type="Node2D" parent="."]
+script = ExtResource("107_pnclo")
+
+[node name="areas" type="Node2D" parent="whisper_manager"]
+
+[node name="whisper_area" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(2194, 2241)
+
+[node name="whisper_area2" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(4149, 1858)
+
+[node name="whisper_area3" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(5871, 2269)
+
+[node name="whisper_area4" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(5865, 3869)
+
+[node name="whisper_area5" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(4118, 4486)
+
+[node name="whisper_area6" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(2154, 3881)
+
+[node name="whisper_area7" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(2961, 3011)
+
+[node name="whisper_area8" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+position = Vector2(5040, 3011)

@@ -9,6 +9,7 @@ var waiter_queue = []
 
 var groups = {}
 @onready var cafe_manager: CafeManager = $cafe_manager
+@onready var whisper_manager: WhisperManager = $whisper_manager
 
 func _ready():
 	$Timer.wait_time = level_time

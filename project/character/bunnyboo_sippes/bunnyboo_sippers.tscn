@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bt7yhx8mojj0m"]
+[gd_scene load_steps=16 format=3 uid="uid://bt7yhx8mojj0m"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_gitro"]
 [ext_resource type="Texture2D" uid="uid://d0gmsjk3nceok" path="res://assets/Bunnyboo Sippers/shadow.png" id="2_0e3tl"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bu4w06om1mqbd" path="res://assets/Bunnyboo Sippers/talk-1.png" id="8_kp2ym"]
 [ext_resource type="Texture2D" uid="uid://cu61jthgwo4i7" path="res://assets/Bunnyboo Sippers/talk-2.png" id="9_1r40f"]
 [ext_resource type="Texture2D" uid="uid://7j1i2smfdiqn" path="res://assets/Bunnyboo Sippers/walk-2.png" id="9_qslu4"]
-[ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_2lnlj"]
 [ext_resource type="PackedScene" uid="uid://qfllko52y25d" path="res://project/food/food.tscn" id="11_a2b33"]
 [ext_resource type="Texture2D" uid="uid://bt6eg4tfuq0c2" path="res://assets/Bunnyboo Sippers/walk-1.png" id="11_wne1m"]
 [ext_resource type="Texture2D" uid="uid://1v6yyjbpgsgr" path="res://assets/Bunnyboo Sippers/base.png" id="12_088qh"]
@@ -80,8 +79,8 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5d1g"]
-size = Vector2(14, 17)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvxlm"]
+size = Vector2(11.3125, 3.9375)
 
 [node name="bunnyboo_sippers" type="CharacterBody2D"]
 scale = Vector2(16, 16)
@@ -100,12 +99,6 @@ offset = Vector2(0.5625, -0.125)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="clickable_component" parent="." instance=ExtResource("10_2lnlj")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
-position = Vector2(0.5625, 0.8125)
-shape = SubResource("RectangleShape2D_e5d1g")
-
 [node name="order_timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
@@ -118,5 +111,9 @@ position = Vector2(5, -24)
 visible = false
 position = Vector2(-7.375, -11)
 texture = ExtResource("14_xhkro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.21875, 5.96875)
+shape = SubResource("RectangleShape2D_tvxlm")
 
 [connection signal="timeout" from="order_timer" to="." method="_on_order_timer_timeout"]

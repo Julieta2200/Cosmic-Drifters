@@ -18,7 +18,6 @@ enum {
 
 var table_status
 
-
 var current_status = STATUS_EMPTY
 
 var enemies
@@ -148,7 +147,7 @@ func get_orders():
 	return orders
 
 func _on_ready_sit(index: int):
-	var chair = _table.sit(index, enemies[index].whisper_coef)
+	var chair = _table.sit(index)
 	enemies[index].global_position = chair.global_position
 	if index == len(enemies) - 1:
 		_ask_for_waiter()

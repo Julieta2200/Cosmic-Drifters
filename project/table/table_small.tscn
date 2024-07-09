@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d34mkuf7wsay2"]
+[gd_scene load_steps=12 format=3 uid="uid://d34mkuf7wsay2"]
 
 [ext_resource type="Script" path="res://project/table/table.gd" id="1_kl5hu"]
 [ext_resource type="Texture2D" uid="uid://bwaoqkksmk10d" path="res://assets/details/Table_Small.png" id="2_nj8fs"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://rg6e7pvhaeq2" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png" id="6_w2jnu"]
 [ext_resource type="Texture2D" uid="uid://dkvkq1jpbb3hn" path="res://assets/Emotions/Wait-for-food/wait-for-food1.png" id="7_xevj6"]
 [ext_resource type="Texture2D" uid="uid://b7qv6plyy0igj" path="res://assets/Emotions/Wait-for-check/wait-for-check1.png" id="8_psy7d"]
-[ext_resource type="Texture2D" uid="uid://cx21t305kuqup" path="res://assets/Game_UI/Scale/Scale1.png" id="9_biebo"]
 
 [sub_resource type="Animation" id="Animation_vnrf4"]
 length = 0.001
@@ -123,25 +122,5 @@ libraries = {
 [node name="EatingTimer" type="Timer" parent="status"]
 one_shot = true
 
-[node name="whisper_area" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="whisper_area"]
-polygon = PackedVector2Array(-28, -16, 28, -16, 28, 16, -28.5, 16)
-
-[node name="suspect_timer" type="Timer" parent="whisper_area"]
-
-[node name="cooldown_timer" type="Timer" parent="whisper_area"]
-
-[node name="whisper_meter" type="Node2D" parent="."]
-visible = false
-
-[node name="sprite" type="Sprite2D" parent="whisper_meter"]
-position = Vector2(0, -44.9375)
-texture = ExtResource("9_biebo")
-
 [connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]
-[connection signal="body_entered" from="whisper_area" to="." method="_on_whisper_area_body_entered"]
-[connection signal="body_exited" from="whisper_area" to="." method="_on_whisper_area_body_exited"]
-[connection signal="timeout" from="whisper_area/suspect_timer" to="." method="_on_suspect_timer_timeout"]
-[connection signal="timeout" from="whisper_area/cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

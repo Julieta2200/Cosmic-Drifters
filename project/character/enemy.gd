@@ -20,7 +20,8 @@ var reviews = {
 var table
 var chair_i
 
-var whisper_coef = 1
+@export var suspect_unit: float
+@export var cooldown_unit: float
 
 func _ready():
 	position_delta = speed / 60

@@ -6,10 +6,6 @@ const ORDER_INTERVAL: int = 1
 @onready var chairs = $chairs
 @onready var group_status = $status
 
-
-@export var suspect_limit = 100
-@export var suspect_time : float = 1
-@export var cooldown_time : float = 1
 @export var number: int
 
 @export var level: Level
@@ -17,18 +13,6 @@ const ORDER_INTERVAL: int = 1
 var rng = RandomNumberGenerator.new()
 var waiter: Waiter
 var group: Group
-var eavesdropping_extent = 0
-var suspect_unit  = 10
-var cooldown_unit = 10
-
-
-var whisper_meter_sprites = {
-	0: "res://assets/Game_UI/Scale/Scale1.png",
-	1: "res://assets/Game_UI/Scale/Scale2.png",
-	2: "res://assets/Game_UI/Scale/Scale3.png",
-	3: "res://assets/Game_UI/Scale/Scale4.png",
-	4: "res://assets/Game_UI/Scale/Scale5.png",
-}
 
 var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/plate_2.png",
 				"res://assets/Food/Plate/plate_3.png","res://assets/Food/Plate/plate_4.png",
@@ -37,21 +21,12 @@ var plates = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/Plate/pla
 var actual_order = []
 var plates_to_remove = []
 
-var whisper_step_time_init = 2
-var whisper_step_time_suspect = 2
-var whisper_step_time_cooldown = 2
 
 var food_action = false
-var player_in_whisper_area = false
 
-func sit(chair_i, whisper_coef):
+func sit(chair_i):
 	var chair = $chairs.get_children()[chair_i]
 	chair.visible = false
-	if whisper_step_time_init - whisper_coef < whisper_step_time_suspect:
-		whisper_step_time_suspect = whisper_step_time_init - whisper_coef
-		whisper_step_time_cooldown = whisper_step_time_init + whisper_coef
-	$whisper_area/suspect_timer.wait_time = whisper_step_time_suspect
-	$whisper_area/cooldown_timer.wait_time = whisper_step_time_cooldown
 	return chair
 	
 	
@@ -109,49 +84,7 @@ func set_true_actual_order(foods):
 func for_lumina() -> bool:
 	return group._for_lumina
 
-func _on_whisper_area_body_entered(body):
-	if body is Player:
-		player_in_whisper_area = true
-
-func _on_whisper_area_body_exited(body):
-	if body is Player:
-		player_in_whisper_area = false
-	
-func _on_suspect_timer_timeout():
-	if eavesdropping_extent < suspect_limit - suspect_unit:
-		eavesdropping_extent = eavesdropping_extent + suspect_unit
-		set_whispere_meter()
-	else:
-		$whisper_area/suspect_timer.stop()
-
-func _on_cooldown_timer_timeout():
-	if eavesdropping_extent > 0:
-		eavesdropping_extent = eavesdropping_extent - cooldown_unit
-		set_whispere_meter()
-	else:
-		$whisper_area/cooldown_timer.stop()
-		
-func set_whispere_meter():
-	$whisper_meter/sprite.texture = load(whisper_meter_sprites[int(eavesdropping_extent/20)])
-		
 func get_clickable_component():
 	return $clickable_component
-	
-func _process(_delta):
-	if group && group.current_status == group.STATUS_EMPTY:
-		$whisper_meter.visible = false
-		return
-	if food_action:
-		$whisper_area/suspect_timer.stop()
-		$whisper_area/cooldown_timer.stop()
-		return
-	if !player_in_whisper_area:
-		$whisper_area/suspect_timer.stop()
-		if $whisper_area/cooldown_timer.is_stopped():
-			$whisper_area/cooldown_timer.start()
-	else:
-		$whisper_meter.visible = true
-		if $whisper_area/suspect_timer.is_stopped():
-			$whisper_area/suspect_timer.start()
-		$whisper_area/cooldown_timer.stop()
+
 

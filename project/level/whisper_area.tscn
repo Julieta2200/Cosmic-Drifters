@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://crpchavqrmy4p"]
+
+[ext_resource type="Script" path="res://project/level/whisper_area.gd" id="1_4eabj"]
+[ext_resource type="Texture2D" uid="uid://cx21t305kuqup" path="res://assets/Game_UI/Scale/Scale1.png" id="2_26o5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p80lv"]
+size = Vector2(1345, 682)
+
+[node name="whisper_area" type="Area2D"]
+script = ExtResource("1_4eabj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(662.5, 331)
+shape = SubResource("RectangleShape2D_p80lv")
+
+[node name="meter" type="TextureRect" parent="."]
+z_index = 100
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 371.0
+offset_top = -529.0
+offset_right = 407.0
+offset_bottom = -523.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(16, 16)
+texture = ExtResource("2_26o5g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
