@@ -736,10 +736,10 @@ tracks/5/path = NodePath("Background/green_planets:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(8.3, 8.7, 9.5, 9.9),
+"times": PackedFloat32Array(8.3, 8.6, 9.5, 9.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0.0745098), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -797,8 +797,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4096.0
-offset_right = 86014.8
-offset_bottom = 71680.0
+offset_right = 4096.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_3xq7i")
@@ -809,8 +808,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 81919.9
-offset_bottom = 71680.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_3xq7i")
