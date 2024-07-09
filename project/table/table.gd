@@ -87,3 +87,4 @@ func for_lumina() -> bool:
 func get_clickable_component():
 	return $clickable_component
 
+
