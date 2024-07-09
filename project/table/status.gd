@@ -12,8 +12,8 @@ class_name Status
 	$waiting_for_food: {
 		1: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food1.png", "duration": 10},
 		2: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food2.png", "duration": 10},
-		3: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food3.png", "duration": 10},
-		4: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food4.png", "duration": 10}
+		3: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food3.png", "duration": 15},
+		4: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food4.png", "duration": 15}
 	},
 	"eating": {
 		1: {"duration": 20}
@@ -26,7 +26,7 @@ class_name Status
 	}
 }
 
-@onready var stage_timer = $Timer
+@onready var stage_timer
 @onready var eating_stage_timer = $EatingTimer
 
 @onready var table = $".."
@@ -35,10 +35,22 @@ class_name Status
 var current_status = 1
 var active_status
 
-func pause_timer():
-	stage_timer.paused = true
-
+func ask_waiter():
+	$ask_waiter.visible = true
+	active_status = $ask_waiter
+	current_status = 1
+	timer_reset_start(get_current_stage()["duration"])
+	
+func waiting_for_food():
+	$ask_waiter.visible = false
+	$waiting_for_food.visible = true
+	$waiting_for_check.visible = false
+	active_status = $waiting_for_food
+	current_status = 1
+	timer_reset_start(get_current_stage()["duration"])
+	
 func eating_food(count):
+	timer_delete()
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = false
 	$waiting_for_check.visible = false
@@ -48,6 +60,7 @@ func eating_food(count):
 	eating_timer_reset_start(get_current_stage()["duration"])
 
 func waiting_for_check():
+	timer_delete()
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = false
 	$waiting_for_check.visible = true
@@ -56,44 +69,33 @@ func waiting_for_check():
 	timer_reset_start(get_current_stage()["duration"])
 
 func serve_end():
-	$ask_waiter.visible = false
-	$waiting_for_food.visible = false
-	$waiting_for_check.visible = false
+	timer_delete()
 	table.leave()
-
-func waiting_for_food():
-	$ask_waiter.visible = false
-	$waiting_for_food.visible = true
-	$waiting_for_check.visible = false
-	active_status = $waiting_for_food
-	current_status = 1
-	timer_reset_start(get_current_stage()["duration"])
-
-func ask_waiter():
-	$ask_waiter.visible = true
-	active_status = $ask_waiter
-	current_status = 1
-	timer_reset_start(get_current_stage()["duration"])
+	await get_tree().create_timer(5).timeout
+	active_status.visible = false
 
 func next_stage():
 	current_status += 1
 	if current_status == stages[active_status].size():
-		print('last')
 		last_stage()
 	if current_status > stages[active_status].size():
 		stage_overflow()
 		return
+	stage_timer.wait_time = get_current_stage()["duration"]
 	active_status.texture = load(get_current_stage()["texture"])
 
 func stage_overflow():
 	print("overflow")
 	
 func last_stage():
-	if typeof(active_status) != TYPE_STRING && active_status == $ask_waiter:
-		table.leave()
+	if active_status == $ask_waiter || active_status == $waiting_for_food:
+		serve_end()
 
 func timer_reset_start(time):
+	stage_timer = Timer.new()
+	add_child(stage_timer)
 	stage_timer.wait_time = time
+	stage_timer.connect("timeout", _on_timer_timeout)
 	stage_timer.start()
 
 func eating_timer_reset_start(time):
@@ -102,10 +104,13 @@ func eating_timer_reset_start(time):
 
 func get_current_stage():
 	return stages[active_status][current_status]
-	
 
 func _on_timer_timeout():
 	next_stage()
 
 func _on_eating_timer_timeout():
 	table.remove_plates()
+
+func timer_delete():
+	if stage_timer != null :
+		stage_timer.queue_free()

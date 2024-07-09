@@ -99,7 +99,7 @@ func _ask_for_waiter():
 	
 
 func ordered(enemy_i):
-	table_status.pause_timer()
+	table_status.timer_delete()
 	if enemy_i == len(enemies) - 1:
 		_table.ordered(get_orders())
 		waiting_for_food()
@@ -140,7 +140,6 @@ func waiting_for_check():
 func serve_end():
 	current_status = STATUS_SERVE_END
 	table_status.serve_end()
-	leave()
 
 func get_orders():
 	var orders = []
