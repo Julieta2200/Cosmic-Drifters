@@ -114,6 +114,5 @@ func timer_delete():
 	if stage_timer != null :
 		stage_timer.queue_free()
 
-
 func _on_visible_timer_timeout():
 	active_status.visible = false

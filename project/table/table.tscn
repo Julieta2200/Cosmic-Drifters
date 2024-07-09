@@ -113,7 +113,7 @@ libraries = {
 "": SubResource("AnimationLibrary_lbfqs")
 }
 
-[node name="Timer" type="Timer" parent="status"]
+[node name="VisibleTimer" type="Timer" parent="status"]
 
 [node name="waiting_for_food" type="Sprite2D" parent="status"]
 visible = false
@@ -156,7 +156,7 @@ visible = false
 position = Vector2(0, -44.9375)
 texture = ExtResource("9_0bvs8")
 
-[connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
+[connection signal="timeout" from="status/VisibleTimer" to="status" method="_on_visible_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]
 [connection signal="body_entered" from="whisper_area" to="." method="_on_whisper_area_body_entered"]
 [connection signal="body_exited" from="whisper_area" to="." method="_on_whisper_area_body_exited"]
