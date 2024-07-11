@@ -10,8 +10,8 @@ class_name Status
 		4: {"texture": "res://assets/Emotions/Exclamation_mark/ExclamationMark(Fier1).png", "duration": 10}
 	},
 	$waiting_for_food: {
-		1: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food1.png", "duration": 10},
-		2: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food2.png", "duration": 10},
+		1: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food1.png", "duration": 15},
+		2: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food2.png", "duration": 15},
 		3: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food3.png", "duration": 15},
 		4: {"texture": "res://assets/Emotions/Wait-for-food/wait-for-food4.png", "duration": 15}
 	},
@@ -19,10 +19,10 @@ class_name Status
 		1: {"duration": 20}
 	}, 
 	$waiting_for_check: {
-		1: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check1.png", "duration": 10},
-		2: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check2.png", "duration": 10},
-		3: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check3.png", "duration": 10},
-		4: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check4.png", "duration": 10},
+		1: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check1.png", "duration": 5},
+		2: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check2.png", "duration": 1},
+		3: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check3.png", "duration": 1},
+		4: {"texture": "res://assets/Emotions/Wait-for-check/wait-for-check4.png", "duration": 1},
 	}
 }
 
@@ -89,6 +89,8 @@ func stage_overflow():
 func last_stage():
 	if active_status == $ask_waiter || active_status == $waiting_for_food:
 		serve_end()
+	if active_status == $waiting_for_check:
+		table.level.manager.give_check_table(table)
 
 func timer_reset_start(time):
 	stage_timer = Timer.new()
@@ -116,3 +118,4 @@ func timer_delete():
 
 func _on_visible_timer_timeout():
 	active_status.visible = false
+	table.plate.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=125 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -108,6 +108,7 @@
 [ext_resource type="Script" path="res://project/level/whisper_manager.gd" id="107_pnclo"]
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
 [ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
+[ext_resource type="PackedScene" uid="uid://bg11plsdmm2qv" path="res://project/character/manager/manager.tscn" id="109_3it4b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -1056,3 +1057,7 @@ position = Vector2(2961, 3011)
 
 [node name="whisper_area8" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
 position = Vector2(5040, 3011)
+
+[node name="manager" parent="." instance=ExtResource("109_3it4b")]
+position = Vector2(1232, 1608)
+scale = Vector2(16, 16)
