@@ -21,13 +21,14 @@ func _ready():
 	animation()
 
 func interact_table(table):
-	match table.group.current_status:
-		table.group.STATUS_ASKING_FOR_WAITER:
-			walk_to_table(table, ready_take_order)
-		table.group.STATUS_WAITING_FOR_FOOD:
-			walk_to_table(table, ready_give_order)
-		table.group.STATUS_WAITING_FOR_CHECK:
-			walk_to_table(table, ready_give_check)
+	if table.group != null:
+		match table.group.current_status:
+			table.group.STATUS_ASKING_FOR_WAITER:
+				walk_to_table(table, ready_take_order)
+			table.group.STATUS_WAITING_FOR_FOOD:
+				walk_to_table(table, ready_give_order)
+			table.group.STATUS_WAITING_FOR_CHECK:
+				walk_to_table(table, ready_give_check)
 
 func give_order(table: Table):
 	var index = ui.get_item_index(table)
