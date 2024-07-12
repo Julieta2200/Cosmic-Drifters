@@ -28,6 +28,9 @@ class_name Status
 
 @onready var stage_timer
 @onready var eating_stage_timer = $EatingTimer
+@onready var _ask_waiter = $ask_waiter
+@onready var _waiting_for_food = $waiting_for_food
+@onready var _waiting_for_check = $waiting_for_check
 
 @onready var table = $".."
 @onready var group = $"..".group
@@ -87,10 +90,11 @@ func stage_overflow():
 	print("overflow")
 	
 func last_stage():
-	if active_status == $ask_waiter || active_status == $waiting_for_food:
-		serve_end()
-	if active_status == $waiting_for_check:
-		table.level.manager.give_check_table(table)
+	match active_status:
+		_ask_waiter, _waiting_for_food:
+			serve_end()
+		_waiting_for_check:
+			table.level.cafe_manager.manager_give_check(table)
 
 func timer_reset_start(time):
 	stage_timer = Timer.new()
