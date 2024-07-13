@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bg11plsdmm2qv"]
+[gd_scene load_steps=11 format=3 uid="uid://bg11plsdmm2qv"]
 
 [ext_resource type="Texture2D" uid="uid://drbx810und22u" path="res://assets/Manager/Shadow.png" id="1_2yx55"]
+[ext_resource type="Script" path="res://project/character/manager/manager.gd" id="1_c3qu0"]
 [ext_resource type="Texture2D" uid="uid://0myn3pk4065h" path="res://assets/Manager/Back_Walk1.png" id="2_oxnpx"]
 [ext_resource type="Texture2D" uid="uid://cjehm4ja4ns64" path="res://assets/Manager/Back_Base.png" id="3_xr4e6"]
 [ext_resource type="Texture2D" uid="uid://dsmwcivyno2mg" path="res://assets/Manager/Back_Walk2.png" id="4_vekj2"]
@@ -64,6 +65,8 @@ animations = [{
 }]
 
 [node name="manager" type="CharacterBody2D"]
+script = ExtResource("1_c3qu0")
+speed = 500.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
@@ -71,7 +74,9 @@ texture = ExtResource("1_2yx55")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m18j0")
-animation = &"walk"
-frame_progress = 0.0905409
+animation = &"idle"
+autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]

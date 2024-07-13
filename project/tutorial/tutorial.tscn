@@ -1205,20 +1205,17 @@ speed = 800.0
 position = Vector2(-3081, -1828)
 speed = 800.0
 
-[node name="Waiter_1" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("100_kwxov")]
+[node name="Waiter_1" parent="." node_paths=PackedStringArray("desk_point") instance=ExtResource("100_kwxov")]
 position = Vector2(6536, 1327)
-lvl = NodePath("..")
 desk_point = NodePath("../waiter_1_point")
 speed = 800.0
 
-[node name="waiter_2" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("101_gaxph")]
+[node name="waiter_2" parent="." node_paths=PackedStringArray("desk_point") instance=ExtResource("101_gaxph")]
 position = Vector2(6909, 1320)
-lvl = NodePath("..")
 desk_point = NodePath("../waiter_2_point")
 
-[node name="Waiter_3" parent="." node_paths=PackedStringArray("lvl", "desk_point") instance=ExtResource("102_rmj42")]
+[node name="Waiter_3" parent="." node_paths=PackedStringArray("desk_point") instance=ExtResource("102_rmj42")]
 position = Vector2(7286, 1334)
-lvl = NodePath("..")
 desk_point = NodePath("../waiter_3_point")
 
 [node name="waiter_1_point" type="Marker2D" parent="."]

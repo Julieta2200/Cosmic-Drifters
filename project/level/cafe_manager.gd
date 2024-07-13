@@ -4,6 +4,7 @@ enum {TakeOrder, PickOrder, GiveCheck}
 
 @onready var kitchen: Kitchen = $"../kitchen"
 @onready var desk: Desk = $"../clickable_objects/desk_plates"
+@onready var manager = $"../manager"
 
 var _waiters_actions: Array
 
@@ -32,3 +33,6 @@ func pick_order(table: Table):
 func ask_for_check(table: Table):
 	if !table.for_lumina():
 		_waiters_actions.append({"table": table, "action": GiveCheck})
+
+func manager_give_check(table: Table):
+	manager.walk_to_give_check(table)
