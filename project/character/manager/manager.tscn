@@ -66,7 +66,7 @@ animations = [{
 
 [node name="manager" type="CharacterBody2D"]
 script = ExtResource("1_c3qu0")
-speed = 300.0
+speed = 500.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
@@ -80,4 +80,3 @@ autoplay = "idle"
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]
-[connection signal="walk_to_room" from="." to="." method="_on_walk_to_room"]
