@@ -8,6 +8,7 @@ const suspect_meter_sprites = {
 	4: "res://assets/Game_UI/Scale/Scale5.png",
 }
 
+
 var suspect_meter: float = 0 # max value 100
 var suspect_unit: float = 0
 var cooldown_unit: float = 0
@@ -20,6 +21,7 @@ var active: bool
 var suspect_sprite: int = 0
 
 @onready var meter: TextureRect = $meter
+@export var table: Table
 
 func _ready():
 	timer = Timer.new()
@@ -61,6 +63,8 @@ func update_meter():
 	
 	if suspect_meter > 99.9:
 		suspect_meter = 99.9
+		meter_full()
+		return
 	if suspect_meter < 0:
 		suspect_meter = 0
 	
@@ -70,3 +74,5 @@ func update_meter():
 		meter.texture = load(suspect_meter_sprites[suspect_sprite])
 	meter.visible = suspect_meter != 0
 		
+func meter_full():
+	table.leave()

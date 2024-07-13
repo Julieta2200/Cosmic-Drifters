@@ -1033,8 +1033,9 @@ script = ExtResource("107_pnclo")
 
 [node name="areas" type="Node2D" parent="whisper_manager"]
 
-[node name="whisper_area" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2194, 2241)
+table = NodePath("../../../clickable_objects/Table")
 
 [node name="whisper_area2" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
 position = Vector2(4149, 1858)
