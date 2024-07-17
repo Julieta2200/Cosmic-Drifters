@@ -494,6 +494,7 @@ size = Vector2(13, 16)
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+collision_mask = 0
 script = ExtResource("1_r3jtw")
 character_name = "LUMINA"
 character_sprite = ExtResource("71_an1sl")

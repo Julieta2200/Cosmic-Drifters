@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=126 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -105,6 +105,7 @@
 [ext_resource type="PackedScene" uid="uid://d2g6t3uh66xnf" path="res://project/character/Cook/cook_1.tscn" id="106_vukck"]
 [ext_resource type="PackedScene" uid="uid://b5cci4tas6o75" path="res://project/pause/pause.tscn" id="107_20isj"]
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="107_c12nv"]
+[ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/secuity_guard/secuity_guard.tscn" id="107_d2twf"]
 [ext_resource type="Script" path="res://project/level/whisper_manager.gd" id="107_pnclo"]
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
 [ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
@@ -1028,6 +1029,10 @@ position = Vector2(10869, 5009)
 
 [node name="manager" parent="." instance=ExtResource("109_3it4b")]
 position = Vector2(887, 4439)
+scale = Vector2(16, 16)
+
+[node name="security_guard" parent="." instance=ExtResource("107_d2twf")]
+position = Vector2(-1422, 2579)
 scale = Vector2(16, 16)
 
 [node name="cafe_manager" type="Node2D" parent="."]
