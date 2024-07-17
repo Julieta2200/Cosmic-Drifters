@@ -142,4 +142,8 @@ func _on_ready_choose_order():
 	desk.open(self)
 
 func walk_stop():
+	if !path.is_empty():
+		path = []
 	busy = true
+	animation()
+	
