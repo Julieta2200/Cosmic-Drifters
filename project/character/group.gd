@@ -14,7 +14,6 @@ enum {
 @export var _for_lumina: bool
 @export var _table: Table
 
-@onready var lumina = $"../clickable_objects/player"
 @onready var _enemies_cont = $enemies
 
 var table_status
@@ -161,8 +160,9 @@ func _on_ready_exit(index):
 	enemies[index].spawn(Vector2(0,0))
 
 func walk_to_player():
-	lumina.walk_stop()
+	var player = level.whisper_manager.get_player()
 	var marker_index = 0
+	player.walk_stop()
 	for enemy in enemies:
-		enemy.walk_to(lumina.enemy_markers.get_child(marker_index).global_position, at_player)
+		enemy.walk_to(player.enemy_markers.get_child(marker_index).global_position, at_player)
 		marker_index += 1
