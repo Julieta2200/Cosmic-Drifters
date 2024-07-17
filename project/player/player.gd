@@ -140,3 +140,6 @@ func _on_ready_input_order():
 
 func _on_ready_choose_order():
 	desk.open(self)
+
+func walk_stop():
+	busy = true
