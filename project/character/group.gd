@@ -14,7 +14,9 @@ enum {
 @export var _for_lumina: bool
 @export var _table: Table
 
+@onready var lumina = $"../clickable_objects/player"
 @onready var _enemies_cont = $enemies
+@onready var markers = $Markers
 
 var table_status
 
@@ -32,6 +34,7 @@ var _order_index = 0
 
 signal ready_sit(index: int)
 signal ready_exit(index: int)
+signal at_player
 
 func _ready():
 	enemies = _enemies_cont.get_children()
@@ -157,3 +160,11 @@ func get_table() -> Table:
 
 func _on_ready_exit(index):
 	enemies[index].spawn(Vector2(0,0))
+
+func walk_to_player():
+	lumina.walk_stop()
+	var marker_index = 0
+	markers.global_position = lumina.global_position
+	for enemy in enemies:
+		enemy.walk_to(markers.get_child(marker_index).global_position, at_player)
+		marker_index += 1

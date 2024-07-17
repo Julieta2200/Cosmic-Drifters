@@ -28,5 +28,19 @@ speed = 800.0
 position = Vector2(-3073, -1944)
 speed = 800.0
 
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Markers"]
+position = Vector2(-406, 6)
+
+[node name="Marker2D2" type="Marker2D" parent="Markers"]
+position = Vector2(-182, 262)
+
+[node name="Marker2D3" type="Marker2D" parent="Markers"]
+position = Vector2(202, 262)
+
+[node name="Marker2D4" type="Marker2D" parent="Markers"]
+position = Vector2(458, 6)
+
 [connection signal="ready_exit" from="." to="." method="_on_ready_exit"]
 [connection signal="ready_sit" from="." to="." method="_on_ready_sit"]
