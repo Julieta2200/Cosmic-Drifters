@@ -9,6 +9,7 @@ signal ready_input_order
 signal ready_choose_order
 
 @export var ui: TopUI
+@onready var enemy_markers = $enemy_markers
 
 func check_queue():
 	pass

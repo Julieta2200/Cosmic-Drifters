@@ -16,7 +16,6 @@ enum {
 
 @onready var lumina = $"../clickable_objects/player"
 @onready var _enemies_cont = $enemies
-@onready var markers = $Markers
 
 var table_status
 
@@ -164,7 +163,6 @@ func _on_ready_exit(index):
 func walk_to_player():
 	lumina.walk_stop()
 	var marker_index = 0
-	markers.global_position = lumina.global_position
 	for enemy in enemies:
-		enemy.walk_to(markers.get_child(marker_index).global_position, at_player)
+		enemy.walk_to(lumina.enemy_markers.get_child(marker_index).global_position, at_player)
 		marker_index += 1
