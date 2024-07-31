@@ -14,6 +14,7 @@ func approach_player(table: Table):
 	var points = player.get_approach_points()
 	var enemies = table.group.enemies
 	for i in range(enemies.size()):
+		enemies[i].set_angry()
 		enemies[i].walk_to(points[i].global_position, approached)
 
 
