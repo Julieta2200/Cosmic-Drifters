@@ -705,7 +705,8 @@ texture = ExtResource("30_ptdti")
 [node name="chair" type="Node2D" parent="details_y_sort_enabled"]
 y_sort_enabled = true
 
-[node name="Chair5" type="Sprite2D" parent="details_y_sort_enabled/chair"]
+[node name="manager_chair" type="Sprite2D" parent="details_y_sort_enabled/chair"]
+visible = false
 position = Vector2(-1024, 5024)
 scale = Vector2(16, 16)
 texture = ExtResource("22_a1tga")
@@ -1049,9 +1050,14 @@ position = Vector2(9570, 5002)
 [node name="Cook_2" parent="." instance=ExtResource("107_c12nv")]
 position = Vector2(10869, 5009)
 
-[node name="manager" parent="." instance=ExtResource("109_3it4b")]
-position = Vector2(887, 4439)
+[node name="manager_origin_position" type="Marker2D" parent="."]
+position = Vector2(-861, 4995)
 scale = Vector2(16, 16)
+
+[node name="manager" parent="." node_paths=PackedStringArray("origin_position", "chair") instance=ExtResource("109_3it4b")]
+position = Vector2(-1033, 5017)
+origin_position = NodePath("../manager_origin_position")
+chair = NodePath("../details_y_sort_enabled/chair/manager_chair")
 
 [node name="cafe_manager" type="Node2D" parent="."]
 script = ExtResource("105_glat7")

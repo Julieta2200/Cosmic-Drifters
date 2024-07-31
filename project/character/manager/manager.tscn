@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bg11plsdmm2qv"]
+[gd_scene load_steps=12 format=3 uid="uid://bg11plsdmm2qv"]
 
 [ext_resource type="Texture2D" uid="uid://drbx810und22u" path="res://assets/Manager/Shadow.png" id="1_2yx55"]
 [ext_resource type="Script" path="res://project/character/manager/manager.gd" id="1_c3qu0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://we0icfuulfgc" path="res://assets/Manager/Idle.png" id="6_vu8ac"]
 [ext_resource type="Texture2D" uid="uid://bthw3osoifkbh" path="res://assets/Manager/Walk_1.png" id="7_ucoe5"]
 [ext_resource type="Texture2D" uid="uid://btr6srb740dm" path="res://assets/Manager/Walk_2.png" id="8_i8fmc"]
+[ext_resource type="Texture2D" uid="uid://cbuvioy1gsa6i" path="res://assets/Emotions/Exclamation_point.png" id="10_rwka7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m18j0"]
 animations = [{
@@ -65,18 +66,26 @@ animations = [{
 }]
 
 [node name="manager" type="CharacterBody2D"]
+scale = Vector2(16, 16)
 script = ExtResource("1_c3qu0")
 speed = 500.0
 
 [node name="shadow" type="Sprite2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0.8125, -1.8125)
 texture = ExtResource("1_2yx55")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.8125, -6.8125)
 sprite_frames = SubResource("SpriteFrames_m18j0")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
+[node name="emotion" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-4.625, -19.5)
+texture = ExtResource("10_rwka7")
+
 [connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]
+[connection signal="ready_sit" from="." to="." method="_on_ready_sit"]

@@ -859,6 +859,7 @@ position = Vector2(-0.0625, 15.125)
 [connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]
 [connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]
 [connection signal="ready_give_order" from="." to="." method="_on_ready_give_order"]
+[connection signal="ready_input_order" from="." to="." method="_on_ready_input_order"]
 [connection signal="ready_pick_order" from="." to="." method="_on_ready_pick_order"]
 [connection signal="ready_take_order" from="." to="." method="_on_ready_take_order"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
