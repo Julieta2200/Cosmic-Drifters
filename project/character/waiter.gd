@@ -45,7 +45,7 @@ func check_queue():
 		CafeManager.TakeOrder, CafeManager.GiveCheck:
 			target = action["table"].get_serve_point()
 		CafeManager.PickOrder:
-			target = desk_point.global_position
+			target = level.cafe_manager.desk.use_point.global_position
 	walk_to(target, get_signal(action["action"]), action["table"])
 
 func get_signal(action) -> Signal:
