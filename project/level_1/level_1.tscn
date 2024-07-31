@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=129 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -111,6 +111,7 @@
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
 [ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
 [ext_resource type="PackedScene" uid="uid://bg11plsdmm2qv" path="res://project/character/manager/manager.tscn" id="109_3it4b"]
+[ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/secuity_guard/secuity_guard.tscn" id="109_ux866"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -1054,10 +1055,16 @@ position = Vector2(10869, 5009)
 position = Vector2(-861, 4995)
 scale = Vector2(16, 16)
 
+
+[node name="secuity_guard" parent="." instance=ExtResource("109_ux866")]
+position = Vector2(-1212, 2597)
+scale = Vector2(16, 16)
+
 [node name="manager" parent="." node_paths=PackedStringArray("origin_position", "chair") instance=ExtResource("109_3it4b")]
 position = Vector2(-1033, 5017)
 origin_position = NodePath("../manager_origin_position")
 chair = NodePath("../details_y_sort_enabled/chair/manager_chair")
+
 
 [node name="cafe_manager" type="Node2D" parent="."]
 script = ExtResource("105_glat7")
