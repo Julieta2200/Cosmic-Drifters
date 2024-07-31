@@ -135,6 +135,9 @@ func change_character(character, _character_name):
 		character.texture = previous_character
 
 
+func get_approach_points() -> Array[Node]:
+	return $approach_points.get_children()
+
 func _on_ready_input_order():
 	input_order()
 

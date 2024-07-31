@@ -122,5 +122,8 @@ libraries = {
 [node name="EatingTimer" type="Timer" parent="status"]
 one_shot = true
 
+[node name="approach_point" type="Marker2D" parent="."]
+position = Vector2(-24.1875, -15.625)
+
 [connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]

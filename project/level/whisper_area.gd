@@ -20,6 +20,9 @@ const meter_time: float = 1.0
 var active: bool
 var suspect_sprite: int = 0
 
+var player: Player
+
+@export var whisper_manager: WhisperManager
 @onready var meter: TextureRect = $meter
 @export var table: Table
 
@@ -31,13 +34,13 @@ func _ready():
 	timer.start()
 
 func _on_body_entered(body):
-	print(body)
 	if body is Enemy:
 		enemies[body] = true
 		update_units()
 	
 	if body is Player:
 		active = true
+		player = body
 
 func _on_body_exited(body):
 	if body is Enemy:
@@ -76,4 +79,6 @@ func update_meter():
 	meter.visible = suspect_meter != 0
 		
 func meter_full():
-	table.leave()
+	timer.paused = true
+	whisper_manager.stop_player(player, table)
+	

@@ -87,4 +87,5 @@ func for_lumina() -> bool:
 func get_clickable_component():
 	return $clickable_component
 
-
+func get_approach_point() -> Marker2D:
+	return $approach_point

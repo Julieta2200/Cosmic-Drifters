@@ -1061,31 +1061,47 @@ script = ExtResource("107_pnclo")
 
 [node name="areas" type="Node2D" parent="whisper_manager"]
 
-[node name="whisper_area" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2194, 2241)
-collision_mask = 3
+whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/Table")
 
-[node name="whisper_area2" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area2" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(4149, 1858)
+whisper_manager = NodePath("../..")
+table = NodePath("../../../clickable_objects/Table2")
 
-[node name="whisper_area3" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area3" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(5871, 2269)
+whisper_manager = NodePath("../..")
+table = NodePath("../../../clickable_objects/Table3")
 
-[node name="whisper_area4" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area4" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(5865, 3869)
+whisper_manager = NodePath("../..")
+table = NodePath("../../../clickable_objects/Table4")
 
-[node name="whisper_area5" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area5" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(4118, 4486)
+whisper_manager = NodePath("../..")
+table = NodePath("../../../clickable_objects/Table5")
 
-[node name="whisper_area6" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area6" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2154, 3881)
+whisper_manager = NodePath("../..")
+table = NodePath("../../../clickable_objects/Table6")
 
-[node name="whisper_area7" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area7" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2961, 3011)
+whisper_manager = NodePath("../..")
+table = NodePath("../../../clickable_objects/TableSmall")
 
-[node name="whisper_area8" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]
+[node name="whisper_area8" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
 position = Vector2(5040, 3011)
+whisper_manager = NodePath("../..")
+table = NodePath("../../../clickable_objects/TableSmall2")
 
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_exited"]
+[connection signal="approached" from="whisper_manager" to="whisper_manager" method="_on_approached"]
+[connection signal="player_ready" from="whisper_manager" to="whisper_manager" method="_on_player_ready"]

@@ -7,6 +7,7 @@
 size = Vector2(1345, 682)
 
 [node name="whisper_area" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_4eabj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -14,6 +15,7 @@ position = Vector2(662.5, 331)
 shape = SubResource("RectangleShape2D_p80lv")
 
 [node name="meter" type="TextureRect" parent="."]
+visible = false
 z_index = 100
 anchors_preset = 8
 anchor_left = 0.5

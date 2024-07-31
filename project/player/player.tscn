@@ -842,6 +842,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("62_2pgch")
 
+[node name="approach_points" type="Node2D" parent="."]
+
+[node name="1" type="Marker2D" parent="approach_points"]
+position = Vector2(-15.625, 0.125)
+
+[node name="2" type="Marker2D" parent="approach_points"]
+position = Vector2(16.75, 0.0625)
+
+[node name="3" type="Marker2D" parent="approach_points"]
+position = Vector2(0.1875, -20.0625)
+
+[node name="4" type="Marker2D" parent="approach_points"]
+position = Vector2(-0.0625, 15.125)
+
+[connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]
+
 [connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]
 [connection signal="ready_give_order" from="." to="." method="_on_ready_give_order"]
 [connection signal="ready_pick_order" from="." to="." method="_on_ready_pick_order"]
