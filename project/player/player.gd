@@ -75,7 +75,6 @@ func open_characters_panel():
 
 func morph(mask = LUMINA):
 	$characters_panel.visible = false
-	$AnimatedSprite2D.play("lumina")
 	expected_mask = mask
 
 func set_mask(mask = LUMINA):
@@ -129,10 +128,11 @@ func change_character(character, _character_name):
 					
 		character.texture = character_sprite
 		morph(_character_name)
+		$AnimatedSprite2D.play(masks[_character_name] + "shapeshifting")
 	else:
 		morph(LUMINA)
+		$AnimatedSprite2D.play("shapeshifting")
 		character.texture = previous_character
-
 
 
 func _on_ready_input_order():
