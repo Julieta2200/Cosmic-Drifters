@@ -712,6 +712,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("62_2pgch")
 
+[node name="enemy_markers" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="enemy_markers"]
+position = Vector2(-24, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="enemy_markers"]
+position = Vector2(-12, 16)
+
+[node name="Marker2D3" type="Marker2D" parent="enemy_markers"]
+position = Vector2(12, 16)
+
+[node name="Marker2D4" type="Marker2D" parent="enemy_markers"]
+position = Vector2(24, 0)
+
 [connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]
 [connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]
 [connection signal="ready_give_order" from="." to="." method="_on_ready_give_order"]

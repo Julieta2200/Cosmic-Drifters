@@ -9,6 +9,7 @@ signal ready_input_order
 signal ready_choose_order
 
 @export var ui: TopUI
+@onready var enemy_markers = $enemy_markers
 
 func check_queue():
 	pass
@@ -140,3 +141,10 @@ func _on_ready_input_order():
 
 func _on_ready_choose_order():
 	desk.open(self)
+
+func walk_stop():
+	if !path.is_empty():
+		path = []
+	busy = true
+	animation()
+	
