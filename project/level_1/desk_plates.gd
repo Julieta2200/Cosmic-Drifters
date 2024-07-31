@@ -25,10 +25,8 @@ func add_plate(table: Table):
 	plate.texture = load(plate_textures[_rng.randf_range(0,plate_textures.size())])
 	plate.visible = true
 	plates[table] = {"plate": plate}
-	
-	if table.for_lumina():
-		var text = add_to_board(table)
-		plates[table]["text"] = text
+	var text = add_to_board(table)
+	plates[table]["text"] = text
 
 
 func remove_plate(table: Table):
