@@ -1040,6 +1040,7 @@ script = ExtResource("107_pnclo")
 
 [node name="whisper_area" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2194, 2241)
+collision_mask = 3
 table = NodePath("../../../clickable_objects/Table")
 
 [node name="whisper_area2" parent="whisper_manager/areas" instance=ExtResource("108_b0sf8")]

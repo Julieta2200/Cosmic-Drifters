@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=73 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://bh64gw7aghagg" path="res://assets/lumina/shadow (4).png" id="2_fktkq"]
@@ -69,6 +69,9 @@
 [ext_resource type="Texture2D" uid="uid://b01jh7rg2oaor" path="res://assets/lumina/Walk2.png" id="57_sbb40"]
 [ext_resource type="Texture2D" uid="uid://ceidnx82ylgwi" path="res://assets/Security guard/Oliver_16px.png" id="62_2pgch"]
 [ext_resource type="Texture2D" uid="uid://cc5jrt48rlsjx" path="res://assets/lumina/Base (3).png" id="71_an1sl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo8un"]
+size = Vector2(13.875, 18.375)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u1gh"]
 animations = [{
@@ -494,6 +497,8 @@ size = Vector2(13, 16)
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_r3jtw")
 character_name = "LUMINA"
 character_sprite = ExtResource("71_an1sl")
@@ -502,13 +507,14 @@ character_sprite = ExtResource("71_an1sl")
 position = Vector2(1, 1)
 texture = ExtResource("2_fktkq")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-6.5625, -14.3125, 7.1875, -14.375, 6.875, 3.125, -6.1875, 3.1875)
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.375, -4.1875)
+shape = SubResource("RectangleShape2D_lo8un")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
 animation = &"back_walk"
-frame_progress = 0.373334
+frame_progress = 0.682442
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
