@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"back_walk",
-"speed": 3.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -42,23 +42,24 @@ animations = [{
 "texture": ExtResource("6_pop0e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_xoff8")
+"texture": ExtResource("8_nhx6q")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_qbu0d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_nhx6q")
+"texture": ExtResource("5_xoff8")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 3.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yeye"]
 size = Vector2(16, 8)
 
 [node name="secuity_guard" type="CharacterBody2D"]
+scale = Vector2(16, 16)
 script = ExtResource("1_tbwo0")
 speed = 500.0
 
@@ -68,8 +69,9 @@ texture = ExtResource("1_kqh67")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1sipt")
-animation = &"idle"
+animation = &"back_walk"
 autoplay = "idle"
+frame_progress = 0.956918
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

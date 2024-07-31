@@ -1055,16 +1055,13 @@ position = Vector2(10869, 5009)
 position = Vector2(-861, 4995)
 scale = Vector2(16, 16)
 
-
 [node name="secuity_guard" parent="." instance=ExtResource("109_ux866")]
-position = Vector2(-1212, 2597)
-scale = Vector2(16, 16)
+position = Vector2(-1107, 2515)
 
 [node name="manager" parent="." node_paths=PackedStringArray("origin_position", "chair") instance=ExtResource("109_3it4b")]
 position = Vector2(-1033, 5017)
 origin_position = NodePath("../manager_origin_position")
 chair = NodePath("../details_y_sort_enabled/chair/manager_chair")
-
 
 [node name="cafe_manager" type="Node2D" parent="."]
 script = ExtResource("105_glat7")
