@@ -60,7 +60,7 @@ func update_units():
 			cooldown_unit = enemy.cooldown_unit
 
 func update_meter():
-	if active:
+	if active and !player.busy:
 		suspect_meter += suspect_unit
 	else:
 		suspect_meter -= cooldown_unit
