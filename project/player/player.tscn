@@ -71,7 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://cc5jrt48rlsjx" path="res://assets/lumina/Base (3).png" id="71_an1sl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo8un"]
-size = Vector2(13.875, 18.375)
+size = Vector2(13.875, 5.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u1gh"]
 animations = [{
@@ -507,14 +507,14 @@ character_sprite = ExtResource("71_an1sl")
 position = Vector2(1, 1)
 texture = ExtResource("2_fktkq")
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.375, -4.1875)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.375, 1.8125)
 shape = SubResource("RectangleShape2D_lo8un")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
 animation = &"back_walk"
-frame_progress = 0.682442
+frame_progress = 0.587743
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

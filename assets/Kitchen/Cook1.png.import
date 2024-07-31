@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn5hrae18lhmx"
-path="res://.godot/imported/Table2.png-524d45ef19bc009d34db8fcafdf5082a.ctex"
+uid="uid://qynarq0ycumu"
+path="res://.godot/imported/Cook1.png-9c14653ceb76fc248176c8133e2a3b91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Kitchen/Table/Table2.png"
-dest_files=["res://.godot/imported/Table2.png-524d45ef19bc009d34db8fcafdf5082a.ctex"]
+source_file="res://assets/Kitchen/Cook1.png"
+dest_files=["res://.godot/imported/Cook1.png-9c14653ceb76fc248176c8133e2a3b91.ctex"]
 
 [params]
 
