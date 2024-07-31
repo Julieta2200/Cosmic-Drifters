@@ -69,6 +69,7 @@ texture = ExtResource("1_kqh67")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1sipt")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
