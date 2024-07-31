@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=79 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://bh64gw7aghagg" path="res://assets/lumina/shadow (4).png" id="2_fktkq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://eakwg3s4rir8" path="res://assets/lumina/Back_Walk_2.png" id="5_5q5qu"]
 [ext_resource type="Texture2D" uid="uid://qemafkdd82wb" path="res://assets/lumina/Lumina Bunnyboo/walk-1.png" id="6_mp531"]
 [ext_resource type="Texture2D" uid="uid://dd75pleob3i05" path="res://assets/lumina/Lumina Bunnyboo/back-base.png" id="7_5301a"]
+[ext_resource type="Texture2D" uid="uid://cg1hsdhdaa0c4" path="res://assets/lumina/Animation/Bunnyboo .png" id="7_bbvr0"]
 [ext_resource type="Texture2D" uid="uid://bkl8ny0chboaj" path="res://assets/lumina/Lumina Bunnyboo/base.png" id="7_nm7xy"]
 [ext_resource type="Texture2D" uid="uid://bpd06ikltlby4" path="res://assets/lumina/Lumina Bunnyboo/walk-2.png" id="8_h82bm"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="10_4r0lb"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://1v6yyjbpgsgr" path="res://assets/Bunnyboo Sippers/base.png" id="14_qwom4"]
 [ext_resource type="Texture2D" uid="uid://1uxhmsu7k6ec" path="res://assets/Cerulean Hoppers/base.png" id="15_aeucg"]
 [ext_resource type="Texture2D" uid="uid://dp36vwglefj0i" path="res://assets/lumina/Lumina Frost/base-walk-2.png" id="15_p7l8l"]
+[ext_resource type="Texture2D" uid="uid://wjttpr0pso2n" path="res://assets/lumina/Animation/Dumplings.png" id="15_rtaqi"]
 [ext_resource type="Texture2D" uid="uid://bwn8ppalpk1cr" path="res://assets/lumina/Lumina Frost/base.png" id="16_5acka"]
 [ext_resource type="Texture2D" uid="uid://bhj7mec0hom58" path="res://assets/Twilight Tarsiers/base.png" id="16_5ii64"]
 [ext_resource type="Texture2D" uid="uid://df4baooeu4510" path="res://assets/Prismarities/base.png" id="17_1blsd"]
@@ -37,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://bot5gb0o1dree" path="res://assets/lumina/Animation/Lumina.png" id="29_5k8cw"]
 [ext_resource type="Texture2D" uid="uid://clp2ftn7p4bd4" path="res://assets/lumina/Lumina Morsel/back-walk-1.png" id="29_noera"]
 [ext_resource type="Texture2D" uid="uid://b0qjbljngvamr" path="res://assets/lumina/Lumina Morsel/back-base.png" id="30_h7t4k"]
+[ext_resource type="Texture2D" uid="uid://dlxw7sqcnw8e4" path="res://assets/lumina/Animation/ Hoppers.png" id="30_hx8ey"]
 [ext_resource type="Texture2D" uid="uid://bmnqi247pu0tn" path="res://assets/lumina/Lumina Morsel/back-walk-2.png" id="31_hyjx2"]
 [ext_resource type="Texture2D" uid="uid://dt8fij0rnnun0" path="res://assets/lumina/Lumina Morsel/base.png" id="32_8sv4p"]
 [ext_resource type="Texture2D" uid="uid://n23c4t6lmyr4" path="res://assets/lumina/Lumina Morsel/idle.png" id="33_q8v2q"]
@@ -51,8 +54,10 @@
 [ext_resource type="Texture2D" uid="uid://5q5abvhl7ie6" path="res://assets/lumina/Lumina Prisma/base.png" id="39_30gqp"]
 [ext_resource type="Texture2D" uid="uid://bhbg35spfp0re" path="res://assets/lumina/Lumina Oliver/Base.png" id="39_i3hyw"]
 [ext_resource type="Texture2D" uid="uid://dursxuhxaova1" path="res://assets/lumina/Lumina Prisma/idle.png" id="40_2iihu"]
+[ext_resource type="Texture2D" uid="uid://cumifi21yh3bi" path="res://assets/lumina/Animation/ Morsels.png" id="40_qw86k"]
 [ext_resource type="Texture2D" uid="uid://cvgn272h2texq" path="res://assets/lumina/Lumina Oliver/Walk1.png" id="40_x8e1t"]
 [ext_resource type="Texture2D" uid="uid://ckom0s0irf4ge" path="res://assets/lumina/Lumina Prisma/walk-1.png" id="41_cene5"]
+[ext_resource type="Texture2D" uid="uid://c5wc65kyqcs4h" path="res://assets/lumina/Animation/Oliver.png" id="41_cu8ml"]
 [ext_resource type="Texture2D" uid="uid://c5dyqfx66n884" path="res://assets/lumina/Lumina Oliver/Walk2.png" id="41_puejq"]
 [ext_resource type="Texture2D" uid="uid://po44ay7xhgeo" path="res://assets/lumina/Lumina Prisma/walk-2.png" id="42_22qr8"]
 [ext_resource type="Texture2D" uid="uid://dhdf46lwmn5e7" path="res://assets/lumina/Lumina Twilight/back-walk-1.png" id="43_1fqxm"]
@@ -60,11 +65,13 @@
 [ext_resource type="Texture2D" uid="uid://chuv5dwtvuj52" path="res://assets/lumina/Lumina Twilight/back-walk-2.png" id="45_ujwxh"]
 [ext_resource type="Texture2D" uid="uid://6diryi1rv6ce" path="res://assets/lumina/Lumina Twilight/base.png" id="46_hpm1i"]
 [ext_resource type="Texture2D" uid="uid://it54a6hecsyv" path="res://assets/lumina/Lumina Twilight/idle.png" id="47_4stiw"]
+[ext_resource type="Texture2D" uid="uid://b7ijku45inu6x" path="res://assets/lumina/Animation/Prismarities.png" id="48_4kaev"]
 [ext_resource type="Texture2D" uid="uid://rfcffkivbgj0" path="res://assets/lumina/Lumina Twilight/walk-1.png" id="48_xwv2v"]
 [ext_resource type="Texture2D" uid="uid://frnqmwkm2kga" path="res://assets/lumina/Lumina Twilight/walk-2.png" id="49_bmru8"]
 [ext_resource type="Texture2D" uid="uid://cdayunie82utx" path="res://assets/lumina/Cell/Circle.png" id="53_1g8ki"]
 [ext_resource type="Texture2D" uid="uid://clba34mf6exvf" path="res://assets/lumina/Cell/Cell1.png" id="54_lxmk1"]
 [ext_resource type="Texture2D" uid="uid://xxsfh5l5e8an" path="res://assets/lumina/Cell/Cell2.png" id="55_m0tuj"]
+[ext_resource type="Texture2D" uid="uid://ci6e20rlloy4q" path="res://assets/lumina/Animation/Twilight.png" id="56_08i7f"]
 [ext_resource type="Texture2D" uid="uid://c3gojcylfn7xb" path="res://assets/lumina/Walk1.png" id="56_82gyc"]
 [ext_resource type="Texture2D" uid="uid://b01jh7rg2oaor" path="res://assets/lumina/Walk2.png" id="57_sbb40"]
 [ext_resource type="Texture2D" uid="uid://ceidnx82ylgwi" path="res://assets/Security guard/Oliver_16px.png" id="62_2pgch"]
@@ -128,6 +135,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_bbvr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nm7xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bbvr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nm7xy")
+}],
+"loop": false,
+"name": &"bunnyboo_shapeshifting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_mp531")
 }, {
 "duration": 1.0,
@@ -176,6 +200,23 @@ animations = [{
 "loop": true,
 "name": &"frost_idle",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_rtaqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pgh0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rtaqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5acka")
+}],
+"loop": false,
+"name": &"frost_shapeshifting",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -230,6 +271,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("30_hx8ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hjtil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hx8ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hjtil")
+}],
+"loop": false,
+"name": &"hopper_shapeshifting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("25_tfxp2")
 }, {
 "duration": 1.0,
@@ -260,24 +318,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("29_5k8cw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("71_an1sl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_5k8cw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("71_an1sl")
-}],
-"loop": false,
-"name": &"lumina",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,6 +353,23 @@ animations = [{
 "loop": true,
 "name": &"morsel_idle",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_qw86k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_8sv4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qw86k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_8sv4p")
+}],
+"loop": false,
+"name": &"morsel_shapeshifting",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -354,6 +412,23 @@ animations = [{
 "loop": true,
 "name": &"oliver_idle",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_cu8ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_i3hyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cu8ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_i3hyw")
+}],
+"loop": false,
+"name": &"oliver_shapeshifting",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -408,6 +483,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("48_4kaev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_30gqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_4kaev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_30gqp")
+}],
+"loop": false,
+"name": &"prisma_shapeshifting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("41_cene5")
 }, {
 "duration": 1.0,
@@ -422,6 +514,23 @@ animations = [{
 "loop": true,
 "name": &"prisma_walk",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_5k8cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_an1sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5k8cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_an1sl")
+}],
+"loop": false,
+"name": &"shapeshifting",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -456,6 +565,23 @@ animations = [{
 "loop": true,
 "name": &"twilight_idle",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_08i7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_hpm1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_08i7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_hpm1i")
+}],
+"loop": false,
+"name": &"twilight_shapeshifting",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -513,8 +639,8 @@ shape = SubResource("RectangleShape2D_lo8un")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-animation = &"back_walk"
-frame_progress = 0.587743
+
+animation = &"idle"
 offset = Vector2(0, -6)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
