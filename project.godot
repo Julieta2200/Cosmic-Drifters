@@ -34,6 +34,10 @@ window/size/window_width_override=1024
 window/size/window_height_override=896
 window/stretch/mode="viewport"
 
+[editor]
+
+movie_writer/movie_file="/Users/grishakirakosyan/Documents/Movies/movie.avi"
+
 [input]
 
 left_click={
