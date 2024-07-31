@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=80 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://bh64gw7aghagg" path="res://assets/lumina/shadow (4).png" id="2_fktkq"]
@@ -639,7 +639,6 @@ shape = SubResource("RectangleShape2D_lo8un")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u1gh")
-
 animation = &"idle"
 offset = Vector2(0, -6)
 
@@ -842,6 +841,20 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("62_2pgch")
+
+[node name="approach_points" type="Node2D" parent="."]
+
+[node name="1" type="Marker2D" parent="approach_points"]
+position = Vector2(-15.625, 0.125)
+
+[node name="2" type="Marker2D" parent="approach_points"]
+position = Vector2(16.75, 0.0625)
+
+[node name="3" type="Marker2D" parent="approach_points"]
+position = Vector2(0.1875, -20.0625)
+
+[node name="4" type="Marker2D" parent="approach_points"]
+position = Vector2(-0.0625, 15.125)
 
 [connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]
 [connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]

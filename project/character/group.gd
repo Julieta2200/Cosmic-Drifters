@@ -20,7 +20,7 @@ var table_status
 
 var current_status = STATUS_EMPTY
 
-var enemies
+var enemies: Array
 
 const SPAWN_DELAY = 1
 const ORDER_INTERVAL = 1
