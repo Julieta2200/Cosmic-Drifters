@@ -29,3 +29,13 @@ func _process(_delta):
 func order_delivered(order: Order):
 	order.delivered()
 	cafe_manager.order_ready(order.table)
+
+
+func _on_area_2d_body_entered(body):
+	if body is Player:
+		$Cook.play("angry")
+
+
+func _on_area_2d_body_exited(body):
+	if body is Player:
+		$Cook.play("default")

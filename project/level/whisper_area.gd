@@ -31,6 +31,7 @@ func _ready():
 	timer.start()
 
 func _on_body_entered(body):
+	print(body)
 	if body is Enemy:
 		enemies[body] = true
 		update_units()
