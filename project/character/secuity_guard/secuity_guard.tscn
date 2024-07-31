@@ -69,9 +69,9 @@ texture = ExtResource("1_kqh67")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1sipt")
-animation = &"back_walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.956918
+frame_progress = 0.85304
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

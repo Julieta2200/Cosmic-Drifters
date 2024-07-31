@@ -7,8 +7,10 @@ var previous_character
 
 signal ready_input_order
 signal ready_choose_order
+signal manager_room
 
 @export var ui: TopUI
+@export var manager_room_position: Marker2D
 
 func check_queue():
 	pass
@@ -67,6 +69,9 @@ func pick_plates(table):
 
 func have_empty_slot():
 	return ui.items.size() != 3
+
+func walk_to_manager():
+	walk_to(manager_room_position.global_position, manager_room)
 
 func open_characters_panel():
 	busy = true
@@ -143,3 +148,7 @@ func _on_ready_input_order():
 
 func _on_ready_choose_order():
 	desk.open(self)
+
+
+func _on_manager_room():
+	print("ready for manager")

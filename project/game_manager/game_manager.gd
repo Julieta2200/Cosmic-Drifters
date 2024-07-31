@@ -24,6 +24,8 @@ func click_action():
 		player.walk_to_desk(clicked_obj)
 	elif clicked_obj is Player:
 		player.open_characters_panel()
+	elif clicked_obj.name == "manager_room":
+		player.walk_to_manager()
 	
 
 func _process(_delta):
