@@ -126,13 +126,12 @@ func change_character(character, _character_name):
 				if $characters_panel.get_child(i).get_child(0).texture == character_sprite:
 					$characters_panel.get_child(i).get_child(0).texture = previous_character
 					
-		character.texture = character_sprite
 		morph(_character_name)
 		$AnimatedSprite2D.play(masks[_character_name] + "shapeshifting")
 	else:
 		morph(LUMINA)
 		$AnimatedSprite2D.play("shapeshifting")
-		character.texture = previous_character
+	character.texture = character_sprite
 
 
 func _on_ready_input_order():
