@@ -999,13 +999,13 @@ level = NodePath("..")
 desk_point = NodePath("../waiter_3_point")
 
 [node name="waiter_1_point" type="Marker2D" parent="."]
-position = Vector2(7562, 1446)
+position = Vector2(4819, 1398)
 
 [node name="waiter_2_point" type="Marker2D" parent="."]
-position = Vector2(7941, 1444)
+position = Vector2(5044, 1398)
 
 [node name="waiter_3_point" type="Marker2D" parent="."]
-position = Vector2(8329, 1440)
+position = Vector2(5233, 1398)
 
 [node name="order_desk" type="Marker2D" parent="."]
 position = Vector2(6917, 1269)
