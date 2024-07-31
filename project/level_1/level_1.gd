@@ -5,4 +5,4 @@ class_name Level1 extends Level
 @onready var ui = $CanvasLayer/ui
 @onready var spawn_point = $spawn_point
 @onready var door = $details/door_animatedSprite2D
-
+@onready var manager = $manager

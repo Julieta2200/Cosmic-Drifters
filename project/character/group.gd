@@ -62,10 +62,10 @@ func _create_timer(time, one_shot, timeout_callback):
 	_timer.start()
 
 func leave():
-	current_status = STATUS_EMPTY
 	_create_timer(1.0, true, _leave)
 	
 func _leave():
+	current_status = STATUS_EMPTY
 	if _spawn_index == enemies.size():
 		_spawn_index = 0
 		return
