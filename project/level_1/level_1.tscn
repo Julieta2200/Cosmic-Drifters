@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=134 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -101,6 +101,7 @@
 [ext_resource type="Texture2D" uid="uid://bbbwrgfetnooa" path="res://assets/Kitchen/Cook4.png" id="99_u47fo"]
 [ext_resource type="Texture2D" uid="uid://qynarq0ycumu" path="res://assets/Kitchen/Cook1.png" id="100_5stm1"]
 [ext_resource type="Texture2D" uid="uid://bq1uwhv0fvcdo" path="res://assets/Kitchen/Cook2.png" id="101_5vamj"]
+[ext_resource type="PackedScene" uid="uid://gu560mqym0x1" path="res://project/dialog/dialog.tscn" id="102_xev84"]
 [ext_resource type="PackedScene" uid="uid://rskgob6ktuy5" path="res://project/level_1/desk_plates.tscn" id="103_6qy7u"]
 [ext_resource type="PackedScene" uid="uid://db5ni7xhg3prs" path="res://project/orders_menu/orders_menu.tscn" id="105_2ytgh"]
 [ext_resource type="Script" path="res://project/level/cafe_manager.gd" id="105_glat7"]
@@ -112,6 +113,9 @@
 [ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
 [ext_resource type="PackedScene" uid="uid://bg11plsdmm2qv" path="res://project/character/manager/manager.tscn" id="109_3it4b"]
 [ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/secuity_guard/secuity_guard.tscn" id="109_ux866"]
+[ext_resource type="Script" path="res://project/level/conversation_manager.gd" id="113_xffrp"]
+[ext_resource type="Script" path="res://project/level/player_approach_conversation.gd" id="114_4flla"]
+[ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -896,10 +900,12 @@ walking_area = NodePath("../walking_area")
 [node name="clickable_objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui", "manager_room_position", "level") instance=ExtResource("25_6bfeo")]
+[node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui", "manager_room_position", "cafe_manager", "conversation_manager", "level") instance=ExtResource("25_6bfeo")]
 position = Vector2(2479, 1157)
 ui = NodePath("../../CanvasLayer/ui")
 manager_room_position = NodePath("../../manager_room_position")
+cafe_manager = NodePath("../../cafe_manager")
+conversation_manager = NodePath("../../conversation_manager")
 level = NodePath("../..")
 speed = 800.0
 
@@ -1046,6 +1052,9 @@ frame_progress = 0.606932
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="dialog" parent="CanvasLayer" instance=ExtResource("102_xev84")]
+visible = false
+
 [node name="ui" parent="CanvasLayer" instance=ExtResource("72_xu1wm")]
 z_index = 1
 
@@ -1083,8 +1092,9 @@ chair = NodePath("../details_y_sort_enabled/chair/manager_chair")
 [node name="cafe_manager" type="Node2D" parent="."]
 script = ExtResource("105_glat7")
 
-[node name="whisper_manager" type="Node2D" parent="."]
+[node name="whisper_manager" type="Node2D" parent="." node_paths=PackedStringArray("conversation_manager")]
 script = ExtResource("107_pnclo")
+conversation_manager = NodePath("../conversation_manager")
 
 [node name="areas" type="Node2D" parent="whisper_manager"]
 
@@ -1127,6 +1137,20 @@ table = NodePath("../../../clickable_objects/TableSmall")
 position = Vector2(5040, 3011)
 whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/TableSmall2")
+
+[node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "whisper_manager")]
+script = ExtResource("113_xffrp")
+dialog = NodePath("../CanvasLayer/dialog")
+player = NodePath("../clickable_objects/player")
+whisper_manager = NodePath("../whisper_manager")
+
+[node name="player_approach_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
+script = ExtResource("114_4flla")
+conversation_manager = NodePath("..")
+
+[node name="player_noticed_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
+script = ExtResource("116_7ja48")
+conversation_manager = NodePath("..")
 
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_exited"]

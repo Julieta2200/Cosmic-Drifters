@@ -52,7 +52,8 @@ func get_signal(action) -> Signal:
 	return action_signal[action]
 
 func ask_order(table: Table):
-	table.call_orders(self)
+	if table.group != null:
+		table.call_orders(self)
 
 func pick_order(table: Table):
 	level.cafe_manager.pick_order(table)
@@ -60,11 +61,13 @@ func pick_order(table: Table):
 	walk_to(target, ready_give_order, table)
 
 func give_check(table: Table):
-	table.serve_end()
+	if table.group != null:
+		table.serve_end()
 	busy = false
 	
 func give_order(table: Table):
-	table.add_plates()
+	if table.group != null:
+		table.add_plates()
 	busy = false
 	
 func ordered(table):

@@ -20,7 +20,7 @@ var table_status
 
 var current_status = STATUS_EMPTY
 
-var enemies: Array
+var enemies: Array[Enemy]
 
 const SPAWN_DELAY = 1
 const ORDER_INTERVAL = 1
@@ -34,7 +34,8 @@ signal ready_sit(index: int)
 signal ready_exit(index: int)
 
 func _ready():
-	enemies = _enemies_cont.get_children()
+	for enemy in _enemies_cont.get_children():
+		enemies.append(enemy as Enemy)
 	_table.group = self
 	table_status = _table.group_status
 	_create_timer(_spawn_time, true, _spawn)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxr0iy23ubcla"]
+[gd_scene load_steps=17 format=3 uid="uid://bxr0iy23ubcla"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_ek06i"]
 [ext_resource type="Texture2D" uid="uid://cvpg5yfof2kns" path="res://assets/Frost Dumplings/shadow.png" id="1_jjwap"]
 [ext_resource type="Texture2D" uid="uid://rvb1ph74bbk7" path="res://assets/Frost Dumplings/base-walk-2.png" id="2_g055v"]
+[ext_resource type="Texture2D" uid="uid://cbr2o7bktwvom" path="res://assets/avatar/Dumpling.png" id="2_ve7nk"]
 [ext_resource type="Texture2D" uid="uid://bssi38idh2ync" path="res://assets/Frost Dumplings/back-base.png" id="3_2ppps"]
 [ext_resource type="Texture2D" uid="uid://ks8fcuauwms8" path="res://assets/Frost Dumplings/base-walk-1.png" id="4_hjq1c"]
 [ext_resource type="Texture2D" uid="uid://bid8428apnfre" path="res://assets/Frost Dumplings/base.png" id="5_574q4"]
@@ -86,6 +87,7 @@ size = Vector2(8, 4.875)
 scale = Vector2(16, 16)
 script = ExtResource("1_ek06i")
 character_name = "FROST"
+character_sprite = ExtResource("2_ve7nk")
 speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]

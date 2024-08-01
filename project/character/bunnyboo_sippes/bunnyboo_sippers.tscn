@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bt7yhx8mojj0m"]
+[gd_scene load_steps=17 format=3 uid="uid://bt7yhx8mojj0m"]
 
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_gitro"]
 [ext_resource type="Texture2D" uid="uid://d0gmsjk3nceok" path="res://assets/Bunnyboo Sippers/shadow.png" id="2_0e3tl"]
+[ext_resource type="Texture2D" uid="uid://b5qapl2urm8d2" path="res://assets/avatar/Bunnyboo.png" id="2_177vy"]
 [ext_resource type="Texture2D" uid="uid://creeesxct5c8n" path="res://assets/Bunnyboo Sippers/back-walk-2.png" id="3_6xkkd"]
 [ext_resource type="Texture2D" uid="uid://2fo88ml1wgs5" path="res://assets/Bunnyboo Sippers/back-walk-1.png" id="5_hfsws"]
 [ext_resource type="Texture2D" uid="uid://dh854f12tflre" path="res://assets/Bunnyboo Sippers/back-base.png" id="6_2bsi8"]
@@ -86,6 +87,7 @@ size = Vector2(11.3125, 3.9375)
 scale = Vector2(16, 16)
 script = ExtResource("1_gitro")
 character_name = "BUNNYBOO"
+character_sprite = ExtResource("2_177vy")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0.5, 7.0625)

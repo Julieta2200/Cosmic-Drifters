@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsncelllnchub"]
+[gd_scene load_steps=17 format=3 uid="uid://bsncelllnchub"]
 
 [ext_resource type="Texture2D" uid="uid://bi0wwtfx58fd0" path="res://assets/Cerulean Hoppers/shadow.png" id="1_osyae"]
 [ext_resource type="Script" path="res://project/character/enemy.gd" id="1_rc42d"]
 [ext_resource type="Texture2D" uid="uid://d24xtgo7r7rg3" path="res://assets/Cerulean Hoppers/back-walk-1.png" id="2_o1awh"]
+[ext_resource type="Texture2D" uid="uid://ddh8lrwagya33" path="res://assets/avatar/Hoppers.png" id="2_yb4rr"]
 [ext_resource type="Texture2D" uid="uid://do2jv473g2rkk" path="res://assets/Cerulean Hoppers/back-base.png" id="3_l4mbp"]
 [ext_resource type="Texture2D" uid="uid://bnis6suuuqun1" path="res://assets/Cerulean Hoppers/back-walk-2.png" id="4_dnr5i"]
 [ext_resource type="Texture2D" uid="uid://1uxhmsu7k6ec" path="res://assets/Cerulean Hoppers/base.png" id="5_6huyq"]
@@ -86,6 +87,7 @@ size = Vector2(7.75, 5.5625)
 scale = Vector2(16, 16)
 script = ExtResource("1_rc42d")
 character_name = "HOPPER"
+character_sprite = ExtResource("2_yb4rr")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(1.1875, 6.5625)
