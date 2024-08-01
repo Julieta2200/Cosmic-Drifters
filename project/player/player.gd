@@ -143,6 +143,9 @@ func change_character(character, _character_name):
 func get_approach_points() -> Array[Node]:
 	return $approach_points.get_children()
 
+func get_save_point() -> Vector2:
+	return $save_point.global_position
+
 func _on_ready_input_order():
 	input_order()
 
@@ -152,3 +155,6 @@ func _on_ready_choose_order():
 
 func _on_manager_room():
 	print("ready for manager")
+
+func make_free():
+	busy = false

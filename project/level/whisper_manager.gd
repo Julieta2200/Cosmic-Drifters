@@ -16,8 +16,7 @@ func approach_player(table: Table):
 	for i in range(enemies.size()):
 		enemies[i].set_angry()
 		enemies[i].walk_to(points[i].global_position, approached)
-
-
+	table.level.cafe_manager.security_guard_save_lumina(player.get_save_point(), table.group)
 
 func _on_approached():
 	print("approached")

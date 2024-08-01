@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://do1g3b6brnss7"]
+
+[ext_resource type="Script" path="res://project/character/security_guard/security_guard.gd" id="1_y52id"]
+[ext_resource type="Texture2D" uid="uid://bfaaatyjjuolv" path="res://assets/Security guard/Shadow.png" id="2_70f4m"]
+[ext_resource type="Texture2D" uid="uid://c08eii46rrrtg" path="res://assets/Security guard/Back_Walk2.png" id="3_7k46l"]
+[ext_resource type="Texture2D" uid="uid://1586nfah88ov" path="res://assets/Security guard/Back_Base.png" id="4_pj0lg"]
+[ext_resource type="Texture2D" uid="uid://cokg3nqtibswb" path="res://assets/Security guard/Back_Walk1.png" id="5_rf7og"]
+[ext_resource type="Texture2D" uid="uid://b1b6ke4j0ba54" path="res://assets/Security guard/Base.png" id="6_vww1s"]
+[ext_resource type="Texture2D" uid="uid://df3gm4au14tm7" path="res://assets/Security guard/Walk_1.png" id="7_4uqgi"]
+[ext_resource type="Texture2D" uid="uid://13agdjmx2d18" path="res://assets/Security guard/Walk_2.png" id="8_q27bs"]
+[ext_resource type="Texture2D" uid="uid://cn7agqrge4upe" path="res://assets/Security guard/Walk_3.png" id="9_0bccv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1sipt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7k46l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pj0lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rf7og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pj0lg")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vww1s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4uqgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q27bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0bccv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vww1s")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yeye"]
+size = Vector2(16, 8)
+
+[node name="security_guard" type="CharacterBody2D"]
+scale = Vector2(16, 16)
+script = ExtResource("1_y52id")
+speed = 500.0
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0.8125, 4.5)
+texture = ExtResource("2_70f4m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.1875, -10.1875)
+sprite_frames = SubResource("SpriteFrames_1sipt")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0.4375, 0.625)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.3125, 1)
+shape = SubResource("RectangleShape2D_4yeye")
+
+[connection signal="save_point" from="." to="." method="_on_save_point"]

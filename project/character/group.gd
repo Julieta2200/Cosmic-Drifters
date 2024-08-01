@@ -157,3 +157,18 @@ func get_table() -> Table:
 
 func _on_ready_exit(index):
 	enemies[index].spawn(Vector2(0,0))
+
+func _walk_to_door():
+	current_status = STATUS_EMPTY
+	if _spawn_index == enemies.size():
+		_spawn_index = 0
+		return
+	var enemy: Enemy = enemies[_spawn_index]
+	enemy.walk_to(level.door.global_position, ready_exit, _spawn_index)
+	_spawn_index += 1
+	_timer.wait_time = SPAWN_DELAY
+	_timer.start()
+
+func walk_to_door():
+	_table.level.cafe_manager.player_free()
+	_create_timer(0.5, true, _walk_to_door)
