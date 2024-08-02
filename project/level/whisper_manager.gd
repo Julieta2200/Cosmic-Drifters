@@ -4,7 +4,7 @@ signal approached
 signal player_ready(table: Table)
 
 var player: Player
-var table : Table
+@onready var security_guard = $"../security_guard"
 
 func stop_player(p: Player, table: Table):
 	player = p
@@ -24,7 +24,6 @@ func _on_approached():
 
 func _on_player_ready(table):
 	approach_player(table)
-	self.table = table
 
 func security_guard_save_lumina(pos, group):
-	table.level.cafe_manager.security_guard.save_lumina(pos, group)
+	security_guard.save_lumina(pos, group)
