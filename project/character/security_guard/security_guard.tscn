@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://do1g3b6brnss7"]
+[gd_scene load_steps=13 format=3 uid="uid://do1g3b6brnss7"]
 
 [ext_resource type="Script" path="res://project/character/security_guard/security_guard.gd" id="1_y52id"]
-[ext_resource type="Texture2D" path="res://assets/Security guard/Shadow (5).png" id="2_hit25"]
-[ext_resource type="Texture2D" path="res://assets/Security guard/Walk_back1.png" id="3_gj7i4"]
-[ext_resource type="Texture2D" path="res://assets/Security guard/Walk_back2.png" id="4_5jxsu"]
-[ext_resource type="Texture2D" path="res://assets/Security guard/Walk_back3 (3).png" id="5_jowju"]
+[ext_resource type="Texture2D" uid="uid://8bbkljx1wyyo" path="res://assets/Security guard/Shadow (5).png" id="2_hit25"]
+[ext_resource type="Texture2D" uid="uid://d0dnjxr2483tx" path="res://assets/avatar/Oliver.png" id="2_s33kb"]
+[ext_resource type="Texture2D" uid="uid://ccyad1jvfo8ou" path="res://assets/Security guard/Walk_back1.png" id="3_gj7i4"]
+[ext_resource type="Texture2D" uid="uid://cxe28olhdls8" path="res://assets/Security guard/Walk_back2.png" id="4_5jxsu"]
+[ext_resource type="Texture2D" uid="uid://dps2y5gpmrlat" path="res://assets/Security guard/Walk_back3 (3).png" id="5_jowju"]
 [ext_resource type="Texture2D" uid="uid://b1b6ke4j0ba54" path="res://assets/Security guard/Base.png" id="6_vww1s"]
-[ext_resource type="Texture2D" path="res://assets/Security guard/Walk1 (2).png" id="7_g3al6"]
-[ext_resource type="Texture2D" path="res://assets/Security guard/Walk2.png" id="8_herb8"]
-[ext_resource type="Texture2D" path="res://assets/Security guard/Walk3 (1).png" id="9_aj06q"]
+[ext_resource type="Texture2D" uid="uid://rs6qy52jigfb" path="res://assets/Security guard/Walk1 (2).png" id="7_g3al6"]
+[ext_resource type="Texture2D" uid="uid://17oo7aisr0nq" path="res://assets/Security guard/Walk2.png" id="8_herb8"]
+[ext_resource type="Texture2D" uid="uid://limctvg57n8r" path="res://assets/Security guard/Walk3 (1).png" id="9_aj06q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1sipt"]
 animations = [{
@@ -61,6 +62,7 @@ size = Vector2(16, 8)
 [node name="security_guard" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_y52id")
+character_sprite = ExtResource("2_s33kb")
 speed = 500.0
 
 [node name="shadow" type="Sprite2D" parent="."]
