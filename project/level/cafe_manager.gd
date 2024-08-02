@@ -38,7 +38,3 @@ func ask_for_check(table: Table):
 
 func manager_give_check(table: Table):
 	manager.walk_to_give_check(table)
-
-func player_free():
-	player.make_free()
-	

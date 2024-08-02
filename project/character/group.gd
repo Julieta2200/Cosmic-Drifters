@@ -170,5 +170,4 @@ func _walk_to_door():
 	_timer.start()
 
 func walk_to_door():
-	_table.level.cafe_manager.player_free()
 	_create_timer(0.5, true, _walk_to_door)

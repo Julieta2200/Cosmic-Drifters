@@ -1,6 +1,6 @@
 class_name Oliver extends Character
 
-var group : Group
+var busy : bool
 
 signal save_point
 signal ready_sit
@@ -8,19 +8,23 @@ signal ready_sit
 @export var origin_position: Marker2D
 @export var chair: Sprite2D
 
+@onready var whisper_manager : WhisperManager = $"../whisper_manager"
+
 func _ready():
 	position_delta = speed / 60
 
 func _physics_process(_delta):
 	move()
 
-func save_lumina(save_position, g):
-	group = g
+func save_lumina(save_position):
+	busy = true
 	chair.visible = true
 	walk_to(save_position, save_point)
 
 func _on_save_point():
-	group.walk_to_door()
+	busy = false
+	whisper_manager.group.walk_to_door()
+	whisper_manager.player.make_free()
 	walk_to_room()
 	
 func walk_to_room():
