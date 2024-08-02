@@ -4,7 +4,10 @@ enum {TakeOrder, PickOrder, GiveCheck}
 
 @onready var kitchen: Kitchen = $"../kitchen"
 @onready var desk: Desk = $"../clickable_objects/desk_plates"
+
 @onready var manager: Manager = $"../manager"
+@onready var security_guard = $"../security_guard"
+@onready var player = $"../clickable_objects/player"
 
 var _waiters_actions: Array
 

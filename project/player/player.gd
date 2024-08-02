@@ -145,6 +145,9 @@ func change_character(character, _character_name):
 func get_approach_points() -> Array[Node]:
 	return $approach_points.get_children()
 
+func get_save_point() -> Vector2:
+	return $save_point.global_position
+
 func _on_ready_input_order():
 	input_order()
 
@@ -153,10 +156,13 @@ func _on_ready_choose_order():
 
 
 func _on_manager_room():
-	if cafe_manager.manager.current_emotion == Emotions.alert:
+  if cafe_manager.manager.current_emotion == Emotions.alert:
 		cafe_manager.manager.set_emotion(Emotions.angry)
 		set_emotion(Emotions.sad)
 	else :
 		cafe_manager.manager.set_emotion(Emotions.question)
 		set_emotion(Emotions.sad)
+
+func make_free():
+	busy = false
 	

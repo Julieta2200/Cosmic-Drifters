@@ -112,7 +112,8 @@
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
 [ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
 [ext_resource type="PackedScene" uid="uid://bg11plsdmm2qv" path="res://project/character/manager/manager.tscn" id="109_3it4b"]
-[ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/secuity_guard/secuity_guard.tscn" id="109_ux866"]
+
+[ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/security_guard/security_guard.tscn" id="109_u3rrt"]
 [ext_resource type="Script" path="res://project/level/conversation_manager.gd" id="113_xffrp"]
 [ext_resource type="Script" path="res://project/level/player_approach_conversation.gd" id="114_4flla"]
 [ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
@@ -719,7 +720,8 @@ position = Vector2(-1024, 5024)
 scale = Vector2(16, 16)
 texture = ExtResource("22_a1tga")
 
-[node name="Chair6" type="Sprite2D" parent="details_y_sort_enabled/chair"]
+[node name="security_guard_chair" type="Sprite2D" parent="details_y_sort_enabled/chair"]
+visible = false
 position = Vector2(-1024, 3328)
 scale = Vector2(16, 16)
 texture = ExtResource("22_a1tga")
@@ -1081,13 +1083,19 @@ scale = Vector2(16, 16)
 position = Vector2(-1056, 4388)
 scale = Vector2(16, 16)
 
-[node name="secuity_guard" parent="." instance=ExtResource("109_ux866")]
-position = Vector2(-1107, 2515)
-
 [node name="manager" parent="." node_paths=PackedStringArray("origin_position", "chair") instance=ExtResource("109_3it4b")]
 position = Vector2(-1033, 5017)
 origin_position = NodePath("../manager_origin_position")
 chair = NodePath("../details_y_sort_enabled/chair/manager_chair")
+
+[node name="security_guard_origin_position" type="Marker2D" parent="."]
+position = Vector2(-1019, 3307)
+scale = Vector2(16, 16)
+
+[node name="security_guard" parent="." node_paths=PackedStringArray("origin_position", "chair") instance=ExtResource("109_u3rrt")]
+position = Vector2(-1044, 3303)
+origin_position = NodePath("../security_guard_origin_position")
+chair = NodePath("../details_y_sort_enabled/chair/security_guard_chair")
 
 [node name="cafe_manager" type="Node2D" parent="."]
 script = ExtResource("105_glat7")
@@ -1154,5 +1162,6 @@ conversation_manager = NodePath("..")
 
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_exited"]
+[connection signal="ready_sit" from="security_guard" to="security_guard" method="_on_ready_sit"]
 [connection signal="approached" from="whisper_manager" to="whisper_manager" method="_on_approached"]
 [connection signal="player_ready" from="whisper_manager" to="whisper_manager" method="_on_player_ready"]

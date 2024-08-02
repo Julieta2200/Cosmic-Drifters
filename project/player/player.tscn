@@ -857,10 +857,14 @@ position = Vector2(0.1875, -20.0625)
 [node name="4" type="Marker2D" parent="approach_points"]
 position = Vector2(-0.0625, 15.125)
 
+[node name="save_point" type="Marker2D" parent="."]
+position = Vector2(-28.3125, 17.6875)
+
 [node name="emotion" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-3.9375, -18.0625)
 texture = ExtResource("77_j6a7g")
+
 
 [connection signal="manager_room" from="." to="." method="_on_manager_room"]
 [connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]
