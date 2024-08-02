@@ -42,7 +42,7 @@ func add_to_board(table: Table):
 	$board.visible = true
 	for text in $board/texts.get_children():
 		if !text.visible:
-			text.text = "N " + str(table.number)
+			text.text = "0" + str(table.number)
 			text.visible = true
 			return text
 
