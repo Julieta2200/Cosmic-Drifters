@@ -1,6 +1,4 @@
-extends Node2D
-
-class_name Status
+class_name Status extends Node2D
 
 @onready var stages = {
 	$ask_waiter: {
@@ -123,3 +121,9 @@ func timer_delete():
 func _on_visible_timer_timeout():
 	active_status.visible = false
 	table.plate.visible = false
+
+func stop_timers():
+	$VisibleTimer.stop()
+	$EatingTimer.stop()
+	if stage_timer != null:
+		stage_timer.stop()

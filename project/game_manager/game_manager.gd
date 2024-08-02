@@ -14,6 +14,8 @@ func click_action():
 	
 	click_area = true
 	var clicked_obj = $"../cursor_manager".detect_object()
+	if clicked_obj == null:
+		return
 	if clicked_obj is Area2D:
 		player.walk_to(get_global_mouse_position(), player.any)
 	elif clicked_obj is Table:

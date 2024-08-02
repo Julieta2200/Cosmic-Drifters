@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=81 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://bh64gw7aghagg" path="res://assets/lumina/shadow (4).png" id="2_fktkq"]
@@ -76,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://b01jh7rg2oaor" path="res://assets/lumina/Walk2.png" id="57_sbb40"]
 [ext_resource type="Texture2D" uid="uid://ceidnx82ylgwi" path="res://assets/Security guard/Oliver_16px.png" id="62_2pgch"]
 [ext_resource type="Texture2D" uid="uid://cc5jrt48rlsjx" path="res://assets/lumina/Base (3).png" id="71_an1sl"]
+[ext_resource type="Texture2D" uid="uid://cbuvioy1gsa6i" path="res://assets/Emotions/Exclamation_point.png" id="77_j6a7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo8un"]
 size = Vector2(13.875, 5.5)
@@ -627,7 +628,7 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_r3jtw")
 character_name = "LUMINA"
-character_sprite = ExtResource("71_an1sl")
+character_sprite = ExtResource("28_rhnkw")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(1, 1)
@@ -858,6 +859,12 @@ position = Vector2(-0.0625, 15.125)
 
 [node name="save_point" type="Marker2D" parent="."]
 position = Vector2(-28.3125, 17.6875)
+
+[node name="emotion" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-3.9375, -18.0625)
+texture = ExtResource("77_j6a7g")
+
 
 [connection signal="manager_room" from="." to="." method="_on_manager_room"]
 [connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]

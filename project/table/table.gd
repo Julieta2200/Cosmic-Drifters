@@ -4,7 +4,7 @@ const ORDER_INTERVAL: int = 1
 
 @onready var plate = $plate
 @onready var chairs = $chairs
-@onready var group_status = $status
+@onready var group_status: Status = $status
 
 @export var number: int
 
@@ -34,6 +34,9 @@ func leave_chair(chair_i):
 	var chair = $chairs.get_children()[chair_i]
 	chair.visible = true
 	return chair
+
+func reset():
+	group = null
 	
 func leave():
 	group.leave()
@@ -82,6 +85,8 @@ func set_true_actual_order(foods):
 	actual_order = foods
 
 func for_lumina() -> bool:
+	if group == null:
+		return false
 	return group._for_lumina
 
 func get_clickable_component():

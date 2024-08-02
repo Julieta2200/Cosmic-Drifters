@@ -23,6 +23,25 @@ static var masks = {
 	OLIVER : "oliver_"
 }
 
+enum Emotions {none, alert, angry, sad, question}
+const emotion_sprites: Dictionary = {
+	Emotions.alert: "res://assets/Emotions/Exclamation_point.png",
+	Emotions.angry: "res://assets/Emotions/Angry.png",
+	Emotions.sad: "res://assets/Emotions/Drop.png",
+	Emotions.question: "res://assets/Emotions/Question_mark.png"
+}
+
+var current_emotion: Emotions
+
+func set_emotion(emotion: Emotions):
+	current_emotion = emotion
+	if emotion == Emotions.none:
+		$emotion.visible = false
+		return
+	
+	$emotion.texture = load(emotion_sprites[emotion])
+	$emotion.visible = true
+
 #character movement
 func move() -> void:
 	if path.is_empty():

@@ -4,7 +4,8 @@ enum {TakeOrder, PickOrder, GiveCheck}
 
 @onready var kitchen: Kitchen = $"../kitchen"
 @onready var desk: Desk = $"../clickable_objects/desk_plates"
-@onready var manager = $"../manager"
+
+@onready var manager: Manager = $"../manager"
 @onready var security_guard = $"../security_guard"
 @onready var player = $"../clickable_objects/player"
 
@@ -38,3 +39,5 @@ func ask_for_check(table: Table):
 
 func manager_give_check(table: Table):
 	manager.walk_to_give_check(table)
+
+

@@ -11,6 +11,8 @@ signal manager_room
 
 @export var ui: TopUI
 @export var manager_room_position: Marker2D
+@export var cafe_manager: CafeManager
+@export var conversation_manager: ConversationManager
 
 func check_queue():
 	pass
@@ -154,7 +156,13 @@ func _on_ready_choose_order():
 
 
 func _on_manager_room():
-	print("ready for manager")
+  if cafe_manager.manager.current_emotion == Emotions.alert:
+		cafe_manager.manager.set_emotion(Emotions.angry)
+		set_emotion(Emotions.sad)
+	else :
+		cafe_manager.manager.set_emotion(Emotions.question)
+		set_emotion(Emotions.sad)
 
 func make_free():
 	busy = false
+	
