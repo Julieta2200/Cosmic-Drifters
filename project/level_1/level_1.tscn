@@ -995,10 +995,11 @@ polygon = PackedVector2Array(0, 416, 0, 323, -45, 323, -61, 316, -69, 316, -61, 
 wait_time = 500.0
 one_shot = true
 
-[node name="group_1" parent="." node_paths=PackedStringArray("level", "_table") instance=ExtResource("94_fnmwe")]
+[node name="group_1" parent="." node_paths=PackedStringArray("level", "_table", "conversation") instance=ExtResource("94_fnmwe")]
 level = NodePath("..")
 _for_lumina = true
 _table = NodePath("../clickable_objects/Table")
+conversation = NodePath("../conversation_manager/group_1_conversation")
 
 [node name="group_2" parent="." node_paths=PackedStringArray("level", "_table") instance=ExtResource("95_t1hhy")]
 level = NodePath("..")

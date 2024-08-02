@@ -41,6 +41,7 @@ func _on_body_entered(body):
 	if body is Player:
 		active = true
 		player = body
+		table.group.conversation.whisper_mode = false
 
 func _on_body_exited(body):
 	if body is Enemy:
@@ -49,6 +50,7 @@ func _on_body_exited(body):
 	
 	if body is Player:
 		active = false
+		table.group.conversation.whisper_mode = true
 
 
 func update_units():
