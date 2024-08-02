@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfaaatyjjuolv"
-path="res://.godot/imported/Shadow.png-c46bcc180972a757be2ce915896fc217.ctex"
+uid="uid://cxe28olhdls8"
+path="res://.godot/imported/Walk_back2.png-a6902e37b45c44c79066cf8d028b6db4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Security guard/Shadow.png"
-dest_files=["res://.godot/imported/Shadow.png-c46bcc180972a757be2ce915896fc217.ctex"]
+source_file="res://assets/Security guard/Walk_back2.png"
+dest_files=["res://.godot/imported/Walk_back2.png-a6902e37b45c44c79066cf8d028b6db4.ctex"]
 
 [params]
 
