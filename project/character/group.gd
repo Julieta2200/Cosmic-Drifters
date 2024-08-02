@@ -172,3 +172,6 @@ func _walk_to_door():
 
 func walk_to_door():
 	_create_timer(0.5, true, _walk_to_door)
+
+func get_enemy(i: int) -> Enemy:
+	return enemies[i]

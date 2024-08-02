@@ -15,7 +15,9 @@ func start(e: Array[Enemy] = []):
 	timer.one_shot = true
 	_play_dialogue()
 	
-	
+func stop():
+	timer.stop()
+
 	
 func _play_dialogue():
 	if index == dialogues.size():

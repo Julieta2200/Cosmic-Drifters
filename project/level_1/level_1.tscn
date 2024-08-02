@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=135 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -116,6 +116,7 @@
 [ext_resource type="Script" path="res://project/level/conversation_manager.gd" id="113_xffrp"]
 [ext_resource type="Script" path="res://project/level/player_approach_conversation.gd" id="114_4flla"]
 [ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
+[ext_resource type="Script" path="res://project/groups/level_1/group_1_conversation.gd" id="117_7w7c6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -1157,6 +1158,11 @@ conversation_manager = NodePath("..")
 
 [node name="player_noticed_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
 script = ExtResource("116_7ja48")
+conversation_manager = NodePath("..")
+
+[node name="group_1_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("group", "conversation_manager")]
+script = ExtResource("117_7w7c6")
+group = NodePath("../../group_1")
 conversation_manager = NodePath("..")
 
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
