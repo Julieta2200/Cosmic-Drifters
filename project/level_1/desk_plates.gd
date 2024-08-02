@@ -34,7 +34,8 @@ func remove_plate(table: Table):
 	if plates[table].has("text"):
 		remove_from_board(plates[table]["text"])
 	plates.erase(table)
-	orders_menu.load_tables(plates, player)
+	if table.for_lumina():
+		orders_menu.load_tables(plates, player)
 	
 
 
