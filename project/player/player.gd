@@ -9,6 +9,7 @@ signal ready_input_order
 signal ready_choose_order
 signal manager_room
 
+@export var shapeshift_sprite : Texture
 @export var ui: TopUI
 @export var manager_room_position: Marker2D
 @export var cafe_manager: CafeManager
@@ -127,13 +128,13 @@ func _on_animated_sprite_2d_animation_finished():
 	busy = false
 
 func change_character(character, _character_name):
-	if character.texture != character_sprite:
+	if character.texture != shapeshift_sprite:
 		for i in $characters_panel.get_child_count():
 			if i > 0 :
-				if $characters_panel.get_child(i).get_child(0).texture == character_sprite:
+				if $characters_panel.get_child(i).get_child(0).texture == shapeshift_sprite:
 					$characters_panel.get_child(i).get_child(0).texture = previous_character
 					
-		character.texture = character_sprite
+		character.texture = shapeshift_sprite
 		morph(_character_name)
 		$AnimatedSprite2D.play(masks[_character_name] + "shapeshifting")
 	else:

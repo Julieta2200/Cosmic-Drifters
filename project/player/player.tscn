@@ -1,7 +1,8 @@
-[gd_scene load_steps=81 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=82 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://bh64gw7aghagg" path="res://assets/lumina/shadow (4).png" id="2_fktkq"]
+[ext_resource type="Texture2D" uid="uid://b86jepfl30uai" path="res://assets/avatar/Lumina.png" id="2_m7krk"]
 [ext_resource type="Texture2D" uid="uid://csmm3bj8idfjq" path="res://assets/lumina/Back_Walk_1.png" id="3_lvgeq"]
 [ext_resource type="Texture2D" uid="uid://dqh5nldq77erh" path="res://assets/lumina/Lumina Bunnyboo/back-walk-1.png" id="3_p58j2"]
 [ext_resource type="Texture2D" uid="uid://bv6whje7exkuh" path="res://assets/lumina/Back_Base (1).png" id="4_4p5jv"]
@@ -627,8 +628,9 @@ scale = Vector2(16, 16)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_r3jtw")
+shapeshift_sprite = ExtResource("71_an1sl")
 character_name = "LUMINA"
-character_sprite = ExtResource("28_rhnkw")
+character_sprite = ExtResource("2_m7krk")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(1, 1)
@@ -864,7 +866,6 @@ position = Vector2(-28.3125, 17.6875)
 visible = false
 position = Vector2(-3.9375, -18.0625)
 texture = ExtResource("77_j6a7g")
-
 
 [connection signal="manager_room" from="." to="." method="_on_manager_room"]
 [connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]
