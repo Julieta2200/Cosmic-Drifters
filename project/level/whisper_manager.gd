@@ -35,7 +35,7 @@ func _on_approached(data):
 	if data["index"] == data["enemies"].size() - 1:
 		conversation_manager.player_approach_conversation.start(data["enemies"])
 		if !security_guard.busy:
-		  security_guard_save_lumina(player.get_save_point())
+			security_guard_save_lumina(player.get_save_point())
 
 
 

@@ -156,10 +156,10 @@ func _on_ready_choose_order():
 
 
 func _on_manager_room():
-  if cafe_manager.manager.current_emotion == Emotions.alert:
+	if cafe_manager.manager.current_emotion == Emotions.alert:
 		cafe_manager.manager.set_emotion(Emotions.angry)
 		set_emotion(Emotions.sad)
-	else :
+	else:
 		cafe_manager.manager.set_emotion(Emotions.question)
 		set_emotion(Emotions.sad)
 
