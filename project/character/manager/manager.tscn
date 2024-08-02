@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bg11plsdmm2qv"]
+[gd_scene load_steps=13 format=3 uid="uid://bg11plsdmm2qv"]
 
 [ext_resource type="Texture2D" uid="uid://drbx810und22u" path="res://assets/Manager/Shadow.png" id="1_2yx55"]
 [ext_resource type="Script" path="res://project/character/manager/manager.gd" id="1_c3qu0"]
+[ext_resource type="Texture2D" uid="uid://cqijxmw2pcd1m" path="res://assets/avatar/Manager.png" id="2_ee0hi"]
 [ext_resource type="Texture2D" uid="uid://0myn3pk4065h" path="res://assets/Manager/Back_Walk1.png" id="2_oxnpx"]
 [ext_resource type="Texture2D" uid="uid://cjehm4ja4ns64" path="res://assets/Manager/Back_Base.png" id="3_xr4e6"]
 [ext_resource type="Texture2D" uid="uid://dsmwcivyno2mg" path="res://assets/Manager/Back_Walk2.png" id="4_vekj2"]
@@ -68,6 +69,7 @@ animations = [{
 [node name="manager" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_c3qu0")
+character_sprite = ExtResource("2_ee0hi")
 speed = 500.0
 
 [node name="shadow" type="Sprite2D" parent="."]

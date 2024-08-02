@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgrqn42lwwe1f"]
+[gd_scene load_steps=7 format=3 uid="uid://cgrqn42lwwe1f"]
 
 [ext_resource type="Texture2D" uid="uid://bq7nvnfgvjgnm" path="res://assets/Boss/Base.png" id="1_dqxdh"]
 [ext_resource type="Texture2D" uid="uid://cpdwvi6f7bkrm" path="res://assets/Boss/shadow.png" id="1_vcnxh"]
 [ext_resource type="Script" path="res://project/character/boss/boss.gd" id="1_w3827"]
+[ext_resource type="Texture2D" uid="uid://cf8lk07vgl25x" path="res://assets/avatar/Boss.png" id="2_a34fw"]
 [ext_resource type="Texture2D" uid="uid://bllgdjpb1afp7" path="res://assets/Boss/Talk.png" id="2_d3hhq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iv80m"]
@@ -23,7 +24,7 @@ animations = [{
 scale = Vector2(16, 16)
 script = ExtResource("1_w3827")
 character_name = "Nebula"
-character_sprite = ExtResource("1_dqxdh")
+character_sprite = ExtResource("2_a34fw")
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 33)
