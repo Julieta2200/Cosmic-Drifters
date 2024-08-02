@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://project/level_1/desk_plates.gd" id="1_t7x4x"]
 [ext_resource type="Texture2D" uid="uid://kek2o3wvuvdq" path="res://assets/details/Table3.png" id="2_mt473"]
-[ext_resource type="Texture2D" uid="uid://cpu3u3ywi4dbo" path="res://assets/Order_Board/Order Board1.png" id="3_mowmt"]
+[ext_resource type="Texture2D" uid="uid://c5xbl2ha333m0" path="res://assets/Order_Board/Order_Board(0).png" id="3_wl7gl"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_0xvte"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="5_t3r3v"]
 
@@ -19,7 +19,7 @@ texture = ExtResource("2_mt473")
 [node name="board" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-0.375, -27.125)
-texture = ExtResource("3_mowmt")
+texture = ExtResource("3_wl7gl")
 
 [node name="texts" type="Control" parent="board"]
 layout_mode = 3
@@ -32,50 +32,80 @@ offset_bottom = 67.125
 [node name="1" type="Label" parent="board/texts"]
 visible = false
 layout_mode = 0
-offset_left = -15.875
-offset_top = -33.0625
-offset_right = 24.125
-offset_bottom = -10.0625
+offset_left = -23.25
+offset_top = -33.875
+offset_right = 16.75
+offset_bottom = -10.875
+scale = Vector2(0.9, 0.9)
 theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
 theme_override_fonts/font = ExtResource("4_0xvte")
 theme_override_font_sizes/font_size = 8
-text = "N 1"
+text = "N1"
 
 [node name="2" type="Label" parent="board/texts"]
 visible = false
 layout_mode = 0
-offset_left = 2.8125
-offset_top = -33.0625
-offset_right = 42.8125
-offset_bottom = -10.0625
+offset_left = -5.5625
+offset_top = -33.875
+offset_right = 34.4375
+offset_bottom = -10.875
+scale = Vector2(0.9, 0.9)
 theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
 theme_override_fonts/font = ExtResource("4_0xvte")
 theme_override_font_sizes/font_size = 8
-text = "N 1"
+text = "N1"
 
 [node name="3" type="Label" parent="board/texts"]
 visible = false
 layout_mode = 0
-offset_left = -15.875
-offset_top = -21.6875
-offset_right = 24.125
-offset_bottom = 1.3125
+offset_left = 11.25
+offset_top = -33.875
+offset_right = 51.25
+offset_bottom = -10.875
+scale = Vector2(0.9, 0.9)
 theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
 theme_override_fonts/font = ExtResource("4_0xvte")
 theme_override_font_sizes/font_size = 8
-text = "N 1"
+text = "N1"
 
 [node name="4" type="Label" parent="board/texts"]
 visible = false
 layout_mode = 0
-offset_left = 2.8125
-offset_top = -22.125
-offset_right = 42.8125
-offset_bottom = 0.875
+offset_left = -23.0625
+offset_top = -21.9375
+offset_right = 16.9375
+offset_bottom = 1.0625
+scale = Vector2(0.9, 0.9)
 theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
 theme_override_fonts/font = ExtResource("4_0xvte")
 theme_override_font_sizes/font_size = 8
-text = "N 1"
+text = "N1"
+
+[node name="5" type="Label" parent="board/texts"]
+visible = false
+layout_mode = 0
+offset_left = -5.75
+offset_top = -21.75
+offset_right = 34.25
+offset_bottom = 1.25
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
+theme_override_fonts/font = ExtResource("4_0xvte")
+theme_override_font_sizes/font_size = 8
+text = "N1"
+
+[node name="6" type="Label" parent="board/texts"]
+visible = false
+layout_mode = 0
+offset_left = 11.25
+offset_top = -21.5625
+offset_right = 51.25
+offset_bottom = 1.4375
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_color = Color(0.294118, 0.670588, 0.882353, 1)
+theme_override_fonts/font = ExtResource("4_0xvte")
+theme_override_font_sizes/font_size = 8
+text = "N1"
 
 [node name="plates" type="Node2D" parent="."]
 
