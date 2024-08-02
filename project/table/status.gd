@@ -125,4 +125,5 @@ func _on_visible_timer_timeout():
 func stop_timers():
 	$VisibleTimer.stop()
 	$EatingTimer.stop()
-	stage_timer.stop()
+	if stage_timer != null:
+		stage_timer.stop()
