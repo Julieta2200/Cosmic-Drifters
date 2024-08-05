@@ -101,3 +101,14 @@ func highlight():
 			group.STATUS_ASKING_FOR_WAITER,group.STATUS_WAITING_FOR_FOOD,group.STATUS_WAITING_FOR_CHECK:
 				$outline.visible = true
 		
+
+
+func _on_clickable_component_outline():
+	if for_lumina():
+		match  group.current_status:
+			group.STATUS_ASKING_FOR_WAITER,group.STATUS_WAITING_FOR_FOOD,group.STATUS_WAITING_FOR_CHECK:
+				$outline.visible = true
+
+
+func _on_clickable_component_delete_outline():
+	$outline.visible = false

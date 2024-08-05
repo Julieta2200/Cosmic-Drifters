@@ -148,5 +148,7 @@ visible = false
 position = Vector2(-0.75, 0.125)
 texture = ExtResource("3_qse6m")
 
+[connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]
 [connection signal="timeout" from="status/VisibleTimer" to="status" method="_on_visible_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]

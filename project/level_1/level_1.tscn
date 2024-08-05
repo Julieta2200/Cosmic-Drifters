@@ -1174,6 +1174,8 @@ script = ExtResource("117_7w7c6")
 group = NodePath("../../group_1")
 conversation_manager = NodePath("..")
 
+[connection signal="delete_outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_outline"]
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_exited"]
 [connection signal="ready_sit" from="security_guard" to="security_guard" method="_on_ready_sit"]

@@ -55,6 +55,11 @@ func remove_from_board(text):
 			return
 	$board.visible = false
 
-func highlight():
+
+func _on_clickable_component_delete_outline():
+	$outline.visible = false
+
+
+func _on_clickable_component_outline():
 	if $board.visible && table.for_lumina():
 		$outline.visible = true

@@ -143,3 +143,6 @@ position = Vector2(-0.25, 18.0625)
 visible = false
 position = Vector2(0.125, 3.9375)
 texture = ExtResource("6_7owwk")
+
+[connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]
