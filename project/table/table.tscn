@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3eghgca6xgvb"]
+[gd_scene load_steps=14 format=3 uid="uid://d3eghgca6xgvb"]
 
 [ext_resource type="Texture2D" uid="uid://dp37y5m0a4hx8" path="res://assets/details/Table_Big.png" id="1_7bdqp"]
 [ext_resource type="Script" path="res://project/table/table.gd" id="1_xte3g"]
@@ -144,14 +144,10 @@ one_shot = true
 [node name="approach_point" type="Marker2D" parent="."]
 position = Vector2(-38.25, -27.9375)
 
-
 [node name="outline" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-0.75, 0.125)
 texture = ExtResource("3_qse6m")
-
-[connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
-[connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]
 
 [node name="whisper_area" type="TextureRect" parent="."]
 visible = false
@@ -169,5 +165,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("9_p60pq")
 
+[connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]
 [connection signal="timeout" from="status/VisibleTimer" to="status" method="_on_visible_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]
