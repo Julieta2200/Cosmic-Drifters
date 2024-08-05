@@ -1103,11 +1103,12 @@ chair = NodePath("../details_y_sort_enabled/chair/manager_chair")
 position = Vector2(-1019, 3307)
 scale = Vector2(16, 16)
 
-[node name="security_guard" parent="." node_paths=PackedStringArray("origin_position", "chair", "save_lumina_conversation") instance=ExtResource("109_u3rrt")]
+[node name="security_guard" parent="." node_paths=PackedStringArray("origin_position", "chair", "conversation_manager") instance=ExtResource("109_u3rrt")]
 position = Vector2(-1044, 3303)
 origin_position = NodePath("../security_guard_origin_position")
 chair = NodePath("../details_y_sort_enabled/chair/security_guard_chair")
-save_lumina_conversation = NodePath("../conversation_manager/oliver_save_lumina_conversation")
+conversation_manager = NodePath("../conversation_manager")
+character_name = "Oliver"
 
 [node name="cafe_manager" type="Node2D" parent="."]
 script = ExtResource("105_glat7")
@@ -1150,10 +1151,11 @@ table = NodePath("../../../clickable_objects/TableSmall")
 position = Vector2(5040, 3011)
 table = NodePath("../../../clickable_objects/TableSmall2")
 
-[node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "whisper_manager")]
+[node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "oliver", "whisper_manager")]
 script = ExtResource("113_xffrp")
 dialog = NodePath("../CanvasLayer/dialog")
 player = NodePath("../clickable_objects/player")
+oliver = NodePath("../security_guard")
 whisper_manager = NodePath("../whisper_manager")
 
 [node name="player_approach_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
@@ -1169,9 +1171,8 @@ script = ExtResource("117_7w7c6")
 group = NodePath("../../group_1")
 conversation_manager = NodePath("..")
 
-[node name="oliver_save_lumina_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("oliver", "conversation_manager")]
+[node name="oliver_save_lumina_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
 script = ExtResource("120_iau2w")
-oliver = NodePath("../../security_guard")
 conversation_manager = NodePath("..")
 
 [connection signal="delete_outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_delete_outline"]

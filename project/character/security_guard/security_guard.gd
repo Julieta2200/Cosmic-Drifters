@@ -7,8 +7,8 @@ signal ready_sit
 
 @export var origin_position: Marker2D
 @export var chair: Sprite2D
-@export var save_lumina_conversation : Conversation
 @onready var whisper_manager : WhisperManager = $"../whisper_manager"
+@export var conversation_manager: ConversationManager
 
 func _ready():
 	position_delta = speed / 60
@@ -22,8 +22,7 @@ func save_lumina(save_position):
 	walk_to(save_position, save_point)
 
 func _on_save_point():
-	save_lumina_conversation.start()
-	save_lumina_conversation.timer.connect( "timeout" , walk_to_room)
+	conversation_manager.oliver_save_lumina_conversation.start()
 
 func walk_to_room():
 	busy = false
