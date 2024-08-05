@@ -13,6 +13,7 @@ enum {
 @export var _spawn_time: float 
 @export var _for_lumina: bool
 @export var _table: Table
+@export var conversation: Conversation
 
 @onready var _enemies_cont = $enemies
 
@@ -83,12 +84,17 @@ func order():
 
 func _order():
 	if _order_index == enemies.size():
+		start_talking()
 		return
 	var enemy = enemies[_order_index]
 	enemy.order(_order_index)
 	_order_index += 1
 	_timer.wait_time = ORDER_INTERVAL
 	_timer.start()
+
+func start_talking():
+	if conversation != null:
+		conversation.start()
 
 func _ask_for_waiter():
 	if _for_lumina:

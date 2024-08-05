@@ -5,6 +5,7 @@ class_name Conversation extends Node
 var index: int = 0
 var timer: Timer
 var enemies: Array[Enemy]
+var whisper_mode: bool = false
 @export var conversation_manager: ConversationManager
 
 func start(e: Array[Enemy] = []):
@@ -18,7 +19,7 @@ func start(e: Array[Enemy] = []):
 func stop():
 	timer.stop()
 
-	
+
 func _play_dialogue():
 	if index == dialogues.size():
 		conversation_finished()
@@ -36,6 +37,9 @@ func _play_dialogue():
 		conversation_manager.dialog.appear(dialogue["text"],
 		 enemies[rand_ind].character_name,
 		 enemies[rand_ind].character_sprite)
+	if whisper_mode:
+		conversation_manager.dialog.disappear()
+	
 	timer.start()
 	
 func dialogue_finished():
@@ -43,4 +47,4 @@ func dialogue_finished():
 	_play_dialogue()
 
 func conversation_finished():
-	conversation_manager.dialog.disappear()
+	conversation_manager.dialog.reset()
