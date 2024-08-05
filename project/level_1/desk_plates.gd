@@ -7,7 +7,7 @@ var plate_textures = ["res://assets/Food/Plate/plate_1.png","res://assets/Food/P
 @onready var use_point = $use_point
 @onready var orders_menu: OrdersMenu = $"../../CanvasLayer/orders_menu"
 var player: Player
-
+var table : Table
 var plates = {}
 var _rng = RandomNumberGenerator.new()
 
@@ -18,6 +18,7 @@ func open(p: Player):
 
 func add_plate(table: Table):
 	var plate
+	self.table = table
 	for p in $plates.get_children():
 		if !p.visible:
 			plate = p
@@ -53,3 +54,7 @@ func remove_from_board(text):
 		if t.visible:
 			return
 	$board.visible = false
+
+func highlight():
+	if $board.visible && table.for_lumina():
+		$outline.visible = true

@@ -9,7 +9,7 @@ const ORDER_INTERVAL: int = 1
 @export var number: int
 
 @export var level: Level
-
+var outline
 var rng = RandomNumberGenerator.new()
 var waiter: Waiter
 var group: Group
@@ -94,3 +94,10 @@ func get_clickable_component():
 
 func get_approach_point() -> Marker2D:
 	return $approach_point
+
+func highlight():
+	if for_lumina():
+		match  group.current_status:
+			group.STATUS_ASKING_FOR_WAITER,group.STATUS_WAITING_FOR_FOOD,group.STATUS_WAITING_FOR_CHECK:
+				$outline.visible = true
+		

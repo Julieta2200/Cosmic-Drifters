@@ -24,4 +24,7 @@ func open(player):
 	var table = tables[0]
 	food_menu.set_table(table)
 	food_menu.visible = true
-	
+
+func highlight():
+	if $status.visible:
+		$outline.visible = true
