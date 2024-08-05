@@ -114,7 +114,7 @@
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
 [ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
 [ext_resource type="PackedScene" uid="uid://bg11plsdmm2qv" path="res://project/character/manager/manager.tscn" id="109_3it4b"]
-[ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/security_guard/security_guard.tscn" id="109_u3rrt"]
+[ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/oliver/oliver.tscn" id="109_u3rrt"]
 [ext_resource type="Script" path="res://project/level/conversation_manager.gd" id="113_xffrp"]
 [ext_resource type="Script" path="res://project/level/player_approach_conversation.gd" id="114_4flla"]
 [ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
@@ -1103,7 +1103,7 @@ chair = NodePath("../details_y_sort_enabled/chair/manager_chair")
 position = Vector2(-1019, 3307)
 scale = Vector2(16, 16)
 
-[node name="security_guard" parent="." node_paths=PackedStringArray("origin_position", "chair", "conversation_manager") instance=ExtResource("109_u3rrt")]
+[node name="oliver" parent="." node_paths=PackedStringArray("origin_position", "chair", "conversation_manager") instance=ExtResource("109_u3rrt")]
 position = Vector2(-1044, 3303)
 origin_position = NodePath("../security_guard_origin_position")
 chair = NodePath("../details_y_sort_enabled/chair/security_guard_chair")
@@ -1155,7 +1155,7 @@ table = NodePath("../../../clickable_objects/TableSmall2")
 script = ExtResource("113_xffrp")
 dialog = NodePath("../CanvasLayer/dialog")
 player = NodePath("../clickable_objects/player")
-oliver = NodePath("../security_guard")
+oliver = NodePath("../oliver")
 whisper_manager = NodePath("../whisper_manager")
 
 [node name="player_approach_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
@@ -1179,6 +1179,6 @@ conversation_manager = NodePath("..")
 [connection signal="outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_outline"]
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_exited"]
-[connection signal="ready_sit" from="security_guard" to="security_guard" method="_on_ready_sit"]
+[connection signal="ready_sit" from="oliver" to="oliver" method="_on_ready_sit"]
 [connection signal="approached" from="whisper_manager" to="whisper_manager" method="_on_approached"]
 [connection signal="player_ready" from="whisper_manager" to="whisper_manager" method="_on_player_ready"]

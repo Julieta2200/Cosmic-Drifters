@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://do1g3b6brnss7"]
+
+[ext_resource type="Script" path="res://project/character/oliver/oliver.gd" id="1_7y8bb"]
+[ext_resource type="Texture2D" uid="uid://d0dnjxr2483tx" path="res://assets/avatar/Oliver.png" id="2_cm0jn"]
+[ext_resource type="Texture2D" uid="uid://8bbkljx1wyyo" path="res://assets/Security guard/Shadow (5).png" id="3_mvof1"]
+[ext_resource type="Texture2D" uid="uid://ccyad1jvfo8ou" path="res://assets/Security guard/Walk_back1.png" id="4_hcych"]
+[ext_resource type="Texture2D" uid="uid://cxe28olhdls8" path="res://assets/Security guard/Walk_back2.png" id="5_pjjoo"]
+[ext_resource type="Texture2D" uid="uid://dps2y5gpmrlat" path="res://assets/Security guard/Walk_back3 (3).png" id="6_2j8sg"]
+[ext_resource type="Texture2D" uid="uid://b1b6ke4j0ba54" path="res://assets/Security guard/Base.png" id="7_tdurx"]
+[ext_resource type="Texture2D" uid="uid://rs6qy52jigfb" path="res://assets/Security guard/Walk1 (2).png" id="8_vfmob"]
+[ext_resource type="Texture2D" uid="uid://17oo7aisr0nq" path="res://assets/Security guard/Walk2.png" id="9_u0ia3"]
+[ext_resource type="Texture2D" uid="uid://limctvg57n8r" path="res://assets/Security guard/Walk3 (1).png" id="10_qjkqk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1sipt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hcych")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pjjoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2j8sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pjjoo")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tdurx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vfmob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u0ia3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qjkqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u0ia3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yeye"]
+size = Vector2(16, 8)
+
+[node name="oliver" type="CharacterBody2D"]
+scale = Vector2(16, 16)
+script = ExtResource("1_7y8bb")
+character_sprite = ExtResource("2_cm0jn")
+speed = 500.0
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0.5625, 5.9375)
+texture = ExtResource("3_mvof1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.75, -10.3125)
+sprite_frames = SubResource("SpriteFrames_1sipt")
+animation = &"walk"
+autoplay = "idle"
+offset = Vector2(0.4375, 0.625)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.3125, 1)
+shape = SubResource("RectangleShape2D_4yeye")
+
+[connection signal="save_point" from="." to="." method="_on_save_point"]

@@ -6,7 +6,7 @@ signal player_ready(table: Table)
 var player: Player
 var group : Group
 
-@onready var security_guard = $"../security_guard"
+@onready var oliver = $"../oliver"
 var current_table: Table
 @export var conversation_manager: ConversationManager
 
@@ -34,7 +34,7 @@ func approach_player(table: Table):
 func _on_approached(data):
 	if data["index"] == data["enemies"].size() - 1:
 		conversation_manager.player_approach_conversation.start(data["enemies"])
-		if !security_guard.busy:
+		if !oliver.busy:
 			security_guard_save_lumina(player.get_save_point())
 
 
@@ -43,4 +43,4 @@ func _on_player_ready(table):
 	approach_player(table)
 
 func security_guard_save_lumina(save_position):
-	security_guard.save_lumina(save_position)
+	oliver.save_lumina(save_position)
