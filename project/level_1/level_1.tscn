@@ -112,9 +112,10 @@
 [ext_resource type="PackedScene" uid="uid://bj3ar22p8x1jc" path="res://project/character/Cook/cool_2.tscn" id="107_c12nv"]
 [ext_resource type="Script" path="res://project/level/whisper_manager.gd" id="107_pnclo"]
 [ext_resource type="PackedScene" uid="uid://uqiq7ol038uw" path="res://project/food_menu/food_menu.tscn" id="108_02bey"]
-[ext_resource type="PackedScene" uid="uid://crpchavqrmy4p" path="res://project/level/whisper_area.tscn" id="108_b0sf8"]
 [ext_resource type="PackedScene" uid="uid://bg11plsdmm2qv" path="res://project/character/manager/manager.tscn" id="109_3it4b"]
 [ext_resource type="PackedScene" uid="uid://do1g3b6brnss7" path="res://project/character/oliver/oliver.tscn" id="109_u3rrt"]
+[ext_resource type="PackedScene" uid="uid://godh5514cgms" path="res://project/recording/recording.tscn" id="109_177wy"]
+
 [ext_resource type="Script" path="res://project/level/conversation_manager.gd" id="113_xffrp"]
 [ext_resource type="Script" path="res://project/level/player_approach_conversation.gd" id="114_4flla"]
 [ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
@@ -905,12 +906,13 @@ walking_area = NodePath("../walking_area")
 [node name="clickable_objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui", "manager_room_position", "cafe_manager", "conversation_manager", "level") instance=ExtResource("25_6bfeo")]
+[node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui", "manager_room_position", "cafe_manager", "conversation_manager", "recording_panel", "level") instance=ExtResource("25_6bfeo")]
 position = Vector2(2479, 1157)
 ui = NodePath("../../CanvasLayer/ui")
 manager_room_position = NodePath("../../manager_room_position")
 cafe_manager = NodePath("../../cafe_manager")
 conversation_manager = NodePath("../../conversation_manager")
+recording_panel = NodePath("../../CanvasLayer/recording")
 level = NodePath("../..")
 speed = 800.0
 
@@ -1080,6 +1082,9 @@ visible = false
 [node name="pause" parent="CanvasLayer" instance=ExtResource("107_20isj")]
 mouse_filter = 2
 
+[node name="recording" parent="CanvasLayer" instance=ExtResource("109_177wy")]
+visible = false
+
 [node name="Cook_1" parent="." instance=ExtResource("106_vukck")]
 position = Vector2(9570, 5002)
 
@@ -1116,6 +1121,7 @@ script = ExtResource("105_glat7")
 [node name="whisper_manager" type="Node2D" parent="." node_paths=PackedStringArray("conversation_manager")]
 script = ExtResource("107_pnclo")
 conversation_manager = NodePath("../conversation_manager")
+
 
 [node name="areas" type="Node2D" parent="whisper_manager"]
 
@@ -1182,3 +1188,5 @@ conversation_manager = NodePath("..")
 [connection signal="ready_sit" from="oliver" to="oliver" method="_on_ready_sit"]
 [connection signal="approached" from="whisper_manager" to="whisper_manager" method="_on_approached"]
 [connection signal="player_ready" from="whisper_manager" to="whisper_manager" method="_on_player_ready"]
+[connection signal="approached" from="conversation_manager" to="conversation_manager" method="_on_approached"]
+[connection signal="player_ready" from="conversation_manager" to="conversation_manager" method="_on_player_ready"]

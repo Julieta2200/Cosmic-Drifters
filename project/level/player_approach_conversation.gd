@@ -6,5 +6,6 @@ func _ready():
 		{"text": "...", "duration": 3.0, "speaker": conversation_manager.player},
 		{"text": "I don't think he's a regular waiter", "duration": 5.0, "speaker": null},
 	]
+	rend_dialog = true
 
 

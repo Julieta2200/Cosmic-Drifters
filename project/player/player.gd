@@ -4,19 +4,63 @@ var desk: Desk
 var computer: Computer
 var expected_mask
 var previous_character
+var recording: bool
 
 signal ready_input_order
 signal ready_choose_order
 signal manager_room
+
+var recorded_enemies: Array[Enemy]
+var recorded_messages: Array
+var current_recording: Array[String] = []
+var recordings: Array[Array] = []
 
 @export var shapeshift_sprite : Texture
 @export var ui: TopUI
 @export var manager_room_position: Marker2D
 @export var cafe_manager: CafeManager
 @export var conversation_manager: ConversationManager
+@export var recording_panel: Control
 
 func check_queue():
 	pass
+
+func _process(delta):
+	record_action()
+
+func start_recording():
+	if busy:
+		recording = false
+		return
+		
+	$whisper_panel.visible = recording
+	recording_panel.visible = recording
+	busy = true
+	if recorded_enemies.size() > 0:
+		var enemy = recorded_enemies[0]
+		enemy.group.conversation.rend_dialog = true
+		enemy.group._table.recorded = true
+
+func stop_recording():
+	recording = false
+	$whisper_panel.visible = recording
+	recording_panel.visible = recording
+	busy = false
+	if recorded_enemies.size() > 0:
+		var enemy = recorded_enemies[0]
+		enemy.group.conversation.rend_dialog = false
+		enemy.group._table.recorded = false
+	if current_recording.size() > 0:
+		recordings.append(current_recording)
+		current_recording = []
+
+func record_action():
+	if Input.is_action_just_pressed("record"):
+		recording = !recording
+		if recording:
+			start_recording()
+		else:
+			stop_recording()
 
 func _physics_process(_delta):
 	move()
@@ -88,6 +132,10 @@ func morph(mask = LUMINA):
 func set_mask(mask = LUMINA):
 	current_mask = mask
 	animation()
+	
+func record(text: String):
+	current_recording.append(text)
+	
 
 func _on_munchkin_morsel_pressed():
 	change_character($characters_panel/munchkin_morsel/TextureRect,MORSEL)
@@ -167,3 +215,14 @@ func _on_manager_room():
 func make_free():
 	busy = false
 	
+
+
+func _on_recording_area_body_entered(body):
+	if body is Enemy:
+		recorded_enemies.append(body)
+
+
+func _on_recording_area_body_exited(body):
+	var index: int = recorded_enemies.find(body)
+	if index != -1:
+		recorded_enemies.remove_at(index)

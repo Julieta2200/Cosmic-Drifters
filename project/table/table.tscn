@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://rg6e7pvhaeq2" path="res://assets/Emotions/Exclamation_mark/Exclamation_mark(Green).png" id="6_ge4ve"]
 [ext_resource type="Texture2D" uid="uid://dkvkq1jpbb3hn" path="res://assets/Emotions/Wait-for-food/wait-for-food1.png" id="7_5q06x"]
 [ext_resource type="Texture2D" uid="uid://b7qv6plyy0igj" path="res://assets/Emotions/Wait-for-check/wait-for-check1.png" id="8_tdvtq"]
-[ext_resource type="Texture2D" uid="uid://bmp7qa45l1fq4" path="res://assets/Game_UI/Eavesdropping/Eavesdropping_big_table.png" id="9_p60pq"]
+[ext_resource type="Texture2D" uid="uid://cx21t305kuqup" path="res://assets/Game_UI/Scale/Scale1.png" id="10_x45xq"]
 
 [sub_resource type="Animation" id="Animation_vnrf4"]
 length = 0.001
@@ -149,21 +149,21 @@ visible = false
 position = Vector2(-0.75, 0.125)
 texture = ExtResource("3_qse6m")
 
-[node name="whisper_area" type="TextureRect" parent="."]
+[node name="meter" type="TextureRect" parent="."]
 visible = false
+z_index = 100
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -248.0
-offset_top = -157.0
-offset_right = 248.0
-offset_bottom = 157.0
+offset_left = -18.375
+offset_top = -47.25
+offset_right = 17.625
+offset_bottom = -41.25
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_p60pq")
+texture = ExtResource("10_x45xq")
 
 [connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
 [connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]

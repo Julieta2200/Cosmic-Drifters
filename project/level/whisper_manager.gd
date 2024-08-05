@@ -7,6 +7,7 @@ var player: Player
 var group : Group
 
 @onready var oliver = $"../oliver"
+@onready var level: Level
 var current_table: Table
 @export var conversation_manager: ConversationManager
 
@@ -44,3 +45,4 @@ func _on_player_ready(table):
 
 func security_guard_save_lumina(save_position):
 	oliver.save_lumina(save_position)
+
