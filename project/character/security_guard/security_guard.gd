@@ -4,12 +4,10 @@ var busy : bool
 
 signal save_point
 signal ready_sit
-signal talk
 
 @export var origin_position: Marker2D
 @export var chair: Sprite2D
-
-@onready var timer = $talk_timer
+@export var save_lumina_conversation : Conversation
 @onready var whisper_manager : WhisperManager = $"../whisper_manager"
 
 func _ready():
@@ -24,17 +22,16 @@ func save_lumina(save_position):
 	walk_to(save_position, save_point)
 
 func _on_save_point():
-	talk.emit()
+	save_lumina_conversation.start()
+	save_lumina_conversation.timer.connect( "timeout" , walk_to_room)
 
 func walk_to_room():
+	busy = false
+	whisper_manager.group.walk_to_door()
+	whisper_manager.player.make_free()
 	walk_to(origin_position.global_position, ready_sit)
 
 func _on_ready_sit():
 	chair.visible = false
 	global_position = chair.global_position
 
-func _on_timer_timeout():
-	busy = false
-	whisper_manager.group.walk_to_door()
-	whisper_manager.player.make_free()
-	walk_to_room()

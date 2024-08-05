@@ -44,7 +44,3 @@ func _on_player_ready(table):
 
 func security_guard_save_lumina(save_position):
 	security_guard.save_lumina(save_position)
-
-func _on_security_guard_talk():
-	conversation_manager.oliver_save_lumina_conversation.start()
-	security_guard.timer.start()

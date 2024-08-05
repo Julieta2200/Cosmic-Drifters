@@ -82,8 +82,4 @@ offset = Vector2(0.4375, 0.625)
 position = Vector2(0.3125, 1)
 shape = SubResource("RectangleShape2D_4yeye")
 
-[node name="talk_timer" type="Timer" parent="."]
-wait_time = 4.0
-
 [connection signal="save_point" from="." to="." method="_on_save_point"]
-[connection signal="timeout" from="talk_timer" to="." method="_on_timer_timeout"]
