@@ -28,10 +28,8 @@ func walk_to_room():
 	busy = false
 	conversation_manager.group.walk_to_door()
 	conversation_manager.player.make_free()
-	walk_to_room()
-	
-func walk_to_room():
 	walk_to(origin_position.global_position, ready_sit)
+	
 
 func _on_ready_sit():
 	chair.visible = false

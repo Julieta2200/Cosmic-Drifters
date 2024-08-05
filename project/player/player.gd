@@ -223,6 +223,8 @@ func _on_recording_area_body_entered(body):
 
 
 func _on_recording_area_body_exited(body):
-	var index: int = recorded_enemies.find(body)
-	if index != -1:
-		recorded_enemies.remove_at(index)
+	if body is Enemy:
+		var index: int = recorded_enemies.find(body)
+		if index != -1:
+			recorded_enemies.remove_at(index)
+	
