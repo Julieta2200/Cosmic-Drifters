@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://rskgob6ktuy5"]
+[gd_scene load_steps=8 format=3 uid="uid://rskgob6ktuy5"]
 
 [ext_resource type="Script" path="res://project/level_1/desk_plates.gd" id="1_t7x4x"]
 [ext_resource type="Texture2D" uid="uid://kek2o3wvuvdq" path="res://assets/details/Table3.png" id="2_mt473"]
 [ext_resource type="Texture2D" uid="uid://c5xbl2ha333m0" path="res://assets/Order_Board/Order_Board(0).png" id="3_wl7gl"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_0xvte"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="5_t3r3v"]
+[ext_resource type="Texture2D" uid="uid://c8hxa3sb48nvj" path="res://assets/details/Outline/Order_Table_Outline.png" id="6_7owwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp6hi"]
 size = Vector2(72, 24.1875)
@@ -137,3 +138,11 @@ shape = SubResource("RectangleShape2D_qp6hi")
 
 [node name="use_point" type="Marker2D" parent="."]
 position = Vector2(-0.25, 18.0625)
+
+[node name="outline" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.125, 3.9375)
+texture = ExtResource("6_7owwk")
+
+[connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1su8qlgqhwlk"]
+[gd_scene load_steps=16 format=3 uid="uid://c1su8qlgqhwlk"]
 
 [ext_resource type="Script" path="res://project/computer/computer.gd" id="1_5jjaq"]
 [ext_resource type="Texture2D" uid="uid://nyrddmf7wkcc" path="res://assets/details/Computer.png" id="1_57rk5"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://y3maq8mwau45" path="res://assets/Order_Button/Order_Button7.png" id="10_yob18"]
 [ext_resource type="Texture2D" uid="uid://dk56u0cf7xc4a" path="res://assets/Order_Button/Order_Button8.png" id="11_y6d74"]
 [ext_resource type="Texture2D" uid="uid://bd7m17blmd17a" path="res://assets/Order_Button/Order_Button9.png" id="12_jxqc4"]
+[ext_resource type="Texture2D" uid="uid://cemsob4v63g4d" path="res://assets/details/Outline/Computer_Outline.png" id="13_sbsdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdpta"]
 size = Vector2(32.3125, 28.625)
@@ -73,3 +74,11 @@ frame_progress = 0.737623
 
 [node name="use_point" type="Marker2D" parent="."]
 position = Vector2(-0.0625, 19.5625)
+
+[node name="outline" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.875, 1.125)
+texture = ExtResource("13_sbsdg")
+
+[connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]

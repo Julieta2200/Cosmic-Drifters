@@ -24,4 +24,11 @@ func open(player):
 	var table = tables[0]
 	food_menu.set_table(table)
 	food_menu.visible = true
-	
+
+
+func _on_clickable_component_delete_outline():
+	$outline.visible = false
+
+func _on_clickable_component_outline():
+	if $status.visible:
+		$outline.visible = true

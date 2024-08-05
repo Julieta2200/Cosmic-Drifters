@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=137 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -94,6 +94,8 @@
 [ext_resource type="PackedScene" uid="uid://bs2hl8onbsd3q" path="res://project/character/waiter_3/waiter_3.tscn" id="69_3w8ui"]
 [ext_resource type="PackedScene" uid="uid://biihx11v7nxj1" path="res://ui/ui.tscn" id="72_xu1wm"]
 [ext_resource type="Script" path="res://project/level_1/Camera2D.gd" id="88_f7d8e"]
+[ext_resource type="Script" path="res://project/level_1/manager_room.gd" id="91_kxady"]
+[ext_resource type="Texture2D" uid="uid://c6g21a2seaec6" path="res://assets/details/Outline/Room_Outline.png" id="92_k0qq2"]
 [ext_resource type="PackedScene" uid="uid://pat6q66q14uf" path="res://project/groups/level_1/group_1.tscn" id="94_fnmwe"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
 [ext_resource type="PackedScene" uid="uid://dhqgjvcudxrn3" path="res://project/groups/level_1/group_2.tscn" id="95_t1hhy"]
@@ -656,7 +658,7 @@ texture = ExtResource("25_m3uav")
 offset = Vector2(0, -5)
 
 [node name="Plant5" type="Sprite2D" parent="details_y_sort_enabled/plant"]
-position = Vector2(-128, 4176)
+position = Vector2(-203, 4164)
 scale = Vector2(16, 16)
 texture = ExtResource("25_m3uav")
 offset = Vector2(0, -5)
@@ -967,12 +969,19 @@ position = Vector2(7938, 769)
 
 [node name="manager_room" type="Node2D" parent="clickable_objects"]
 position = Vector2(-907, 4190)
+script = ExtResource("91_kxady")
 
 [node name="clickable_component" parent="clickable_objects/manager_room" instance=ExtResource("57_iauci")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_objects/manager_room/clickable_component"]
 position = Vector2(-196, 439)
 shape = SubResource("RectangleShape2D_wt61r")
+
+[node name="outline" type="Sprite2D" parent="clickable_objects/manager_room"]
+visible = false
+position = Vector2(-196, 130)
+scale = Vector2(16, 16)
+texture = ExtResource("92_k0qq2")
 
 [node name="spawn_point" type="Node2D" parent="."]
 position = Vector2(3269, 958)
@@ -1158,6 +1167,8 @@ script = ExtResource("117_7w7c6")
 group = NodePath("../../group_1")
 conversation_manager = NodePath("..")
 
+[connection signal="delete_outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_outline"]
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_exited"]
 [connection signal="ready_sit" from="security_guard" to="security_guard" method="_on_ready_sit"]
