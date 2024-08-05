@@ -22,7 +22,7 @@ var suspect_sprite: int = 0
 
 var player: Player
 
-@export var whisper_manager: WhisperManager
+@onready var whisper_manager: WhisperManager = $"../.."
 @onready var meter: TextureRect = $meter
 @export var table: Table
 
@@ -41,7 +41,10 @@ func _on_body_entered(body):
 	if body is Player:
 		active = true
 		player = body
-		table.group.conversation.whisper_mode = false
+		if !player.busy:
+			table.group.conversation.whisper_mode = false
+			whisper_manager.conversation_manager.dialog.show_panel()
+			table.show_whisper_panel(true)
 
 func _on_body_exited(body):
 	if body is Enemy:
@@ -51,6 +54,8 @@ func _on_body_exited(body):
 	if body is Player:
 		active = false
 		table.group.conversation.whisper_mode = true
+		whisper_manager.conversation_manager.dialog.disappear()
+		table.show_whisper_panel(false)
 
 
 func update_units():

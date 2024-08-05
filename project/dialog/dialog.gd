@@ -9,6 +9,8 @@ var normal_text_color = "[color=#d6d6d6]"
 
 @onready var _timer = $Timer
 
+var have_text: bool
+
 func appear(text: String , character_name :String , sprite : Texture):
 	_text = highlight_text(text)
 	_name = character_name
@@ -16,12 +18,21 @@ func appear(text: String , character_name :String , sprite : Texture):
 	_show_name_index = 0
 	$background/stroke/sprite.texture = sprite
 	visible = true
+	have_text = true
 	$background/name.text = ""
 	$background/text.text = ""
 	write_text(0.02)
 	
+func reset():
+	visible = false
+	have_text = false
+	
 func disappear():
 	visible = false
+
+func show_panel():
+	if have_text:
+		visible = true
 	
 func write_text(wait_time):
 	_timer.wait_time = wait_time

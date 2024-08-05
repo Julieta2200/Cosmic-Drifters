@@ -94,3 +94,6 @@ func get_clickable_component():
 
 func get_approach_point() -> Marker2D:
 	return $approach_point
+
+func show_whisper_panel(show: bool):
+	$whisper_area.visible = show

@@ -8,4 +8,5 @@ func _ready():
 		{"text": "Hi", "duration": 3, "speaker": group.get_enemy(1)},
 		{"text": "How are you", "duration": 3, "speaker": group.get_enemy(2)},
 	]
+	
 	whisper_mode = true

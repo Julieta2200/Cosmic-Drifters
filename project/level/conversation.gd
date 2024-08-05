@@ -27,17 +27,19 @@ func _play_dialogue():
 	
 	var dialogue = dialogues[index]
 	timer.wait_time = dialogue["duration"]
-	if !whisper_mode:
-		if dialogue["speaker"] != null:
-			conversation_manager.dialog.appear(dialogue["text"],
-			 dialogue["speaker"].character_name,
-			 dialogue["speaker"].character_sprite)
-		elif enemies.size() > 0:
-			randomize()
-			var rand_ind: int = randi() % enemies.size()
-			conversation_manager.dialog.appear(dialogue["text"],
-			 enemies[rand_ind].character_name,
-			 enemies[rand_ind].character_sprite)
+	if dialogue["speaker"] != null:
+		conversation_manager.dialog.appear(dialogue["text"],
+		 dialogue["speaker"].character_name,
+		 dialogue["speaker"].character_sprite)
+	elif enemies.size() > 0:
+		randomize()
+		var rand_ind: int = randi() % enemies.size()
+		conversation_manager.dialog.appear(dialogue["text"],
+		 enemies[rand_ind].character_name,
+		 enemies[rand_ind].character_sprite)
+	if whisper_mode:
+		conversation_manager.dialog.disappear()
+	
 	timer.start()
 	
 func dialogue_finished():
@@ -45,4 +47,4 @@ func dialogue_finished():
 	_play_dialogue()
 
 func conversation_finished():
-	conversation_manager.dialog.disappear()
+	conversation_manager.dialog.reset()

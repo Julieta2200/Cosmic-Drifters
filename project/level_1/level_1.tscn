@@ -1107,44 +1107,36 @@ conversation_manager = NodePath("../conversation_manager")
 
 [node name="areas" type="Node2D" parent="whisper_manager"]
 
-[node name="whisper_area" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2194, 2241)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/Table")
 
-[node name="whisper_area2" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area2" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(4149, 1858)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/Table2")
 
-[node name="whisper_area3" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area3" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(5871, 2269)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/Table3")
 
-[node name="whisper_area4" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area4" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(5865, 3869)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/Table4")
 
-[node name="whisper_area5" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area5" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(4118, 4486)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/Table5")
 
-[node name="whisper_area6" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area6" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2154, 3881)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/Table6")
 
-[node name="whisper_area7" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area7" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(2961, 3011)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/TableSmall")
 
-[node name="whisper_area8" parent="whisper_manager/areas" node_paths=PackedStringArray("whisper_manager", "table") instance=ExtResource("108_b0sf8")]
+[node name="whisper_area8" parent="whisper_manager/areas" node_paths=PackedStringArray("table") instance=ExtResource("108_b0sf8")]
 position = Vector2(5040, 3011)
-whisper_manager = NodePath("../..")
 table = NodePath("../../../clickable_objects/TableSmall2")
 
 [node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "whisper_manager")]
