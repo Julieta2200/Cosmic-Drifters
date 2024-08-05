@@ -1,10 +1,18 @@
 class_name Table extends Node2D
 
 const ORDER_INTERVAL: int = 1
+const suspect_meter_sprites = {
+	0: "res://assets/Game_UI/Scale/Scale1.png",
+	1: "res://assets/Game_UI/Scale/Scale2.png",
+	2: "res://assets/Game_UI/Scale/Scale3.png",
+	3: "res://assets/Game_UI/Scale/Scale4.png",
+	4: "res://assets/Game_UI/Scale/Scale5.png",
+}
 
 @onready var plate = $plate
 @onready var chairs = $chairs
 @onready var group_status: Status = $status
+@onready var meter: TextureRect = $meter
 
 @export var number: int
 
@@ -23,6 +31,22 @@ var plates_to_remove = []
 
 
 var food_action = false
+
+# recording
+var recorded: bool
+var suspect_meter: float = 0 # max value 100
+var suspect_unit: float = 10
+var cooldown_unit: float = 5
+var suspect_sprite: int = 0
+var timer: Timer
+const meter_time: float = 1.0
+
+func _ready():
+	timer = Timer.new()
+	timer.wait_time = meter_time
+	add_child(timer)
+	timer.connect("timeout", update_meter)
+	timer.start()
 
 func sit(chair_i):
 	var chair = $chairs.get_children()[chair_i]
@@ -113,3 +137,30 @@ func _on_clickable_component_outline():
 func _on_clickable_component_delete_outline():
 	$outline.visible = false
 
+
+func update_meter():
+	if recorded:
+		suspect_meter += suspect_unit
+	else:
+		suspect_meter -= cooldown_unit
+	
+	if suspect_meter > 99.9:
+		suspect_meter = 99.9
+		meter_full()
+		return
+	if suspect_meter < 0:
+		suspect_meter = 0
+	
+	var _suspect_sprite = int(suspect_meter/20)
+	if suspect_sprite != _suspect_sprite:
+		suspect_sprite = _suspect_sprite
+		meter.texture = load(suspect_meter_sprites[suspect_sprite])
+	meter.visible = suspect_meter != 0
+		
+func meter_full():
+	timer.paused = true
+	level.conversation_manager.player.stop_recording()
+	level.conversation_manager.player.busy = true
+	level.conversation_manager.current_table = self
+	group_status.stop_timers()
+	level.conversation_manager.player_noticed_conversation.start(group.enemies)

@@ -17,7 +17,7 @@ var reviews = {
 
 @onready var group: Group = $"../.."
 
-var table
+var table: Table
 var chair_i
 
 @export var suspect_unit: float

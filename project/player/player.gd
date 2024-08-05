@@ -28,25 +28,39 @@ func check_queue():
 func _process(delta):
 	record_action()
 
+func start_recording():
+	if busy:
+		recording = false
+		return
+		
+	$whisper_panel.visible = recording
+	recording_panel.visible = recording
+	busy = true
+	if recorded_enemies.size() > 0:
+		var enemy = recorded_enemies[0]
+		enemy.group.conversation.rend_dialog = true
+		enemy.group._table.recorded = true
+
+func stop_recording():
+	recording = false
+	$whisper_panel.visible = recording
+	recording_panel.visible = recording
+	busy = false
+	if recorded_enemies.size() > 0:
+		var enemy = recorded_enemies[0]
+		enemy.group.conversation.rend_dialog = false
+		enemy.group._table.recorded = false
+	if current_recording.size() > 0:
+		recordings.append(current_recording)
+		current_recording = []
+
 func record_action():
 	if Input.is_action_just_pressed("record"):
 		recording = !recording
-		$whisper_panel.visible = recording
-		recording_panel.visible = recording
 		if recording:
-			busy = true
-			if recorded_enemies.size() > 0:
-				var enemy = recorded_enemies[0]
-				enemy.group.conversation.rend_dialog = true
+			start_recording()
 		else:
-			busy = false
-			if recorded_enemies.size() > 0:
-				var enemy = recorded_enemies[0]
-				enemy.group.conversation.rend_dialog = false
-			if current_recording.size() > 0:
-				recordings.append(current_recording)
-				current_recording = []
-			print(recordings)
+			stop_recording()
 
 func _physics_process(_delta):
 	move()

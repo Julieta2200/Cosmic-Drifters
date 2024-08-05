@@ -1144,3 +1144,5 @@ conversation_manager = NodePath("..")
 [connection signal="ready_sit" from="security_guard" to="security_guard" method="_on_ready_sit"]
 [connection signal="approached" from="whisper_manager" to="whisper_manager" method="_on_approached"]
 [connection signal="player_ready" from="whisper_manager" to="whisper_manager" method="_on_player_ready"]
+[connection signal="approached" from="conversation_manager" to="conversation_manager" method="_on_approached"]
+[connection signal="player_ready" from="conversation_manager" to="conversation_manager" method="_on_player_ready"]
