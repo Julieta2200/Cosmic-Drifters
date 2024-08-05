@@ -2,11 +2,13 @@ class_name ConversationManager extends Node2D
 
 @export var dialog: Dialog
 @export var player: Player
+@export var oliver: Oliver
 @export var whisper_manager: WhisperManager
 
 @onready var player_approach_conversation: Conversation = $player_approach_conversation
 @onready var player_noticed_conversation: Conversation = $player_noticed_conversation
-@onready var security_guard = $"../security_guard"
+@onready var oliver_save_lumina_conversation = $oliver_save_lumina_conversation
+
 var group : Group
 
 signal approached(data)
@@ -34,13 +36,13 @@ func approach_player(table: Table):
 func _on_approached(data):
 	if data["index"] == data["enemies"].size() - 1:
 		player_approach_conversation.start(data["enemies"])
-		if !security_guard.busy:
-			security_guard_save_lumina(player.get_save_point())
+		if !oliver.busy:
+			oliver_save_lumina(player.get_save_point())
 
 
 
 func _on_player_ready(table):
 	approach_player(table)
 
-func security_guard_save_lumina(save_position):
-	security_guard.save_lumina(save_position)
+func oliver_save_lumina(save_position):
+	oliver.save_lumina(save_position)
