@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=138 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -119,6 +119,7 @@
 [ext_resource type="Script" path="res://project/level/player_approach_conversation.gd" id="114_4flla"]
 [ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
 [ext_resource type="Script" path="res://project/groups/level_1/group_1_conversation.gd" id="117_7w7c6"]
+[ext_resource type="Script" path="res://project/level_1/oliver_save_lumina_conversation.gd" id="120_iau2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -1148,11 +1149,12 @@ table = NodePath("../../../clickable_objects/TableSmall")
 position = Vector2(5040, 3011)
 table = NodePath("../../../clickable_objects/TableSmall2")
 
-[node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "whisper_manager")]
+[node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "whisper_manager", "oliver")]
 script = ExtResource("113_xffrp")
 dialog = NodePath("../CanvasLayer/dialog")
 player = NodePath("../clickable_objects/player")
 whisper_manager = NodePath("../whisper_manager")
+oliver = NodePath("../security_guard")
 
 [node name="player_approach_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
 script = ExtResource("114_4flla")
@@ -1167,10 +1169,15 @@ script = ExtResource("117_7w7c6")
 group = NodePath("../../group_1")
 conversation_manager = NodePath("..")
 
+[node name="oliver_save_lumina_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
+script = ExtResource("120_iau2w")
+conversation_manager = NodePath("..")
+
 [connection signal="delete_outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_delete_outline"]
 [connection signal="outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_outline"]
 [connection signal="body_entered" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="kitchen/Area2D" to="kitchen" method="_on_area_2d_body_exited"]
 [connection signal="ready_sit" from="security_guard" to="security_guard" method="_on_ready_sit"]
+[connection signal="talk" from="security_guard" to="whisper_manager" method="_on_security_guard_talk"]
 [connection signal="approached" from="whisper_manager" to="whisper_manager" method="_on_approached"]
 [connection signal="player_ready" from="whisper_manager" to="whisper_manager" method="_on_player_ready"]
