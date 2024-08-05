@@ -15,7 +15,7 @@ var reviews = {
 	REVIEW_HEART: {"texture": "res://assets/Emotions/Heart.png"}
 }
 
-@onready var group = $"../.."
+@onready var group: Group = $"../.."
 
 var table
 var chair_i

@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://sr7t5e8ttji0"]
+[gd_scene load_steps=84 format=3 uid="uid://sr7t5e8ttji0"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_r3jtw"]
 [ext_resource type="Texture2D" uid="uid://bh64gw7aghagg" path="res://assets/lumina/shadow (4).png" id="2_fktkq"]
@@ -78,6 +78,7 @@
 [ext_resource type="Texture2D" uid="uid://ceidnx82ylgwi" path="res://assets/Security guard/Oliver_16px.png" id="62_2pgch"]
 [ext_resource type="Texture2D" uid="uid://cc5jrt48rlsjx" path="res://assets/lumina/Base (3).png" id="71_an1sl"]
 [ext_resource type="Texture2D" uid="uid://cbuvioy1gsa6i" path="res://assets/Emotions/Exclamation_point.png" id="77_j6a7g"]
+[ext_resource type="Texture2D" uid="uid://bxcq4k6h6m54p" path="res://assets/Game_UI/Eavesdropping/Eavesdropping_small_table.png" id="79_vi8k8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo8un"]
 size = Vector2(13.875, 5.5)
@@ -623,6 +624,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r21ao"]
 size = Vector2(13, 16)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltq01"]
+radius = 25.375
+height = 78.5
+
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 collision_layer = 2
@@ -866,6 +871,28 @@ visible = false
 position = Vector2(-3.9375, -18.0625)
 texture = ExtResource("77_j6a7g")
 
+[node name="whisper_panel" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.5
+offset_top = -157.0
+offset_right = 234.5
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("79_vi8k8")
+
+[node name="recording_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="recording_area"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ltq01")
+
 [connection signal="manager_room" from="." to="." method="_on_manager_room"]
 [connection signal="ready_choose_order" from="." to="." method="_on_ready_choose_order"]
 [connection signal="ready_give_check" from="." to="." method="_on_ready_give_check"]
@@ -881,3 +908,5 @@ texture = ExtResource("77_j6a7g")
 [connection signal="pressed" from="characters_panel/prismarity" to="." method="_on_prismarity_pressed"]
 [connection signal="pressed" from="characters_panel/twilight_tarsier" to="." method="_on_twilight_tarsier_pressed"]
 [connection signal="pressed" from="characters_panel/oliver" to="." method="_on_oliver_pressed"]
+[connection signal="body_entered" from="recording_area" to="." method="_on_recording_area_body_entered"]
+[connection signal="body_exited" from="recording_area" to="." method="_on_recording_area_body_exited"]

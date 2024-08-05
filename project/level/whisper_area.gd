@@ -44,7 +44,6 @@ func _on_body_entered(body):
 		if !player.busy:
 			table.group.conversation.whisper_mode = false
 			whisper_manager.conversation_manager.dialog.show_panel()
-			table.show_whisper_panel(true)
 
 func _on_body_exited(body):
 	if body is Enemy:
@@ -55,7 +54,6 @@ func _on_body_exited(body):
 		active = false
 		table.group.conversation.whisper_mode = true
 		whisper_manager.conversation_manager.dialog.disappear()
-		table.show_whisper_panel(false)
 
 
 func update_units():

@@ -6,3 +6,7 @@ class_name ConversationManager extends Node2D
 
 @onready var player_approach_conversation: Conversation = $player_approach_conversation
 @onready var player_noticed_conversation: Conversation = $player_noticed_conversation
+
+
+func record(text: String):
+	player.record(text)

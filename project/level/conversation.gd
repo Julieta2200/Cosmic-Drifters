@@ -5,7 +5,9 @@ class_name Conversation extends Node
 var index: int = 0
 var timer: Timer
 var enemies: Array[Enemy]
-var whisper_mode: bool = false
+var rend_dialog: bool
+		
+		
 @export var conversation_manager: ConversationManager
 
 func start(e: Array[Enemy] = []):
@@ -24,21 +26,21 @@ func _play_dialogue():
 	if index == dialogues.size():
 		conversation_finished()
 		return
-	
-	var dialogue = dialogues[index]
-	timer.wait_time = dialogue["duration"]
-	if dialogue["speaker"] != null:
-		conversation_manager.dialog.appear(dialogue["text"],
-		 dialogue["speaker"].character_name,
-		 dialogue["speaker"].character_sprite)
-	elif enemies.size() > 0:
-		randomize()
-		var rand_ind: int = randi() % enemies.size()
-		conversation_manager.dialog.appear(dialogue["text"],
-		 enemies[rand_ind].character_name,
-		 enemies[rand_ind].character_sprite)
-	if whisper_mode:
-		conversation_manager.dialog.disappear()
+		
+	timer.wait_time = dialogues[index]["duration"]
+	if  rend_dialog:
+		var dialogue = dialogues[index]
+		if dialogue["speaker"] != null:
+			conversation_manager.dialog.appear(dialogue["text"],
+			 dialogue["speaker"].character_name,
+			 dialogue["speaker"].character_sprite)
+		elif enemies.size() > 0:
+			randomize()
+			var rand_ind: int = randi() % enemies.size()
+			conversation_manager.dialog.appear(dialogue["text"],
+			 enemies[rand_ind].character_name,
+			 enemies[rand_ind].character_sprite)
+		conversation_manager.record(dialogue["text"])
 	
 	timer.start()
 	

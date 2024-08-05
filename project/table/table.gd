@@ -113,6 +113,3 @@ func _on_clickable_component_outline():
 func _on_clickable_component_delete_outline():
 	$outline.visible = false
 
-func show_whisper_panel(show: bool):
-	$whisper_area.visible = show
-

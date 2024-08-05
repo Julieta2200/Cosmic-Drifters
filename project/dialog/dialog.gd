@@ -16,9 +16,8 @@ func appear(text: String , character_name :String , sprite : Texture):
 	_name = character_name
 	_show_text_index = 0
 	_show_name_index = 0
-	$background/stroke/sprite.texture = sprite
 	visible = true
-	have_text = true
+	$background/stroke/sprite.texture = sprite
 	$background/name.text = ""
 	$background/text.text = ""
 	write_text(0.02)
@@ -30,10 +29,11 @@ func reset():
 func disappear():
 	visible = false
 
+
 func show_panel():
-	if have_text:
-		visible = true
-	
+	visible = true
+
+
 func write_text(wait_time):
 	_timer.wait_time = wait_time
 	_timer.start()
