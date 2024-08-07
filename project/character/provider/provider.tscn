@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmcjulbckk2po"]
+
+[ext_resource type="Texture2D" uid="uid://dp3tpolme1q3s" path="res://assets/Provider/provider1.png" id="1_rdoys"]
+[ext_resource type="Texture2D" uid="uid://bwiqcuqtngnl1" path="res://assets/Provider/provider2.png" id="2_6i6ar"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7pi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rdoys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6i6ar")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="provider" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k7pi2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.326802
