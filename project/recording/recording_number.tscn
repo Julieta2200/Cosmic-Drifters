@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhjltat7557ls"]
+
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="1_jkfaq"]
+[ext_resource type="Script" path="res://project/recording/recording_number.gd" id="1_x43wk"]
+[ext_resource type="Texture2D" uid="uid://dliww3sk2bl0q" path="res://assets/recording/Recording1.png" id="2_xhqvo"]
+[ext_resource type="Texture2D" uid="uid://8pnibgdlttkj" path="res://assets/recording/Recording2.png" id="3_qisqo"]
+[ext_resource type="Texture2D" uid="uid://ct53wt1brg4lb" path="res://assets/recording/Recording3.png" id="4_1aw6q"]
+[ext_resource type="Texture2D" uid="uid://chnfa1uyx7lew" path="res://assets/recording/Recording4.png" id="5_fo8rp"]
+[ext_resource type="Texture2D" uid="uid://b287omhrf7k8u" path="res://assets/recording/Recording5.png" id="6_e7ig0"]
+[ext_resource type="Texture2D" uid="uid://h5kmvjobirr1" path="res://assets/recording/Recording Panel/Play_button/Play1.png" id="7_vm04u"]
+[ext_resource type="Texture2D" uid="uid://bsvi8at1l4rq1" path="res://assets/recording/Recording Panel/Play_button/Play2.png" id="8_dalmv"]
+[ext_resource type="Texture2D" uid="uid://tqar7qt74701" path="res://assets/recording/Recording Panel/delete.png" id="9_t5g7f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_du0ao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xhqvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qisqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1aw6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fo8rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e7ig0")
+}],
+"loop": true,
+"name": &"recording",
+"speed": 1.5
+}]
+
+[node name="recording_number" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 190.0
+offset_top = 180.0
+offset_right = 230.0
+offset_bottom = 220.0
+script = ExtResource("1_x43wk")
+
+[node name="number" type="Label" parent="."]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 40.0
+offset_right = 109.0
+offset_bottom = 268.0
+theme_override_colors/font_color = Color(0.815686, 0.87451, 0.996078, 1)
+theme_override_fonts/font = ExtResource("1_jkfaq")
+theme_override_font_sizes/font_size = 140
+text = "1."
+
+[node name="recording_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(408, 83)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_du0ao")
+animation = &"recording"
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = -43.0
+offset_right = 1357.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0.815686, 0.87451, 0.996078, 1)
+theme_override_font_sizes/font_size = 140
+text = "name"
+
+[node name="play_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1314.0
+offset_top = -43.0
+offset_right = 1554.0
+offset_bottom = 197.0
+texture_normal = ExtResource("7_vm04u")
+texture_pressed = ExtResource("8_dalmv")
+stretch_mode = 0
+
+[node name="delete_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1639.0
+offset_top = -17.0
+offset_right = 1879.0
+offset_bottom = 191.0
+texture_normal = ExtResource("9_t5g7f")
+texture_pressed = ExtResource("9_t5g7f")
+stretch_mode = 0
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]

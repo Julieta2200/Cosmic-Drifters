@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://bvmgb4jyduc0l"]
+
+[ext_resource type="Texture2D" uid="uid://85yxyrec1kmt" path="res://assets/recording/Recording Panel/Panel.png" id="1_bc1kt"]
+[ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_jynto"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="2_vqm5w"]
+[ext_resource type="PackedScene" uid="uid://dhjltat7557ls" path="res://project/recording/recording_number.tscn" id="4_jhhdi"]
+[ext_resource type="Texture2D" uid="uid://l0y7iie41dvk" path="res://assets/recording/Recording Panel/Submit/Submit1.png" id="11_jrsxh"]
+[ext_resource type="Texture2D" uid="uid://be1dgg1ibfrdd" path="res://assets/recording/Recording Panel/Submit/Submit2.png" id="12_fn0sh"]
+[ext_resource type="Texture2D" uid="uid://cp48tnk0wsw6j" path="res://assets/recording/Recording Panel/Submit/Submit3.png" id="13_tids0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6ytl"]
+texture = ExtResource("1_jynto")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d128k"]
+texture = ExtResource("1_bc1kt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fy3i"]
+texture = ExtResource("11_jrsxh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q17gx"]
+texture = ExtResource("12_fn0sh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyu8w"]
+texture = ExtResource("13_tids0")
+
+[node name="recording_panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="backgroun_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_q6ytl")
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1072.0
+offset_top = -720.0
+offset_right = 1072.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d128k")
+
+[node name="recording_number" parent="panel" instance=ExtResource("4_jhhdi")]
+
+[node name="recording_number2" parent="panel" instance=ExtResource("4_jhhdi")]
+visible = false
+offset_top = 480.0
+offset_bottom = 520.0
+
+[node name="recording_number3" parent="panel" instance=ExtResource("4_jhhdi")]
+visible = false
+offset_top = 780.0
+offset_bottom = 820.0
+
+[node name="recording_number4" parent="panel" instance=ExtResource("4_jhhdi")]
+visible = false
+offset_top = 1080.0
+offset_bottom = 1120.0
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2480.0
+offset_top = 2597.0
+offset_right = 3104.0
+offset_bottom = 2821.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_1fy3i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q17gx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oyu8w")
+
+[node name="Label" type="Label" parent="submit"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 73.0
+offset_right = 857.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("2_vqm5w")
+theme_override_font_sizes/font_size = 120
+text = "Submit"
