@@ -12,13 +12,13 @@ var play_button = ["res://assets/recording/Recording Panel/Play_button/Play1.png
 func _on_play_button_pressed():
 	if button.texture_normal == load(play_button[0]):
 		$recording_animation.play("recording")
-		button_texture(stop_button)
+		change_texture(stop_button)
 	else:
 		$recording_animation.stop()
-		button_texture(play_button)
+		change_texture(play_button)
 		
 	
-func button_texture(button_texture):
+func change_texture(button_texture):
 	button.texture_normal = load(button_texture[0])
 	button.texture_pressed = load(button_texture[1])
 
