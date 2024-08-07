@@ -31,7 +31,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"recording",
-"speed": 1.5
+"speed": 2.0
 }]
 
 [node name="recording_number" type="Control"]

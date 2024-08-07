@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvmgb4jyduc0l"]
+[gd_scene load_steps=14 format=3 uid="uid://bvmgb4jyduc0l"]
 
 [ext_resource type="Texture2D" uid="uid://85yxyrec1kmt" path="res://assets/recording/Recording Panel/Panel.png" id="1_bc1kt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_jynto"]
+[ext_resource type="Script" path="res://project/recording/recording_panel.gd" id="1_qgiy7"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="2_vqm5w"]
 [ext_resource type="PackedScene" uid="uid://dhjltat7557ls" path="res://project/recording/recording_number.tscn" id="4_jhhdi"]
 [ext_resource type="Texture2D" uid="uid://l0y7iie41dvk" path="res://assets/recording/Recording Panel/Submit/Submit1.png" id="11_jrsxh"]
@@ -30,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qgiy7")
 
 [node name="backgroun_panel" type="Panel" parent="."]
 layout_mode = 1
@@ -58,21 +60,18 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_d128k")
 [node name="recording_number" parent="panel" instance=ExtResource("4_jhhdi")]
 
 [node name="recording_number2" parent="panel" instance=ExtResource("4_jhhdi")]
-visible = false
 offset_top = 480.0
 offset_bottom = 520.0
 
 [node name="recording_number3" parent="panel" instance=ExtResource("4_jhhdi")]
-visible = false
 offset_top = 780.0
 offset_bottom = 820.0
 
 [node name="recording_number4" parent="panel" instance=ExtResource("4_jhhdi")]
-visible = false
 offset_top = 1080.0
 offset_bottom = 1120.0
 
-[node name="submit" type="Button" parent="."]
+[node name="report" type="Button" parent="."]
 layout_mode = 0
 offset_left = 2480.0
 offset_top = 2597.0
@@ -82,12 +81,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1fy3i")
 theme_override_styles/hover = SubResource("StyleBoxTexture_q17gx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_oyu8w")
 
-[node name="Label" type="Label" parent="submit"]
+[node name="Label" type="Label" parent="report"]
 layout_mode = 0
-offset_left = 82.0
+offset_left = 98.0
 offset_top = 73.0
-offset_right = 857.0
+offset_right = 873.0
 offset_bottom = 301.0
 theme_override_fonts/font = ExtResource("2_vqm5w")
-theme_override_font_sizes/font_size = 120
-text = "Submit"
+theme_override_font_sizes/font_size = 100
+text = "Report"
