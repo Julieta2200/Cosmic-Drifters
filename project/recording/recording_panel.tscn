@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bvmgb4jyduc0l"]
+[gd_scene load_steps=20 format=3 uid="uid://bvmgb4jyduc0l"]
 
 [ext_resource type="Texture2D" uid="uid://85yxyrec1kmt" path="res://assets/recording/Recording Panel/Panel.png" id="1_bc1kt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_jynto"]
@@ -23,22 +23,15 @@ texture_margin_left = 30.0
 expand_margin_left = 75.0
 draw_center = false
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ipk6s"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6luk"]
 content_margin_top = 70.0
 content_margin_bottom = 70.0
 texture = ExtResource("5_5eoti")
 expand_margin_left = 120.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sefug"]
-
 [sub_resource type="Theme" id="Theme_58qak"]
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_thyjs")
-VScrollBar/styles/grabber_highlight = null
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ipk6s")
 VScrollBar/styles/scroll = SubResource("StyleBoxTexture_c6luk")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_sefug")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqyqa"]
 
@@ -90,9 +83,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 73.0
-offset_top = 21.0
+offset_top = 34.0
 offset_right = 199.0
-offset_bottom = -49.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_58qak")
@@ -102,7 +95,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_wqyqa")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 330
+theme_override_constants/separation = 335
 
 [node name="recording_number6" parent="panel/ScrollContainer/VBoxContainer" instance=ExtResource("4_jhhdi")]
 layout_mode = 2
