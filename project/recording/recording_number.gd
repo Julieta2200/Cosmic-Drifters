@@ -8,13 +8,14 @@ var stop_button = ["res://assets/recording/Recording Panel/Stop_button/Stop1.png
 var play_button = ["res://assets/recording/Recording Panel/Play_button/Play1.png",
 					"res://assets/recording/Recording Panel/Play_button/Play2.png"]
 
+@onready var recording_panel = $"../../../.."
 @onready var button = $play_button
 @onready var recording_animation = $recording_animation
 
 
 func _on_play_button_pressed():
-	$"../..".stoping()
 	if button.texture_normal == load(play_button[0]):
+		recording_panel.stoping()
 		recording_animation.play("recording")
 		change_texture(stop_button)
 		butten_state = true
