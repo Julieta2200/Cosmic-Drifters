@@ -13,7 +13,7 @@ signal manager_room
 var recorded_enemies: Array[Enemy]
 var recorded_messages: Array
 var current_recording: Array[String] = []
-var recordings: Array[Array] = []
+var recordings: Dictionary = {}
 
 @export var shapeshift_sprite : Texture
 @export var ui: TopUI
@@ -51,7 +51,7 @@ func stop_recording():
 		enemy.group.conversation.rend_dialog = false
 		enemy.group._table.recorded = false
 	if current_recording.size() > 0:
-		recordings.append(current_recording)
+		recordings[recorded_enemies[0].group] = current_recording
 		current_recording = []
 
 func record_action():
