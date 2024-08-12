@@ -18,3 +18,5 @@ func _on_next_button_pressed():
 	if text_index < recording_array.size() - 1:
 		text_index += 1
 		display_text(recording_array)
+	else:
+		text_index = 0

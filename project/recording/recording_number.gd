@@ -27,10 +27,14 @@ func _on_play_button_pressed():
 		change_texture(play_button)
 		butten_state = false
 		
-	
 func change_texture(button_texture):
 	button.texture_normal = load(button_texture[0])
 	button.texture_pressed = load(button_texture[1])
 
-func change(number):
+func change(number, group_name):
 	$number.text = str(number + 1) + "."
+	$name.text = str(group_name)
+
+func _on_delete_button_pressed():
+	queue_free()
+	recording_panel.arrange()

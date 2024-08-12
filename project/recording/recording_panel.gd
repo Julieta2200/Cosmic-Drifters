@@ -18,7 +18,7 @@ func open(r : Dictionary):
 	for i in range(recordings.size()):
 		recording_scene = preload("res://project/recording/recording_number.tscn").instantiate()
 		recordings_container.add_child(recording_scene)
-		recording_scene.change(i)
+		recording_scene.change(i,recordings.keys()[i].name)
 	visible = true
 	
 func display_recording(recording):
@@ -31,3 +31,11 @@ func display_recording(recording):
 	
 func display_recording_stop():
 	recording_dialog.reset()
+
+func arrange():
+	for i in range(recordings_container.get_child_count()):
+		recording_scene.change(i,recordings.keys()[i].name)
+	recording_dialog.reset()
+
+func _on_report_pressed():
+	pass # Replace with function body.
