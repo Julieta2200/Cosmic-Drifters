@@ -900,6 +900,7 @@ shape = SubResource("CapsuleShape2D_ltq01")
 [connection signal="ready_input_order" from="." to="." method="_on_ready_input_order"]
 [connection signal="ready_pick_order" from="." to="." method="_on_ready_pick_order"]
 [connection signal="ready_take_order" from="." to="." method="_on_ready_take_order"]
+[connection signal="recording_panel_open" from="." to="." method="_on_recording_panel_open"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="characters_panel/bunnyboo_sipper" to="." method="_on_bunnyboo_sipper_pressed"]
 [connection signal="pressed" from="characters_panel/frost_dumpling" to="." method="_on_frost_dumpling_pressed"]

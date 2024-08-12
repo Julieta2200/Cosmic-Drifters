@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmcjulbckk2po"]
+[gd_scene load_steps=6 format=3 uid="uid://dmcjulbckk2po"]
 
 [ext_resource type="Texture2D" uid="uid://dp3tpolme1q3s" path="res://assets/Provider/provider1.png" id="1_rdoys"]
 [ext_resource type="Texture2D" uid="uid://bwiqcuqtngnl1" path="res://assets/Provider/provider2.png" id="2_6i6ar"]
+[ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="3_mgay4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k7pi2"]
 animations = [{
@@ -17,6 +18,9 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o2pa"]
+size = Vector2(16, 30)
+
 [node name="provider" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -24,3 +28,11 @@ sprite_frames = SubResource("SpriteFrames_k7pi2")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.326802
+
+[node name="clickable_component" parent="." instance=ExtResource("3_mgay4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_component"]
+shape = SubResource("RectangleShape2D_4o2pa")
+
+[node name="point" type="Marker2D" parent="."]
+position = Vector2(17, 17)

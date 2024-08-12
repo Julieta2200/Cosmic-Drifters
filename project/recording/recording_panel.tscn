@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bvmgb4jyduc0l"]
+[gd_scene load_steps=19 format=3 uid="uid://bvmgb4jyduc0l"]
 
 [ext_resource type="Texture2D" uid="uid://85yxyrec1kmt" path="res://assets/recording/Recording Panel/Panel.png" id="1_bc1kt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_jynto"]
 [ext_resource type="Script" path="res://project/recording/recording_panel.gd" id="1_qgiy7"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="2_vqm5w"]
-[ext_resource type="PackedScene" uid="uid://dhjltat7557ls" path="res://project/recording/recording_number.tscn" id="4_jhhdi"]
 [ext_resource type="Texture2D" uid="uid://tu3vag68ni84" path="res://assets/recording/Scroll/Scroll_panel.png" id="5_5eoti"]
 [ext_resource type="Texture2D" uid="uid://i765j56jb7n7" path="res://assets/recording/Scroll/Scroll_Point.png" id="5_bpmtv"]
 [ext_resource type="Texture2D" uid="uid://l0y7iie41dvk" path="res://assets/recording/Recording Panel/Submit/Submit1.png" id="11_jrsxh"]
@@ -93,33 +92,8 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_wqyqa")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="panel/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 335
-
-[node name="recording_number6" parent="panel/ScrollContainer/VBoxContainer" instance=ExtResource("4_jhhdi")]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="recording_number7" parent="panel/ScrollContainer/VBoxContainer" instance=ExtResource("4_jhhdi")]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="recording_number8" parent="panel/ScrollContainer/VBoxContainer" instance=ExtResource("4_jhhdi")]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="recording_number2" parent="panel/ScrollContainer/VBoxContainer" instance=ExtResource("4_jhhdi")]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="recording_number3" parent="panel/ScrollContainer/VBoxContainer" instance=ExtResource("4_jhhdi")]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="recording_number4" parent="panel/ScrollContainer/VBoxContainer" instance=ExtResource("4_jhhdi")]
-layout_mode = 2
-size_flags_horizontal = 0
 
 [node name="report" type="Button" parent="."]
 layout_mode = 0
@@ -140,3 +114,5 @@ offset_bottom = 301.0
 theme_override_fonts/font = ExtResource("2_vqm5w")
 theme_override_font_sizes/font_size = 100
 text = "Report"
+
+[connection signal="pressed" from="report" to="." method="_on_report_pressed"]

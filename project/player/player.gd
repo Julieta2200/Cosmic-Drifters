@@ -9,6 +9,7 @@ var recording: bool
 signal ready_input_order
 signal ready_choose_order
 signal manager_room
+signal recording_panel_open
 
 var recorded_enemies: Array[Enemy]
 var recorded_messages: Array
@@ -21,6 +22,8 @@ var recordings: Dictionary = {}
 @export var cafe_manager: CafeManager
 @export var conversation_manager: ConversationManager
 @export var recording_panel: Control
+
+@onready var provider = $"../provider"
 
 func check_queue():
 	pass
@@ -45,6 +48,7 @@ func stop_recording():
 	recording = false
 	$whisper_panel.visible = recording
 	recording_panel.visible = recording
+	conversation_manager.dialog.reset()
 	busy = false
 	if recorded_enemies.size() > 0:
 		var enemy = recorded_enemies[0]
@@ -119,6 +123,11 @@ func have_empty_slot():
 
 func walk_to_manager():
 	walk_to(manager_room_position.global_position, manager_room)
+
+func walk_to_provider():
+	busy = true
+	var provider_approach_pos = provider.global_position - Vector2(-300,-300)
+	walk_to(provider_approach_pos, recording_panel_open)
 
 func open_characters_panel():
 	busy = true
@@ -228,3 +237,6 @@ func _on_recording_area_body_exited(body):
 		if index != -1:
 			recorded_enemies.remove_at(index)
 	
+
+func _on_recording_panel_open():
+	cafe_manager.recording_panel.open(recordings)
