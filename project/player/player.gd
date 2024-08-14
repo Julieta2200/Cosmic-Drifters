@@ -25,6 +25,7 @@ var recordings: Dictionary = {}
 
 @onready var provider = $"../provider"
 
+
 func check_queue():
 	pass
 
@@ -55,7 +56,8 @@ func stop_recording():
 		enemy.group.conversation.rend_dialog = false
 		enemy.group._table.recorded = false
 	if current_recording.size() > 0:
-		recordings[recorded_enemies[0].group] = current_recording
+		recordings["group"].append(recorded_enemies[0].group)
+		recordings["conversation"].append(current_recording )
 		current_recording = []
 
 func record_action():
@@ -72,6 +74,8 @@ func _physics_process(_delta):
 func _ready():
 	position_delta = speed / 60 # game is working approximately in 60 fps
 	animation()
+	recordings["conversation"] = []
+	recordings["group"] = []
 
 func interact_table(table):
 	if table.group != null:
