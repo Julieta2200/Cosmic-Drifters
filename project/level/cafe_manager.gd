@@ -8,6 +8,7 @@ enum {TakeOrder, PickOrder, GiveCheck}
 @onready var manager: Manager = $"../manager"
 @onready var oliver = $"../oliver"
 @onready var player = $"../clickable_objects/player"
+@onready var recording_panel = $"../CanvasLayer/recording_panel"
 
 var _waiters_actions: Array
 

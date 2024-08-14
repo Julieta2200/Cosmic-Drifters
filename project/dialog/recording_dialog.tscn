@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca8lks8ofc3op"]
+
+[ext_resource type="Script" path="res://project/dialog/recording_dialog.gd" id="1_3sj56"]
+[ext_resource type="Texture2D" uid="uid://basqdveofhxjk" path="res://assets/Game_UI/dialog panel/panel.png" id="1_4amx7"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="2_3llx7"]
+[ext_resource type="Texture2D" uid="uid://dfoo33nxr8q5u" path="res://assets/Menu_UI/Cancel_button/Cancel_Button(Normal).png" id="3_4e4xr"]
+[ext_resource type="Texture2D" uid="uid://cotkrcf0qcai8" path="res://assets/Menu_UI/Cancel_button/Cancel_button(click).png" id="4_yn6ix"]
+[ext_resource type="Texture2D" uid="uid://d3j87o4efhv8d" path="res://assets/Menu_UI/Cancel_button/Cancel_Button(hover).png" id="5_vhluh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ds5ll"]
+texture = ExtResource("1_4amx7")
+
+[node name="recording_dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_3sj56")
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2048.0
+offset_top = -736.0
+offset_right = 2048.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ds5ll")
+
+[node name="text" type="RichTextLabel" parent="background"]
+layout_mode = 0
+offset_left = 394.0
+offset_right = 2950.0
+offset_bottom = 685.0
+theme_override_colors/default_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_constants/line_separation = 30
+theme_override_fonts/normal_font = ExtResource("2_3llx7")
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = " 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,( sed )"
+fit_content = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="next_button" type="TextureButton" parent="background"]
+layout_mode = 0
+offset_left = 3094.0
+offset_top = 415.0
+offset_right = 4022.0
+offset_bottom = 687.0
+texture_normal = ExtResource("3_4e4xr")
+texture_pressed = ExtResource("4_yn6ix")
+texture_hover = ExtResource("5_vhluh")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="background/next_button"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 102.0
+offset_right = 735.0
+offset_bottom = 285.0
+theme_override_fonts/font = ExtResource("2_3llx7")
+theme_override_font_sizes/font_size = 160
+text = "Next"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="background/next_button" to="." method="_on_next_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

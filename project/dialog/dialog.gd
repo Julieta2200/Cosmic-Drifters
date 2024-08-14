@@ -21,7 +21,7 @@ func appear(text: String , character_name :String , sprite : Texture):
 	$background/name.text = ""
 	$background/text.text = ""
 	write_text(0.02)
-	
+
 func reset():
 	visible = false
 	have_text = false

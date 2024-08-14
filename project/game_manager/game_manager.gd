@@ -28,6 +28,8 @@ func click_action():
 		player.open_characters_panel()
 	elif clicked_obj.name == "manager_room":
 		player.walk_to_manager()
+	elif clicked_obj.name == "provider":
+		player.walk_to_provider()
 	
 
 func _process(_delta):
