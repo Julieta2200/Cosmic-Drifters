@@ -14,7 +14,7 @@ signal recording_panel_open
 var recorded_enemies: Array[Enemy]
 var recorded_messages: Array
 var current_recording: Array[String] = []
-var recordings: Dictionary = {}
+var recordings: Array[Dictionary] = []
 
 @export var shapeshift_sprite : Texture
 @export var ui: TopUI
@@ -56,8 +56,7 @@ func stop_recording():
 		enemy.group.conversation.rend_dialog = false
 		enemy.group._table.recorded = false
 	if current_recording.size() > 0:
-		recordings["group"].append(recorded_enemies[0].group)
-		recordings["conversation"].append(current_recording )
+		recordings.append({"group" : recorded_enemies[0].group ,"conversation" : current_recording})
 		current_recording = []
 
 func record_action():
@@ -74,8 +73,6 @@ func _physics_process(_delta):
 func _ready():
 	position_delta = speed / 60 # game is working approximately in 60 fps
 	animation()
-	recordings["conversation"] = []
-	recordings["group"] = []
 
 func interact_table(table):
 	if table.group != null:
