@@ -33,23 +33,17 @@ func display_recording(recording):
 func display_recording_stop():
 	recording_dialog.reset()
 
-func arrange(index):
-	for i in range(recordings_container.get_child_count()):
-		if i > index:
-			recording_scene.change(i-1,recordings[i-1]["group"].name)
-		elif i < index:
-			recording_scene.change(i,recordings[i]["group"].name)
-
 func delete_recording(recording):
 	var index = 0
 	for i in recordings_container.get_children():
 		if i == recording:
 			recordings.remove_at(index)
-			recording_dialog.reset()
-			arrange(index)
-			stoping()
-			return
+		i.queue_free()
 		index += 1
+	recording_dialog.reset()
+	stoping()
+	open(recordings)
+	
 
 func _on_report_pressed():
 	pass # Replace with function body.

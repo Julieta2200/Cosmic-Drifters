@@ -36,4 +36,3 @@ func change(number, group_name):
 
 func _on_delete_button_pressed():
 	recording_panel.delete_recording(self)
-	queue_free()
