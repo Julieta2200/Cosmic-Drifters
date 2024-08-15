@@ -1,7 +1,7 @@
 extends Control
 
 var recording_scene 
-var recordings
+var recordings : Array[Dictionary]
 
 @onready var recording_dialog = $"../recording_dialog"
 @onready var recordings_container = $panel/ScrollContainer/VBoxContainer

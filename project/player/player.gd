@@ -240,4 +240,7 @@ func _on_recording_area_body_exited(body):
 	
 
 func _on_recording_panel_open():
-	cafe_manager.recording_panel.open(recordings)
+	if recordings != []:
+		cafe_manager.recording_panel.open(recordings)
+	else:
+		provider.start_talking()

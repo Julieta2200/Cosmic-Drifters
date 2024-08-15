@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmcjulbckk2po"]
+[gd_scene load_steps=11 format=3 uid="uid://dmcjulbckk2po"]
 
+[ext_resource type="Texture2D" uid="uid://cpepthtagjtbd" path="res://assets/Provider/shadow (6).png" id="1_e1r1s"]
+[ext_resource type="Script" path="res://project/character/provider/provider.gd" id="1_fcm78"]
 [ext_resource type="Texture2D" uid="uid://dp3tpolme1q3s" path="res://assets/Provider/provider1.png" id="1_rdoys"]
 [ext_resource type="Texture2D" uid="uid://bwiqcuqtngnl1" path="res://assets/Provider/provider2.png" id="2_6i6ar"]
 [ext_resource type="PackedScene" uid="uid://cqmbm2cublfgn" path="res://project/components/clickable_component.tscn" id="3_mgay4"]
+[ext_resource type="Texture2D" uid="uid://dk8cuu1gqptle" path="res://assets/Provider/Outline/provider_outline1.png" id="5_igc2u"]
+[ext_resource type="Texture2D" uid="uid://ckcdo4nhwx1fx" path="res://assets/Provider/Outline/provider_outline2.png" id="6_28kjg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k7pi2"]
 animations = [{
@@ -21,13 +25,34 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o2pa"]
 size = Vector2(16, 30)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmv76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_igc2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_28kjg")
+}],
+"loop": true,
+"name": &"outline",
+"speed": 1.0
+}]
+
 [node name="provider" type="CharacterBody2D"]
+script = ExtResource("1_fcm78")
+character_name = "Provider"
+character_sprite = ExtResource("1_rdoys")
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 15)
+texture = ExtResource("1_e1r1s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k7pi2")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.326802
+frame_progress = 0.0897169
 
 [node name="clickable_component" parent="." instance=ExtResource("3_mgay4")]
 
@@ -36,3 +61,15 @@ shape = SubResource("RectangleShape2D_4o2pa")
 
 [node name="point" type="Marker2D" parent="."]
 position = Vector2(17, 17)
+
+[node name="outline" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_gmv76")
+animation = &"outline"
+autoplay = "outline"
+frame_progress = 0.0860778
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
+[connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]
