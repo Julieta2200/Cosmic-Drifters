@@ -13,7 +13,6 @@ var play_button = ["res://assets/recording/Recording Panel/Play_button/Play1.png
 @onready var button = $play_button
 @onready var recording_animation = $recording_animation
 
-
 func _on_play_button_pressed():
 	if button.texture_normal == load(play_button[0]):
 		recording_panel.display_recording(self)
@@ -38,4 +37,3 @@ func change(number, group_name):
 func _on_delete_button_pressed():
 	recording_panel.delete_recording(self)
 	queue_free()
-	recording_panel.arrange()
