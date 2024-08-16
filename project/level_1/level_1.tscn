@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=142 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -123,6 +123,7 @@
 [ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
 [ext_resource type="Script" path="res://project/groups/level_1/group_1_conversation.gd" id="117_7w7c6"]
 [ext_resource type="Script" path="res://project/level_1/oliver_save_lumina_conversation.gd" id="120_iau2w"]
+[ext_resource type="Script" path="res://project/level_1/provider_coversation.gd" id="124_q6yaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -988,9 +989,10 @@ position = Vector2(-196, 130)
 scale = Vector2(16, 16)
 texture = ExtResource("92_k0qq2")
 
-[node name="provider" parent="clickable_objects" instance=ExtResource("114_wles1")]
+[node name="provider" parent="clickable_objects" node_paths=PackedStringArray("conversation_manager") instance=ExtResource("114_wles1")]
 position = Vector2(1655, 951)
 scale = Vector2(16, 16)
+conversation_manager = NodePath("../../conversation_manager")
 
 [node name="spawn_point" type="Node2D" parent="."]
 position = Vector2(3269, 958)
@@ -1134,12 +1136,13 @@ script = ExtResource("105_glat7")
 script = ExtResource("107_pnclo")
 conversation_manager = NodePath("../conversation_manager")
 
-[node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "oliver", "whisper_manager")]
+[node name="conversation_manager" type="Node2D" parent="." node_paths=PackedStringArray("dialog", "player", "oliver", "whisper_manager", "provider")]
 script = ExtResource("113_xffrp")
 dialog = NodePath("../CanvasLayer/dialog")
 player = NodePath("../clickable_objects/player")
 oliver = NodePath("../oliver")
 whisper_manager = NodePath("../whisper_manager")
+provider = NodePath("../clickable_objects/provider")
 
 [node name="player_approach_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
 script = ExtResource("114_4flla")
@@ -1156,6 +1159,10 @@ conversation_manager = NodePath("..")
 
 [node name="oliver_save_lumina_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
 script = ExtResource("120_iau2w")
+conversation_manager = NodePath("..")
+
+[node name="provider_coversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]
+script = ExtResource("124_q6yaj")
 conversation_manager = NodePath("..")
 
 [connection signal="delete_outline" from="clickable_objects/manager_room/clickable_component" to="clickable_objects/manager_room" method="_on_clickable_component_delete_outline"]

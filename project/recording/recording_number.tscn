@@ -35,15 +35,18 @@ animations = [{
 }]
 
 [node name="recording_number" type="Control"]
+custom_minimum_size = Vector2(0, 350)
 layout_mode = 3
 anchors_preset = 0
-size_flags_horizontal = 4
+offset_right = 2270.0
+offset_bottom = 350.0
 script = ExtResource("1_x43wk")
 
 [node name="number" type="Label" parent="."]
 layout_mode = 0
+offset_left = 24.0
 offset_top = 136.0
-offset_right = 158.0
+offset_right = 182.0
 offset_bottom = 297.0
 pivot_offset = Vector2(520, 32)
 theme_override_colors/font_color = Color(0.815686, 0.87451, 0.996078, 1)
@@ -52,7 +55,7 @@ theme_override_font_sizes/font_size = 140
 text = "1."
 
 [node name="recording_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(490, 168)
+position = Vector2(514, 168)
 scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_du0ao")
 animation = &"recording"
@@ -60,9 +63,9 @@ offset = Vector2(2, 1)
 
 [node name="name" type="Label" parent="."]
 layout_mode = 0
-offset_left = 896.0
+offset_left = 920.0
 offset_top = 104.0
-offset_right = 1445.0
+offset_right = 1469.0
 offset_bottom = 380.0
 pivot_offset = Vector2(-432, 112)
 theme_override_colors/font_color = Color(0.815686, 0.87451, 0.996078, 1)
@@ -72,9 +75,9 @@ uppercase = true
 
 [node name="play_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1432.0
+offset_left = 1456.0
 offset_top = 64.0
-offset_right = 1672.0
+offset_right = 1696.0
 offset_bottom = 304.0
 pivot_offset = Vector2(-928, 104)
 texture_normal = ExtResource("7_vm04u")
@@ -83,9 +86,9 @@ stretch_mode = 0
 
 [node name="delete_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1720.0
+offset_left = 1744.0
 offset_top = 80.0
-offset_right = 1960.0
+offset_right = 1984.0
 offset_bottom = 288.0
 pivot_offset = Vector2(-1264, 88)
 texture_normal = ExtResource("9_t5g7f")

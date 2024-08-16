@@ -11,6 +11,7 @@ var rend_dialog: bool
 @export var conversation_manager: ConversationManager
 
 func start(e: Array[Enemy] = []):
+	index = 0
 	timer = Timer.new()
 	add_child(timer)
 	timer.connect("timeout", dialogue_finished)
@@ -40,7 +41,8 @@ func _play_dialogue():
 			conversation_manager.dialog.appear(dialogue["text"],
 			 enemies[rand_ind].character_name,
 			 enemies[rand_ind].character_sprite)
-		conversation_manager.record(dialogue["text"])
+		if conversation_manager.player.recording:
+			conversation_manager.record(dialogue["text"])
 	
 	timer.start()
 	

@@ -14,7 +14,7 @@ signal recording_panel_open
 var recorded_enemies: Array[Enemy]
 var recorded_messages: Array
 var current_recording: Array[String] = []
-var recordings: Dictionary = {}
+var recordings: Array[Dictionary] = []
 
 @export var shapeshift_sprite : Texture
 @export var ui: TopUI
@@ -24,6 +24,7 @@ var recordings: Dictionary = {}
 @export var recording_panel: Control
 
 @onready var provider = $"../provider"
+
 
 func check_queue():
 	pass
@@ -55,7 +56,7 @@ func stop_recording():
 		enemy.group.conversation.rend_dialog = false
 		enemy.group._table.recorded = false
 	if current_recording.size() > 0:
-		recordings[recorded_enemies[0].group] = current_recording
+		recordings.append({"group" : recorded_enemies[0].group ,"conversation" : current_recording})
 		current_recording = []
 
 func record_action():
@@ -239,4 +240,7 @@ func _on_recording_area_body_exited(body):
 	
 
 func _on_recording_panel_open():
-	cafe_manager.recording_panel.open(recordings)
+	if recordings != []:
+		cafe_manager.recording_panel.open(recordings)
+	else:
+		provider.start_talking()
