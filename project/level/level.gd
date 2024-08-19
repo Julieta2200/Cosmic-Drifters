@@ -15,3 +15,4 @@ var groups = {}
 func _ready():
 	$Timer.wait_time = level_time
 	$Timer.start()
+	AudioPlayer.main_music()
