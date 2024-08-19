@@ -157,6 +157,7 @@ func update_meter():
 	meter.visible = suspect_meter != 0
 		
 func meter_full():
+	meter.visible = false
 	timer.paused = true
 	level.conversation_manager.player.stop_recording()
 	level.conversation_manager.player.busy = true
