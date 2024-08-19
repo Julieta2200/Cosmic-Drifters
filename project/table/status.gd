@@ -119,11 +119,15 @@ func timer_delete():
 		stage_timer.queue_free()
 
 func _on_visible_timer_timeout():
-	active_status.visible = false
-	table.plate.visible = false
+	reset()
 
 func stop_timers():
 	$VisibleTimer.stop()
 	$EatingTimer.stop()
+	reset()
 	if stage_timer != null:
 		stage_timer.stop()
+
+func reset():
+	active_status.visible = false
+	table.plate.visible = false

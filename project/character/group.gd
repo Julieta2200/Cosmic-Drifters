@@ -164,6 +164,9 @@ func get_table() -> Table:
 
 func _on_ready_exit(index):
 	enemies[index].spawn(Vector2(0,0))
+	if index == enemies.size() - 1:
+		_table.reset()
+		
 
 func _walk_to_door():
 	current_status = STATUS_EMPTY
