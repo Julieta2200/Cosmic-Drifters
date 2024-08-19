@@ -71,7 +71,6 @@ func waiting_for_check():
 
 func serve_end():
 	timer_delete()
-	table.reset()
 	table.leave()
 	$VisibleTimer.start()
 
