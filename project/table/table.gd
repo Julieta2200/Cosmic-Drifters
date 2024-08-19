@@ -99,7 +99,6 @@ func ordered(a_orders):
 func serve_end():
 	group.serve_end()
 
-
 func set_actual_order(foods):
 	actual_order = foods
 	waiter.busy = false
