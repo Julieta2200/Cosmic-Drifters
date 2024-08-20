@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://da36kx34eg8d1"]
+[gd_scene load_steps=11 format=3 uid="uid://da36kx34eg8d1"]
 
 [ext_resource type="Script" path="res://project/initial_scene.gd" id="1_q52br"]
 [ext_resource type="Texture2D" uid="uid://6mm5t3mir3vv" path="res://assets/Game_UI/lvl info/Panel.png" id="2_lh8jj"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dx0kdobiuv35y" path="res://assets/Game_UI/lvl info/Button(hover).png" id="4_nra25"]
 [ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="5_uncm3"]
 [ext_resource type="Texture2D" uid="uid://mi1rk8cayjq" path="res://assets/avatar/Morsels.png" id="6_bmj6l"]
+[ext_resource type="Texture2D" uid="uid://byxeo2626ld3u" path="res://assets/Game_UI/lvl info/Cell.png" id="6_w30wf"]
 [ext_resource type="Texture2D" uid="uid://ddadrewblh40" path="res://assets/Game_UI/lvl info/frame.png" id="7_4h4s6"]
+[ext_resource type="Texture2D" uid="uid://d0dnjxr2483tx" path="res://assets/avatar/Oliver.png" id="8_8v1m4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud63b"]
 texture = ExtResource("2_lh8jj")
@@ -53,10 +55,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -464.0
-offset_top = 1208.0
-offset_right = 464.0
-offset_bottom = 1480.0
+offset_left = -1048.0
+offset_top = 1258.0
+offset_right = -120.0
+offset_bottom = 1530.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_ee7r3")
@@ -72,26 +74,63 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -254.0
-offset_top = -36.0
+offset_top = -26.0
 offset_right = 254.0
-offset_bottom = 137.0
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_fonts/font = ExtResource("5_uncm3")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 140
 text = "start"
+horizontal_alignment = 1
 uppercase = true
 
-[node name="character1" type="ReferenceRect" parent="Panel"]
+[node name="cancel_button" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1946.0
+offset_top = -534.0
+offset_right = -1018.0
+offset_bottom = -262.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_ee7r3")
+texture_pressed = ExtResource("4_nra25")
+texture_hover = ExtResource("4_nra25")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/cancel_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -26.0
+offset_right = 254.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_font_sizes/font_size = 140
+text = "cancel"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="character1" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 900.0
-offset_right = 900.0
-offset_bottom = 1500.0
-border_color = Color(1, 1, 1, 1)
-border_width = 20.0
-editor_only = false
+offset_left = 296.0
+offset_top = 1014.0
+offset_right = 952.0
+offset_bottom = 1654.0
+texture = ExtResource("6_w30wf")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/character1"]
 layout_mode = 1
@@ -128,15 +167,13 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="character2" type="ReferenceRect" parent="Panel"]
+[node name="character2" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 1200.0
-offset_top = 900.0
-offset_right = 1800.0
-offset_bottom = 1500.0
-border_color = Color(1, 1, 1, 1)
-border_width = 20.0
-editor_only = false
+offset_left = 1196.0
+offset_top = 1014.0
+offset_right = 1852.0
+offset_bottom = 1654.0
+texture = ExtResource("6_w30wf")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/character2"]
 layout_mode = 1
@@ -151,7 +188,7 @@ offset_right = 288.0
 offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_bmj6l")
+texture = ExtResource("8_8v1m4")
 
 [node name="Label" type="Label" parent="Panel/character2"]
 layout_mode = 1
@@ -173,15 +210,13 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="character3" type="ReferenceRect" parent="Panel"]
+[node name="character3" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 1900.0
-offset_right = 900.0
-offset_bottom = 2500.0
-border_color = Color(1, 1, 1, 1)
-border_width = 20.0
-editor_only = false
+offset_left = 296.0
+offset_top = 2014.0
+offset_right = 952.0
+offset_bottom = 2654.0
+texture = ExtResource("6_w30wf")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/character3"]
 layout_mode = 1
@@ -218,15 +253,13 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="character4" type="ReferenceRect" parent="Panel"]
+[node name="character4" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 1200.0
-offset_top = 1900.0
-offset_right = 1800.0
-offset_bottom = 2500.0
-border_color = Color(1, 1, 1, 1)
-border_width = 20.0
-editor_only = false
+offset_left = 1196.0
+offset_top = 2014.0
+offset_right = 1852.0
+offset_bottom = 2654.0
+texture = ExtResource("6_w30wf")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/character4"]
 layout_mode = 1
@@ -263,22 +296,22 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="TextureRect1" type="TextureRect" parent="Panel"]
+[node name="Text1" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -2044.0
-offset_top = -1042.0
-offset_right = -300.0
-offset_bottom = -130.0
+offset_left = -2048.0
+offset_top = -928.0
+offset_right = -304.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("7_4h4s6")
 
-[node name="text" type="RichTextLabel" parent="Panel/TextureRect1"]
+[node name="text" type="RichTextLabel" parent="Panel/Text1"]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 5
@@ -294,25 +327,25 @@ theme_override_constants/line_separation = 30
 theme_override_fonts/normal_font = ExtResource("5_uncm3")
 theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliquag "
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliquag "
 scroll_active = false
 
-[node name="TextureRect2" type="TextureRect" parent="Panel"]
+[node name="Text2" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -2044.0
-offset_top = 8.0
-offset_right = -300.0
-offset_bottom = 920.0
+offset_left = -2048.0
+offset_top = 122.0
+offset_right = -304.0
+offset_bottom = 1034.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("7_4h4s6")
 
-[node name="text" type="RichTextLabel" parent="Panel/TextureRect2"]
+[node name="text" type="RichTextLabel" parent="Panel/Text2"]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 5
