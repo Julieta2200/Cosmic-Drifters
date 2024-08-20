@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://da36kx34eg8d1"]
+[gd_scene load_steps=9 format=3 uid="uid://da36kx34eg8d1"]
 
-[ext_resource type="Texture2D" uid="uid://cktnfw3j50w7n" path="res://assets/menu/Settings/Panel.png" id="1_kmkiv"]
 [ext_resource type="Script" path="res://project/initial_scene.gd" id="1_q52br"]
-[ext_resource type="Texture2D" uid="uid://h5kmvjobirr1" path="res://assets/recording/Recording Panel/Play_button/Play1.png" id="2_umkfg"]
-[ext_resource type="Texture2D" uid="uid://bsvi8at1l4rq1" path="res://assets/recording/Recording Panel/Play_button/Play2.png" id="3_vwtn1"]
+[ext_resource type="Texture2D" uid="uid://6mm5t3mir3vv" path="res://assets/Game_UI/lvl info/Panel.png" id="2_lh8jj"]
+[ext_resource type="Texture2D" uid="uid://40d570pg0kbg" path="res://assets/Game_UI/lvl info/Button(Normal).png" id="3_ee7r3"]
+[ext_resource type="Texture2D" uid="uid://dx0kdobiuv35y" path="res://assets/Game_UI/lvl info/Button(hover).png" id="4_nra25"]
+[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="5_uncm3"]
+[ext_resource type="Texture2D" uid="uid://mi1rk8cayjq" path="res://assets/avatar/Morsels.png" id="6_bmj6l"]
+[ext_resource type="Texture2D" uid="uid://ddadrewblh40" path="res://assets/Game_UI/lvl info/frame.png" id="7_4h4s6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud63b"]
-texture = ExtResource("1_kmkiv")
+texture = ExtResource("2_lh8jj")
 
 [node name="initial_scene" type="Control"]
 layout_mode = 3
@@ -19,35 +22,313 @@ script = ExtResource("1_q52br")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1288.0
-offset_top = -1216.0
-offset_right = 1288.0
-offset_bottom = 1216.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ud63b")
 
-[node name="play_button" type="TextureButton" parent="."]
+[node name="title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -837.5
+offset_top = 200.0
+offset_right = 837.5
+offset_bottom = 656.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_font_sizes/font_size = 200
+text = "Cosmic Nexus
+Alliance"
+horizontal_alignment = 1
+
+[node name="play_button" type="TextureButton" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -120.0
-offset_right = 120.0
-offset_bottom = 120.0
+offset_left = -464.0
+offset_top = 1208.0
+offset_right = 464.0
+offset_bottom = 1480.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_umkfg")
-texture_pressed = ExtResource("3_vwtn1")
-texture_hover = ExtResource("3_vwtn1")
+texture_normal = ExtResource("3_ee7r3")
+texture_pressed = ExtResource("4_nra25")
+texture_hover = ExtResource("4_nra25")
 stretch_mode = 0
 
-[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[node name="Label" type="Label" parent="Panel/play_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -36.0
+offset_right = 254.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_font_sizes/font_size = 150
+text = "start"
+uppercase = true
+
+[node name="character1" type="ReferenceRect" parent="Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 900.0
+offset_right = 900.0
+offset_bottom = 1500.0
+border_color = Color(1, 1, 1, 1)
+border_width = 20.0
+editor_only = false
+
+[node name="TextureRect" type="TextureRect" parent="Panel/character1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 288.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bmj6l")
+
+[node name="Label" type="Label" parent="Panel/character1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = 400.0
+offset_right = 248.0
+offset_bottom = 573.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_font_sizes/font_size = 110
+text = "???"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="character2" type="ReferenceRect" parent="Panel"]
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 900.0
+offset_right = 1800.0
+offset_bottom = 1500.0
+border_color = Color(1, 1, 1, 1)
+border_width = 20.0
+editor_only = false
+
+[node name="TextureRect" type="TextureRect" parent="Panel/character2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 288.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bmj6l")
+
+[node name="Label" type="Label" parent="Panel/character2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = 400.0
+offset_right = 248.0
+offset_bottom = 573.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_font_sizes/font_size = 110
+text = "???"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="character3" type="ReferenceRect" parent="Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 1900.0
+offset_right = 900.0
+offset_bottom = 2500.0
+border_color = Color(1, 1, 1, 1)
+border_width = 20.0
+editor_only = false
+
+[node name="TextureRect" type="TextureRect" parent="Panel/character3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 288.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bmj6l")
+
+[node name="Label" type="Label" parent="Panel/character3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = 400.0
+offset_right = 248.0
+offset_bottom = 573.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_font_sizes/font_size = 110
+text = "???"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="character4" type="ReferenceRect" parent="Panel"]
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 1900.0
+offset_right = 1800.0
+offset_bottom = 2500.0
+border_color = Color(1, 1, 1, 1)
+border_width = 20.0
+editor_only = false
+
+[node name="TextureRect" type="TextureRect" parent="Panel/character4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 288.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bmj6l")
+
+[node name="Label" type="Label" parent="Panel/character4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = 400.0
+offset_right = 248.0
+offset_bottom = 573.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_font_sizes/font_size = 110
+text = "???"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TextureRect1" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2044.0
+offset_top = -1042.0
+offset_right = -300.0
+offset_bottom = -130.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_4h4s6")
+
+[node name="text" type="RichTextLabel" parent="Panel/TextureRect1"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -800.0
+offset_top = 90.0
+offset_right = 800.0
+offset_bottom = 790.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_constants/line_separation = 30
+theme_override_fonts/normal_font = ExtResource("5_uncm3")
+theme_override_font_sizes/normal_font_size = 90
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliquag "
+scroll_active = false
+
+[node name="TextureRect2" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2044.0
+offset_top = 8.0
+offset_right = -300.0
+offset_bottom = 920.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_4h4s6")
+
+[node name="text" type="RichTextLabel" parent="Panel/TextureRect2"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -800.0
+offset_top = 90.0
+offset_right = 800.0
+offset_bottom = 790.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_constants/line_separation = 30
+theme_override_fonts/normal_font = ExtResource("5_uncm3")
+theme_override_font_sizes/normal_font_size = 90
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliquag "
+scroll_active = false
+
+[connection signal="pressed" from="Panel/play_button" to="." method="_on_play_button_pressed"]
