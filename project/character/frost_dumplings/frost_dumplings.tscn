@@ -85,6 +85,7 @@ size = Vector2(8, 4.875)
 
 [node name="frost_dumplings" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+collision_mask = 2
 script = ExtResource("1_ek06i")
 character_name = "FROST"
 character_sprite = ExtResource("2_ve7nk")

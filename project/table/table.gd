@@ -35,8 +35,8 @@ var food_action = false
 # recording
 var recorded: bool
 var suspect_meter: float = 0 # max value 100
-var suspect_unit: float = 10
-var cooldown_unit: float = 5
+var suspect_unit: float = 7
+var cooldown_unit: float = 3.5
 var suspect_sprite: int = 0
 var timer: Timer
 const meter_time: float = 1.0
