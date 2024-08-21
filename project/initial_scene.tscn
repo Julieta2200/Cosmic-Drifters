@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://da36kx34eg8d1"]
+[gd_scene load_steps=14 format=3 uid="uid://da36kx34eg8d1"]
 
 [ext_resource type="Script" path="res://project/initial_scene.gd" id="1_q52br"]
 [ext_resource type="Texture2D" uid="uid://6mm5t3mir3vv" path="res://assets/Game_UI/lvl info/Panel.png" id="2_lh8jj"]
@@ -12,6 +12,259 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud63b"]
 texture = ExtResource("2_lh8jj")
+
+[sub_resource type="Animation" id="Animation_0lj5u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Text1/text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Text2/text:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/character1/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/character1/TextureRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/character2/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/character2/TextureRect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/character4/ColorRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel/character4/TextureRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel/character3/ColorRect:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel/character3/TextureRect:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g1spq"]
+resource_name = "animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Text1/text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Text2/text:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/character1/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/character1/TextureRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/character2/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/character2/TextureRect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/character4/ColorRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.7, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel/character4/TextureRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel/character3/ColorRect:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel/character3/TextureRect:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tlcge"]
+_data = {
+"RESET": SubResource("Animation_0lj5u"),
+"animation": SubResource("Animation_g1spq")
+}
 
 [node name="initial_scene" type="Control"]
 layout_mode = 3
@@ -37,9 +290,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -837.5
-offset_top = 200.0
+offset_top = 250.0
 offset_right = 837.5
-offset_bottom = 656.0
+offset_bottom = 706.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_fonts/font = ExtResource("5_uncm3")
@@ -167,6 +420,21 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="ColorRect" type="ColorRect" parent="Panel/character1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -288.0
+offset_right = 300.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.662745, 0.776471, 1, 1)
+
 [node name="character2" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_left = 1196.0
@@ -176,6 +444,7 @@ offset_bottom = 1654.0
 texture = ExtResource("6_w30wf")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/character2"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -210,6 +479,22 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="ColorRect" type="ColorRect" parent="Panel/character2"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -288.0
+offset_right = 300.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.662745, 0.776471, 1, 1)
+
 [node name="character3" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_left = 296.0
@@ -219,6 +504,7 @@ offset_bottom = 2654.0
 texture = ExtResource("6_w30wf")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/character3"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -253,7 +539,24 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="ColorRect" type="ColorRect" parent="Panel/character3"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -288.0
+offset_right = 300.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.662745, 0.776471, 1, 1)
+
 [node name="character4" type="TextureRect" parent="Panel"]
+self_modulate = Color(0.99021, 0.990096, 1, 1)
 layout_mode = 0
 offset_left = 1196.0
 offset_top = 2014.0
@@ -262,6 +565,7 @@ offset_bottom = 2654.0
 texture = ExtResource("6_w30wf")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/character4"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -296,6 +600,22 @@ text = "???"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="ColorRect" type="ColorRect" parent="Panel/character4"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -288.0
+offset_right = 300.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.662745, 0.776471, 1, 1)
+
 [node name="Text1" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = 6
@@ -317,10 +637,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -800.0
-offset_top = 90.0
-offset_right = 800.0
-offset_bottom = 790.0
+offset_left = -792.0
+offset_top = 100.0
+offset_right = 808.0
+offset_bottom = 800.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_constants/line_separation = 30
@@ -329,6 +649,8 @@ theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliquag "
 scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Text2" type="TextureRect" parent="Panel"]
 layout_mode = 1
@@ -351,17 +673,25 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -800.0
-offset_top = 90.0
-offset_right = 800.0
-offset_bottom = 790.0
+offset_left = -792.0
+offset_top = 100.0
+offset_right = 808.0
+offset_bottom = 800.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_constants/line_separation = 30
 theme_override_fonts/normal_font = ExtResource("5_uncm3")
 theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliquag "
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,aliquag "
 scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "animation"
+libraries = {
+"": SubResource("AnimationLibrary_tlcge")
+}
 
 [connection signal="pressed" from="Panel/play_button" to="." method="_on_play_button_pressed"]
