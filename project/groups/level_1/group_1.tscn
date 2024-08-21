@@ -1,32 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://pat6q66q14uf"]
+[gd_scene load_steps=6 format=3 uid="uid://pat6q66q14uf"]
 
 [ext_resource type="Script" path="res://project/character/group.gd" id="1_6nk82"]
 [ext_resource type="PackedScene" uid="uid://bt7yhx8mojj0m" path="res://project/character/bunnyboo_sippes/bunnyboo_sippers.tscn" id="2_3frnm"]
-[ext_resource type="PackedScene" uid="uid://bsncelllnchub" path="res://project/character/cerulean_hoppers/cerulean_hoppers.tscn" id="3_a8fy3"]
-[ext_resource type="PackedScene" uid="uid://dl1thhd2djkjj" path="res://project/character/twilight_tarsiers/twilight_tarsiers.tscn" id="4_nxddn"]
+[ext_resource type="PackedScene" uid="uid://7k6qxbu2nrsc" path="res://project/character/munchkin_morsels/munchkin_morsels.tscn" id="2_nwn5g"]
+[ext_resource type="PackedScene" uid="uid://bxr0iy23ubcla" path="res://project/character/frost_dumplings/frost_dumplings.tscn" id="4_pvdx1"]
+[ext_resource type="PackedScene" uid="uid://7njhwo26o2yf" path="res://project/character/prismarities/prismarities.tscn" id="5_v66jl"]
 
 [node name="group_1" type="Node2D"]
-position = Vector2(2678, 1274)
 script = ExtResource("1_6nk82")
 _spawn_time = 5.0
 
 [node name="enemies" type="Node2D" parent="."]
 
+[node name="munchkin_morsels" parent="enemies" instance=ExtResource("2_nwn5g")]
+character_name = "Grand"
+
+[node name="prismarities" parent="enemies" instance=ExtResource("5_v66jl")]
+character_name = "Gerald"
+
+[node name="frost_dumplings" parent="enemies" instance=ExtResource("4_pvdx1")]
+character_name = "Ralph"
+
 [node name="bunnyboo_sippers" parent="enemies" instance=ExtResource("2_3frnm")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="cerulean_hoppers" parent="enemies" instance=ExtResource("3_a8fy3")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="bunnyboo_sippers2" parent="enemies" instance=ExtResource("2_3frnm")]
-position = Vector2(-3081, -1828)
-speed = 800.0
-
-[node name="twilight_tarsiers" parent="enemies" instance=ExtResource("4_nxddn")]
-position = Vector2(-3073, -1944)
-speed = 800.0
+character_name = "Kafka"
 
 [connection signal="ready_exit" from="." to="." method="_on_ready_exit"]
 [connection signal="ready_sit" from="." to="." method="_on_ready_sit"]

@@ -84,6 +84,7 @@ size = Vector2(14.75, 7.125)
 
 [node name="munchkin_morsels" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+collision_mask = 2
 script = ExtResource("1_0n30y")
 character_name = "MORSEL"
 character_sprite = ExtResource("2_y6p1s")

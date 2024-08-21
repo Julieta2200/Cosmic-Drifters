@@ -1017,8 +1017,9 @@ one_shot = true
 
 [node name="group_1" parent="." node_paths=PackedStringArray("level", "_table", "conversation") instance=ExtResource("94_fnmwe")]
 level = NodePath("..")
+_spawn_time = 4.0
 _for_lumina = true
-_table = NodePath("../clickable_objects/Table")
+_table = NodePath("../clickable_objects/Table6")
 conversation = NodePath("../conversation_manager/group_1_conversation")
 
 [node name="group_2" parent="." node_paths=PackedStringArray("level", "_table") instance=ExtResource("95_t1hhy")]

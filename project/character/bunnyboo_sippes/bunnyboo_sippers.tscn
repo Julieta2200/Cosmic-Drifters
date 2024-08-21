@@ -85,9 +85,11 @@ size = Vector2(11.3125, 3.9375)
 
 [node name="bunnyboo_sippers" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+collision_mask = 2
 script = ExtResource("1_gitro")
 character_name = "BUNNYBOO"
 character_sprite = ExtResource("2_177vy")
+speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(0.5, 7.0625)

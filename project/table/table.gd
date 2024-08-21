@@ -35,8 +35,8 @@ var food_action = false
 # recording
 var recorded: bool
 var suspect_meter: float = 0 # max value 100
-var suspect_unit: float = 10
-var cooldown_unit: float = 5
+var suspect_unit: float = 7
+var cooldown_unit: float = 3.5
 var suspect_sprite: int = 0
 var timer: Timer
 const meter_time: float = 1.0
@@ -99,7 +99,6 @@ func ordered(a_orders):
 func serve_end():
 	group.serve_end()
 
-
 func set_actual_order(foods):
 	actual_order = foods
 	waiter.busy = false
@@ -158,6 +157,7 @@ func update_meter():
 	meter.visible = suspect_meter != 0
 		
 func meter_full():
+	meter.visible = false
 	timer.paused = true
 	level.conversation_manager.player.stop_recording()
 	level.conversation_manager.player.busy = true

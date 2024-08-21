@@ -85,6 +85,7 @@ size = Vector2(8.75, 5.8125)
 
 [node name="prismarities" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+collision_mask = 2
 script = ExtResource("1_qh3jx")
 character_name = "PRISMA"
 character_sprite = ExtResource("2_o5pgk")
