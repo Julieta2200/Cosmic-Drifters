@@ -793,9 +793,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7q5wo")
 
 [node name="stars2" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = 4096.0
 offset_right = 12288.0
 offset_bottom = 7168.0
