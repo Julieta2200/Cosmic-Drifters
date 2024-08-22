@@ -1061,7 +1061,8 @@ cooks = [NodePath("../Cook_1"), NodePath("../Cook_2")]
 desk_point = NodePath("../order_desk")
 
 [node name="Area2D" type="Area2D" parent="kitchen"]
-collision_mask = 2
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kitchen/Area2D"]
 position = Vector2(10307, 4757)
