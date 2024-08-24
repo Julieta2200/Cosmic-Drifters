@@ -97,7 +97,7 @@ libraries = {
 "": SubResource("AnimationLibrary_lbfqs")
 }
 
-[node name="Timer" type="Timer" parent="status"]
+[node name="VisibleTimer" type="Timer" parent="status"]
 
 [node name="waiting_for_food" type="Sprite2D" parent="status"]
 visible = false
@@ -150,5 +150,5 @@ texture = ExtResource("10_573if")
 
 [connection signal="delete_outline" from="clickable_component" to="." method="_on_clickable_component_delete_outline"]
 [connection signal="outline" from="clickable_component" to="." method="_on_clickable_component_outline"]
-[connection signal="timeout" from="status/Timer" to="status" method="_on_timer_timeout"]
+[connection signal="timeout" from="status/VisibleTimer" to="status" method="_on_timer_timeout"]
 [connection signal="timeout" from="status/EatingTimer" to="status" method="_on_eating_timer_timeout"]

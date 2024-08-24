@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=143 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -123,6 +123,7 @@
 [ext_resource type="Script" path="res://project/level/player_noticed_conversation.gd" id="116_7ja48"]
 [ext_resource type="Script" path="res://project/groups/level_1/group_1_conversation.gd" id="117_7w7c6"]
 [ext_resource type="Script" path="res://project/level_1/oliver_save_lumina_conversation.gd" id="120_iau2w"]
+[ext_resource type="Script" path="res://project/groups/level_1/group_2_conversation.gd" id="123_4yyto"]
 [ext_resource type="Script" path="res://project/level_1/provider_coversation.gd" id="124_q6yaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
@@ -1022,10 +1023,11 @@ _for_lumina = true
 _table = NodePath("../clickable_objects/Table6")
 conversation = NodePath("../conversation_manager/group_1_conversation")
 
-[node name="group_2" parent="." node_paths=PackedStringArray("level", "_table") instance=ExtResource("95_t1hhy")]
+[node name="group_2" parent="." node_paths=PackedStringArray("level", "_table", "conversation") instance=ExtResource("95_t1hhy")]
 level = NodePath("..")
 _spawn_time = 10.0
-_table = NodePath("../clickable_objects/Table2")
+_table = NodePath("../clickable_objects/TableSmall2")
+conversation = NodePath("../conversation_manager/group_2_conversation")
 
 [node name="Waiter_1" parent="." node_paths=PackedStringArray("level", "desk_point") instance=ExtResource("63_7uax7")]
 position = Vector2(6536, 1327)
@@ -1157,6 +1159,11 @@ conversation_manager = NodePath("..")
 [node name="group_1_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("group", "conversation_manager")]
 script = ExtResource("117_7w7c6")
 group = NodePath("../../group_1")
+conversation_manager = NodePath("..")
+
+[node name="group_2_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("group", "conversation_manager")]
+script = ExtResource("123_4yyto")
+group = NodePath("../../group_2")
 conversation_manager = NodePath("..")
 
 [node name="oliver_save_lumina_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]

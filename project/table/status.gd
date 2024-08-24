@@ -24,7 +24,7 @@ class_name Status extends Node2D
 	}
 }
 
-@onready var stage_timer
+var stage_timer: Timer
 @onready var eating_stage_timer = $EatingTimer
 @onready var _ask_waiter = $ask_waiter
 @onready var _waiting_for_food = $waiting_for_food
@@ -35,6 +35,11 @@ class_name Status extends Node2D
 
 var current_status = 1
 var active_status
+
+func _ready():
+	stage_timer = Timer.new()
+	add_child(stage_timer)
+	stage_timer.connect("timeout", _on_timer_timeout)
 
 func ask_waiter():
 	$ask_waiter.visible = true
@@ -51,7 +56,6 @@ func waiting_for_food():
 	timer_reset_start(get_current_stage()["duration"])
 	
 func eating_food(count):
-	timer_delete()
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = false
 	$waiting_for_check.visible = false
@@ -61,7 +65,6 @@ func eating_food(count):
 	eating_timer_reset_start(get_current_stage()["duration"])
 
 func waiting_for_check():
-	timer_delete()
 	$ask_waiter.visible = false
 	$waiting_for_food.visible = false
 	$waiting_for_check.visible = true
@@ -70,7 +73,7 @@ func waiting_for_check():
 	timer_reset_start(get_current_stage()["duration"])
 
 func serve_end():
-	timer_delete()
+	stage_timer.stop()
 	table.leave()
 	$VisibleTimer.start()
 
@@ -78,11 +81,13 @@ func next_stage():
 	current_status += 1
 	if current_status == stages[active_status].size():
 		last_stage()
+		return
 	if current_status > stages[active_status].size():
 		stage_overflow()
 		return
-	stage_timer.wait_time = get_current_stage()["duration"]
-	active_status.texture = load(get_current_stage()["texture"])
+	if stage_timer:
+		stage_timer.wait_time = get_current_stage()["duration"]
+		active_status.texture = load(get_current_stage()["texture"])
 
 func stage_overflow():
 	print("overflow")
@@ -95,11 +100,9 @@ func last_stage():
 			table.level.cafe_manager.manager_give_check(table)
 
 func timer_reset_start(time):
-	stage_timer = Timer.new()
-	add_child(stage_timer)
 	stage_timer.wait_time = time
-	stage_timer.connect("timeout", _on_timer_timeout)
 	stage_timer.start()
+	
 
 func eating_timer_reset_start(time):
 	eating_stage_timer.wait_time = time + 0.1

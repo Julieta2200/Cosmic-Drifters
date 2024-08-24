@@ -105,7 +105,6 @@ func _ask_for_waiter():
 	
 
 func ordered(enemy_i):
-	table_status.timer_delete()
 	if enemy_i == len(enemies) - 1:
 		_table.ordered(get_orders())
 		waiting_for_food()
