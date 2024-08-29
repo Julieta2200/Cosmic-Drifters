@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://project/initial_scene.gd" id="1_q52br"]
 [ext_resource type="Texture2D" uid="uid://6mm5t3mir3vv" path="res://assets/Game_UI/lvl info/Panel.png" id="2_lh8jj"]
+[ext_resource type="FontFile" uid="uid://ipnwq2itk0jf" path="res://assets/Fonts/8-bit-fortress.ttf" id="3_e3meh"]
 [ext_resource type="Texture2D" uid="uid://40d570pg0kbg" path="res://assets/Game_UI/lvl info/Button(Normal).png" id="3_ee7r3"]
 [ext_resource type="Texture2D" uid="uid://dx0kdobiuv35y" path="res://assets/Game_UI/lvl info/Button(hover).png" id="4_nra25"]
-[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="5_uncm3"]
 [ext_resource type="Texture2D" uid="uid://mi1rk8cayjq" path="res://assets/avatar/Morsels.png" id="6_bmj6l"]
 [ext_resource type="Texture2D" uid="uid://byxeo2626ld3u" path="res://assets/Game_UI/lvl info/Cell.png" id="6_w30wf"]
 [ext_resource type="Texture2D" uid="uid://ddadrewblh40" path="res://assets/Game_UI/lvl info/frame.png" id="7_4h4s6"]
@@ -463,7 +463,7 @@ offset_right = 837.5
 offset_bottom = 706.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
-theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_fonts/font = ExtResource("3_e3meh")
 theme_override_font_sizes/font_size = 200
 text = "Cosmic Nexus
 Alliance"
@@ -489,22 +489,17 @@ stretch_mode = 0
 
 [node name="Label" type="Label" parent="Panel/play_button"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -254.0
-offset_top = -26.0
-offset_right = 254.0
-offset_bottom = 147.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
-theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_fonts/font = ExtResource("3_e3meh")
 theme_override_font_sizes/font_size = 140
 text = "start"
 horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [node name="cancel_button" type="TextureButton" parent="Panel"]
@@ -527,22 +522,17 @@ stretch_mode = 0
 
 [node name="Label" type="Label" parent="Panel/cancel_button"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -254.0
-offset_top = -26.0
-offset_right = 254.0
-offset_bottom = 147.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
-theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_fonts/font = ExtResource("3_e3meh")
 theme_override_font_sizes/font_size = 140
 text = "cancel"
 horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [node name="character1" type="TextureRect" parent="Panel"]
@@ -582,7 +572,7 @@ offset_bottom = 573.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
-theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_fonts/font = ExtResource("3_e3meh")
 theme_override_font_sizes/font_size = 110
 text = "???"
 horizontal_alignment = 1
@@ -641,7 +631,7 @@ offset_bottom = 573.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
-theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_fonts/font = ExtResource("3_e3meh")
 theme_override_font_sizes/font_size = 110
 text = "???"
 horizontal_alignment = 1
@@ -701,7 +691,7 @@ offset_bottom = 573.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
-theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_fonts/font = ExtResource("3_e3meh")
 theme_override_font_sizes/font_size = 110
 text = "???"
 horizontal_alignment = 1
@@ -762,7 +752,7 @@ offset_bottom = 573.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
-theme_override_fonts/font = ExtResource("5_uncm3")
+theme_override_fonts/font = ExtResource("3_e3meh")
 theme_override_font_sizes/font_size = 110
 text = "???"
 horizontal_alignment = 1
@@ -812,10 +802,10 @@ offset_bottom = 800.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_constants/line_separation = 30
-theme_override_fonts/normal_font = ExtResource("5_uncm3")
+theme_override_fonts/normal_font = ExtResource("3_e3meh")
 theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ( sed )do eiusmod tempor incididunt ut labore et  dolore magna aliquag "
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ( sed )do eiusmod tempor incididunt "
 scroll_active = false
 visible_characters = 0
 visible_ratio = 0.0
@@ -843,9 +833,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -800.0
-offset_top = -335.0
+offset_top = -376.0
 offset_right = 800.0
-offset_bottom = 415.0
+offset_bottom = 374.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
@@ -856,7 +846,7 @@ custom_minimum_size = Vector2(1600, 150)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_constants/line_separation = 30
-theme_override_fonts/normal_font = ExtResource("5_uncm3")
+theme_override_fonts/normal_font = ExtResource("3_e3meh")
 theme_override_font_sizes/normal_font_size = 120
 text = "[ul]Unlike Label"
 scroll_active = false
@@ -870,7 +860,7 @@ custom_minimum_size = Vector2(1600, 150)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_constants/line_separation = 30
-theme_override_fonts/normal_font = ExtResource("5_uncm3")
+theme_override_fonts/normal_font = ExtResource("3_e3meh")
 theme_override_font_sizes/normal_font_size = 120
 text = "[ul]Unlike Label"
 scroll_active = false
@@ -884,7 +874,7 @@ custom_minimum_size = Vector2(1600, 150)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_constants/line_separation = 30
-theme_override_fonts/normal_font = ExtResource("5_uncm3")
+theme_override_fonts/normal_font = ExtResource("3_e3meh")
 theme_override_font_sizes/normal_font_size = 120
 bbcode_enabled = true
 text = "[ul]Unlike Label"
@@ -899,7 +889,7 @@ custom_minimum_size = Vector2(1600, 150)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.662745, 0.776471, 1, 1)
 theme_override_constants/line_separation = 30
-theme_override_fonts/normal_font = ExtResource("5_uncm3")
+theme_override_fonts/normal_font = ExtResource("3_e3meh")
 theme_override_font_sizes/normal_font_size = 120
 bbcode_enabled = true
 text = "[ul]Unlike Label"

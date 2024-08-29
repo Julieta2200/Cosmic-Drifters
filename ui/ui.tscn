@@ -1,32 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://biihx11v7nxj1"]
+[gd_scene load_steps=10 format=3 uid="uid://biihx11v7nxj1"]
 
 [ext_resource type="Script" path="res://ui/ui.gd" id="1_384xp"]
 [ext_resource type="Texture2D" uid="uid://t3e0lwkfv53e" path="res://assets/Game_UI/Panel.png" id="1_xvuwc"]
 [ext_resource type="Texture2D" uid="uid://b2ppmldare2ty" path="res://assets/Game_UI/Item.png" id="2_evno3"]
 [ext_resource type="Texture2D" uid="uid://hlripqj84fj7" path="res://assets/Game_UI/Coin/Coin1.png" id="3_px6ff"]
-[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_f84f5"]
+[ext_resource type="FontFile" uid="uid://ipnwq2itk0jf" path="res://assets/Fonts/8-bit-fortress.ttf" id="4_g2fvg"]
 [ext_resource type="Texture2D" uid="uid://gf73lgnir20i" path="res://assets/Game_UI/Coin/Coin2.png" id="4_rv2fc"]
 [ext_resource type="Texture2D" uid="uid://drpbp0cf6evgg" path="res://assets/Game_UI/lvl/Stroke.png" id="5_3rs2e"]
 [ext_resource type="Texture2D" uid="uid://b4t3i5gcxwsh" path="res://assets/Game_UI/lvl/Scale_1.png" id="6_vw0ko"]
 [ext_resource type="Texture2D" uid="uid://dl3nwavm241pv" path="res://assets/Game_UI/lvl/Scale_2.png" id="7_5n7hw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_f5l1e"]
-font = ExtResource("4_f84f5")
-font_size = 70
-
-[sub_resource type="LabelSettings" id="LabelSettings_ebnn8"]
-font = ExtResource("4_f84f5")
-font_size = 100
-
-[sub_resource type="LabelSettings" id="LabelSettings_7m0iq"]
-font = ExtResource("4_f84f5")
-font_size = 120
-
 [node name="ui" type="Control"]
 layout_mode = 3
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
+anchors_preset = 0
+offset_right = 4096.0
+offset_bottom = 384.0
 script = ExtResource("1_384xp")
 
 [node name="panel" type="TextureRect" parent="."]
@@ -56,13 +44,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -27.0
-offset_right = 101.0
-offset_bottom = 66.0
+offset_left = -87.0
+offset_top = -75.0
+offset_right = 88.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-label_settings = SubResource("LabelSettings_f5l1e")
+theme_override_fonts/font = ExtResource("4_g2fvg")
+theme_override_font_sizes/font_size = 80
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -78,13 +67,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -27.0
-offset_right = 101.0
-offset_bottom = 66.0
+offset_left = -87.0
+offset_top = -75.0
+offset_right = 88.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-label_settings = SubResource("LabelSettings_f5l1e")
+theme_override_fonts/font = ExtResource("4_g2fvg")
+theme_override_font_sizes/font_size = 80
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -100,13 +90,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -27.0
-offset_right = 101.0
-offset_bottom = 66.0
+offset_left = -87.0
+offset_top = -75.0
+offset_right = 88.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-label_settings = SubResource("LabelSettings_f5l1e")
+theme_override_fonts/font = ExtResource("4_g2fvg")
+theme_override_font_sizes/font_size = 80
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -154,8 +145,9 @@ theme_override_constants/separation = 50
 [node name="Label" type="Label" parent="progress_bar1"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_g2fvg")
+theme_override_font_sizes/font_size = 100
 text = "Lv1"
-label_settings = SubResource("LabelSettings_ebnn8")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="progress_bar1"]
 custom_minimum_size = Vector2(576, 112)
@@ -179,8 +171,9 @@ theme_override_constants/separation = 50
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_g2fvg")
+theme_override_font_sizes/font_size = 100
 text = "Lv1"
-label_settings = SubResource("LabelSettings_ebnn8")
 
 [node name="TextureProgressBar2" type="TextureProgressBar" parent="progress_bar2"]
 custom_minimum_size = Vector2(576, 112)
@@ -193,13 +186,18 @@ texture_under = ExtResource("5_3rs2e")
 texture_progress = ExtResource("7_5n7hw")
 
 [node name="time" type="Label" parent="."]
-layout_mode = 0
-offset_left = 3575.0
-offset_top = 108.0
-offset_right = 3925.0
-offset_bottom = 224.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -596.0
+offset_top = 50.0
+offset_right = -158.0
+offset_bottom = 214.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_g2fvg")
+theme_override_font_sizes/font_size = 110
 text = "09:00"
-label_settings = SubResource("LabelSettings_7m0iq")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
