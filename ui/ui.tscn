@@ -38,22 +38,17 @@ layout_mode = 2
 texture = ExtResource("2_evno3")
 
 [node name="Label" type="Label" parent="item/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -87.0
-offset_top = -75.0
-offset_right = 88.0
-offset_bottom = 75.0
-grow_horizontal = 2
-grow_vertical = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 43.0
+offset_right = 186.0
+offset_bottom = 167.0
 theme_override_fonts/font = ExtResource("4_g2fvg")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
 
 [node name="TextureRect2" type="TextureRect" parent="item"]
 custom_minimum_size = Vector2(208, 200)
@@ -61,22 +56,16 @@ layout_mode = 2
 texture = ExtResource("2_evno3")
 
 [node name="Label" type="Label" parent="item/TextureRect2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -87.0
-offset_top = -75.0
-offset_right = 88.0
-offset_bottom = 75.0
-grow_horizontal = 2
-grow_vertical = 2
+clip_contents = true
+offset_left = 26.0
+offset_top = 43.0
+offset_right = 186.0
+offset_bottom = 167.0
 theme_override_fonts/font = ExtResource("4_g2fvg")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
 
 [node name="TextureRect3" type="TextureRect" parent="item"]
 custom_minimum_size = Vector2(208, 200)
@@ -84,22 +73,16 @@ layout_mode = 2
 texture = ExtResource("2_evno3")
 
 [node name="Label" type="Label" parent="item/TextureRect3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -87.0
-offset_top = -75.0
-offset_right = 88.0
-offset_bottom = 75.0
-grow_horizontal = 2
-grow_vertical = 2
+clip_contents = true
+offset_left = 26.0
+offset_top = 43.0
+offset_right = 186.0
+offset_bottom = 167.0
 theme_override_fonts/font = ExtResource("4_g2fvg")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
 
 [node name="coin" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -196,7 +179,7 @@ offset_right = -158.0
 offset_bottom = 214.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("4_g2fvg")
-theme_override_font_sizes/font_size = 110
+theme_override_font_sizes/font_size = 120
 text = "09:00"
 
 [node name="Timer" type="Timer" parent="."]
