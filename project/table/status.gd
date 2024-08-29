@@ -75,7 +75,7 @@ func waiting_for_check():
 func serve_end():
 	stage_timer.stop()
 	table.leave()
-	$VisibleTimer.start()
+	reset()
 
 func next_stage():
 	current_status += 1
@@ -121,11 +121,7 @@ func timer_delete():
 	if stage_timer != null :
 		stage_timer.queue_free()
 
-func _on_visible_timer_timeout():
-	reset()
-
 func stop_timers():
-	$VisibleTimer.stop()
 	$EatingTimer.stop()
 	reset()
 	if stage_timer != null:
