@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dhjltat7557ls"]
 
-[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="1_jkfaq"]
 [ext_resource type="Script" path="res://project/recording/recording_number.gd" id="1_x43wk"]
+[ext_resource type="FontFile" uid="uid://ipnwq2itk0jf" path="res://assets/Fonts/8-bit-fortress.ttf" id="2_3dxdx"]
 [ext_resource type="Texture2D" uid="uid://dliww3sk2bl0q" path="res://assets/recording/Recording1.png" id="2_xhqvo"]
 [ext_resource type="Texture2D" uid="uid://8pnibgdlttkj" path="res://assets/recording/Recording2.png" id="3_qisqo"]
 [ext_resource type="Texture2D" uid="uid://ct53wt1brg4lb" path="res://assets/recording/Recording3.png" id="4_1aw6q"]
@@ -44,13 +44,13 @@ script = ExtResource("1_x43wk")
 
 [node name="number" type="Label" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 136.0
-offset_right = 182.0
-offset_bottom = 297.0
+offset_left = 31.0
+offset_top = 80.0
+offset_right = 191.0
+offset_bottom = 243.0
 pivot_offset = Vector2(520, 32)
-theme_override_colors/font_color = Color(0.815686, 0.87451, 0.996078, 1)
-theme_override_fonts/font = ExtResource("1_jkfaq")
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("2_3dxdx")
 theme_override_font_sizes/font_size = 140
 text = "1."
 
@@ -65,10 +65,11 @@ offset = Vector2(2, 1)
 layout_mode = 0
 offset_left = 920.0
 offset_top = 104.0
-offset_right = 1469.0
-offset_bottom = 380.0
+offset_right = 1296.0
+offset_bottom = 233.0
 pivot_offset = Vector2(-432, 112)
-theme_override_colors/font_color = Color(0.815686, 0.87451, 0.996078, 1)
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("2_3dxdx")
 theme_override_font_sizes/font_size = 110
 text = "name"
 uppercase = true

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://project/menu/settings/settings.gd" id="1_57a0v"]
 [ext_resource type="Texture2D" uid="uid://x4e7gemlj63y" path="res://assets/menu/background/Background2.png" id="2_s11wm"]
 [ext_resource type="Texture2D" uid="uid://cktnfw3j50w7n" path="res://assets/menu/Settings/Panel.png" id="3_ooao7"]
-[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_pmoc4"]
+[ext_resource type="FontFile" uid="uid://ipnwq2itk0jf" path="res://assets/Fonts/8-bit-fortress.ttf" id="5_7wxfq"]
 [ext_resource type="Texture2D" uid="uid://bjew0lph63wmr" path="res://assets/menu/Settings/Music_Icon.png" id="5_58i2c"]
 [ext_resource type="Texture2D" uid="uid://c7riaqodf8fus" path="res://assets/menu/Settings/Switch1.png" id="6_68uwx"]
 [ext_resource type="Texture2D" uid="uid://4y2pjgwhqybj" path="res://assets/menu/Settings/Switch2.png" id="7_3s32k"]
@@ -82,8 +82,8 @@ offset_top = 200.0
 offset_right = 807.5
 offset_bottom = 541.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.619608, 0.85098, 1, 1)
-theme_override_fonts/font = ExtResource("4_pmoc4")
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_7wxfq")
 theme_override_font_sizes/font_size = 300
 text = "SETTINGS"
 
@@ -105,12 +105,12 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 234.0
-offset_top = 100.0
-offset_right = 1849.0
-offset_bottom = 441.0
+offset_top = 80.0
+offset_right = 836.0
+offset_bottom = 255.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.690196, 0.878431, 1, 1)
-theme_override_fonts/font = ExtResource("4_pmoc4")
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_7wxfq")
 theme_override_font_sizes/font_size = 150
 text = "MUSIC"
 
@@ -153,12 +153,12 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 234.0
-offset_top = 100.0
-offset_right = 1849.0
-offset_bottom = 441.0
+offset_top = 80.0
+offset_right = 879.0
+offset_bottom = 255.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.690196, 0.878431, 1, 1)
-theme_override_fonts/font = ExtResource("4_pmoc4")
+theme_override_colors/font_color = Color(0.662745, 0.776471, 1, 1)
+theme_override_fonts/font = ExtResource("5_7wxfq")
 theme_override_font_sizes/font_size = 150
 text = "SOUND"
 

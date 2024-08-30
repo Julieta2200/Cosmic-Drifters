@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://85yxyrec1kmt" path="res://assets/recording/Recording Panel/Panel.png" id="1_bc1kt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_jynto"]
 [ext_resource type="Script" path="res://project/recording/recording_panel.gd" id="1_qgiy7"]
-[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="2_vqm5w"]
 [ext_resource type="Texture2D" uid="uid://tu3vag68ni84" path="res://assets/recording/Scroll/Scroll_panel.png" id="5_5eoti"]
 [ext_resource type="Texture2D" uid="uid://i765j56jb7n7" path="res://assets/recording/Scroll/Scroll_Point.png" id="5_bpmtv"]
+[ext_resource type="FontFile" uid="uid://ipnwq2itk0jf" path="res://assets/Fonts/8-bit-fortress.ttf" id="6_i8vqx"]
 [ext_resource type="Texture2D" uid="uid://l0y7iie41dvk" path="res://assets/recording/Recording Panel/Submit/Submit1.png" id="11_jrsxh"]
 [ext_resource type="Texture2D" uid="uid://be1dgg1ibfrdd" path="res://assets/recording/Recording Panel/Submit/Submit2.png" id="12_fn0sh"]
 [ext_resource type="Texture2D" uid="uid://cp48tnk0wsw6j" path="res://assets/recording/Recording Panel/Submit/Submit3.png" id="13_tids0"]
@@ -102,18 +102,11 @@ offset_left = 2480.0
 offset_top = 2597.0
 offset_right = 3104.0
 offset_bottom = 2821.0
+theme_override_fonts/font = ExtResource("6_i8vqx")
+theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_1fy3i")
 theme_override_styles/hover = SubResource("StyleBoxTexture_q17gx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_oyu8w")
-
-[node name="Label" type="Label" parent="report"]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 73.0
-offset_right = 873.0
-offset_bottom = 301.0
-theme_override_fonts/font = ExtResource("2_vqm5w")
-theme_override_font_sizes/font_size = 100
 text = "Report"
 
 [connection signal="pressed" from="report" to="." method="_on_report_pressed"]

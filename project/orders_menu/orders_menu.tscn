@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://project/orders_menu/orders_menu.gd" id="1_840mt"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="1_lwmvx"]
 [ext_resource type="Texture2D" uid="uid://sq72t4hqm7b4" path="res://assets/Menu2_UI/Menu1.png" id="3_idacn"]
-[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="4_410ax"]
+[ext_resource type="FontFile" uid="uid://ipnwq2itk0jf" path="res://assets/Fonts/8-bit-fortress.ttf" id="4_qlfgo"]
 [ext_resource type="Texture2D" uid="uid://6bbs4iw2f27j" path="res://assets/Food/Hot_dish/becon.png" id="5_2mtat"]
 [ext_resource type="Texture2D" uid="uid://ck1bf2gt4xpau" path="res://assets/Menu_UI/OK_Button/OK_Button(normal).png" id="6_y4jqj"]
 [ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="7_gythv"]
@@ -82,27 +82,11 @@ offset_top = 45.0
 offset_bottom = 221.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_5ugeu")
 theme_override_styles/hover = SubResource("StyleBoxTexture_12scm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_71yku")
-
-[node name="Label" type="Label" parent="main_panel/cancel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -22.0
-offset_right = 163.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
-theme_override_font_sizes/font_size = 80
 text = "Close"
 
 [node name="orders" type="Control" parent="main_panel"]
@@ -132,20 +116,16 @@ texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order/table_number"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -73.0
-offset_top = -23.0
-offset_right = 77.0
-offset_bottom = 70.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 text = "N 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="foods" type="Control" parent="main_panel/orders/order"]
 anchors_preset = 0
@@ -253,30 +233,13 @@ offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
-
-[node name="Label" type="Label" parent="main_panel/orders/order/pick"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -22.0
-offset_right = 163.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
-theme_override_font_sizes/font_size = 80
 text = "Pick"
-horizontal_alignment = 1
 
 [node name="order2" type="Control" parent="main_panel/orders"]
 visible = false
@@ -300,20 +263,16 @@ texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order2/table_number"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -73.0
-offset_top = -23.0
-offset_right = 77.0
-offset_bottom = 70.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 text = "N 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="foods" type="Control" parent="main_panel/orders/order2"]
 anchors_preset = 0
@@ -421,30 +380,13 @@ offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
-
-[node name="Label" type="Label" parent="main_panel/orders/order2/pick"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -22.0
-offset_right = 163.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
-theme_override_font_sizes/font_size = 80
 text = "Pick"
-horizontal_alignment = 1
 
 [node name="order3" type="Control" parent="main_panel/orders"]
 visible = false
@@ -468,20 +410,16 @@ texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order3/table_number"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -73.0
-offset_top = -23.0
-offset_right = 77.0
-offset_bottom = 70.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 text = "N 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="foods" type="Control" parent="main_panel/orders/order3"]
 anchors_preset = 0
@@ -589,30 +527,13 @@ offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
-
-[node name="Label" type="Label" parent="main_panel/orders/order3/pick"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -22.0
-offset_right = 163.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
-theme_override_font_sizes/font_size = 80
 text = "Pick"
-horizontal_alignment = 1
 
 [node name="order4" type="Control" parent="main_panel/orders"]
 visible = false
@@ -636,20 +557,16 @@ texture = ExtResource("9_f6fhl")
 
 [node name="table_number" type="Label" parent="main_panel/orders/order4/table_number"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -73.0
-offset_top = -23.0
-offset_right = 77.0
-offset_bottom = 70.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 text = "N 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="foods" type="Control" parent="main_panel/orders/order4"]
 anchors_preset = 0
@@ -757,30 +674,13 @@ offset_right = 575.0
 offset_bottom = 84.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
+theme_override_fonts/font = ExtResource("4_qlfgo")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_pkfn8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5jx3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q5mf4")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_kvpf8")
-
-[node name="Label" type="Label" parent="main_panel/orders/order4/pick"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -22.0
-offset_right = 163.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_410ax")
-theme_override_font_sizes/font_size = 80
 text = "Pick"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="main_panel/cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="main_panel/orders/order/pick" to="main_panel/orders/order" method="_on_pick_pressed"]

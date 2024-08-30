@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://project/food_menu/food_menu.gd" id="1_lrmo0"]
 [ext_resource type="Texture2D" uid="uid://bcglbg7y8b6s3" path="res://assets/Menu_UI/Menu/Menu1.png" id="1_y2ks4"]
 [ext_resource type="Texture2D" uid="uid://dx4e23yrqyd0j" path="res://assets/Menu_UI/Menu/Shadow.png" id="3_yc1tq"]
+[ext_resource type="FontFile" uid="uid://ipnwq2itk0jf" path="res://assets/Fonts/8-bit-fortress.ttf" id="4_6dykk"]
 [ext_resource type="Texture2D" uid="uid://7kekda2kqqca" path="res://assets/Menu_UI/Panel_Hot_Dishes/Hot_dishes1.png" id="6_vmx4f"]
 [ext_resource type="Texture2D" uid="uid://tnyd6rhj7fmq" path="res://assets/Menu_UI/Panel_Dessert/Dessert2.png" id="7_41j6o"]
-[ext_resource type="FontFile" uid="uid://ca1c0t3foshuc" path="res://assets/Fonts/Mystery Font1.ttf" id="7_jqssa"]
 [ext_resource type="PackedScene" uid="uid://dau66ack38vrt" path="res://project/food_menu/selected_food.tscn" id="10_ngwlq"]
 [ext_resource type="Texture2D" uid="uid://d4moklghebpk6" path="res://assets/Menu_UI/OK_Button/Ok(disabled).png" id="14_n8v27"]
 [ext_resource type="Texture2D" uid="uid://bgfgrw0v8jfl6" path="res://assets/Menu_UI/Panel_Drinks/Drinks2.png" id="19_f2ual"]
@@ -15,11 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://bcyifjrddsg0x" path="res://project/food_menu/food_placeholder.tscn" id="25_6mjy8"]
 [ext_resource type="Texture2D" uid="uid://cgrypvordenpr" path="res://assets/Menu_UI/OK_Button/OK_Button(hover).png" id="25_bt8lu"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raq75"]
-texture = ExtResource("1_547g1")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8hl4"]
 texture = ExtResource("3_yc1tq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raq75"]
+texture = ExtResource("1_547g1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tp0bn"]
 texture = ExtResource("23_32s55")
@@ -45,6 +45,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_lrmo0")
 
+[node name="backgroun_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p8hl4")
+
 [node name="table_number" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -59,31 +68,22 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_raq75")
 
 [node name="Label" type="Label" parent="table_number"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -157.5
-offset_top = -150.0
-offset_right = 157.5
-offset_bottom = -12.0
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -70.5
+offset_right = 176.0
+offset_bottom = 70.5
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("7_jqssa")
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6dykk")
 theme_override_font_sizes/font_size = 120
 text = "N 12"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="backgroun_panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_p8hl4")
 
 [node name="main_panel" type="TextureRect" parent="."]
 layout_mode = 1
@@ -115,13 +115,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -265.0
-offset_top = -41.0
-offset_right = 265.0
-offset_bottom = 52.0
+offset_left = -296.0
+offset_top = -62.0
+offset_right = 296.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_fonts/font = ExtResource("4_6dykk")
 theme_override_font_sizes/font_size = 80
 text = "Hot dishes"
 horizontal_alignment = 1
@@ -143,12 +143,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -265.0
-offset_top = -41.0
+offset_top = -67.0
 offset_right = 265.0
-offset_bottom = 52.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_fonts/font = ExtResource("4_6dykk")
 theme_override_font_sizes/font_size = 80
 text = "Dessert"
 horizontal_alignment = 1
@@ -170,12 +170,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -265.0
-offset_top = -41.0
+offset_top = -63.0
 offset_right = 265.0
-offset_bottom = 52.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_fonts/font = ExtResource("4_6dykk")
 theme_override_font_sizes/font_size = 80
 text = "Drinks"
 horizontal_alignment = 1
@@ -345,27 +345,11 @@ offset_right = -1633.0
 offset_bottom = -631.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_fonts/font = ExtResource("4_6dykk")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_tp0bn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ccc7m")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_h7hmg")
-
-[node name="Label" type="Label" parent="cancel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -22.0
-offset_right = 163.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_jqssa")
-theme_override_font_sizes/font_size = 80
 text = "Cancel"
 
 [node name="ok" type="Button" parent="."]
@@ -381,31 +365,14 @@ offset_right = -1137.0
 offset_bottom = -631.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("7_jqssa")
+theme_override_fonts/font = ExtResource("4_6dykk")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_tp0bn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ccc7m")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_h7hmg")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_gs846")
 disabled = true
-
-[node name="Label" type="Label" parent="ok"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -22.0
-offset_right = 163.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_jqssa")
-theme_override_font_sizes/font_size = 80
-text = "Ok"
-horizontal_alignment = 1
+text = "OK"
 
 [connection signal="gui_input" from="main_panel/hot_dishes" to="." method="_on_hot_dishes_gui_input"]
 [connection signal="gui_input" from="main_panel/dessert" to="." method="_on_dessert_gui_input"]
