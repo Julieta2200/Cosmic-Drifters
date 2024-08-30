@@ -60,12 +60,14 @@ animations = [{
 size = Vector2(16, 8)
 
 [node name="oliver" type="CharacterBody2D"]
+z_index = 20
 scale = Vector2(16, 16)
 script = ExtResource("1_7y8bb")
 character_sprite = ExtResource("2_cm0jn")
 speed = 500.0
 
 [node name="shadow" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(0.5625, 5.9375)
 texture = ExtResource("3_mvof1")
 

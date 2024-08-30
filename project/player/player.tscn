@@ -633,10 +633,12 @@ scale = Vector2(16, 16)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_r3jtw")
+shapeshift_sprite = ExtResource("71_an1sl")
 character_name = "LUMINA"
 character_sprite = ExtResource("2_m7krk")
 
 [node name="shadow" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(1, 1)
 texture = ExtResource("2_fktkq")
 

@@ -65,6 +65,7 @@ animations = [{
 }]
 
 [node name="Cook_2" type="CharacterBody2D"]
+z_index = 20
 scale = Vector2(16, 16)
 script = ExtResource("1_f7rur")
 speed = 800.0
