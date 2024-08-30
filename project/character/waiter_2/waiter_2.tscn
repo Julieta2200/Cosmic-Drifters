@@ -65,11 +65,13 @@ animations = [{
 }]
 
 [node name="waiter_2" type="CharacterBody2D"]
+z_index = 20
 scale = Vector2(16, 16)
 script = ExtResource("1_u60k8")
 speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(1, 7)
 texture = ExtResource("1_uxwr8")
 

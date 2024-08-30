@@ -84,12 +84,14 @@ animations = [{
 size = Vector2(7.75, 5.5625)
 
 [node name="cerulean_hoppers" type="CharacterBody2D"]
+z_index = 20
 scale = Vector2(16, 16)
 script = ExtResource("1_rc42d")
 character_name = "HOPPER"
 character_sprite = ExtResource("2_yb4rr")
 
 [node name="shadow" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(1.1875, 6.5625)
 texture = ExtResource("1_osyae")
 

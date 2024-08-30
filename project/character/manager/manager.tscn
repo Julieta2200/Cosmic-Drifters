@@ -67,12 +67,14 @@ animations = [{
 }]
 
 [node name="manager" type="CharacterBody2D"]
+z_index = 20
 scale = Vector2(16, 16)
 script = ExtResource("1_c3qu0")
 character_sprite = ExtResource("2_ee0hi")
 speed = 500.0
 
 [node name="shadow" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(0.8125, -1.8125)
 texture = ExtResource("1_2yx55")
 

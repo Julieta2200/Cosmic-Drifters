@@ -608,6 +608,7 @@ autoplay = "gaming_machine"
 frame = 3
 
 [node name="details_y_sort_enabled" type="Node2D" parent="."]
+z_index = 20
 y_sort_enabled = true
 
 [node name="plant" type="Node2D" parent="details_y_sort_enabled"]
@@ -908,6 +909,7 @@ clickable_objects = NodePath("../clickable_objects")
 walking_area = NodePath("../walking_area")
 
 [node name="clickable_objects" type="Node2D" parent="."]
+z_index = 20
 y_sort_enabled = true
 
 [node name="player" parent="clickable_objects" node_paths=PackedStringArray("ui", "manager_room_position", "cafe_manager", "conversation_manager", "recording_panel", "level") instance=ExtResource("25_6bfeo")]

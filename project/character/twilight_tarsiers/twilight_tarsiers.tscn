@@ -88,6 +88,7 @@ size = Vector2(17, 15)
 size = Vector2(16, 7.375)
 
 [node name="twilight_tarsiers" type="CharacterBody2D"]
+z_index = 20
 scale = Vector2(16, 16)
 script = ExtResource("1_sig5f")
 suspect_unit = 10.0
@@ -96,6 +97,7 @@ character_name = "TWILIGHT"
 character_sprite = ExtResource("2_5yi40")
 
 [node name="shadow" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(0, 7)
 texture = ExtResource("2_hkg40")
 
