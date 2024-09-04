@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://2w8fr0fk6fsl"]
+[gd_scene load_steps=145 format=3 uid="uid://2w8fr0fk6fsl"]
 
 [ext_resource type="Texture2D" uid="uid://cgaxsnbk0121u" path="res://assets/details/TileMap.png" id="1_krjco"]
 [ext_resource type="Script" path="res://project/level_1/level_1.gd" id="1_pbq2x"]
@@ -99,6 +99,7 @@
 [ext_resource type="PackedScene" uid="uid://pat6q66q14uf" path="res://project/groups/level_1/group_1.tscn" id="94_fnmwe"]
 [ext_resource type="PackedScene" uid="uid://c1su8qlgqhwlk" path="res://project/computer/computer.tscn" id="95_1m0fq"]
 [ext_resource type="PackedScene" uid="uid://dhqgjvcudxrn3" path="res://project/groups/level_1/group_2.tscn" id="95_t1hhy"]
+[ext_resource type="PackedScene" uid="uid://4s58228124kw" path="res://project/groups/level_1/group_3.tscn" id="97_5w3fx"]
 [ext_resource type="Texture2D" uid="uid://crws4lb8k88jm" path="res://assets/Kitchen/Cook3.png" id="98_eb6uq"]
 [ext_resource type="Texture2D" uid="uid://bbbwrgfetnooa" path="res://assets/Kitchen/Cook4.png" id="99_u47fo"]
 [ext_resource type="Texture2D" uid="uid://qynarq0ycumu" path="res://assets/Kitchen/Cook1.png" id="100_5stm1"]
@@ -125,6 +126,7 @@
 [ext_resource type="Script" path="res://project/level_1/oliver_save_lumina_conversation.gd" id="120_iau2w"]
 [ext_resource type="Script" path="res://project/groups/level_1/group_2_conversation.gd" id="123_4yyto"]
 [ext_resource type="Script" path="res://project/level_1/provider_coversation.gd" id="124_q6yaj"]
+[ext_resource type="Script" path="res://project/groups/level_1/group_3_conversation.gd" id="125_x167u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eypp"]
 texture = ExtResource("1_krjco")
@@ -1031,6 +1033,13 @@ _spawn_time = 10.0
 _table = NodePath("../clickable_objects/TableSmall2")
 conversation = NodePath("../conversation_manager/group_2_conversation")
 
+[node name="group_3" parent="." node_paths=PackedStringArray("level", "_table", "conversation") instance=ExtResource("97_5w3fx")]
+level = NodePath("..")
+_spawn_time = 20.0
+_for_lumina = true
+_table = NodePath("../clickable_objects/Table")
+conversation = NodePath("../conversation_manager/group_3_conversation")
+
 [node name="Waiter_1" parent="." node_paths=PackedStringArray("level", "desk_point") instance=ExtResource("63_7uax7")]
 position = Vector2(6536, 1327)
 level = NodePath("..")
@@ -1166,6 +1175,11 @@ conversation_manager = NodePath("..")
 [node name="group_2_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("group", "conversation_manager")]
 script = ExtResource("123_4yyto")
 group = NodePath("../../group_2")
+conversation_manager = NodePath("..")
+
+[node name="group_3_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("group", "conversation_manager")]
+script = ExtResource("125_x167u")
+group = NodePath("../../group_3")
 conversation_manager = NodePath("..")
 
 [node name="oliver_save_lumina_conversation" type="Node2D" parent="conversation_manager" node_paths=PackedStringArray("conversation_manager")]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://4s58228124kw"]
+
+[ext_resource type="Script" path="res://project/character/group.gd" id="1_34b1w"]
+[ext_resource type="PackedScene" uid="uid://bt7yhx8mojj0m" path="res://project/character/bunnyboo_sippes/bunnyboo_sippers.tscn" id="2_apg72"]
+[ext_resource type="PackedScene" uid="uid://dl1thhd2djkjj" path="res://project/character/twilight_tarsiers/twilight_tarsiers.tscn" id="3_8046k"]
+[ext_resource type="PackedScene" uid="uid://bsncelllnchub" path="res://project/character/cerulean_hoppers/cerulean_hoppers.tscn" id="4_rtf46"]
+
+[node name="group_3" type="Node2D"]
+script = ExtResource("1_34b1w")
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="bunnyboo_sippers" parent="enemies" instance=ExtResource("2_apg72")]
+character_name = "Hopon"
+
+[node name="twilight_tarsiers" parent="enemies" instance=ExtResource("3_8046k")]
+character_name = "Moonlight"
+
+[node name="cerulean_hoppers" parent="enemies" instance=ExtResource("4_rtf46")]
+character_name = "Shadow"
+
+[node name="bunnyboo_sippers2" parent="enemies" instance=ExtResource("2_apg72")]
+character_name = "Hopoff"
+
+[connection signal="ready_exit" from="." to="." method="_on_ready_exit"]
+[connection signal="ready_sit" from="." to="." method="_on_ready_sit"]

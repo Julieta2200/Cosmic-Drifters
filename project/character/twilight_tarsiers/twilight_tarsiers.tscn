@@ -95,6 +95,7 @@ suspect_unit = 10.0
 cooldown_unit = 5.0
 character_name = "TWILIGHT"
 character_sprite = ExtResource("2_5yi40")
+speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 z_as_relative = false

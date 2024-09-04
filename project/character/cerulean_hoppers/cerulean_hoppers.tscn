@@ -89,6 +89,7 @@ scale = Vector2(16, 16)
 script = ExtResource("1_rc42d")
 character_name = "HOPPER"
 character_sprite = ExtResource("2_yb4rr")
+speed = 800.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 z_as_relative = false
